@@ -10,9 +10,11 @@ interface SplashScreenProps {
 
 export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [text, setText] = useState('')
-  const fullText = "SOFTWARE ENGINEER"
+  const fullText = 'SOFTWARE ENGINEER'
   const [showCursor, setShowCursor] = useState(true)
-  const [phase, setPhase] = useState<'loading' | 'typing' | 'complete'>('loading')
+  const [phase, setPhase] = useState<'loading' | 'typing' | 'complete'>(
+    'loading'
+  )
 
   useEffect(() => {
     // Initial loading phase
@@ -45,7 +47,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev)
+      setShowCursor((prev) => !prev)
     }, 500)
 
     return () => clearInterval(cursorInterval)
@@ -61,7 +63,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyber-purple rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyber-cyan rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-20 right-10 w-72 h-72 bg-cyber-cyan rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+          style={{ animationDelay: '2s' }}
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyber-pink rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
       </div>
 
@@ -76,30 +81,34 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
             <div className="text-cyber-cyan font-mono text-sm tracking-[0.3em]">
               {'<'} INITIALIZING SYSTEM {'/>'}
             </div>
-            
+
             {/* Loading bars */}
             <div className="space-y-2 w-80 mx-auto">
-              {['NEURAL.PATHWAYS', 'CYBER.INTERFACE', 'MATRIX.PROTOCOLS'].map((item, i) => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="text-cyber-green font-mono text-xs w-32">{item}</span>
-                  <div className="flex-1 h-1 bg-black/50 border border-cyber-cyan/30 overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: '100%' }}
-                      transition={{ delay: i * 0.3, duration: 1.5 }}
-                      className="h-full bg-gradient-to-r from-cyber-cyan to-cyber-purple"
-                    />
+              {['NEURAL.PATHWAYS', 'CYBER.INTERFACE', 'MATRIX.PROTOCOLS'].map(
+                (item, i) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="text-cyber-green font-mono text-xs w-32">
+                      {item}
+                    </span>
+                    <div className="flex-1 h-1 bg-black/50 border border-cyber-cyan/30 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        transition={{ delay: i * 0.3, duration: 1.5 }}
+                        className="h-full bg-gradient-to-r from-cyber-cyan to-cyber-purple"
+                      />
+                    </div>
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: i * 0.3 + 1.5 }}
+                      className="text-cyber-green font-mono text-xs"
+                    >
+                      OK
+                    </motion.span>
                   </div>
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: i * 0.3 + 1.5 }}
-                    className="text-cyber-green font-mono text-xs"
-                  >
-                    OK
-                  </motion.span>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </motion.div>
         )}
@@ -109,19 +118,23 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="space-y-8"
+            className="space-y-12"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-cyber font-black">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-cyber font-black mb-20">
               <span className="glitch-text" data-text={text}>
                 {text}
-                <span className={`text-cyber-cyan ${showCursor ? 'opacity-100' : 'opacity-0'}`}>_</span>
+                <span
+                  className={`text-cyber-cyan ${showCursor ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  _
+                </span>
               </span>
             </h1>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 1, type: "spring" }}
+              transition={{ delay: 0.5, duration: 1, type: 'spring' }}
             >
               <CyberpunkAvatar />
             </motion.div>
@@ -153,9 +166,11 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         <div className="flex items-center gap-2 text-cyber-cyan/50 font-mono text-xs">
           <div className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse" />
           <span>
-            {phase === 'loading' ? 'LOADING.MODULES' : 
-             phase === 'typing' ? 'ESTABLISHING.IDENTITY' : 
-             'READY.FOR.TERMINAL'}
+            {phase === 'loading'
+              ? 'LOADING.MODULES'
+              : phase === 'typing'
+                ? 'ESTABLISHING.IDENTITY'
+                : 'READY.FOR.TERMINAL'}
           </span>
         </div>
       </div>
