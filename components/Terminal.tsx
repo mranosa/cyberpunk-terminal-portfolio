@@ -79,10 +79,9 @@ const projects = [
 ]
 
 const thoughts = [
-  'Code is poetry written in logic',
-  'The best code is no code',
-  'Debugging is twice as hard as writing code',
-  'Simplicity is the ultimate sophistication',
+  'Pressure over Peace!',
+  'Obsession over Discipline!',
+  'Growth over Comfort!',
 ]
 
 const skills = {
@@ -135,7 +134,6 @@ export default function Terminal() {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
   }, [commands])
-
 
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()
@@ -570,8 +568,8 @@ Knock, knock, Neo.
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-cyber font-black mb-4">
-            <GlitchText 
-              text="KEN.RANOSA" 
+            <GlitchText
+              text="KEN.RANOSA"
               className="text-5xl md:text-6xl font-cyber font-black"
             />
           </h2>
