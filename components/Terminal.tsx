@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import GlitchText from './GlitchText'
+import LightBulbText from './LightBulbText'
 
 interface Command {
   id: number
@@ -108,7 +109,11 @@ const skills = {
   ],
 }
 
-export default function Terminal() {
+interface TerminalProps {
+  onContactOpen?: () => void
+}
+
+export default function Terminal({ onContactOpen }: TerminalProps = {}) {
   const [commands, setCommands] = useState<Command[]>([
     {
       id: 1,
@@ -567,7 +572,9 @@ Knock, knock, Neo.
               className="text-5xl md:text-6xl font-cyber font-black"
             />
           </h2>
-          <p className="text-gray-400 font-mono text-sm">HOW.CAN.I.HELP</p>
+          <p className="text-gray-400 font-mono text-sm">
+            <LightBulbText text="HOW.CAN.I.HELP" onClick={onContactOpen} />
+          </p>
         </motion.div>
 
         {/* Terminal Window */}

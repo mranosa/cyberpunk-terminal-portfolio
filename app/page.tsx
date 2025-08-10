@@ -9,6 +9,7 @@ import MatrixRain from '@/components/MatrixRain'
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true)
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   const handleSplashComplete = () => {
     setShowSplash(false)
@@ -17,13 +18,13 @@ export default function Home() {
   return (
     <main className="relative">
       <MatrixRain />
-      <ContactDrawer />
+      <ContactDrawer isOpen={isContactOpen} onOpenChange={setIsContactOpen} />
 
       <AnimatePresence>
         {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       </AnimatePresence>
 
-      {!showSplash && <Terminal />}
+      {!showSplash && <Terminal onContactOpen={() => setIsContactOpen(true)} />}
     </main>
   )
 }

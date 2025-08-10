@@ -3,8 +3,15 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function ContactDrawer() {
-  const [isOpen, setIsOpen] = useState(false)
+interface ContactDrawerProps {
+  isOpen?: boolean
+  onOpenChange?: (isOpen: boolean) => void
+}
+
+export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: ContactDrawerProps = {}) {
+  const [internalIsOpen, setInternalIsOpen] = useState(false)
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
+  const setIsOpen = onOpenChange || setInternalIsOpen
   const [formData, setFormData] = useState({
     name: '',
     email: '',
