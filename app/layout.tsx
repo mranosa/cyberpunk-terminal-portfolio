@@ -1,0 +1,68 @@
+import type { Metadata } from 'next'
+import ErrorBoundary from '@/components/ErrorBoundary'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'Ken Ranosa | Software Engineer Portfolio',
+  description: 'Interactive cyberpunk-themed portfolio showcasing my software engineering journey, skills, and projects. Built with Next.js and TypeScript.',
+  keywords: 'Ken Ranosa, software engineer, developer, portfolio, cyberpunk, full-stack, React, Next.js, TypeScript, Philippines',
+  authors: [{ name: 'Ken Ranosa' }],
+  creator: 'Ken Ranosa',
+  publisher: 'Ken Ranosa',
+  openGraph: {
+    title: 'Ken Ranosa | Software Engineer Portfolio',
+    description: 'Interactive cyberpunk-themed portfolio showcasing my software engineering journey, skills, and projects.',
+    type: 'website',
+    locale: 'en_US',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com',
+    siteName: 'Ken Ranosa Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ken Ranosa | Software Engineer Portfolio',
+    description: 'Interactive cyberpunk-themed portfolio',
+    creator: '@yourtwitterhandle',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0a0a0f" />
+      </head>
+      <body className="antialiased">
+        <ErrorBoundary>
+          <div className="fixed inset-0 bg-cyber-darker -z-50" />
+          <div className="fixed inset-0 opacity-30 -z-40">
+            <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px]" />
+          </div>
+          {children}
+        </ErrorBoundary>
+      </body>
+    </html>
+  )
+}
