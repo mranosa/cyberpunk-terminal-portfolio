@@ -12,6 +12,7 @@ import {
   WorkExperienceCommand,
   SkillsCommand,
   SkillsCategoryCommand,
+  RecommendationsCommand,
   CVCommand,
   ThoughtsCommand,
   AboutCommand,
@@ -76,6 +77,11 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
 
       case 'work':
         output = <WorkExperienceCommand />
+        break
+
+      case 'recommendations':
+      case 'refs':
+        output = <RecommendationsCommand />
         break
 
       case 'skills':

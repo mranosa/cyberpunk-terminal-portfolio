@@ -15,6 +15,9 @@ export function HelpCommand() {
         <span className="text-cyber-purple">work</span> - Display work experience and career history
       </div>
       <div>
+        <span className="text-cyber-purple">recommendations</span> - View professional recommendations and references
+      </div>
+      <div>
         <span className="text-cyber-purple">skills [category]</span> - Display skills matrix (languages, frameworks, tools)
       </div>
       <div>
