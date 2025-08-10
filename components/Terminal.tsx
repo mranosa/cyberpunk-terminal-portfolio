@@ -4,172 +4,26 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import GlitchText from './GlitchText'
 import LightBulbText from './LightBulbText'
+import {
+  HelpCommand,
+  BlogListCommand,
+  BlogReadCommand,
+  ProjectsCommand,
+  WorkExperienceCommand,
+  SkillsCommand,
+  SkillsCategoryCommand,
+  CVCommand,
+  ThoughtsCommand,
+  AboutCommand,
+  MatrixCommand
+} from './terminal/commands'
+import { skills } from './terminal/data/skills'
 
 interface Command {
   id: number
   command: string
   output: string | React.ReactNode
   timestamp: Date
-}
-
-const blogPosts = [
-  {
-    title: 'Optimizing React Performance',
-    date: '2024-01-15',
-    excerpt:
-      'Deep dive into React optimization techniques including memoization, lazy loading, and virtual scrolling...',
-    tags: ['React', 'Performance', 'JavaScript'],
-  },
-  {
-    title: 'Building Scalable Microservices',
-    date: '2024-01-10',
-    excerpt:
-      'Architecture patterns and best practices for designing resilient microservice systems...',
-    tags: ['Architecture', 'Docker', 'Kubernetes'],
-  },
-  {
-    title: 'The Future of AI in Development',
-    date: '2024-01-05',
-    excerpt:
-      'Exploring how AI tools are revolutionizing the software development workflow...',
-    tags: ['AI', 'Development', 'Future'],
-  },
-]
-
-const projects = [
-  {
-    id: 1,
-    title: 'Neural Commerce Platform',
-    description:
-      'AI-powered e-commerce solution with predictive analytics and personalized recommendations',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker'],
-    stats: { stars: 342, forks: 89, commits: 1247 },
-    status: 'DEPLOYED',
-    link: 'https://github.com/username/neural-commerce',
-  },
-  {
-    id: 2,
-    title: 'Quantum Task Manager',
-    description:
-      'Real-time collaborative project management tool with advanced automation features',
-    tech: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'WebSockets'],
-    stats: { stars: 567, forks: 123, commits: 892 },
-    status: 'ACTIVE',
-    link: 'https://github.com/username/quantum-tasks',
-  },
-  {
-    id: 3,
-    title: 'CyberSec Dashboard',
-    description:
-      'Security monitoring and threat detection system with ML-based anomaly detection',
-    tech: ['Python', 'FastAPI', 'React', 'TensorFlow', 'Elasticsearch'],
-    stats: { stars: 891, forks: 234, commits: 1567 },
-    status: 'DEPLOYED',
-    link: 'https://github.com/username/cybersec-dashboard',
-  },
-  {
-    id: 4,
-    title: 'Blockchain Wallet',
-    description:
-      'Decentralized cryptocurrency wallet with multi-chain support and DeFi integration',
-    tech: ['Rust', 'Web3.js', 'React Native', 'Solidity', 'IPFS'],
-    stats: { stars: 1234, forks: 456, commits: 2341 },
-    status: 'BETA',
-    link: 'https://github.com/username/blockchain-wallet',
-  },
-]
-
-const thoughts = [
-  'Pressure over Peace!',
-  'Obsession over Discipline!',
-  'Growth over Comfort!',
-]
-
-const workExperience = [
-  {
-    id: 1,
-    company: 'TechCorp Solutions',
-    position: 'Senior Full Stack Developer',
-    duration: '2022 - Present',
-    location: 'Remote',
-    type: 'Full-time',
-    achievements: [
-      'Led development of microservices architecture serving 1M+ users',
-      'Reduced API response times by 60% through optimization',
-      'Mentored 5 junior developers and established code review practices',
-      'Implemented CI/CD pipelines reducing deployment time by 80%'
-    ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'TypeScript']
-  },
-  {
-    id: 2,
-    company: 'InnovateLab Inc',
-    position: 'Full Stack Developer',
-    duration: '2020 - 2022',
-    location: 'San Francisco, CA',
-    type: 'Full-time',
-    achievements: [
-      'Built real-time collaboration features for 50K+ active users',
-      'Developed RESTful APIs and GraphQL endpoints',
-      'Integrated third-party payment systems and analytics',
-      'Improved code coverage from 40% to 90% through testing initiatives'
-    ],
-    technologies: ['Vue.js', 'Python', 'MongoDB', 'Redis', 'GCP', 'JavaScript']
-  },
-  {
-    id: 3,
-    company: 'StartupX',
-    position: 'Frontend Developer',
-    duration: '2019 - 2020',
-    location: 'Austin, TX',
-    type: 'Contract',
-    achievements: [
-      'Designed and implemented responsive web applications',
-      'Collaborated with UX team to improve user engagement by 40%',
-      'Built component library used across 3 product teams',
-      'Optimized bundle size reducing load times by 50%'
-    ],
-    technologies: ['React', 'TypeScript', 'Webpack', 'SASS', 'Jest']
-  },
-  {
-    id: 4,
-    company: 'FreelanceForge',
-    position: 'Freelance Web Developer',
-    duration: '2018 - 2019',
-    location: 'Remote',
-    type: 'Freelance',
-    achievements: [
-      'Delivered 15+ custom web solutions for small businesses',
-      'Maintained 100% client satisfaction rating',
-      'Specialized in e-commerce and content management systems',
-      'Built SEO-optimized sites improving search rankings by avg 300%'
-    ],
-    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'CSS3']
-  }
-]
-
-const skills = {
-  languages: [
-    { name: 'TypeScript', level: 90 },
-    { name: 'JavaScript', level: 95 },
-    { name: 'Python', level: 85 },
-    { name: 'Rust', level: 70 },
-    { name: 'Go', level: 75 },
-  ],
-  frameworks: [
-    { name: 'React/Next.js', level: 95 },
-    { name: 'Node.js', level: 90 },
-    { name: 'FastAPI', level: 85 },
-    { name: 'GraphQL', level: 80 },
-    { name: 'Docker/K8s', level: 85 },
-  ],
-  tools: [
-    { name: 'Git/GitHub', level: 95 },
-    { name: 'AWS/Cloud', level: 85 },
-    { name: 'CI/CD', level: 90 },
-    { name: 'Databases', level: 88 },
-    { name: 'Testing', level: 92 },
-  ],
 }
 
 interface TerminalProps {
@@ -208,270 +62,24 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
 
     switch (trimmedCmd) {
       case 'help':
-        output = (
-          <div className="space-y-1">
-            <div className="text-cyber-cyan">Available commands:</div>
-            <div>
-              <span className="text-cyber-purple">ls</span> - List all blog
-              posts
-            </div>
-            <div>
-              <span className="text-cyber-purple">read [number]</span> - Read a
-              specific post
-            </div>
-            <div>
-              <span className="text-cyber-purple">projects</span> - List all
-              project repositories
-            </div>
-            <div>
-              <span className="text-cyber-purple">work</span> - Display
-              work experience and career history
-            </div>
-            <div>
-              <span className="text-cyber-purple">skills [category]</span> -
-              Display skills matrix (languages, frameworks, tools)
-            </div>
-            <div>
-              <span className="text-cyber-purple">cv</span> - Download
-              curriculum vitae
-            </div>
-            <div>
-              <span className="text-cyber-purple">thoughts</span> - Display
-              random thoughts
-            </div>
-            <div>
-              <span className="text-cyber-purple">about</span> - About this
-              terminal
-            </div>
-            <div>
-              <span className="text-cyber-purple">clear</span> - Clear terminal
-            </div>
-            <div>
-              <span className="text-cyber-purple">matrix</span> - Enter the
-              matrix
-            </div>
-          </div>
-        )
+        output = <HelpCommand />
         break
 
       case 'ls':
       case 'dir':
-        output = (
-          <div className="space-y-2">
-            {blogPosts.map((post, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <span className="text-cyber-green">[{index + 1}]</span>
-                <div>
-                  <div className="text-cyber-cyan">{post.title}</div>
-                  <div className="text-gray-500 text-xs">{post.date}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
+        output = <BlogListCommand />
         break
 
       case 'projects':
-        output = (
-          <div className="space-y-4">
-            <div className="text-cyber-cyan mb-3">PROJECT REPOSITORIES:</div>
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="border border-cyber-purple/30 p-4 bg-black/20"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-cyber-green font-bold">
-                      [{index + 1}]
-                    </span>
-                    <span className="text-cyber-cyan text-lg">
-                      {project.title}
-                    </span>
-                  </div>
-                  <span
-                    className={`text-xs px-2 py-1 border ${
-                      project.status === 'DEPLOYED'
-                        ? 'border-cyber-green text-cyber-green'
-                        : project.status === 'ACTIVE'
-                          ? 'border-cyber-cyan text-cyber-cyan'
-                          : project.status === 'BETA'
-                            ? 'border-cyber-orange text-cyber-orange'
-                            : 'border-gray-500 text-gray-500'
-                    }`}
-                  >
-                    {project.status}
-                  </span>
-                </div>
-
-                <div className="text-gray-300 mb-3">{project.description}</div>
-
-                <div>
-                  <div className="text-cyber-purple text-sm mb-2">
-                    Tech Stack:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-xs border border-cyber-purple/30 px-2 py-1 text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
+        output = <ProjectsCommand />
         break
 
       case 'work':
-        output = (
-          <div className="space-y-6">
-            <div className="text-cyber-cyan mb-4">WORK EXPERIENCE:</div>
-            {workExperience.map((job, index) => (
-              <div
-                key={job.id}
-                className="border border-cyber-green/30 p-4 bg-black/20"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-1">
-                      <span className="text-cyber-green font-bold">
-                        [{index + 1}]
-                      </span>
-                      <span className="text-cyber-cyan text-lg font-semibold">
-                        {job.position}
-                      </span>
-                    </div>
-                    <div className="text-white font-medium">{job.company}</div>
-                    <div className="text-gray-400 text-sm">
-                      {job.location} • {job.type}
-                    </div>
-                  </div>
-                  <div className="text-cyber-green text-sm border border-cyber-green/30 px-2 py-1">
-                    {job.duration}
-                  </div>
-                </div>
-
-                <div className="mb-3">
-                  <div className="text-cyber-purple text-sm mb-2">
-                    Key Achievements:
-                  </div>
-                  <ul className="space-y-1">
-                    {job.achievements.map((achievement, i) => (
-                      <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                        <span className="text-cyber-green mt-1">•</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="text-cyber-purple text-sm mb-2">
-                    Technologies:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {job.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-xs border border-cyber-cyan/30 px-2 py-1 text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
+        output = <WorkExperienceCommand />
         break
 
       case 'skills':
-        output = (
-          <div className="space-y-4">
-            <div className="text-cyber-cyan mb-3">SKILLS MATRIX:</div>
-
-            {/* Languages */}
-            <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
-                Languages
-              </div>
-              {skills.languages.map((skill, index) => (
-                <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">
-                    {skill.name}
-                  </div>
-                  <div className="flex-1 max-w-md">
-                    <div className="bg-black/50 border border-cyber-cyan/20 h-4 overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-cyber-cyan to-cyan-600 transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                  <div className="text-cyber-cyan font-mono text-sm w-10">
-                    {skill.level}%
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Frameworks */}
-            <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
-                Frameworks
-              </div>
-              {skills.frameworks.map((skill, index) => (
-                <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">
-                    {skill.name}
-                  </div>
-                  <div className="flex-1 max-w-md">
-                    <div className="bg-black/50 border border-cyber-purple/20 h-4 overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-cyber-purple to-purple-600 transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                  <div className="text-cyber-purple font-mono text-sm w-10">
-                    {skill.level}%
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Tools */}
-            <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
-                Tools
-              </div>
-              {skills.tools.map((skill, index) => (
-                <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">
-                    {skill.name}
-                  </div>
-                  <div className="flex-1 max-w-md">
-                    <div className="bg-black/50 border border-cyber-green/20 h-4 overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-cyber-green to-green-600 transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                  <div className="text-cyber-green font-mono text-sm w-10">
-                    {skill.level}%
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )
+        output = <SkillsCommand />
         break
 
       case 'skills languages':
@@ -479,112 +87,25 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
       case 'skills tools':
         const category = trimmedCmd.split(' ')[1] as keyof typeof skills
         if (skills[category]) {
-          output = (
-            <div className="space-y-3">
-              <div className="text-cyber-cyan mb-3">
-                {category.toUpperCase()} SKILLS:
-              </div>
-              {skills[category].map((skill, index) => (
-                <div key={skill.name} className="flex items-center gap-3">
-                  <div className="w-32 text-gray-300 font-mono text-sm">
-                    {skill.name}
-                  </div>
-                  <div className="flex-1 max-w-lg">
-                    <div className="bg-black/50 border border-cyber-cyan/20 h-4 overflow-hidden">
-                      <div
-                        className={`h-full transition-all duration-1000 ${
-                          category === 'languages'
-                            ? 'bg-gradient-to-r from-cyber-cyan to-cyan-600'
-                            : category === 'frameworks'
-                              ? 'bg-gradient-to-r from-cyber-purple to-purple-600'
-                              : 'bg-gradient-to-r from-cyber-green to-green-600'
-                        }`}
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`font-mono text-sm w-10 ${
-                      category === 'languages'
-                        ? 'text-cyber-cyan'
-                        : category === 'frameworks'
-                          ? 'text-cyber-purple'
-                          : 'text-cyber-green'
-                    }`}
-                  >
-                    {skill.level}%
-                  </div>
-                </div>
-              ))}
-            </div>
-          )
+          output = <SkillsCategoryCommand category={category} />
         }
         break
 
       case 'cv':
       case 'resume':
-        output = (
-          <div className="space-y-3">
-            <div className="text-cyber-cyan">CV DOWNLOAD INITIATED...</div>
-            <div className="border border-cyber-green/30 bg-black/20 p-4">
-              <div className="flex items-center justify-between mb-3">
-                <div className="text-cyber-green font-mono text-sm">
-                  SOFTWARE_ENGINEER_CV.pdf
-                </div>
-                <div className="text-cyber-green text-xs">2.4MB</div>
-              </div>
-              <div className="text-gray-400 text-sm mb-4">
-                Complete technical resume with project portfolio, skills matrix,
-                and professional experience.
-              </div>
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => {
-                    // Replace with actual CV file path
-                    const link = document.createElement('a')
-                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                    link.download = 'SOFTWARE_ENGINEER_CV.pdf'
-                    link.click()
-                  }}
-                  className="text-cyber-green hover:text-white text-sm border border-cyber-green/50 
-                           hover:border-cyber-green px-3 py-1 transition-colors"
-                >
-                  DOWNLOAD.PDF →
-                </button>
-                <div className="text-gray-500 font-mono text-xs">
-                  STATUS: <span className="text-cyber-green">READY</span>
-                </div>
-              </div>
-            </div>
-            <div className="text-gray-500 text-xs font-mono">
-              $ curl -O https://portfolio.domain/cv/SOFTWARE_ENGINEER_CV.pdf
-            </div>
-          </div>
-        )
+        output = <CVCommand />
         break
 
       case 'thoughts':
-        const randomThought =
-          thoughts[Math.floor(Math.random() * thoughts.length)]
-        output = (
-          <div className="text-cyber-purple italic">"{randomThought}"</div>
-        )
+        output = <ThoughtsCommand />
         break
 
       case 'about':
-        output = (
-          <div className="space-y-2 text-gray-300">
-            <div className="text-cyber-cyan">{`// PERSONAL.INFO`}</div>
-            <div>
-              Hi! I'm Ken Ranosa, a Software Engineer from the Philippines.
-            </div>
-            <div>
-              Built with Next.js, TypeScript, and a love for cyberpunk
-              aesthetics.
-            </div>
-            <div className="text-cyber-green">Status: ONLINE</div>
-          </div>
-        )
+        output = <AboutCommand />
+        break
+
+      case 'matrix':
+        output = <MatrixCommand />
         break
 
       case 'clear':
@@ -602,45 +123,10 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
         ])
         return
 
-      case 'matrix':
-        output = (
-          <div className="text-cyber-green font-mono text-xs">
-            <pre>{`
-Wake up, Neo...
-The Matrix has you...
-Follow the white rabbit.
-
-Knock, knock, Neo.
-            `}</pre>
-          </div>
-        )
-        break
-
       default:
         if (trimmedCmd.startsWith('read ')) {
           const postIndex = parseInt(trimmedCmd.split(' ')[1]) - 1
-          if (postIndex >= 0 && postIndex < blogPosts.length) {
-            const post = blogPosts[postIndex]
-            output = (
-              <div className="space-y-2">
-                <div className="text-cyber-cyan text-lg">{post.title}</div>
-                <div className="text-gray-500">{post.date}</div>
-                <div className="text-gray-300">{post.excerpt}</div>
-                <div className="flex gap-2 mt-2">
-                  {post.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-cyber-purple text-xs border border-cyber-purple/30 px-2 py-1"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )
-          } else {
-            output = <span className="text-red-500">Error: Post not found</span>
-          }
+          output = <BlogReadCommand postIndex={postIndex} />
         } else if (trimmedCmd === '') {
           return
         } else {
@@ -698,8 +184,8 @@ Knock, knock, Neo.
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-cyber font-black mb-4">
-            <GlitchText
-              text="KEN.RANOSA"
+            <GlitchText 
+              text="KEN.RANOSA" 
               className="text-5xl md:text-6xl font-cyber font-black"
             />
           </h2>
