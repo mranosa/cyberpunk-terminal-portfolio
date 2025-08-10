@@ -5,10 +5,13 @@ A futuristic, terminal-based portfolio showcasing software engineering skills wi
 ## 🚀 Features
 
 - **Interactive Terminal Interface** - Navigate the entire portfolio through command-line
+- **Modular Architecture** - Clean, organized terminal commands and data structure
 - **Cyberpunk Design** - Neon colors, glitch effects, and matrix rain animation
+- **Professional Showcase** - Work experience, projects, skills, and recommendations
 - **Responsive Design** - Works on desktop, tablet, and mobile devices
 - **Performance Optimized** - Built with Next.js 15 and TypeScript
 - **SEO Ready** - Complete metadata and sitemap configuration
+- **Easy Customization** - Modular components for easy content updates
 
 ## 🛠 Tech Stack
 
@@ -27,18 +30,38 @@ A futuristic, terminal-based portfolio showcasing software engineering skills wi
 │   ├── page.tsx           # Main page with splash screen
 │   └── sitemap.ts         # SEO sitemap
 ├── components/            # Reusable components
+│   ├── terminal/          # Terminal module (modular architecture)
+│   │   ├── commands/      # Terminal command components
+│   │   │   ├── BlogCommand.tsx        # Blog list and read commands
+│   │   │   ├── HelpCommand.tsx        # Help command display
+│   │   │   ├── OtherCommands.tsx      # CV, thoughts, about, matrix
+│   │   │   ├── ProjectsCommand.tsx    # Projects showcase
+│   │   │   ├── RecommendationsCommand.tsx # Professional references
+│   │   │   ├── SkillsCommand.tsx      # Skills matrix display
+│   │   │   ├── WorkExperienceCommand.tsx # Career history
+│   │   │   └── index.ts              # Command exports
+│   │   └── data/          # Terminal data structures
+│   │       ├── blogPosts.ts          # Blog post data
+│   │       ├── projects.ts           # Project portfolio data
+│   │       ├── recommendations.ts     # Professional recommendations
+│   │       ├── skills.ts             # Technical skills data
+│   │       ├── thoughts.ts           # Random thoughts/quotes
+│   │       └── workExperience.ts     # Work history data
 │   ├── CyberpunkAvatar.tsx    # Animated avatar with effects
 │   ├── ContactDrawer.tsx      # Sliding contact form
 │   ├── ErrorBoundary.tsx      # Error handling
+│   ├── GlitchText.tsx         # Glitch text effect component
+│   ├── LightBulbText.tsx      # Light bulb hover effect
 │   ├── MatrixRain.tsx         # Background animation
 │   ├── SplashScreen.tsx       # Loading animation
-│   └── Terminal.tsx           # Interactive terminal
+│   └── Terminal.tsx           # Main terminal interface
 ├── public/                # Static assets
+│   ├── cv/               # Resume files
+│   │   └── SOFTWARE_ENGINEER_CV.pdf
 │   ├── images/           # Avatar images
+│   │   └── avatar-original.jpeg
 │   ├── robots.txt        # SEO robots file
 │   └── manifest.json     # PWA manifest
-└── lib/                  # Utility functions
-    └── utils.ts          # Helper functions
 ```
 
 ## 🚀 Getting Started
@@ -77,13 +100,17 @@ npm run dev
 
 ### Terminal Commands (in the portfolio)
 - `help` - Show all available commands
-- `about` - Personal information
-- `skills` - Display skills matrix
-- `projects` - Show project repositories  
-- `cv` - Download resume
+- `ls` / `dir` - List all blog posts
+- `read [number]` - Read a specific blog post
+- `projects` - Show project repositories with tech stacks
+- `work` - Display work experience and career history
+- `recommendations` - View professional recommendations and references
+- `skills [category]` - Display skills matrix (languages, frameworks, tools)
+- `cv` / `resume` - Download curriculum vitae
 - `thoughts` - Random developer quotes
-- `clear` - Clear terminal
-- `matrix` - Easter egg
+- `about` - Personal information and bio
+- `clear` - Clear terminal screen
+- `matrix` - Enter the matrix (Easter egg)
 
 ### Development Commands
 ```bash
@@ -97,17 +124,27 @@ npm run lint     # Run ESLint
 
 ### Personal Information
 Update these files with your information:
-- `components/Terminal.tsx` - Skills, projects, about section
-- `app/layout.tsx` - SEO metadata
-- `public/` - Add your avatar images and favicons
+- **Data Files** (in `components/terminal/data/`):
+  - `blogPosts.ts` - Your blog posts and articles
+  - `projects.ts` - Your project portfolio
+  - `workExperience.ts` - Your work history and achievements
+  - `skills.ts` - Your technical skills and proficiency levels
+  - `recommendations.ts` - Professional references and testimonials
+  - `thoughts.ts` - Personal quotes and thoughts
+- **Metadata**: `app/layout.tsx` - SEO metadata and site info
+- **Assets**: `public/` - Add your avatar images and favicons
+- **Resume**: `public/cv/` - Add your CV/resume PDF
 
 ### Styling
 - `app/globals.css` - Cyberpunk theme and animations
 - `tailwind.config.ts` - Color scheme and custom classes
 
-### Content
-- `components/Terminal.tsx` - Projects, skills, blog posts
-- `.env.example` - Configuration variables
+### Adding New Commands
+- Create new command components in `components/terminal/commands/`
+- Add data files in `components/terminal/data/`
+- Export new commands in `components/terminal/commands/index.ts`
+- Add command cases in `components/Terminal.tsx`
+- Update help command in `components/terminal/commands/HelpCommand.tsx`
 
 ## 🚢 Deployment
 
