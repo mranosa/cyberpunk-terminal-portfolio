@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import GlitchText from './GlitchText'
 
 interface Command {
   id: number
@@ -12,22 +13,25 @@ interface Command {
 
 const blogPosts = [
   {
-    title: "Optimizing React Performance",
-    date: "2024-01-15",
-    excerpt: "Deep dive into React optimization techniques including memoization, lazy loading, and virtual scrolling...",
-    tags: ["React", "Performance", "JavaScript"],
+    title: 'Optimizing React Performance',
+    date: '2024-01-15',
+    excerpt:
+      'Deep dive into React optimization techniques including memoization, lazy loading, and virtual scrolling...',
+    tags: ['React', 'Performance', 'JavaScript'],
   },
   {
-    title: "Building Scalable Microservices",
-    date: "2024-01-10",
-    excerpt: "Architecture patterns and best practices for designing resilient microservice systems...",
-    tags: ["Architecture", "Docker", "Kubernetes"],
+    title: 'Building Scalable Microservices',
+    date: '2024-01-10',
+    excerpt:
+      'Architecture patterns and best practices for designing resilient microservice systems...',
+    tags: ['Architecture', 'Docker', 'Kubernetes'],
   },
   {
-    title: "The Future of AI in Development",
-    date: "2024-01-05",
-    excerpt: "Exploring how AI tools are revolutionizing the software development workflow...",
-    tags: ["AI", "Development", "Future"],
+    title: 'The Future of AI in Development',
+    date: '2024-01-05',
+    excerpt:
+      'Exploring how AI tools are revolutionizing the software development workflow...',
+    tags: ['AI', 'Development', 'Future'],
   },
 ]
 
@@ -35,7 +39,8 @@ const projects = [
   {
     id: 1,
     title: 'Neural Commerce Platform',
-    description: 'AI-powered e-commerce solution with predictive analytics and personalized recommendations',
+    description:
+      'AI-powered e-commerce solution with predictive analytics and personalized recommendations',
     tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker'],
     stats: { stars: 342, forks: 89, commits: 1247 },
     status: 'DEPLOYED',
@@ -44,7 +49,8 @@ const projects = [
   {
     id: 2,
     title: 'Quantum Task Manager',
-    description: 'Real-time collaborative project management tool with advanced automation features',
+    description:
+      'Real-time collaborative project management tool with advanced automation features',
     tech: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'WebSockets'],
     stats: { stars: 567, forks: 123, commits: 892 },
     status: 'ACTIVE',
@@ -53,7 +59,8 @@ const projects = [
   {
     id: 3,
     title: 'CyberSec Dashboard',
-    description: 'Security monitoring and threat detection system with ML-based anomaly detection',
+    description:
+      'Security monitoring and threat detection system with ML-based anomaly detection',
     tech: ['Python', 'FastAPI', 'React', 'TensorFlow', 'Elasticsearch'],
     stats: { stars: 891, forks: 234, commits: 1567 },
     status: 'DEPLOYED',
@@ -62,7 +69,8 @@ const projects = [
   {
     id: 4,
     title: 'Blockchain Wallet',
-    description: 'Decentralized cryptocurrency wallet with multi-chain support and DeFi integration',
+    description:
+      'Decentralized cryptocurrency wallet with multi-chain support and DeFi integration',
     tech: ['Rust', 'Web3.js', 'React Native', 'Solidity', 'IPFS'],
     stats: { stars: 1234, forks: 456, commits: 2341 },
     status: 'BETA',
@@ -71,10 +79,10 @@ const projects = [
 ]
 
 const thoughts = [
-  "Code is poetry written in logic",
-  "The best code is no code",
-  "Debugging is twice as hard as writing code",
-  "Simplicity is the ultimate sophistication",
+  'Code is poetry written in logic',
+  'The best code is no code',
+  'Debugging is twice as hard as writing code',
+  'Simplicity is the ultimate sophistication',
 ]
 
 const skills = {
@@ -105,7 +113,7 @@ export default function TerminalBlog() {
   const [commands, setCommands] = useState<Command[]>([
     {
       id: 1,
-      command: "",
+      command: '',
       output: (
         <div className="text-cyber-green">
           <div>Terminal v0.0.1</div>
@@ -115,7 +123,7 @@ export default function TerminalBlog() {
       timestamp: new Date(),
     },
   ])
-  const [currentCommand, setCurrentCommand] = useState("")
+  const [currentCommand, setCurrentCommand] = useState('')
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
   const [isTyping, setIsTyping] = useState(false)
@@ -128,30 +136,57 @@ export default function TerminalBlog() {
     }
   }, [commands])
 
+
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()
-    let output: string | React.ReactNode = ""
+    let output: string | React.ReactNode = ''
 
     switch (trimmedCmd) {
-      case "help":
+      case 'help':
         output = (
           <div className="space-y-1">
             <div className="text-cyber-cyan">Available commands:</div>
-            <div><span className="text-cyber-purple">ls</span> - List all blog posts</div>
-            <div><span className="text-cyber-purple">read [number]</span> - Read a specific post</div>
-            <div><span className="text-cyber-purple">projects</span> - List all project repositories</div>
-            <div><span className="text-cyber-purple">skills [category]</span> - Display skills matrix (languages, frameworks, tools)</div>
-            <div><span className="text-cyber-purple">cv</span> - Download curriculum vitae</div>
-            <div><span className="text-cyber-purple">thoughts</span> - Display random thoughts</div>
-            <div><span className="text-cyber-purple">about</span> - About this terminal</div>
-            <div><span className="text-cyber-purple">clear</span> - Clear terminal</div>
-            <div><span className="text-cyber-purple">matrix</span> - Enter the matrix</div>
+            <div>
+              <span className="text-cyber-purple">ls</span> - List all blog
+              posts
+            </div>
+            <div>
+              <span className="text-cyber-purple">read [number]</span> - Read a
+              specific post
+            </div>
+            <div>
+              <span className="text-cyber-purple">projects</span> - List all
+              project repositories
+            </div>
+            <div>
+              <span className="text-cyber-purple">skills [category]</span> -
+              Display skills matrix (languages, frameworks, tools)
+            </div>
+            <div>
+              <span className="text-cyber-purple">cv</span> - Download
+              curriculum vitae
+            </div>
+            <div>
+              <span className="text-cyber-purple">thoughts</span> - Display
+              random thoughts
+            </div>
+            <div>
+              <span className="text-cyber-purple">about</span> - About this
+              terminal
+            </div>
+            <div>
+              <span className="text-cyber-purple">clear</span> - Clear terminal
+            </div>
+            <div>
+              <span className="text-cyber-purple">matrix</span> - Enter the
+              matrix
+            </div>
           </div>
         )
         break
 
-      case "ls":
-      case "dir":
+      case 'ls':
+      case 'dir':
         output = (
           <div className="space-y-2">
             {blogPosts.map((post, index) => (
@@ -167,34 +202,51 @@ export default function TerminalBlog() {
         )
         break
 
-      case "projects":
+      case 'projects':
         output = (
           <div className="space-y-4">
             <div className="text-cyber-cyan mb-3">PROJECT REPOSITORIES:</div>
             {projects.map((project, index) => (
-              <div key={project.id} className="border border-cyber-purple/30 p-4 bg-black/20">
+              <div
+                key={project.id}
+                className="border border-cyber-purple/30 p-4 bg-black/20"
+              >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-cyber-green font-bold">[{index + 1}]</span>
-                    <span className="text-cyber-cyan text-lg">{project.title}</span>
+                    <span className="text-cyber-green font-bold">
+                      [{index + 1}]
+                    </span>
+                    <span className="text-cyber-cyan text-lg">
+                      {project.title}
+                    </span>
                   </div>
-                  <span className={`text-xs px-2 py-1 border ${
-                    project.status === 'DEPLOYED' ? 'border-cyber-green text-cyber-green' :
-                    project.status === 'ACTIVE' ? 'border-cyber-cyan text-cyber-cyan' :
-                    project.status === 'BETA' ? 'border-cyber-orange text-cyber-orange' :
-                    'border-gray-500 text-gray-500'
-                  }`}>
+                  <span
+                    className={`text-xs px-2 py-1 border ${
+                      project.status === 'DEPLOYED'
+                        ? 'border-cyber-green text-cyber-green'
+                        : project.status === 'ACTIVE'
+                          ? 'border-cyber-cyan text-cyber-cyan'
+                          : project.status === 'BETA'
+                            ? 'border-cyber-orange text-cyber-orange'
+                            : 'border-gray-500 text-gray-500'
+                    }`}
+                  >
                     {project.status}
                   </span>
                 </div>
-                
+
                 <div className="text-gray-300 mb-3">{project.description}</div>
-                
+
                 <div>
-                  <div className="text-cyber-purple text-sm mb-2">Tech Stack:</div>
+                  <div className="text-cyber-purple text-sm mb-2">
+                    Tech Stack:
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
-                      <span key={i} className="text-xs border border-cyber-purple/30 px-2 py-1 text-gray-300">
+                      <span
+                        key={i}
+                        className="text-xs border border-cyber-purple/30 px-2 py-1 text-gray-300"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -206,65 +258,87 @@ export default function TerminalBlog() {
         )
         break
 
-      case "skills":
-        const allSkills = [...skills.languages, ...skills.frameworks, ...skills.tools]
+      case 'skills':
+        const allSkills = [
+          ...skills.languages,
+          ...skills.frameworks,
+          ...skills.tools,
+        ]
         output = (
           <div className="space-y-4">
             <div className="text-cyber-cyan mb-3">SKILLS MATRIX:</div>
-            
+
             {/* Languages */}
             <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">Languages</div>
+              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+                Languages
+              </div>
               {skills.languages.map((skill, index) => (
                 <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">{skill.name}</div>
+                  <div className="w-24 text-gray-300 font-mono text-sm">
+                    {skill.name}
+                  </div>
                   <div className="flex-1 max-w-md">
                     <div className="bg-black/50 border border-cyber-cyan/20 h-4 overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-cyber-cyan to-cyan-600 transition-all duration-1000"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
-                  <div className="text-cyber-cyan font-mono text-sm w-10">{skill.level}%</div>
+                  <div className="text-cyber-cyan font-mono text-sm w-10">
+                    {skill.level}%
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Frameworks */}
             <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">Frameworks</div>
+              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+                Frameworks
+              </div>
               {skills.frameworks.map((skill, index) => (
                 <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">{skill.name}</div>
+                  <div className="w-24 text-gray-300 font-mono text-sm">
+                    {skill.name}
+                  </div>
                   <div className="flex-1 max-w-md">
                     <div className="bg-black/50 border border-cyber-purple/20 h-4 overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-cyber-purple to-purple-600 transition-all duration-1000"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
-                  <div className="text-cyber-purple font-mono text-sm w-10">{skill.level}%</div>
+                  <div className="text-cyber-purple font-mono text-sm w-10">
+                    {skill.level}%
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Tools */}
             <div className="mb-4">
-              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">Tools</div>
+              <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+                Tools
+              </div>
               {skills.tools.map((skill, index) => (
                 <div key={skill.name} className="flex items-center gap-3 mb-2">
-                  <div className="w-24 text-gray-300 font-mono text-sm">{skill.name}</div>
+                  <div className="w-24 text-gray-300 font-mono text-sm">
+                    {skill.name}
+                  </div>
                   <div className="flex-1 max-w-md">
                     <div className="bg-black/50 border border-cyber-green/20 h-4 overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-cyber-green to-green-600 transition-all duration-1000"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
-                  <div className="text-cyber-green font-mono text-sm w-10">{skill.level}%</div>
+                  <div className="text-cyber-green font-mono text-sm w-10">
+                    {skill.level}%
+                  </div>
                 </div>
               ))}
             </div>
@@ -272,34 +346,44 @@ export default function TerminalBlog() {
         )
         break
 
-      case "skills languages":
-      case "skills frameworks": 
-      case "skills tools":
-        const category = trimmedCmd.split(" ")[1] as keyof typeof skills
+      case 'skills languages':
+      case 'skills frameworks':
+      case 'skills tools':
+        const category = trimmedCmd.split(' ')[1] as keyof typeof skills
         if (skills[category]) {
           output = (
             <div className="space-y-3">
-              <div className="text-cyber-cyan mb-3">{category.toUpperCase()} SKILLS:</div>
+              <div className="text-cyber-cyan mb-3">
+                {category.toUpperCase()} SKILLS:
+              </div>
               {skills[category].map((skill, index) => (
                 <div key={skill.name} className="flex items-center gap-3">
-                  <div className="w-32 text-gray-300 font-mono text-sm">{skill.name}</div>
+                  <div className="w-32 text-gray-300 font-mono text-sm">
+                    {skill.name}
+                  </div>
                   <div className="flex-1 max-w-lg">
                     <div className="bg-black/50 border border-cyber-cyan/20 h-4 overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full transition-all duration-1000 ${
-                          category === 'languages' ? 'bg-gradient-to-r from-cyber-cyan to-cyan-600' :
-                          category === 'frameworks' ? 'bg-gradient-to-r from-cyber-purple to-purple-600' :
-                          'bg-gradient-to-r from-cyber-green to-green-600'
+                          category === 'languages'
+                            ? 'bg-gradient-to-r from-cyber-cyan to-cyan-600'
+                            : category === 'frameworks'
+                              ? 'bg-gradient-to-r from-cyber-purple to-purple-600'
+                              : 'bg-gradient-to-r from-cyber-green to-green-600'
                         }`}
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
-                  <div className={`font-mono text-sm w-10 ${
-                    category === 'languages' ? 'text-cyber-cyan' :
-                    category === 'frameworks' ? 'text-cyber-purple' :
-                    'text-cyber-green'
-                  }`}>
+                  <div
+                    className={`font-mono text-sm w-10 ${
+                      category === 'languages'
+                        ? 'text-cyber-cyan'
+                        : category === 'frameworks'
+                          ? 'text-cyber-purple'
+                          : 'text-cyber-green'
+                    }`}
+                  >
                     {skill.level}%
                   </div>
                 </div>
@@ -309,21 +393,24 @@ export default function TerminalBlog() {
         }
         break
 
-      case "cv":
-      case "resume":
+      case 'cv':
+      case 'resume':
         output = (
           <div className="space-y-3">
             <div className="text-cyber-cyan">CV DOWNLOAD INITIATED...</div>
             <div className="border border-cyber-green/30 bg-black/20 p-4">
               <div className="flex items-center justify-between mb-3">
-                <div className="text-cyber-green font-mono text-sm">SOFTWARE_ENGINEER_CV.pdf</div>
+                <div className="text-cyber-green font-mono text-sm">
+                  SOFTWARE_ENGINEER_CV.pdf
+                </div>
                 <div className="text-cyber-green text-xs">2.4MB</div>
               </div>
               <div className="text-gray-400 text-sm mb-4">
-                Complete technical resume with project portfolio, skills matrix, and professional experience.
+                Complete technical resume with project portfolio, skills matrix,
+                and professional experience.
               </div>
               <div className="flex items-center gap-4">
-                <button 
+                <button
                   onClick={() => {
                     // Replace with actual CV file path
                     const link = document.createElement('a')
@@ -348,40 +435,46 @@ export default function TerminalBlog() {
         )
         break
 
-      case "thoughts":
-        const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)]
+      case 'thoughts':
+        const randomThought =
+          thoughts[Math.floor(Math.random() * thoughts.length)]
         output = (
-          <div className="text-cyber-purple italic">
-            "{randomThought}"
-          </div>
+          <div className="text-cyber-purple italic">"{randomThought}"</div>
         )
         break
 
-      case "about":
+      case 'about':
         output = (
           <div className="space-y-2 text-gray-300">
             <div className="text-cyber-cyan">{`// PERSONAL.INFO`}</div>
-            <div>Hi! I'm Ken Ranosa, a Software Engineer from the Philippines.</div>
-            <div>Built with Next.js, TypeScript, and a love for cyberpunk aesthetics.</div>
+            <div>
+              Hi! I'm Ken Ranosa, a Software Engineer from the Philippines.
+            </div>
+            <div>
+              Built with Next.js, TypeScript, and a love for cyberpunk
+              aesthetics.
+            </div>
             <div className="text-cyber-green">Status: ONLINE</div>
           </div>
         )
         break
 
-      case "clear":
-        setCommands([{
-          id: Date.now(),
-          command: "",
-          output: (
-            <div className="text-cyber-green">
-              Terminal cleared. Type 'help' for commands.
-            </div>
-          ),
-          timestamp: new Date(),
-        }])
+      case 'clear':
+        setCommands([
+          {
+            id: Date.now(),
+            command: '',
+            output: (
+              <div className="text-cyber-green">
+                Terminal cleared. Type 'help' for commands.
+              </div>
+            ),
+            timestamp: new Date(),
+          },
+        ])
         return
 
-      case "matrix":
+      case 'matrix':
         output = (
           <div className="text-cyber-green font-mono text-xs">
             <pre>{`
@@ -396,8 +489,8 @@ Knock, knock, Neo.
         break
 
       default:
-        if (trimmedCmd.startsWith("read ")) {
-          const postIndex = parseInt(trimmedCmd.split(" ")[1]) - 1
+        if (trimmedCmd.startsWith('read ')) {
+          const postIndex = parseInt(trimmedCmd.split(' ')[1]) - 1
           if (postIndex >= 0 && postIndex < blogPosts.length) {
             const post = blogPosts[postIndex]
             output = (
@@ -407,7 +500,10 @@ Knock, knock, Neo.
                 <div className="text-gray-300">{post.excerpt}</div>
                 <div className="flex gap-2 mt-2">
                   {post.tags.map((tag, i) => (
-                    <span key={i} className="text-cyber-purple text-xs border border-cyber-purple/30 px-2 py-1">
+                    <span
+                      key={i}
+                      className="text-cyber-purple text-xs border border-cyber-purple/30 px-2 py-1"
+                    >
                       #{tag}
                     </span>
                   ))}
@@ -417,10 +513,12 @@ Knock, knock, Neo.
           } else {
             output = <span className="text-red-500">Error: Post not found</span>
           }
-        } else if (trimmedCmd === "") {
+        } else if (trimmedCmd === '') {
           return
         } else {
-          output = <span className="text-red-500">Command not found: {cmd}</span>
+          output = (
+            <span className="text-red-500">Command not found: {cmd}</span>
+          )
         }
     }
 
@@ -431,23 +529,23 @@ Knock, knock, Neo.
       timestamp: new Date(),
     }
 
-    setCommands(prev => [...prev, newCommand])
-    setCommandHistory(prev => [...prev, cmd])
+    setCommands((prev) => [...prev, newCommand])
+    setCommandHistory((prev) => [...prev, cmd])
     setHistoryIndex(-1)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       processCommand(currentCommand)
-      setCurrentCommand("")
-    } else if (e.key === "ArrowUp") {
+      setCurrentCommand('')
+    } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       if (historyIndex < commandHistory.length - 1) {
         const newIndex = historyIndex + 1
         setHistoryIndex(newIndex)
         setCurrentCommand(commandHistory[commandHistory.length - 1 - newIndex])
       }
-    } else if (e.key === "ArrowDown") {
+    } else if (e.key === 'ArrowDown') {
       e.preventDefault()
       if (historyIndex > 0) {
         const newIndex = historyIndex - 1
@@ -455,7 +553,7 @@ Knock, knock, Neo.
         setCurrentCommand(commandHistory[commandHistory.length - 1 - newIndex])
       } else if (historyIndex === 0) {
         setHistoryIndex(-1)
-        setCurrentCommand("")
+        setCurrentCommand('')
       }
     }
   }
@@ -472,13 +570,12 @@ Knock, knock, Neo.
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-cyber font-black mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-cyan">
-              KEN.RANOSA
-            </span>
+            <GlitchText 
+              text="KEN.RANOSA" 
+              className="text-5xl md:text-6xl font-cyber font-black"
+            />
           </h2>
-          <p className="text-gray-400 font-mono text-sm">
-            HOW.CAN.I.HELP
-          </p>
+          <p className="text-gray-400 font-mono text-sm">HOW.CAN.I.HELP</p>
         </motion.div>
 
         {/* Terminal Window */}
@@ -515,9 +612,7 @@ Knock, knock, Neo.
                     <span className="text-white">{cmd.command}</span>
                   </div>
                 )}
-                <div className="mt-1 text-gray-300">
-                  {cmd.output}
-                </div>
+                <div className="mt-1 text-gray-300">{cmd.output}</div>
               </div>
             ))}
 

@@ -15,7 +15,7 @@
 
   body {
     @apply bg-cyber-darker text-gray-100 font-cyber;
-    background-image: 
+    background-image:
       linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -42,7 +42,7 @@
 
 @layer components {
   .neon-text {
-    text-shadow: 
+    text-shadow:
       0 0 10px currentColor,
       0 0 20px currentColor,
       0 0 30px currentColor,
@@ -52,6 +52,8 @@
   .glitch-text {
     position: relative;
     display: inline-block;
+    color: #ffffff !important;
+    animation: textGlitch 2s infinite;
   }
 
   .glitch-text::before,
@@ -62,18 +64,94 @@
     left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
   }
 
   .glitch-text::before {
-    animation: glitch-1 0.5s infinite;
-    color: #00ffff;
-    z-index: -1;
+    color: #00ffff !important;
+    animation: glitchBefore 2s infinite;
+    z-index: 1;
   }
 
   .glitch-text::after {
-    animation: glitch-2 0.5s infinite;
-    color: #ff00ff;
-    z-index: -2;
+    color: #ff00ff !important;
+    animation: glitchAfter 2s infinite;
+    z-index: 2;
+  }
+
+  @keyframes textGlitch {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  @keyframes glitchBefore {
+    0%,
+    100% {
+      clip-path: inset(0 0 0 0);
+      transform: translate(0);
+    }
+    10% {
+      clip-path: inset(10% 0 85% 0);
+      transform: translate(-5px, 0);
+    }
+    20% {
+      clip-path: inset(80% 0 10% 0);
+      transform: translate(-5px, 0);
+    }
+    30% {
+      clip-path: inset(10% 0 85% 0);
+      transform: translate(-5px, 0);
+    }
+    40% {
+      clip-path: inset(40% 0 40% 0);
+      transform: translate(-5px, 0);
+    }
+    50% {
+      clip-path: inset(60% 0 25% 0);
+      transform: translate(-5px, 0);
+    }
+  }
+
+  @keyframes glitchAfter {
+    0%,
+    100% {
+      clip-path: inset(0 0 0 0);
+      transform: translate(0);
+    }
+    15% {
+      clip-path: inset(65% 0 15% 0);
+      transform: translate(5px, 0);
+    }
+    25% {
+      clip-path: inset(25% 0 60% 0);
+      transform: translate(5px, 0);
+    }
+    35% {
+      clip-path: inset(85% 0 5% 0);
+      transform: translate(5px, 0);
+    }
+    45% {
+      clip-path: inset(15% 0 70% 0);
+      transform: translate(5px, 0);
+    }
+    55% {
+      clip-path: inset(50% 0 30% 0);
+      transform: translate(5px, 0);
+    }
   }
 
   @keyframes glitch-1 {
@@ -147,14 +225,25 @@
   }
 
   @keyframes holographic {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .cyber-button {
     @apply relative px-8 py-3 font-bold uppercase tracking-wider overflow-hidden;
-    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(0, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
     border: 2px solid #00ffff;
     transition: all 0.3s;
   }
@@ -166,7 +255,12 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 255, 255, 0.4),
+      transparent
+    );
     transition: left 0.5s;
   }
 
@@ -175,7 +269,9 @@
   }
 
   .cyber-button:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    box-shadow:
+      0 0 20px rgba(0, 255, 255, 0.6),
+      inset 0 0 20px rgba(0, 255, 255, 0.1);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
   }
 
@@ -184,7 +280,13 @@
   }
 
   @keyframes cursor-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
   }
 }
