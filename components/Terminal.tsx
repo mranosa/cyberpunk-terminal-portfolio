@@ -109,7 +109,7 @@ const skills = {
   ],
 }
 
-export default function TerminalBlog() {
+export default function Terminal() {
   const [commands, setCommands] = useState<Command[]>([
     {
       id: 1,

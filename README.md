@@ -32,7 +32,7 @@ A futuristic, terminal-based portfolio showcasing software engineering skills wi
 │   ├── ErrorBoundary.tsx      # Error handling
 │   ├── MatrixRain.tsx         # Background animation
 │   ├── SplashScreen.tsx       # Loading animation
-│   └── TerminalBlog.tsx       # Interactive terminal
+│   └── Terminal.tsx           # Interactive terminal
 ├── public/                # Static assets
 │   ├── images/           # Avatar images
 │   ├── robots.txt        # SEO robots file
@@ -97,7 +97,7 @@ npm run lint     # Run ESLint
 
 ### Personal Information
 Update these files with your information:
-- `components/TerminalBlog.tsx` - Skills, projects, about section
+- `components/Terminal.tsx` - Skills, projects, about section
 - `app/layout.tsx` - SEO metadata
 - `public/` - Add your avatar images and favicons
 
@@ -106,7 +106,7 @@ Update these files with your information:
 - `tailwind.config.ts` - Color scheme and custom classes
 
 ### Content
-- `components/TerminalBlog.tsx` - Projects, skills, blog posts
+- `components/Terminal.tsx` - Projects, skills, blog posts
 - `.env.example` - Configuration variables
 
 ## 🚢 Deployment

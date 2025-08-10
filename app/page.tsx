@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import SplashScreen from '@/components/SplashScreen'
-import TerminalBlog from '@/components/TerminalBlog'
+import Terminal from '@/components/Terminal'
 import ContactDrawer from '@/components/ContactDrawer'
 import MatrixRain from '@/components/MatrixRain'
 
@@ -23,7 +23,7 @@ export default function Home() {
         {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       </AnimatePresence>
 
-      {!showSplash && <TerminalBlog />}
+      {!showSplash && <Terminal />}
     </main>
   )
 }
