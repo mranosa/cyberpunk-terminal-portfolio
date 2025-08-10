@@ -85,6 +85,69 @@ const thoughts = [
   'Growth over Comfort!',
 ]
 
+const workExperience = [
+  {
+    id: 1,
+    company: 'TechCorp Solutions',
+    position: 'Senior Full Stack Developer',
+    duration: '2022 - Present',
+    location: 'Remote',
+    type: 'Full-time',
+    achievements: [
+      'Led development of microservices architecture serving 1M+ users',
+      'Reduced API response times by 60% through optimization',
+      'Mentored 5 junior developers and established code review practices',
+      'Implemented CI/CD pipelines reducing deployment time by 80%'
+    ],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'TypeScript']
+  },
+  {
+    id: 2,
+    company: 'InnovateLab Inc',
+    position: 'Full Stack Developer',
+    duration: '2020 - 2022',
+    location: 'San Francisco, CA',
+    type: 'Full-time',
+    achievements: [
+      'Built real-time collaboration features for 50K+ active users',
+      'Developed RESTful APIs and GraphQL endpoints',
+      'Integrated third-party payment systems and analytics',
+      'Improved code coverage from 40% to 90% through testing initiatives'
+    ],
+    technologies: ['Vue.js', 'Python', 'MongoDB', 'Redis', 'GCP', 'JavaScript']
+  },
+  {
+    id: 3,
+    company: 'StartupX',
+    position: 'Frontend Developer',
+    duration: '2019 - 2020',
+    location: 'Austin, TX',
+    type: 'Contract',
+    achievements: [
+      'Designed and implemented responsive web applications',
+      'Collaborated with UX team to improve user engagement by 40%',
+      'Built component library used across 3 product teams',
+      'Optimized bundle size reducing load times by 50%'
+    ],
+    technologies: ['React', 'TypeScript', 'Webpack', 'SASS', 'Jest']
+  },
+  {
+    id: 4,
+    company: 'FreelanceForge',
+    position: 'Freelance Web Developer',
+    duration: '2018 - 2019',
+    location: 'Remote',
+    type: 'Freelance',
+    achievements: [
+      'Delivered 15+ custom web solutions for small businesses',
+      'Maintained 100% client satisfaction rating',
+      'Specialized in e-commerce and content management systems',
+      'Built SEO-optimized sites improving search rankings by avg 300%'
+    ],
+    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'CSS3']
+  }
+]
+
 const skills = {
   languages: [
     { name: 'TypeScript', level: 90 },
@@ -159,6 +222,10 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
             <div>
               <span className="text-cyber-purple">projects</span> - List all
               project repositories
+            </div>
+            <div>
+              <span className="text-cyber-purple">work</span> - Display
+              work experience and career history
             </div>
             <div>
               <span className="text-cyber-purple">skills [category]</span> -
@@ -248,6 +315,70 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
                       <span
                         key={i}
                         className="text-xs border border-cyber-purple/30 px-2 py-1 text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )
+        break
+
+      case 'work':
+        output = (
+          <div className="space-y-6">
+            <div className="text-cyber-cyan mb-4">WORK EXPERIENCE:</div>
+            {workExperience.map((job, index) => (
+              <div
+                key={job.id}
+                className="border border-cyber-green/30 p-4 bg-black/20"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="text-cyber-green font-bold">
+                        [{index + 1}]
+                      </span>
+                      <span className="text-cyber-cyan text-lg font-semibold">
+                        {job.position}
+                      </span>
+                    </div>
+                    <div className="text-white font-medium">{job.company}</div>
+                    <div className="text-gray-400 text-sm">
+                      {job.location} • {job.type}
+                    </div>
+                  </div>
+                  <div className="text-cyber-green text-sm border border-cyber-green/30 px-2 py-1">
+                    {job.duration}
+                  </div>
+                </div>
+
+                <div className="mb-3">
+                  <div className="text-cyber-purple text-sm mb-2">
+                    Key Achievements:
+                  </div>
+                  <ul className="space-y-1">
+                    {job.achievements.map((achievement, i) => (
+                      <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
+                        <span className="text-cyber-green mt-1">•</span>
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <div className="text-cyber-purple text-sm mb-2">
+                    Technologies:
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {job.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs border border-cyber-cyan/30 px-2 py-1 text-gray-300"
                       >
                         {tech}
                       </span>
