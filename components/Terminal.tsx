@@ -125,7 +125,6 @@ export default function Terminal() {
   const [currentCommand, setCurrentCommand] = useState('')
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
-  const [isTyping, setIsTyping] = useState(false)
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -257,11 +256,6 @@ export default function Terminal() {
         break
 
       case 'skills':
-        const allSkills = [
-          ...skills.languages,
-          ...skills.frameworks,
-          ...skills.tools,
-        ]
         output = (
           <div className="space-y-4">
             <div className="text-cyber-cyan mb-3">SKILLS MATRIX:</div>
