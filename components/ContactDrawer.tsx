@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { slideInFromRight, fadeIn, staggerContainer, staggerItem, easings } from '@/utils/animations'
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 interface ContactDrawerProps {
   isOpen?: boolean
@@ -128,10 +128,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
             transition: { duration: 0.5 }
           }}
         >
-          <motion.span 
-            className="text-2xl plasma-cyan group-hover:text-solar-yellow transition-all duration-300 
-                       group-hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]
-                       group-hover:filter group-hover:brightness-150"
+          <motion.div
             animate={{
               scale: [1, 1.1, 1],
             }}
@@ -141,10 +138,12 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
               ease: "easeInOut"
             }}
           >
-            ☎
-          </motion.span>
+            <PhoneIcon className="w-8 h-8 plasma-cyan group-hover:text-solar-yellow transition-all duration-300 
+                                 group-hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]
+                                 group-hover:filter group-hover:brightness-150" />
+          </motion.div>
           <motion.div 
-            className="absolute inset-0 text-2xl plasma-cyan"
+            className="absolute inset-0 flex items-center justify-center"
             animate={{
               scale: [1, 1.5, 2],
               opacity: [0.5, 0.2, 0]
@@ -155,7 +154,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
               ease: "easeOut"
             }}
           >
-            ☎
+            <PhoneIcon className="w-8 h-8 plasma-cyan" />
           </motion.div>
         </motion.div>
         
