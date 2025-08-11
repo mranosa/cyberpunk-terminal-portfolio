@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import GlitchText from './GlitchText'
 import LightBulbText from './LightBulbText'
+import { commandEvents } from '@/utils/commandEvents'
 import {
   HelpCommand,
   BlogListCommand,
@@ -156,6 +157,10 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
+      // Emit command event for matrix rain effect
+      if (currentCommand.trim()) {
+        commandEvents.emit(currentCommand.trim())
+      }
       processCommand(currentCommand)
       setCurrentCommand('')
     } else if (e.key === 'ArrowUp') {
