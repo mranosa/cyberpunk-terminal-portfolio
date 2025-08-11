@@ -117,10 +117,10 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed right-0 top-0 h-full w-full max-w-xl bg-cyber-darker border-l-2 
-                       border-cyber-cyan shadow-2xl z-50 overflow-y-auto"
+                       border-cyber-cyan shadow-2xl z-50 flex flex-col"
           >
-            {/* Drawer Header */}
-            <div className="sticky top-0 bg-cyber-darker border-b border-cyber-cyan/30 p-6 z-10">
+            {/* Drawer Header - Fixed */}
+            <div className="bg-cyber-darker border-b border-cyber-cyan/30 p-6 flex-shrink-0">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-cyber ultra-thin holographic-ultra" data-text="ESTABLISH CONNECTION">
@@ -141,27 +141,29 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
               </div>
             </div>
 
-            {/* Circuit Animation Background */}
-            <div className="absolute inset-0 opacity-5 pointer-events-none">
-              <svg className="w-full h-full">
-                {[...Array(10)].map((_, i) => (
-                  <line
-                    key={i}
-                    x1={`${i * 10}%`}
-                    y1="0"
-                    x2={`${i * 10}%`}
-                    y2="100%"
-                    stroke="cyan"
-                    strokeWidth="0.5"
-                    className="animate-pulse"
-                    style={{ animationDelay: `${i * 0.1}s` }}
-                  />
-                ))}
-              </svg>
-            </div>
+            {/* Scrollable Content Container */}
+            <div className="flex-1 overflow-y-auto relative">
+              {/* Circuit Animation Background */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <svg className="w-full h-full">
+                  {[...Array(10)].map((_, i) => (
+                    <line
+                      key={i}
+                      x1={`${i * 10}%`}
+                      y1="0"
+                      x2={`${i * 10}%`}
+                      y2="100%"
+                      stroke="cyan"
+                      strokeWidth="0.5"
+                      className="animate-pulse"
+                      style={{ animationDelay: `${i * 0.1}s` }}
+                    />
+                  ))}
+                </svg>
+              </div>
 
-            {/* Form Content */}
-            <div className="p-6 relative z-10">
+              {/* Form Content */}
+              <div className="p-6 relative">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
                 <div className="relative">
@@ -333,6 +335,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     </div>
                   </a>
                 </div>
+              </div>
               </div>
             </div>
           </motion.div>
