@@ -1,4 +1,5 @@
 import { recommendations } from '../data/recommendations'
+import { StarIcon, EnvelopeIcon, LinkIcon } from '@heroicons/react/24/solid'
 
 export function RecommendationsCommand() {
   return (
@@ -19,9 +20,9 @@ export function RecommendationsCommand() {
                 <span className="text-cyber-cyan text-lg font-semibold">
                   {rec.name}
                 </span>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-0.5">
                   {[...Array(rec.rating)].map((_, i) => (
-                    <span key={i} className="text-cyber-orange">★</span>
+                    <StarIcon key={i} className="w-4 h-4 text-cyber-orange" />
                   ))}
                 </div>
               </div>
@@ -56,9 +57,15 @@ export function RecommendationsCommand() {
             </blockquote>
           </div>
 
-          <div className="text-gray-500 text-xs">
-            <div>📧 {rec.contact.email}</div>
-            <div>🔗 {rec.contact.linkedin}</div>
+          <div className="text-gray-500 text-xs space-y-1">
+            <div className="flex items-center gap-2">
+              <EnvelopeIcon className="w-4 h-4" />
+              <span>{rec.contact.email}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <LinkIcon className="w-4 h-4" />
+              <span>{rec.contact.linkedin}</span>
+            </div>
           </div>
         </div>
       ))}

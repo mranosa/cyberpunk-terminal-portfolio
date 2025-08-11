@@ -227,15 +227,45 @@ button:active, a:active {
   outline-offset: 4px;
 }
 
-/* Mobile optimizations */
-@media (max-width: 640px) {
-  @keyframes float {
-    0%, 100% { 
-      transform: translate3d(0, 0, 0);
-    }
-    50% { 
-      transform: translate3d(0, -10px, 0);
-    }
+/* Mobile optimizations - Disable most animations */
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Keep only essential transitions for usability */
+  button, a, input, textarea {
+    transition: opacity 0.2s ease, background-color 0.2s ease !important;
+  }
+  
+  /* Disable all keyframe animations */
+  @keyframes float { }
+  @keyframes glow-pulse { }
+  @keyframes scan-line { }
+  @keyframes glitch { }
+  @keyframes matrix-fall { }
+  @keyframes grid-flow { }
+  @keyframes holographic { }
+  @keyframes circuit-trace { }
+  @keyframes smooth-blink { }
+  @keyframes pulse-smooth { }
+  
+  /* Disable transform animations */
+  .gpu-accelerated,
+  .transform-gpu {
+    transform: none !important;
+  }
+  
+  /* Disable glitch effects */
+  .glitch-text::before,
+  .glitch-text::after {
+    display: none !important;
+  }
+  
+  /* Simplify hover states */
+  *:hover {
+    transition: opacity 0.2s ease !important;
   }
 }
 

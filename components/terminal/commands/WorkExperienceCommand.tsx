@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { workExperience } from '../data/workExperience'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 export function WorkExperienceCommand() {
   const router = useRouter()
@@ -76,7 +77,7 @@ export function WorkExperienceCommand() {
           className="px-6 py-3 border border-cyber-cyan/50 text-cyber-cyan hover:bg-cyber-cyan/10 hover:border-cyber-cyan transition-all duration-300 flex items-center gap-2 group"
         >
           <span>View More Info About Work</span>
-          <span className="group-hover:translate-x-1 transition-transform">→</span>
+          <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
     </div>

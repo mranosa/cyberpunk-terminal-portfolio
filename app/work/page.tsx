@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import MatrixRain from '@/components/MatrixRainWrapper'
+import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
 export default function WorkPage() {
   const router = useRouter()
@@ -50,7 +51,7 @@ export default function WorkPage() {
               onClick={handleBackToTerminal}
               className="mb-6 text-cyber-cyan hover:text-cyber-green transition-colors flex items-center gap-2 group"
             >
-              <span className="group-hover:-translate-x-1 transition-transform">←</span>
+              <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span>Back to Terminal</span>
             </button>
             

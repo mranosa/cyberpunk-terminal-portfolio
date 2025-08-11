@@ -1,4 +1,5 @@
 import { thoughts } from '../data/thoughts'
+import { ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export function CVCommand() {
   return (
@@ -26,7 +27,8 @@ export function CVCommand() {
             className="text-cyber-green hover:text-white text-sm border border-cyber-green/50 
                      hover:border-cyber-green px-3 py-1 transition-colors"
           >
-            DOWNLOAD.PDF →
+            <ArrowDownTrayIcon className="w-4 h-4 inline mr-1" />
+            DOWNLOAD.PDF
           </button>
           <div className="text-gray-500 font-mono text-xs">
             STATUS: <span className="text-cyber-green">READY</span>

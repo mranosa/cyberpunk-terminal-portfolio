@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { slideInFromRight, fadeIn, staggerContainer, staggerItem, easings } from '@/utils/animations'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 interface ContactDrawerProps {
   isOpen?: boolean
@@ -214,7 +215,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
               whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-2xl group-hover:animate-spin">×</span>
+              <XMarkIcon className="w-6 h-6 group-hover:rotate-90 transition-transform duration-200" />
             </motion.button>
 
             {/* Enhanced Content */}
