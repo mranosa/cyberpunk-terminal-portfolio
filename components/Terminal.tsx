@@ -62,7 +62,6 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
         output = <HelpCommand />
         break
 
-      case 'ls':
       case 'dir':
         output = <BlogListCommand />
         break
@@ -99,10 +98,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
         return
 
       default:
-        if (trimmedCmd.startsWith('read ')) {
-          const postIndex = parseInt(trimmedCmd.split(' ')[1]) - 1
-          output = <BlogReadCommand postIndex={postIndex} />
-        } else if (trimmedCmd === '') {
+        if (trimmedCmd === '') {
           return
         } else {
           output = (
