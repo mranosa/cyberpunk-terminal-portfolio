@@ -1,6 +1,15 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { workExperience } from '../data/workExperience'
 
 export function WorkExperienceCommand() {
+  const router = useRouter()
+
+  const handleMoreInfo = () => {
+    router.push('/work')
+  }
+
   return (
     <div className="space-y-6">
       <div className="text-cyber-cyan mb-4">WORK EXPERIENCE:</div>
@@ -60,6 +69,16 @@ export function WorkExperienceCommand() {
           </div>
         </div>
       ))}
+
+      <div className="mt-6 flex justify-center">
+        <button
+          onClick={handleMoreInfo}
+          className="px-6 py-3 border border-cyber-cyan/50 text-cyber-cyan hover:bg-cyber-cyan/10 hover:border-cyber-cyan transition-all duration-300 flex items-center gap-2 group"
+        >
+          <span>View More Info About Work</span>
+          <span className="group-hover:translate-x-1 transition-transform">→</span>
+        </button>
+      </div>
     </div>
   )
 }
