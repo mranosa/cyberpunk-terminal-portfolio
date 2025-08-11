@@ -12,10 +12,7 @@ export function HelpCommand() {
         <span className="quantum-blue">projects</span> - List all project repositories
       </div>
       <div className="ultra-light">
-        <span className="quantum-blue">work</span> - Display work experience and career history
-      </div>
-      <div className="ultra-light">
-        <span className="nova-purple">recommendations</span> - View professional recommendations and references
+        <span className="quantum-blue">work</span> - Display work experience, recommendations and CV download
       </div>
       <div className="ultra-light">
         <span className="nova-purple">skills [category]</span> - Display skills matrix (languages, frameworks, tools)

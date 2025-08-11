@@ -14,7 +14,6 @@ import {
   WorkExperienceCommand,
   SkillsCommand,
   SkillsCategoryCommand,
-  RecommendationsCommand,
   ThoughtsCommand,
   AboutCommand,
   MatrixCommand
@@ -78,11 +77,6 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
       case 'work':
         output = <WorkExperienceCommand />
-        break
-
-      case 'recommendations':
-      case 'refs':
-        output = <RecommendationsCommand />
         break
 
       case 'skills':
