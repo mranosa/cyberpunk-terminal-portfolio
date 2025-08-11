@@ -12,13 +12,10 @@ import {
   BlogReadCommand,
   ProjectsCommand,
   WorkExperienceCommand,
-  SkillsCommand,
-  SkillsCategoryCommand,
   ThoughtsCommand,
   AboutCommand,
   MatrixCommand
 } from './terminal/commands'
-import { skills } from './terminal/data/skills'
 
 interface Command {
   id: number
@@ -77,21 +74,6 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
       case 'work':
         output = <WorkExperienceCommand />
-        break
-
-      case 'skills':
-        output = <SkillsCommand />
-        break
-
-      case 'skills languages':
-      case 'skills frameworks':
-      case 'skills tools':
-      case 'skills databases':
-      case 'skills aiml':
-        const category = trimmedCmd.split(' ')[1] as keyof typeof skills
-        if (skills[category]) {
-          output = <SkillsCategoryCommand category={category} />
-        }
         break
 
       case 'thoughts':

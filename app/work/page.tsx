@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import { recommendations } from '@/components/terminal/data/recommendations'
+import { skills } from '@/components/terminal/data/skills'
 import MatrixRain from '@/components/MatrixRainWrapper'
 import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { StarIcon, LinkIcon } from '@heroicons/react/24/solid'
@@ -58,9 +59,9 @@ export default function WorkPage() {
             </button>
             
             <h1 className="text-4xl md:text-6xl font-bold text-cyber-green mb-2 glitch-text">
-              WORK EXPERIENCE
+              PROFESSIONAL PORTFOLIO
             </h1>
-            <div className="text-cyber-cyan">Professional Journey & Achievements</div>
+            <div className="text-cyber-cyan">Experience • Skills • Recommendations • CV</div>
           </motion.div>
 
           <motion.div
@@ -136,6 +137,133 @@ export default function WorkPage() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-12"
+          >
+            <h2 className="text-3xl font-bold text-cyber-cyan mb-6">SKILLS & EXPERTISE</h2>
+            <div className="border border-cyber-cyan/30 p-6 bg-black/60 backdrop-blur-sm mb-12">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Languages */}
+                <div>
+                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Languages</h3>
+                  {skills.languages && skills.languages.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 mb-3">
+                      <div className="w-24 text-gray-300 font-mono text-sm">
+                        {skill.name}
+                      </div>
+                      <div className="flex-1">
+                        <div className="bg-black/50 border border-cyber-cyan/20 h-3 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-cyber-cyan to-cyan-600 transition-all duration-1000"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-cyber-cyan font-mono text-xs w-10">
+                        {skill.level}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Frameworks */}
+                <div>
+                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Frameworks</h3>
+                  {skills.frameworks && skills.frameworks.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 mb-3">
+                      <div className="w-24 text-gray-300 font-mono text-sm">
+                        {skill.name}
+                      </div>
+                      <div className="flex-1">
+                        <div className="bg-black/50 border border-cyber-purple/20 h-3 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-nova-purple to-nebula-pink transition-all duration-1000"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-pink-400 font-mono text-xs w-10">
+                        {skill.level}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tools */}
+                <div>
+                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Tools & Testing</h3>
+                  {skills.tools && skills.tools.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 mb-3">
+                      <div className="w-24 text-gray-300 font-mono text-sm">
+                        {skill.name}
+                      </div>
+                      <div className="flex-1">
+                        <div className="bg-black/50 border border-cyber-green/20 h-3 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-cyber-green to-green-600 transition-all duration-1000"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-cyber-green font-mono text-xs w-10">
+                        {skill.level}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Databases */}
+                <div>
+                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Databases</h3>
+                  {skills.databases && skills.databases.map((skill) => (
+                    <div key={skill.name} className="flex items-center gap-3 mb-3">
+                      <div className="w-24 text-gray-300 font-mono text-sm">
+                        {skill.name}
+                      </div>
+                      <div className="flex-1">
+                        <div className="bg-black/50 border border-cyber-orange/20 h-3 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-cyber-orange to-orange-600 transition-all duration-1000"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-cyber-orange font-mono text-xs w-10">
+                        {skill.level}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* AI/ML if exists */}
+                {skills.aiml && (
+                  <div>
+                    <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">AI/ML</h3>
+                    {skills.aiml.map((skill) => (
+                      <div key={skill.name} className="flex items-center gap-3 mb-3">
+                        <div className="w-24 text-gray-300 font-mono text-sm">
+                          {skill.name}
+                        </div>
+                        <div className="flex-1">
+                          <div className="bg-black/50 border border-purple-500/20 h-3 overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-purple-500 to-purple-700 transition-all duration-1000"
+                              style={{ width: `${skill.level}%` }}
+                            />
+                          </div>
+                        </div>
+                        <div className="text-purple-400 font-mono text-xs w-10">
+                          {skill.level}%
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
