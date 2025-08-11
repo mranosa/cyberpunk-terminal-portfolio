@@ -75,7 +75,7 @@ A futuristic, terminal-based portfolio showcasing software engineering skills wi
 1. Clone the repository
 ```bash
 git clone <your-repo-url>
-cd claude-code-test-opus
+cd cyberpunk-terminal-portfolio
 ```
 
 2. Install dependencies
