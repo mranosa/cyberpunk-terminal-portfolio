@@ -103,7 +103,7 @@ npm run dev
 - `ls` / `dir` - List all blog posts
 - `read [number]` - Read a specific blog post
 - `projects` - Show project repositories with tech stacks
-- `work` - Display work experience and career history
+- `work` - Quick career highlights teaser (click button for full experience)
 - `recommendations` - View professional recommendations and references
 - `skills [category]` - Display skills matrix (languages, frameworks, tools)
 - `cv` / `resume` - Download curriculum vitae
