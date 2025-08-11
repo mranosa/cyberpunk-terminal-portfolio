@@ -4,6 +4,7 @@ import CircuitBoard from '@/components/CircuitBoard'
 import DataStream from '@/components/DataStream'
 import HolographicOverlay from '@/components/HolographicOverlay'
 import ScanLines from '@/components/ScanLines'
+import PerformanceMonitor from '@/components/PerformanceMonitor'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -69,6 +70,7 @@ export default function RootLayout({
           <DataStream />
           <ScanLines />
           {children}
+          <PerformanceMonitor />
         </ErrorBoundary>
       </body>
     </html>

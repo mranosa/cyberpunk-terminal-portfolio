@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import { motion } from 'framer-motion'
 import GlitchText from './GlitchText'
 import LightBulbText from './LightBulbText'
@@ -32,7 +32,7 @@ interface TerminalProps {
   onContactOpen?: () => void
 }
 
-export default function Terminal({ onContactOpen }: TerminalProps = {}) {
+const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
   const [commands, setCommands] = useState<Command[]>([
     {
       id: 1,
@@ -281,4 +281,6 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
       </div>
     </section>
   )
-}
+})
+
+export default Terminal

@@ -29,7 +29,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
     }
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
-  }, [])
+  }, [setIsOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

@@ -1,12 +1,26 @@
 'use client'
 
 import { useState, useEffect, Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { AnimatePresence } from 'framer-motion'
-import SplashScreen from '@/components/SplashScreen'
-import Terminal from '@/components/Terminal'
-import ContactDrawer from '@/components/ContactDrawer'
-import MatrixRain from '@/components/MatrixRain'
+
+const SplashScreen = dynamic(() => import('@/components/SplashScreen'), {
+  ssr: false,
+})
+
+const Terminal = dynamic(() => import('@/components/Terminal'), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen bg-gray-900" />,
+})
+
+const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'), {
+  ssr: false,
+})
+
+const MatrixRain = dynamic(() => import('@/components/MatrixRain'), {
+  ssr: false,
+})
 
 function HomeContent() {
   const [showSplash, setShowSplash] = useState(true)
