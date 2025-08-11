@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { commandEvents } from '@/utils/commandEvents'
 
 interface MatrixColumn {
@@ -20,6 +20,15 @@ export default function MatrixRain() {
   const mouseRef = useRef({ x: 0, y: 0 })
   const parallaxBurstRef = useRef({ active: false, strength: 0, decay: 0.9 })
   const columnsRef = useRef<MatrixColumn[]>([])
+  const [rotation, setRotation] = useState({ x: 5, y: 0, z: 0 })
+  const rotationAnimRef = useRef({ 
+    active: false, 
+    targetX: 5, 
+    targetY: 0, 
+    targetZ: 0, 
+    duration: 0,
+    startTime: 0 
+  })
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -28,8 +37,9 @@ export default function MatrixRain() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    // Ensure canvas covers entire screen including rotated areas
+    canvas.width = window.innerWidth * 1.5
+    canvas.height = window.innerHeight * 1.5
 
     const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split("")
     
@@ -87,6 +97,20 @@ export default function MatrixRain() {
         decay: 0.92 // Slower decay for longer effect
       }
 
+      // Random 3D rotation effect
+      const randomRotationX = 5 + (Math.random() - 0.5) * 10  // 0 to 10 degrees
+      const randomRotationY = (Math.random() - 0.5) * 8       // -4 to 4 degrees  
+      const randomRotationZ = (Math.random() - 0.5) * 6       // -3 to 3 degrees
+      
+      rotationAnimRef.current = {
+        active: true,
+        targetX: randomRotationX,
+        targetY: randomRotationY,
+        targetZ: randomRotationZ,
+        duration: 1500, // 1.5 seconds
+        startTime: Date.now()
+      }
+
       // Affect more columns for better visibility
       const affectedColumns = Math.floor(columnsRef.current.length * 0.5)
       
@@ -115,6 +139,7 @@ export default function MatrixRain() {
           parallaxBurstRef.current.active = false
         }
       }
+
 
       // Draw columns from back to front
       columnsRef.current.forEach(column => {
@@ -197,12 +222,45 @@ export default function MatrixRain() {
       }
     }
 
+    // 3D rotation animation loop
+    const updateRotation = () => {
+      if (rotationAnimRef.current.active) {
+        const now = Date.now()
+        const elapsed = now - rotationAnimRef.current.startTime
+        const progress = Math.min(elapsed / rotationAnimRef.current.duration, 1)
+        
+        // Easing function for smooth animation
+        const easeOut = 1 - Math.pow(1 - progress, 3)
+        
+        const currentRotation = {
+          x: rotation.x + (rotationAnimRef.current.targetX - rotation.x) * easeOut,
+          y: rotation.y + (rotationAnimRef.current.targetY - rotation.y) * easeOut,
+          z: rotation.z + (rotationAnimRef.current.targetZ - rotation.z) * easeOut
+        }
+        
+        setRotation(currentRotation)
+        
+        if (progress >= 1) {
+          // Immediately start easing back to default position
+          rotationAnimRef.current = {
+            active: true,
+            targetX: 5,
+            targetY: 0,
+            targetZ: 0,
+            duration: 2000, // 2 seconds to ease back
+            startTime: Date.now()
+          }
+        }
+      }
+    }
+
     // Increased interval for better performance (33ms = ~30fps instead of 30ms)
     const animationFrame = setInterval(draw, 33)
+    const rotationFrame = setInterval(updateRotation, 16) // 60fps for smooth rotation
 
     const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      canvas.width = window.innerWidth * 1.5
+      canvas.height = window.innerHeight * 1.5
     }
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -217,6 +275,7 @@ export default function MatrixRain() {
 
     return () => {
       clearInterval(animationFrame)
+      clearInterval(rotationFrame)
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('mousemove', handleMouseMove)
       unsubscribe()
@@ -227,11 +286,15 @@ export default function MatrixRain() {
     <>
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 pointer-events-none"
+        className="fixed pointer-events-none transition-transform duration-75"
         style={{ 
           zIndex: 1,
-          opacity: 0.3, // Reduced opacity
-          transform: 'perspective(800px) rotateX(5deg)',
+          opacity: 0.3,
+          left: '-25%',
+          top: '-25%',
+          width: '150%',
+          height: '150%',
+          transform: `perspective(800px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`,
           transformOrigin: 'center center'
         }}
       />
