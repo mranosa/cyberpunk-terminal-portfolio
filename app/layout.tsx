@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import CircuitBoard from '@/components/CircuitBoard'
+import DataStream from '@/components/DataStream'
+import HolographicOverlay from '@/components/HolographicOverlay'
+import ScanLines from '@/components/ScanLines'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -60,6 +64,10 @@ export default function RootLayout({
           <div className="fixed inset-0 opacity-30 -z-40">
             <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px]" />
           </div>
+          <CircuitBoard />
+          <HolographicOverlay />
+          <DataStream />
+          <ScanLines />
           {children}
         </ErrorBoundary>
       </body>

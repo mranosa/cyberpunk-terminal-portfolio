@@ -206,16 +206,16 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-black border-2 border-cyber-cyan/50"
+          className="bg-black ultra-thin-border scan-lines circuit-pattern relative overflow-hidden"
         >
           {/* Terminal Header */}
-          <div className="bg-cyber-cyan/10 border-b border-cyber-cyan/30 px-4 py-2 flex items-center justify-between">
+          <div className="bg-cyber-cyan/10 border-b border-cyber-cyan/30 px-4 py-2 flex items-center justify-between relative">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
+              <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(255,0,0,0.5)]" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(255,255,0,0.5)]" />
+              <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(0,255,0,0.5)]" />
             </div>
-            <div className="font-mono text-xs text-cyber-cyan">
+            <div className="font-mono text-xs holographic-text">
               user@portfolio:~/blog
             </div>
           </div>
