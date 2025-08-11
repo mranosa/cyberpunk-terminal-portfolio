@@ -14,7 +14,7 @@ const MatrixRain2D = dynamic(() => import('./MatrixRain2D'), {
 })
 
 export default function MatrixRainWrapper() {
-  const [use2D, setUse2D] = useState(false)
+  const [renderMode, setRenderMode] = useState<'3d' | '2d' | 'none'>('none')
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -86,14 +86,27 @@ export default function MatrixRainWrapper() {
         }
       }
 
-      // Set to use 2D if mobile OR slow desktop
-      setUse2D(isMobile || isSlowDesktop)
+      // Determine render mode:
+      // - Mobile: no matrix rain
+      // - Slow desktop: 2D matrix rain
+      // - Fast desktop: 3D matrix rain
+      let mode: '3d' | '2d' | 'none' = '3d'
+      
+      if (isMobile) {
+        mode = 'none' // No matrix rain for mobile
+      } else if (isSlowDesktop) {
+        mode = '2d' // 2D matrix rain for slow desktops
+      } else {
+        mode = '3d' // 3D matrix rain for fast desktops
+      }
+      
+      setRenderMode(mode)
       
       // Log decision for debugging
       console.log('Matrix Rain Mode:', {
+        mode,
         isMobile,
         isSlowDesktop,
-        use2D: isMobile || isSlowDesktop,
         deviceMemory: (navigator as any).deviceMemory,
         cores: navigator.hardwareConcurrency,
         screenWidth: window.innerWidth
@@ -113,5 +126,14 @@ export default function MatrixRainWrapper() {
     return null
   }
 
-  return use2D ? <MatrixRain2D /> : <MatrixRain3D />
+  // Render based on detected mode
+  switch (renderMode) {
+    case '2d':
+      return <MatrixRain2D />
+    case '3d':
+      return <MatrixRain3D />
+    case 'none':
+    default:
+      return null // No matrix rain for mobile
+  }
 }
