@@ -70,18 +70,27 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
         whileTap={{ scale: 0.95 }}
       >
         <div className="relative">
-          <span className="text-2xl text-cyber-cyan group-hover:text-cyber-purple transition-colors">
-            ⟡
+          <span className="text-2xl text-cyber-cyan group-hover:text-cyber-purple transition-all duration-300 
+                         group-hover:drop-shadow-[0_0_10px_rgba(157,0,255,0.8)]
+                         group-hover:filter group-hover:brightness-125">
+            ☎
           </span>
           <div className="absolute inset-0 animate-ping text-2xl text-cyber-cyan opacity-30">
-            ⟡
+            ☎
+          </div>
+          {/* Neon glow effect on hover */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                          text-2xl text-cyber-purple animate-pulse
+                          drop-shadow-[0_0_15px_rgba(157,0,255,1)]
+                          filter brightness-150">
+            ☎
           </div>
         </div>
         
         {/* Tooltip */}
         <div className="absolute bottom-full mb-2 px-3 py-1 bg-black border border-cyber-cyan 
                         text-cyber-cyan text-xs font-mono whitespace-nowrap opacity-0 
-                        group-hover:opacity-100 transition-opacity pointer-events-none">
+                        group-hover:opacity-100 transition-opacity pointer-events-none right-0">
           ESTABLISH.CONNECTION
         </div>
       </motion.button>
