@@ -19,7 +19,7 @@ const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'), {
   ssr: false,
 })
 
-const MatrixRain = dynamic(() => import('@/components/MatrixRain'), {
+const MatrixRain = dynamic(() => import('@/components/MatrixRainWrapper'), {
   ssr: false,
 })
 

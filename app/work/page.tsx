@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
-import MatrixRain from '@/components/MatrixRain'
+import MatrixRain from '@/components/MatrixRainWrapper'
 
 export default function WorkPage() {
   const router = useRouter()
