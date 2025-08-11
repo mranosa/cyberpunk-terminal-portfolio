@@ -86,6 +86,8 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
       case 'skills languages':
       case 'skills frameworks':
       case 'skills tools':
+      case 'skills databases':
+      case 'skills aiml':
         const category = trimmedCmd.split(' ')[1] as keyof typeof skills
         if (skills[category]) {
           output = <SkillsCategoryCommand category={category} />

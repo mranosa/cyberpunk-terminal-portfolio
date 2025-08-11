@@ -6,7 +6,7 @@ import { workExperience } from '@/components/terminal/data/workExperience'
 import { recommendations } from '@/components/terminal/data/recommendations'
 import MatrixRain from '@/components/MatrixRainWrapper'
 import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
-import { StarIcon, EnvelopeIcon, LinkIcon } from '@heroicons/react/24/solid'
+import { StarIcon, LinkIcon } from '@heroicons/react/24/solid'
 
 export default function WorkPage() {
   const router = useRouter()
@@ -198,14 +198,17 @@ export default function WorkPage() {
                     </blockquote>
                   </div>
 
-                  <div className="text-gray-500 text-xs space-y-1">
-                    <div className="flex items-center gap-2">
-                      <EnvelopeIcon className="w-4 h-4" />
-                      <span>{rec.contact.email}</span>
-                    </div>
+                  <div className="text-gray-500 text-xs">
                     <div className="flex items-center gap-2">
                       <LinkIcon className="w-4 h-4" />
-                      <span>{rec.contact.linkedin}</span>
+                      <a 
+                        href={`https://${rec.contact.linkedin}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-cyber-cyan transition-colors"
+                      >
+                        {rec.contact.linkedin}
+                      </a>
                     </div>
                   </div>
                 </motion.div>
@@ -226,18 +229,18 @@ export default function WorkPage() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
                 <div className="text-cyber-green font-mono text-lg mb-2">
-                  SOFTWARE_ENGINEER_CV.pdf
+                  Mark_Kenneth_Ranosa_CV.pdf
                 </div>
                 <div className="text-gray-400 text-sm">
-                  Complete technical resume with project portfolio, skills matrix,
-                  and professional experience.
+                  Complete technical resume with 15+ years of experience,
+                  project portfolio, and comprehensive skills matrix.
                 </div>
               </div>
               <button
                 onClick={() => {
                   const link = document.createElement('a')
                   link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                  link.download = 'SOFTWARE_ENGINEER_CV.pdf'
+                  link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
                   link.click()
                 }}
                 className="text-cyber-green hover:text-white text-sm border border-cyber-green/50 
