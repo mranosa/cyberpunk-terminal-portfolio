@@ -21,9 +21,6 @@ export function HelpCommand() {
         <span className="nova-purple">skills [category]</span> - Display skills matrix (languages, frameworks, tools)
       </div>
       <div className="ultra-light">
-        <span className="aurora-green">cv</span> - Download curriculum vitae
-      </div>
-      <div className="ultra-light">
         <span className="aurora-green">thoughts</span> - Display random thoughts
       </div>
       <div className="ultra-light">

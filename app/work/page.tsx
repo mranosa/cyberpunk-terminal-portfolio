@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import MatrixRain from '@/components/MatrixRainWrapper'
-import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export default function WorkPage() {
   const router = useRouter()
@@ -138,7 +138,38 @@ export default function WorkPage() {
 
           <motion.div
             variants={itemVariants}
-            className="mt-12 text-center"
+            className="mt-12 border border-cyber-green/30 p-6 bg-black/60 backdrop-blur-sm"
+          >
+            <h2 className="text-2xl font-bold text-cyber-cyan mb-4">DOWNLOAD CV</h2>
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <div className="text-cyber-green font-mono text-lg mb-2">
+                  SOFTWARE_ENGINEER_CV.pdf
+                </div>
+                <div className="text-gray-400 text-sm">
+                  Complete technical resume with project portfolio, skills matrix,
+                  and professional experience.
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  const link = document.createElement('a')
+                  link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                  link.download = 'SOFTWARE_ENGINEER_CV.pdf'
+                  link.click()
+                }}
+                className="text-cyber-green hover:text-white text-sm border border-cyber-green/50 
+                         hover:border-cyber-green px-4 py-2 transition-colors flex items-center gap-2"
+              >
+                <ArrowDownTrayIcon className="w-5 h-5" />
+                <span>DOWNLOAD PDF</span>
+              </button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 text-center"
           >
             <button
               onClick={handleBackToTerminal}

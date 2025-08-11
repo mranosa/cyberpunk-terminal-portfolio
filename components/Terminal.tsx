@@ -15,7 +15,6 @@ import {
   SkillsCommand,
   SkillsCategoryCommand,
   RecommendationsCommand,
-  CVCommand,
   ThoughtsCommand,
   AboutCommand,
   MatrixCommand
@@ -97,11 +96,6 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
         if (skills[category]) {
           output = <SkillsCategoryCommand category={category} />
         }
-        break
-
-      case 'cv':
-      case 'resume':
-        output = <CVCommand />
         break
 
       case 'thoughts':
