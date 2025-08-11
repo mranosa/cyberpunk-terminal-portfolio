@@ -7,11 +7,12 @@ import { AnimatePresence } from 'framer-motion'
 
 const SplashScreen = dynamic(() => import('@/components/SplashScreen'), {
   ssr: false,
+  loading: () => null,
 })
 
 const Terminal = dynamic(() => import('@/components/Terminal'), {
   ssr: false,
-  loading: () => <div className="w-full h-screen bg-gray-900" />,
+  loading: () => <div className="w-full h-screen bg-cyber-darker" />,
 })
 
 const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'), {
@@ -25,18 +26,29 @@ const MatrixRain = dynamic(() => import('@/components/MatrixRain'), {
 function HomeContent() {
   const [showSplash, setShowSplash] = useState(true)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const searchParams = useSearchParams()
   const router = useRouter()
 
   useEffect(() => {
+    setIsMounted(true)
+    
     // Check if we should skip splash (coming from internal navigation)
     const skipSplash = searchParams.get('skipSplash') === 'true'
+    
+    // Check if splash was already shown in this session
+    const splashShown = sessionStorage.getItem('splashShown') === 'true'
 
-    if (skipSplash) {
-      // Coming from internal navigation, don't show splash
+    if (skipSplash || splashShown) {
+      // Coming from internal navigation or already shown, don't show splash
       setShowSplash(false)
       // Clean up the URL by removing the query parameter
-      router.replace('/', { scroll: false })
+      if (skipSplash) {
+        router.replace('/', { scroll: false })
+      }
+    } else {
+      // Mark splash as shown for this session
+      sessionStorage.setItem('splashShown', 'true')
     }
   }, [searchParams, router])
 
@@ -44,12 +56,20 @@ function HomeContent() {
     setShowSplash(false)
   }
 
+  if (!isMounted) {
+    return (
+      <main className="relative w-full h-screen bg-cyber-darker">
+        <MatrixRain />
+      </main>
+    )
+  }
+
   return (
     <main className="relative">
       <MatrixRain />
       <ContactDrawer isOpen={isContactOpen} onOpenChange={setIsContactOpen} />
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       </AnimatePresence>
 

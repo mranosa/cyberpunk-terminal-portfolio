@@ -1,10 +1,22 @@
 /* GPU-accelerated animations */
 @keyframes float {
   0%, 100% { 
-    transform: translateY(0) translateZ(0);
+    transform: translate3d(0, 0, 0);
   }
   50% { 
-    transform: translateY(-20px) translateZ(0);
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Smooth pulse for splash screen */
+@keyframes pulse-smooth {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 
@@ -92,6 +104,19 @@ button:active, a:active {
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Transform GPU acceleration */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Splash screen specific optimizations */
+.splash-gradient {
+  will-change: opacity, transform;
+  contain: layout style paint;
 }
 
 .smooth-scroll {
@@ -202,6 +227,18 @@ button:active, a:active {
   outline-offset: 4px;
 }
 
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  @keyframes float {
+    0%, 100% { 
+      transform: translate3d(0, 0, 0);
+    }
+    50% { 
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -211,5 +248,9 @@ button:active, a:active {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  
+  .splash-gradient {
+    animation: none !important;
   }
 }
