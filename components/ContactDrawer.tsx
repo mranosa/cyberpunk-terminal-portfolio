@@ -132,8 +132,8 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 border-2 border-cyber-cyan/50 hover:border-cyber-cyan 
-                             text-cyber-cyan hover:shadow-neon-cyan transition-all flex items-center 
+                  className="w-10 h-10 border-2 border-plasma-cyan/50 hover:border-plasma-cyan 
+                             plasma-cyan ultra-thin hover:shadow-neon-cyan transition-all flex items-center 
                              justify-center text-2xl"
                 >
                   ×
@@ -165,7 +165,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Field */}
                 <div className="relative">
-                  <label className="block text-cyber-cyan font-mono text-sm mb-2">
+                  <label className="block plasma-cyan font-mono text-sm ultra-thin mb-2">
                     NAME.INPUT
                   </label>
                   <input
@@ -178,7 +178,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     required
                     className={`w-full px-4 py-3 bg-black/50 border-2 ${
                       focusedField === 'name' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } text-white font-mono outline-none transition-all`}
+                    } photon-white font-mono ultra-light outline-none transition-all`}
                     placeholder="Enter your designation"
                   />
                   {focusedField === 'name' && (
@@ -188,7 +188,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
 
                 {/* Email Field */}
                 <div className="relative">
-                  <label className="block text-cyber-cyan font-mono text-sm mb-2">
+                  <label className="block quantum-blue font-mono text-sm ultra-thin mb-2">
                     EMAIL.ADDRESS
                   </label>
                   <input
@@ -201,7 +201,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     required
                     className={`w-full px-4 py-3 bg-black/50 border-2 ${
                       focusedField === 'email' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } text-white font-mono outline-none transition-all`}
+                    } photon-white font-mono ultra-light outline-none transition-all`}
                     placeholder="Protocol address"
                   />
                   {focusedField === 'email' && (
@@ -211,7 +211,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
 
                 {/* Subject Field */}
                 <div className="relative">
-                  <label className="block text-cyber-cyan font-mono text-sm mb-2">
+                  <label className="block nova-purple font-mono text-sm ultra-thin mb-2">
                     SUBJECT.HEADER
                   </label>
                   <input
@@ -224,7 +224,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     required
                     className={`w-full px-4 py-3 bg-black/50 border-2 ${
                       focusedField === 'subject' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } text-white font-mono outline-none transition-all`}
+                    } photon-white font-mono ultra-light outline-none transition-all`}
                     placeholder="Transmission subject"
                   />
                   {focusedField === 'subject' && (
@@ -234,7 +234,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
 
                 {/* Message Field */}
                 <div className="relative">
-                  <label className="block text-cyber-cyan font-mono text-sm mb-2">
+                  <label className="block aurora-green font-mono text-sm ultra-thin mb-2">
                     MESSAGE.PAYLOAD
                   </label>
                   <textarea
@@ -247,7 +247,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     rows={6}
                     className={`w-full px-4 py-3 bg-black/50 border-2 ${
                       focusedField === 'message' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } text-white font-mono outline-none transition-all resize-none`}
+                    } photon-white font-mono ultra-light outline-none transition-all resize-none`}
                     placeholder="Initialize data stream..."
                   />
                   {focusedField === 'message' && (
@@ -262,13 +262,13 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                   className="w-full cyber-button relative disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
+                    <span className="flex items-center justify-center gap-2 solar-yellow ultra-thin">
                       <span className="animate-spin">⟳</span> TRANSMITTING...
                     </span>
                   ) : submitStatus === 'success' ? (
-                    <span className="text-cyber-green">✓ TRANSMISSION.COMPLETE</span>
+                    <span className="aurora-green ultra-light">✓ TRANSMISSION.COMPLETE</span>
                   ) : (
-                    'TRANSMIT MESSAGE'
+                    <span className="plasma-cyan ultra-thin">TRANSMIT MESSAGE</span>
                   )}
                 </button>
 
@@ -277,7 +277,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center text-cyber-green font-mono text-sm"
+                    className="text-center aurora-green font-mono text-sm ultra-thin"
                   >
                     CONNECTION.ESTABLISHED.SUCCESSFULLY
                   </motion.div>
@@ -286,7 +286,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
 
               {/* Contact Links */}
               <div className="mt-12 pt-8 border-t border-cyber-cyan/20">
-                <h3 className="text-cyber-cyan font-mono text-sm mb-6">
+                <h3 className="solar-yellow font-mono text-sm ultra-thin mb-6">
                   ALTERNATIVE.CHANNELS
                 </h3>
                 
@@ -296,10 +296,10 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                                         hover:border-cyber-purple transition-all group">
                     <div className="flex items-center justify-between">
                       <div>
-                        <div className="text-pink-400 font-mono text-sm">GITHUB.REPO</div>
-                        <div className="text-gray-500 text-xs mt-1">@yourusername</div>
+                        <div className="nebula-pink font-mono text-sm ultra-thin">GITHUB.REPO</div>
+                        <div className="quantum-blue text-xs ultra-thin mt-1">@yourusername</div>
                       </div>
-                      <span className="text-pink-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="nebula-pink ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
                     </div>
@@ -310,10 +310,10 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                                         hover:border-cyber-cyan transition-all group">
                     <div className="flex items-center justify-between">
                       <div>
-                        <div className="text-cyber-cyan font-mono text-sm">LINKEDIN.PROFILE</div>
-                        <div className="text-gray-500 text-xs mt-1">/in/yourprofile</div>
+                        <div className="plasma-cyan font-mono text-sm ultra-thin">LINKEDIN.PROFILE</div>
+                        <div className="quantum-blue text-xs ultra-thin mt-1">/in/yourprofile</div>
                       </div>
-                      <span className="text-cyber-cyan opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="plasma-cyan ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
                     </div>
@@ -324,10 +324,10 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                                                                hover:border-cyber-pink transition-all group">
                     <div className="flex items-center justify-between">
                       <div>
-                        <div className="text-cyber-pink font-mono text-sm">EMAIL.DIRECT</div>
-                        <div className="text-gray-500 text-xs mt-1">hello@domain.com</div>
+                        <div className="fusion-orange font-mono text-sm ultra-thin">EMAIL.DIRECT</div>
+                        <div className="quantum-blue text-xs ultra-thin mt-1">hello@domain.com</div>
                       </div>
-                      <span className="text-cyber-pink opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="fusion-orange ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
                     </div>
