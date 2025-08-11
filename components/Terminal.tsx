@@ -9,7 +9,6 @@ import { fadeInUp, staggerContainer, staggerItem, easings } from '@/utils/animat
 import {
   HelpCommand,
   BlogListCommand,
-  BlogReadCommand,
   WorkExperienceCommand,
   ThoughtsCommand,
   AboutCommand,
