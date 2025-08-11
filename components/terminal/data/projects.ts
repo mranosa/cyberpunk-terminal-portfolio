@@ -1,42 +1,77 @@
 export const projects = [
   {
     id: 1,
-    title: 'Neural Commerce Platform',
+    title: 'KyoZen',
+    type: 'Web',
     description:
-      'AI-powered e-commerce solution with predictive analytics and personalized recommendations',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker'],
-    stats: { stars: 342, forks: 89, commits: 1247 },
-    status: 'DEPLOYED',
-    link: 'https://github.com/username/neural-commerce',
+      'Party Matching Platform for E-Sports - Connect gamers and form teams for competitive gaming',
+    tech: ['NodeJS', 'React', 'Firebase', 'Heroku', 'Git', 'Bitbucket'],
+    status: 'MVP',
+    highlights: [
+      'Real-time party matching system',
+      'Player skill ranking algorithm', 
+      'Team formation and management',
+      'Chat and voice integration'
+    ]
   },
   {
     id: 2,
-    title: 'Quantum Task Manager',
+    title: 'SignZen',
+    type: 'Web / IoT',
     description:
-      'Real-time collaborative project management tool with advanced automation features',
-    tech: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'WebSockets'],
-    stats: { stars: 567, forks: 123, commits: 892 },
-    status: 'ACTIVE',
-    link: 'https://github.com/username/quantum-tasks',
+      'Pay per Unique Gaze - Revolutionary advertising platform that tracks viewer engagement through computer vision',
+    tech: ['Python', 'NodeJS', 'React', 'Firebase', 'Heroku', 'Git', 'Bitbucket', 'HDF5', 'PyInstaller', 'TensorFlow', 'Keras', 'PyTorch', 'VLC'],
+    status: 'MVP',
+    highlights: [
+      'Computer vision for gaze tracking',
+      'Real-time analytics dashboard',
+      'Planned for 16,000 in-transit and 100 indoor digital screens',
+      'AI-powered engagement metrics'
+    ]
   },
   {
     id: 3,
-    title: 'CyberSec Dashboard',
+    title: 'PageBoy',
+    type: 'Web',
     description:
-      'Security monitoring and threat detection system with ML-based anomaly detection',
-    tech: ['Python', 'FastAPI', 'React', 'TensorFlow', 'Elasticsearch'],
-    stats: { stars: 891, forks: 234, commits: 1567 },
-    status: 'DEPLOYED',
-    link: 'https://github.com/username/cybersec-dashboard',
+      'Web and mobile platform for brick and mortar stores to easily accept orders from nearby buyers',
+    tech: ['NodeJS', 'AngularJS', 'Firebase', 'Bootstrap', 'Yeoman', 'Bower', 'Grunt', 'Heroku', 'Git', 'Bitbucket'],
+    status: 'MVP',
+    highlights: [
+      'Location-based order management',
+      'Real-time inventory tracking',
+      'Mobile-responsive design',
+      'Payment gateway integration'
+    ]
   },
   {
     id: 4,
-    title: 'Blockchain Wallet',
+    title: 'Trankeelo',
+    type: 'Web / Mobile',
     description:
-      'Decentralized cryptocurrency wallet with multi-chain support and DeFi integration',
-    tech: ['Rust', 'Web3.js', 'React Native', 'Solidity', 'IPFS'],
-    stats: { stars: 1234, forks: 456, commits: 2341 },
-    status: 'BETA',
-    link: 'https://github.com/username/blockchain-wallet',
+      'Web and mobile sales and inventory software for small and medium business',
+    tech: ['NodeJS', 'AngularJS', 'Firebase', 'Bootstrap', 'Yeoman', 'Bower', 'Grunt', 'Elasticsearch', 'Heroku', 'Git', 'Bitbucket'],
+    status: 'MVP',
+    highlights: [
+      'Comprehensive inventory management',
+      'Sales analytics and reporting',
+      'Multi-store support',
+      'Elasticsearch-powered search'
+    ]
   },
+  {
+    id: 5,
+    title: 'Frizzle',
+    type: 'Web',
+    description:
+      'Room centric dating platform for single professionals - Connect through shared virtual spaces',
+    tech: ['Scala', 'JavaScript', 'Play', 'AngularJS', 'Firebase', 'Neo4J', 'Bootstrap', 'Yeoman', 'Bower', 'Grunt', 'Heroku', 'Git', 'Bitbucket'],
+    status: 'MVP',
+    highlights: [
+      'Virtual room-based matching',
+      'Graph database for relationship mapping',
+      'Professional verification system',
+      'Privacy-focused design'
+    ]
+  }
 ]

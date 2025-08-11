@@ -10,7 +10,6 @@ import {
   HelpCommand,
   BlogListCommand,
   BlogReadCommand,
-  ProjectsCommand,
   WorkExperienceCommand,
   ThoughtsCommand,
   AboutCommand,
@@ -66,10 +65,6 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
       case 'ls':
       case 'dir':
         output = <BlogListCommand />
-        break
-
-      case 'projects':
-        output = <ProjectsCommand />
         break
 
       case 'work':

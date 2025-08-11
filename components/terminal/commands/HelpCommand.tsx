@@ -9,10 +9,7 @@ export function HelpCommand() {
         <span className="plasma-cyan">read [number]</span> - Read a specific post
       </div>
       <div className="ultra-light">
-        <span className="quantum-blue">projects</span> - List all project repositories
-      </div>
-      <div className="ultra-light">
-        <span className="quantum-blue">work</span> - Display work experience, skills, recommendations and CV download
+        <span className="quantum-blue">work</span> - Display work experience, skills, projects, recommendations and CV
       </div>
       <div className="ultra-light">
         <span className="aurora-green">thoughts</span> - Display random thoughts

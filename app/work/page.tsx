@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import { recommendations } from '@/components/terminal/data/recommendations'
 import { skills } from '@/components/terminal/data/skills'
+import { projects } from '@/components/terminal/data/projects'
 import MatrixRain from '@/components/MatrixRainWrapper'
 import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { StarIcon, LinkIcon } from '@heroicons/react/24/solid'
@@ -61,7 +62,7 @@ export default function WorkPage() {
             <h1 className="text-4xl md:text-6xl font-bold text-cyber-green mb-2 glitch-text">
               PROFESSIONAL PORTFOLIO
             </h1>
-            <div className="text-cyber-cyan">Experience • Skills • Recommendations • CV</div>
+            <div className="text-cyber-cyan">Experience • Skills • Projects • Recommendations • CV</div>
           </motion.div>
 
           <motion.div
@@ -145,124 +146,175 @@ export default function WorkPage() {
           >
             <h2 className="text-3xl font-bold text-cyber-cyan mb-6">SKILLS & EXPERTISE</h2>
             <div className="border border-cyber-cyan/30 p-6 bg-black/60 backdrop-blur-sm mb-12">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-3 gap-6">
                 {/* Languages */}
-                <div>
-                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Languages</h3>
-                  {skills.languages && skills.languages.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3 mb-3">
-                      <div className="w-24 text-gray-300 font-mono text-sm">
+                <div className="border border-cyber-cyan/20 p-4 bg-black/40 hover:border-cyber-cyan/40 transition-all">
+                  <h3 className="text-cyber-cyan font-semibold mb-3 uppercase tracking-wider text-sm">Languages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.languages && skills.languages.map((skill) => (
+                      <span 
+                        key={skill.name} 
+                        className="text-xs border border-cyber-cyan/30 px-2 py-1 text-gray-300 hover:border-cyber-cyan hover:text-cyber-cyan transition-all"
+                      >
                         {skill.name}
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-black/50 border border-cyber-cyan/20 h-3 overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-cyber-cyan to-cyan-600 transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-cyber-cyan font-mono text-xs w-10">
-                        {skill.level}%
-                      </div>
-                    </div>
-                  ))}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Frameworks */}
-                <div>
-                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Frameworks</h3>
-                  {skills.frameworks && skills.frameworks.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3 mb-3">
-                      <div className="w-24 text-gray-300 font-mono text-sm">
+                <div className="border border-nova-purple/20 p-4 bg-black/40 hover:border-nova-purple/40 transition-all">
+                  <h3 className="text-nova-purple font-semibold mb-3 uppercase tracking-wider text-sm">Frameworks</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.frameworks && skills.frameworks.map((skill) => (
+                      <span 
+                        key={skill.name} 
+                        className="text-xs border border-nova-purple/30 px-2 py-1 text-gray-300 hover:border-nova-purple hover:text-nova-purple transition-all"
+                      >
                         {skill.name}
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-black/50 border border-cyber-purple/20 h-3 overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-nova-purple to-nebula-pink transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-pink-400 font-mono text-xs w-10">
-                        {skill.level}%
-                      </div>
-                    </div>
-                  ))}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Tools */}
-                <div>
-                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Tools & Testing</h3>
-                  {skills.tools && skills.tools.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3 mb-3">
-                      <div className="w-24 text-gray-300 font-mono text-sm">
+                <div className="border border-cyber-green/20 p-4 bg-black/40 hover:border-cyber-green/40 transition-all">
+                  <h3 className="text-cyber-green font-semibold mb-3 uppercase tracking-wider text-sm">Tools & Testing</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.tools && skills.tools.map((skill) => (
+                      <span 
+                        key={skill.name} 
+                        className="text-xs border border-cyber-green/30 px-2 py-1 text-gray-300 hover:border-cyber-green hover:text-cyber-green transition-all"
+                      >
                         {skill.name}
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-black/50 border border-cyber-green/20 h-3 overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-cyber-green to-green-600 transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-cyber-green font-mono text-xs w-10">
-                        {skill.level}%
-                      </div>
-                    </div>
-                  ))}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Databases */}
-                <div>
-                  <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">Databases</h3>
-                  {skills.databases && skills.databases.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3 mb-3">
-                      <div className="w-24 text-gray-300 font-mono text-sm">
+                <div className="border border-cyber-orange/20 p-4 bg-black/40 hover:border-cyber-orange/40 transition-all">
+                  <h3 className="text-cyber-orange font-semibold mb-3 uppercase tracking-wider text-sm">Databases</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.databases && skills.databases.map((skill) => (
+                      <span 
+                        key={skill.name} 
+                        className="text-xs border border-cyber-orange/30 px-2 py-1 text-gray-300 hover:border-cyber-orange hover:text-cyber-orange transition-all"
+                      >
                         {skill.name}
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-black/50 border border-cyber-orange/20 h-3 overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-cyber-orange to-orange-600 transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-cyber-orange font-mono text-xs w-10">
-                        {skill.level}%
-                      </div>
-                    </div>
-                  ))}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* AI/ML if exists */}
                 {skills.aiml && (
-                  <div>
-                    <h3 className="text-pink-400 font-semibold mb-4 uppercase tracking-wider">AI/ML</h3>
-                    {skills.aiml.map((skill) => (
-                      <div key={skill.name} className="flex items-center gap-3 mb-3">
-                        <div className="w-24 text-gray-300 font-mono text-sm">
+                  <div className="border border-purple-500/20 p-4 bg-black/40 hover:border-purple-500/40 transition-all">
+                    <h3 className="text-purple-400 font-semibold mb-3 uppercase tracking-wider text-sm">AI/ML</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {skills.aiml.map((skill) => (
+                        <span 
+                          key={skill.name} 
+                          className="text-xs border border-purple-500/30 px-2 py-1 text-gray-300 hover:border-purple-500 hover:text-purple-400 transition-all"
+                        >
                           {skill.name}
-                        </div>
-                        <div className="flex-1">
-                          <div className="bg-black/50 border border-purple-500/20 h-3 overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-purple-500 to-purple-700 transition-all duration-1000"
-                              style={{ width: `${skill.level}%` }}
-                            />
-                          </div>
-                        </div>
-                        <div className="text-purple-400 font-mono text-xs w-10">
-                          {skill.level}%
-                        </div>
-                      </div>
-                    ))}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-12"
+          >
+            <h2 className="text-3xl font-bold text-nova-purple mb-6">PET PROJECTS</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02 }}
+                  className="border border-nova-purple/30 p-6 bg-black/60 backdrop-blur-sm hover:border-nova-purple/50 transition-all duration-300"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-cyber-cyan mb-1">
+                        {project.title}
+                      </h3>
+                      <div className="text-sm text-nova-purple font-semibold">
+                        {project.type}
+                      </div>
+                    </div>
+                    <div className={`text-xs px-2 py-1 border ${
+                      project.status === 'DEPLOYED' 
+                        ? 'border-cyber-green text-cyber-green' 
+                        : project.status === 'ACTIVE'
+                        ? 'border-cyber-cyan text-cyber-cyan'
+                        : project.status === 'MVP'
+                        ? 'border-cyber-orange text-cyber-orange'
+                        : project.status === 'BETA'
+                        ? 'border-nova-purple text-nova-purple'
+                        : 'border-gray-500 text-gray-500'
+                    }`}>
+                      {project.status}
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm mb-4">
+                    {project.description}
+                  </p>
+
+                  {project.highlights && (
+                    <div className="mb-4">
+                      <div className="text-pink-400 text-xs font-semibold mb-2">KEY FEATURES:</div>
+                      <ul className="space-y-1">
+                        {project.highlights.map((highlight, i) => (
+                          <li key={i} className="text-gray-400 text-xs flex items-start gap-1">
+                            <span className="text-cyber-green mt-0.5">▸</span>
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {project.tech.slice(0, 8).map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs border border-nova-purple/30 px-2 py-0.5 text-gray-400 hover:border-nova-purple hover:text-nova-purple transition-all"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.tech.length > 8 && (
+                      <div className="relative group inline-block">
+                        <span className="text-xs text-gray-500 cursor-help">
+                          +{project.tech.length - 8} more
+                        </span>
+                        <div className="absolute bottom-full left-0 mb-2 hidden group-hover:block z-10">
+                          <div className="bg-black/95 border border-nova-purple/50 p-2 rounded">
+                            <div className="flex flex-wrap gap-1 max-w-xs">
+                              {project.tech.slice(8).map((tech, i) => (
+                                <span
+                                  key={i}
+                                  className="text-xs border border-nova-purple/30 px-2 py-0.5 text-gray-300 whitespace-nowrap"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
