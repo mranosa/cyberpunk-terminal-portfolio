@@ -3,27 +3,27 @@ import { skills } from '../data/skills'
 export function SkillsCommand() {
   return (
     <div className="space-y-4">
-      <div className="text-cyber-cyan mb-3">SKILLS MATRIX:</div>
+      <div className="solar-yellow ultra-thin mb-3">SKILLS MATRIX:</div>
 
       {/* Languages */}
       <div className="mb-4">
-        <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+        <div className="nebula-pink text-sm ultra-thin mb-2 uppercase tracking-wider">
           Languages
         </div>
         {skills.languages.map((skill, index) => (
           <div key={skill.name} className="flex items-center gap-3 mb-2">
-            <div className="w-24 text-gray-300 font-mono text-sm">
+            <div className="w-24 photon-white font-mono text-sm ultra-light">
               {skill.name}
             </div>
             <div className="flex-1 max-w-md">
               <div className="bg-black/50 border border-cyber-cyan/20 h-4 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-cyber-cyan to-cyan-600 transition-all duration-1000"
+                  className="h-full bg-gradient-to-r from-plasma-cyan to-quantum-blue transition-all duration-1000"
                   style={{ width: `${skill.level}%` }}
                 />
               </div>
             </div>
-            <div className="text-cyber-cyan font-mono text-sm w-10">
+            <div className="plasma-cyan font-mono text-sm ultra-thin w-10">
               {skill.level}%
             </div>
           </div>
@@ -32,23 +32,23 @@ export function SkillsCommand() {
 
       {/* Frameworks */}
       <div className="mb-4">
-        <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+        <div className="nova-purple text-sm ultra-thin mb-2 uppercase tracking-wider">
           Frameworks
         </div>
         {skills.frameworks.map((skill, index) => (
           <div key={skill.name} className="flex items-center gap-3 mb-2">
-            <div className="w-24 text-gray-300 font-mono text-sm">
+            <div className="w-24 photon-white font-mono text-sm ultra-light">
               {skill.name}
             </div>
             <div className="flex-1 max-w-md">
               <div className="bg-black/50 border border-cyber-purple/20 h-4 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-cyber-purple to-purple-600 transition-all duration-1000"
+                  className="h-full bg-gradient-to-r from-nova-purple to-nebula-pink transition-all duration-1000"
                   style={{ width: `${skill.level}%` }}
                 />
               </div>
             </div>
-            <div className="text-cyber-purple font-mono text-sm w-10">
+            <div className="text-pink-400 font-mono text-sm w-10">
               {skill.level}%
             </div>
           </div>
@@ -57,12 +57,12 @@ export function SkillsCommand() {
 
       {/* Tools */}
       <div className="mb-4">
-        <div className="text-cyber-purple text-sm mb-2 uppercase tracking-wider">
+        <div className="text-pink-400 text-sm mb-2 uppercase tracking-wider">
           Tools
         </div>
         {skills.tools.map((skill, index) => (
           <div key={skill.name} className="flex items-center gap-3 mb-2">
-            <div className="w-24 text-gray-300 font-mono text-sm">
+            <div className="w-24 photon-white font-mono text-sm ultra-light">
               {skill.name}
             </div>
             <div className="flex-1 max-w-md">
@@ -115,7 +115,7 @@ export function SkillsCategoryCommand({ category }: { category: keyof typeof ski
               category === 'languages'
                 ? 'text-cyber-cyan'
                 : category === 'frameworks'
-                  ? 'text-cyber-purple'
+                  ? 'text-pink-400'
                   : 'text-cyber-green'
             }`}
           >

@@ -30,7 +30,7 @@ export function WorkExperienceCommand() {
           </div>
 
           <div className="mb-3">
-            <div className="text-cyber-purple text-sm mb-2">
+            <div className="text-pink-400 text-sm mb-2">
               Key Achievements:
             </div>
             <ul className="space-y-1">
@@ -44,7 +44,7 @@ export function WorkExperienceCommand() {
           </div>
 
           <div>
-            <div className="text-cyber-purple text-sm mb-2">
+            <div className="text-pink-400 text-sm mb-2">
               Technologies:
             </div>
             <div className="flex flex-wrap gap-2">

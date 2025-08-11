@@ -38,9 +38,9 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
       id: 1,
       command: '',
       output: (
-        <div className="text-cyber-green">
-          <div>Terminal v0.0.1</div>
-          <div>Click/Tap inside terminal and Type 'help'</div>
+        <div className="space-y-1">
+          <div className="plasma-cyan ultra-thin">Terminal v0.0.1</div>
+          <div className="solar-yellow ultra-light">Click/Tap inside terminal and Type 'help'</div>
         </div>
       ),
       timestamp: new Date(),
@@ -121,7 +121,7 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
             id: Date.now(),
             command: '',
             output: (
-              <div className="text-cyber-green">
+              <div className="aurora-green ultra-thin">
                 Terminal cleared. Type 'help' for commands.
               </div>
             ),
@@ -138,7 +138,7 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           return
         } else {
           output = (
-            <span className="text-red-500">Command not found: {cmd}</span>
+            <span className="fusion-orange ultra-light">Command not found: {cmd}</span>
           )
         }
     }
@@ -194,13 +194,13 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-cyber font-black mb-4">
+          <h2 className="text-5xl md:text-6xl font-cyber ultra-thin mb-4">
             <GlitchText 
               text="KEN.RANOSA" 
-              className="text-5xl md:text-6xl font-cyber font-black"
+              className="text-5xl md:text-6xl font-cyber ultra-thin quantum-blue"
             />
           </h2>
-          <p className="text-gray-400 font-mono text-sm">
+          <p className="font-mono text-sm">
             <LightBulbText text="HOW.CAN.I.HELP" onClick={onContactOpen} />
           </p>
         </motion.div>
@@ -211,16 +211,16 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-black ultra-thin-border scan-lines circuit-pattern relative overflow-hidden"
+          className="bg-black backdrop-blur-sm ultra-thin-border scan-lines circuit-pattern relative overflow-hidden"
         >
           {/* Terminal Header */}
-          <div className="bg-cyber-cyan/10 border-b border-cyber-cyan/30 px-4 py-2 flex items-center justify-between relative">
+          <div className="bg-cyber-cyan/30 backdrop-blur-sm border-b border-cyber-cyan/50 px-4 py-2 flex items-center justify-between relative">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(255,0,0,0.5)]" />
               <div className="w-3 h-3 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(255,255,0,0.5)]" />
               <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_10px_rgba(0,255,0,0.5)]" />
             </div>
-            <div className="font-mono text-xs holographic-text">
+            <div className="font-mono text-xs holographic-ultra ultra-thin" data-text="user@portfolio:~/blog">
               user@portfolio:~/blog
             </div>
           </div>
@@ -228,28 +228,28 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           {/* Terminal Body */}
           <div
             ref={terminalRef}
-            className="h-[500px] overflow-y-auto p-4 font-mono text-sm"
+            className="h-[500px] overflow-y-auto p-4 font-mono text-sm bg-black/50 backdrop-blur-sm"
             onClick={() => inputRef.current?.focus()}
           >
             {commands.map((cmd) => (
               <div key={cmd.id} className="mb-4">
                 {cmd.command && (
                   <div className="flex items-start gap-2">
-                    <span className="text-cyber-green">$</span>
-                    <span className="text-white">{cmd.command}</span>
+                    <span className="pulsar-lime ultra-light">$</span>
+                    <span className="plasma-cyan ultra-thin">{cmd.command}</span>
                   </div>
                 )}
-                <div className="mt-1 text-gray-300">{cmd.output}</div>
+                <div className="mt-1 photon-white ultra-thin bg-black/20 rounded px-2 py-1">{cmd.output}</div>
               </div>
             ))}
 
             {/* Current Input Line */}
             <div className="flex items-start gap-2">
-              <span className="text-cyber-green">$</span>
+              <span className="pulsar-lime ultra-light">$</span>
               <div className="flex-1 relative">
                 <div className="flex items-center">
-                  <span className="text-white">{currentCommand}</span>
-                  <span className="text-cyber-cyan terminal-cursor">_</span>
+                  <span className="plasma-cyan ultra-thin">{currentCommand}</span>
+                  <span className="terminal-cursor ultra-thin" style={{ color: '#FFD700' }}>_</span>
                 </div>
                 <input
                   ref={inputRef}
@@ -274,7 +274,7 @@ export default function Terminal({ onContactOpen }: TerminalProps = {}) {
           viewport={{ once: true }}
           className="mt-4 text-center"
         >
-          <p className="text-gray-500 font-mono text-xs">
+          <p className="quantum-blue font-mono text-xs ultra-thin">
             Terminal v0.0.1 | Click/Tap inside terminal and Type 'help'
           </p>
         </motion.div>

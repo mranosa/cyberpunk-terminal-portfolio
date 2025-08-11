@@ -43,7 +43,7 @@ export function CVCommand() {
 export function ThoughtsCommand() {
   const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)]
   return (
-    <div className="text-cyber-purple italic">"{randomThought}"</div>
+    <div className="text-pink-400 italic">"{randomThought}"</div>
   )
 }
 

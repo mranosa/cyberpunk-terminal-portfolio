@@ -227,29 +227,34 @@ export default function MatrixRain() {
       if (rotationAnimRef.current.active) {
         const now = Date.now()
         const elapsed = now - rotationAnimRef.current.startTime
-        const progress = Math.min(elapsed / rotationAnimRef.current.duration, 1)
+        const totalDuration = rotationAnimRef.current.duration
         
-        // Easing function for smooth animation
-        const easeOut = 1 - Math.pow(1 - progress, 3)
-        
-        const currentRotation = {
-          x: rotation.x + (rotationAnimRef.current.targetX - rotation.x) * easeOut,
-          y: rotation.y + (rotationAnimRef.current.targetY - rotation.y) * easeOut,
-          z: rotation.z + (rotationAnimRef.current.targetZ - rotation.z) * easeOut
-        }
-        
-        setRotation(currentRotation)
-        
-        if (progress >= 1) {
-          // Immediately start easing back to default position
-          rotationAnimRef.current = {
-            active: true,
-            targetX: 5,
-            targetY: 0,
-            targetZ: 0,
-            duration: 2000, // 2 seconds to ease back
-            startTime: Date.now()
-          }
+        if (elapsed < totalDuration) {
+          // First phase: rotate to random position
+          const progress = elapsed / totalDuration
+          const easeInOut = progress < 0.5 
+            ? 2 * progress * progress 
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2
+          
+          setRotation({
+            x: 5 + (rotationAnimRef.current.targetX - 5) * easeInOut,
+            y: 0 + (rotationAnimRef.current.targetY - 0) * easeInOut,
+            z: 0 + (rotationAnimRef.current.targetZ - 0) * easeInOut
+          })
+        } else if (elapsed < totalDuration * 3) {
+          // Second phase: ease back to default over 2x duration
+          const returnProgress = (elapsed - totalDuration) / (totalDuration * 2)
+          const easeOut = 1 - Math.pow(1 - returnProgress, 3)
+          
+          setRotation({
+            x: rotationAnimRef.current.targetX + (5 - rotationAnimRef.current.targetX) * easeOut,
+            y: rotationAnimRef.current.targetY + (0 - rotationAnimRef.current.targetY) * easeOut,
+            z: rotationAnimRef.current.targetZ + (0 - rotationAnimRef.current.targetZ) * easeOut
+          })
+        } else {
+          // Animation complete, reset to default
+          setRotation({ x: 5, y: 0, z: 0 })
+          rotationAnimRef.current.active = false
         }
       }
     }

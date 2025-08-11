@@ -48,7 +48,7 @@ export function RecommendationsCommand() {
           </div>
 
           <div className="mb-4">
-            <div className="text-cyber-purple text-sm mb-2">
+            <div className="text-pink-400 text-sm mb-2">
               Recommendation:
             </div>
             <blockquote className="text-gray-300 text-sm italic border-l-2 border-cyber-pink/30 pl-4">

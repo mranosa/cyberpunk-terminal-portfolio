@@ -47,15 +47,17 @@ export default function GlitchText({ text, className = '' }: GlitchTextProps) {
         }
         
         .glitch-container.active .glitch-copy:nth-child(2) {
-          color: #00ffff;
+          color: #00FFFF;
           animation: glitch1 0.5s ease-in-out;
           z-index: 1;
+          opacity: 0.6;
         }
         
         .glitch-container.active .glitch-copy:nth-child(3) {
-          color: #ff00ff;
+          color: #FFD700;
           animation: glitch2 0.5s ease-in-out;
           z-index: 2;
+          opacity: 0.4;
         }
         
         .glitch-container.ultra-active {

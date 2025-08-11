@@ -25,17 +25,21 @@ export default function LightBulbText({ text, className = '', onClick }: LightBu
           position: relative;
           display: inline-block;
           transition: all 0.3s ease;
+          color: #C0C0C0;
+          font-weight: 200;
+          cursor: pointer;
         }
         
         .lightbulb-text.glowing {
-          color: #ffff88;
+          color: #FFD700;
           text-shadow: 
-            0 0 5px #ffff88,
-            0 0 10px #ffff88,
-            0 0 15px #ffff88,
-            0 0 20px #ffff88,
-            0 0 25px #ffff88;
+            0 0 10px #FFD700,
+            0 0 20px #FFD700,
+            0 0 30px #FFA500,
+            0 0 40px #FFA500,
+            0 0 50px #FFD700;
           animation: flicker 0.5s ease-in-out;
+          font-weight: 100;
         }
         
         .lightbulb-text.glowing::before {
@@ -46,35 +50,35 @@ export default function LightBulbText({ text, className = '', onClick }: LightBu
         @keyframes flicker {
           0%, 100% {
             text-shadow: 
-              0 0 5px #ffff88,
-              0 0 10px #ffff88,
-              0 0 15px #ffff88,
-              0 0 20px #ffff88,
-              0 0 25px #ffff88;
+              0 0 10px #FFD700,
+              0 0 20px #FFD700,
+              0 0 30px #FFA500,
+              0 0 40px #FFA500,
+              0 0 50px #FFD700;
           }
           25% {
             text-shadow: 
-              0 0 2px #ffff88,
-              0 0 5px #ffff88,
-              0 0 8px #ffff88,
-              0 0 12px #ffff88,
-              0 0 15px #ffff88;
+              0 0 5px #FFD700,
+              0 0 10px #FFD700,
+              0 0 15px #FFA500,
+              0 0 20px #FFA500,
+              0 0 25px #FFD700;
           }
           50% {
             text-shadow: 
-              0 0 8px #ffff88,
-              0 0 15px #ffff88,
-              0 0 20px #ffff88,
-              0 0 25px #ffff88,
-              0 0 30px #ffff88;
+              0 0 15px #FFD700,
+              0 0 25px #FFD700,
+              0 0 35px #FFA500,
+              0 0 45px #FFA500,
+              0 0 60px #FFD700;
           }
           75% {
             text-shadow: 
-              0 0 3px #ffff88,
-              0 0 6px #ffff88,
-              0 0 10px #ffff88,
-              0 0 15px #ffff88,
-              0 0 20px #ffff88;
+              0 0 8px #FFD700,
+              0 0 15px #FFD700,
+              0 0 20px #FFA500,
+              0 0 30px #FFA500,
+              0 0 40px #FFD700;
           }
         }
         

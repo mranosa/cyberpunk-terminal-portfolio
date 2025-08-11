@@ -25,7 +25,34 @@ const config: Config = {
           purple: '#d500f9',
           pink: '#ff1744',
           green: '#00e676',
-        }
+        },
+        plasma: {
+          cyan: '#00FFFF',
+        },
+        quantum: {
+          blue: '#4169E1',
+        },
+        solar: {
+          yellow: '#FFD700',
+        },
+        photon: {
+          white: '#FFFFFF',
+        },
+        fusion: {
+          orange: '#FF8C00',
+        },
+        nova: {
+          purple: '#9370DB',
+        },
+        aurora: {
+          green: '#00FA9A',
+        },
+        nebula: {
+          pink: '#FF69B4',
+        },
+        pulsar: {
+          lime: '#32CD32',
+        },
       },
       fontFamily: {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
