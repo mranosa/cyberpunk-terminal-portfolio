@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './animations.css';
+
 @layer base {
   :root {
     --cyber-dark: #0a0a0f;

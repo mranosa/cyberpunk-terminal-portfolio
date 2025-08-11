@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect, useRef, memo } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import GlitchText from './GlitchText'
 import LightBulbText from './LightBulbText'
 import { commandEvents } from '@/utils/commandEvents'
+import { fadeInUp, staggerContainer, staggerItem, easings } from '@/utils/animations'
 import {
   HelpCommand,
   BlogListCommand,
@@ -183,14 +184,47 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
     }
   }
 
+  const commandVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut'
+      }
+    }
+  }
+
+  const cursorVariants = {
+    blink: {
+      opacity: [1, 0, 1],
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        ease: 'linear'
+      }
+    }
+  }
+
   return (
-    <section className="min-h-screen py-20 px-4 relative">
-      <div className="max-w-4xl mx-auto">
+    <motion.section 
+      className="min-h-screen py-20 px-4 relative"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      <motion.div 
+        className="max-w-4xl mx-auto"
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+      >
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -257,7 +291,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                   value={currentCommand}
                   onChange={(e) => setCurrentCommand(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="absolute inset-0 bg-transparent text-transparent outline-none caret-transparent"
+                  className="absolute inset-0 bg-transparent text-transparent outline-none focus-visible:outline-none caret-transparent"
                   autoFocus
                   spellCheck={false}
                 />
@@ -278,8 +312,8 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
             Terminal v0.0.1 | Click/Tap inside terminal and Type 'help'
           </p>
         </motion.div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 })
 

@@ -1,11 +1,53 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
+import { slideInFromRight, fadeIn, staggerContainer, staggerItem, easings } from '@/utils/animations'
 
 interface ContactDrawerProps {
   isOpen?: boolean
   onOpenChange?: (isOpen: boolean) => void
+}
+
+const backdropVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { duration: 0.3 }
+  },
+  exit: { 
+    opacity: 0,
+    transition: { duration: 0.2 }
+  }
+}
+
+const drawerVariants: Variants = {
+  hidden: { 
+    x: '100%',
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: 'spring', stiffness: 280, damping: 20 }
+  },
+  exit: {
+    x: '100%',
+    opacity: 0,
+    transition: { duration: 0.3 }
+  }
+}
+
+const formFieldVariants: Variants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5
+    }
+  })
 }
 
 export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: ContactDrawerProps = {}) {
@@ -57,287 +99,315 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
 
   return (
     <>
-      {/* Floating Contact Button */}
+      {/* Enhanced Floating Contact Button */}
       <motion.button
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: "spring" }}
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ 
+          delay: 1,
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }}
         onClick={() => setIsOpen(true)}
         className="fixed bottom-8 right-8 z-40 w-16 h-16 bg-black border-2 border-cyber-cyan 
                    shadow-neon-cyan hover:shadow-neon-purple transition-all duration-300 
-                   flex items-center justify-center group"
-        whileHover={{ scale: 1.1 }}
+                   flex items-center justify-center group overflow-hidden"
+        whileHover={{ 
+          scale: 1.1,
+          borderColor: '#ff00ff',
+          transition: { duration: 0.2 }
+        }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="relative">
-          <span className="text-2xl plasma-cyan group-hover:text-solar-yellow transition-all duration-300 
-                         group-hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]
-                         group-hover:filter group-hover:brightness-150">
+        <motion.div 
+          className="relative"
+          whileHover={{
+            rotate: [0, -10, 10, -10, 0],
+            transition: { duration: 0.5 }
+          }}
+        >
+          <motion.span 
+            className="text-2xl plasma-cyan group-hover:text-solar-yellow transition-all duration-300 
+                       group-hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]
+                       group-hover:filter group-hover:brightness-150"
+            animate={{
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
             ☎
-          </span>
-          <div className="absolute inset-0 animate-ping text-2xl plasma-cyan opacity-30">
+          </motion.span>
+          <motion.div 
+            className="absolute inset-0 text-2xl plasma-cyan"
+            animate={{
+              scale: [1, 1.5, 2],
+              opacity: [0.5, 0.2, 0]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeOut"
+            }}
+          >
             ☎
-          </div>
-          {/* Neon glow effect on hover */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                          text-2xl solar-yellow animate-pulse
-                          drop-shadow-[0_0_15px_rgba(255,215,0,1)]
-                          filter brightness-200">
-            ☎
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        {/* Tooltip */}
-        <div className="absolute bottom-full mb-2 px-3 py-1 bg-black border border-plasma-cyan 
-                        plasma-cyan text-xs font-mono ultra-thin whitespace-nowrap opacity-0 
-                        group-hover:opacity-100 transition-opacity pointer-events-none right-0">
+        {/* Enhanced Tooltip */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileHover={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+          className="absolute bottom-full mb-2 px-3 py-1 bg-black border border-plasma-cyan 
+                     plasma-cyan text-xs font-mono ultra-thin whitespace-nowrap 
+                     pointer-events-none right-0"
+        >
           ESTABLISH.CONNECTION
-        </div>
+        </motion.div>
       </motion.button>
 
-      {/* Backdrop */}
+      {/* Enhanced Backdrop with blur */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            variants={backdropVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+            style={{
+              backdropFilter: 'blur(8px) saturate(1.5)',
+            }}
           />
         )}
       </AnimatePresence>
 
-      {/* Drawer */}
+      {/* Enhanced Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 h-full w-full max-w-xl bg-cyber-darker border-l-2 
-                       border-cyber-cyan shadow-2xl z-50 flex flex-col"
+            variants={drawerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed right-0 top-0 h-full w-full md:w-[500px] bg-cyber-darker border-l-2 
+                       border-cyber-cyan shadow-2xl z-50 overflow-y-auto"
+            style={{
+              boxShadow: '-10px 0 40px rgba(0, 255, 255, 0.3)',
+            }}
           >
-            {/* Drawer Header - Fixed */}
-            <div className="bg-cyber-darker border-b border-cyber-cyan/30 p-6 flex-shrink-0">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-2xl font-cyber ultra-thin holographic-ultra" data-text="ESTABLISH CONNECTION">
-                    ESTABLISH CONNECTION
-                  </h2>
-                  <p className="quantum-blue font-mono text-xs ultra-light mt-1">
-                    PROTOCOL: SECURE_CHANNEL_v3
-                  </p>
-                </div>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 border-2 border-plasma-cyan/50 hover:border-plasma-cyan 
-                             plasma-cyan ultra-thin hover:shadow-neon-cyan transition-all flex items-center 
-                             justify-center text-2xl"
+            {/* Enhanced Close Button */}
+            <motion.button
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ delay: 0.3, type: "spring" }}
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center 
+                         border-2 border-cyber-purple text-cyber-purple hover:bg-cyber-purple 
+                         hover:text-black transition-all duration-300 group"
+              whileHover={{ scale: 1.1, rotate: 90 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-2xl group-hover:animate-spin">×</span>
+            </motion.button>
+
+            {/* Enhanced Content */}
+            <motion.div 
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              className="p-8 pt-20"
+            >
+              {/* Enhanced Header */}
+              <motion.div 
+                variants={staggerItem}
+                className="mb-8"
+              >
+                <motion.h2 
+                  className="text-3xl font-bold text-cyber-cyan mb-2"
+                  animate={{
+                    textShadow: [
+                      '0 0 10px rgba(0, 255, 255, 0.5)',
+                      '0 0 20px rgba(0, 255, 255, 0.8)',
+                      '0 0 10px rgba(0, 255, 255, 0.5)',
+                    ]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
-                  ×
-                </button>
-              </div>
-            </div>
+                  ESTABLISH CONNECTION
+                </motion.h2>
+                <motion.p 
+                  variants={staggerItem}
+                  className="text-gray-400 font-mono text-sm"
+                >
+                  {/* Initialize secure communication protocol */}
+                </motion.p>
+              </motion.div>
 
-            {/* Scrollable Content Container */}
-            <div className="flex-1 overflow-y-auto relative">
-              {/* Circuit Animation Background */}
-              <div className="absolute inset-0 opacity-5 pointer-events-none">
-                <svg className="w-full h-full">
-                  {[...Array(10)].map((_, i) => (
-                    <line
-                      key={i}
-                      x1={`${i * 10}%`}
-                      y1="0"
-                      x2={`${i * 10}%`}
-                      y2="100%"
-                      stroke="cyan"
-                      strokeWidth="0.5"
-                      className="animate-pulse"
-                      style={{ animationDelay: `${i * 0.1}s` }}
-                    />
-                  ))}
-                </svg>
-              </div>
+              {/* Success Message */}
+              <AnimatePresence>
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20, scale: 0.8 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.8 }}
+                    transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+                    className="mb-6 p-4 bg-cyber-green/20 border border-cyber-green text-cyber-green"
+                  >
+                    <motion.p 
+                      className="font-mono"
+                      animate={{
+                        opacity: [1, 0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        repeat: 3
+                      }}
+                    >
+                      CONNECTION.ESTABLISHED.SUCCESSFULLY
+                    </motion.p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-              {/* Form Content */}
-              <div className="p-6 relative">
+              {/* Enhanced Form */}
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
-                <div className="relative">
-                  <label className="block plasma-cyan font-mono text-sm ultra-thin mb-2">
-                    NAME.INPUT
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField('name')}
-                    onBlur={() => setFocusedField(null)}
-                    required
-                    className={`w-full px-4 py-3 bg-black/50 border-2 ${
-                      focusedField === 'name' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } photon-white font-mono ultra-light outline-none transition-all`}
-                    placeholder="Enter your designation"
-                  />
-                  {focusedField === 'name' && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyber-cyan animate-pulse" />
-                  )}
-                </div>
+                {[
+                  { name: 'name', label: 'IDENTIFIER', type: 'text', placeholder: 'Your designation...' },
+                  { name: 'email', label: 'COMM.CHANNEL', type: 'email', placeholder: 'your.signal@cyberspace.net' },
+                  { name: 'subject', label: 'TRANSMISSION.SUBJECT', type: 'text', placeholder: 'Mission briefing...' },
+                ].map((field, index) => (
+                  <motion.div
+                    key={field.name}
+                    custom={index}
+                    variants={formFieldVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="space-y-2"
+                  >
+                    <label className="block text-cyber-cyan font-mono text-sm uppercase tracking-wider">
+                      {field.label}
+                    </label>
+                    <motion.input
+                      type={field.type}
+                      name={field.name}
+                      value={formData[field.name as keyof typeof formData]}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField(field.name)}
+                      onBlur={() => setFocusedField(null)}
+                      placeholder={field.placeholder}
+                      className="w-full px-4 py-3 bg-black border-2 border-cyber-purple/50 
+                               text-white placeholder-gray-500 font-mono
+                               focus:border-cyber-cyan focus:outline-none focus:shadow-neon-cyan
+                               transition-all duration-300"
+                      whileFocus={{
+                        scale: 1.02,
+                        transition: { duration: 0.2 }
+                      }}
+                      animate={{
+                        borderColor: focusedField === field.name ? '#00ffff' : 'rgba(255, 0, 255, 0.5)',
+                        boxShadow: focusedField === field.name 
+                          ? '0 0 20px rgba(0, 255, 255, 0.5)' 
+                          : '0 0 0px rgba(0, 255, 255, 0)'
+                      }}
+                      required
+                    />
+                  </motion.div>
+                ))}
 
-                {/* Email Field */}
-                <div className="relative">
-                  <label className="block quantum-blue font-mono text-sm ultra-thin mb-2">
-                    EMAIL.ADDRESS
+                {/* Enhanced Message Field */}
+                <motion.div
+                  custom={3}
+                  variants={formFieldVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="space-y-2"
+                >
+                  <label className="block text-cyber-cyan font-mono text-sm uppercase tracking-wider">
+                    DATA.PAYLOAD
                   </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField(null)}
-                    required
-                    className={`w-full px-4 py-3 bg-black/50 border-2 ${
-                      focusedField === 'email' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } photon-white font-mono ultra-light outline-none transition-all`}
-                    placeholder="Protocol address"
-                  />
-                  {focusedField === 'email' && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyber-cyan animate-pulse" />
-                  )}
-                </div>
-
-                {/* Subject Field */}
-                <div className="relative">
-                  <label className="block nova-purple font-mono text-sm ultra-thin mb-2">
-                    SUBJECT.HEADER
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField('subject')}
-                    onBlur={() => setFocusedField(null)}
-                    required
-                    className={`w-full px-4 py-3 bg-black/50 border-2 ${
-                      focusedField === 'subject' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } photon-white font-mono ultra-light outline-none transition-all`}
-                    placeholder="Transmission subject"
-                  />
-                  {focusedField === 'subject' && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyber-cyan animate-pulse" />
-                  )}
-                </div>
-
-                {/* Message Field */}
-                <div className="relative">
-                  <label className="block aurora-green font-mono text-sm ultra-thin mb-2">
-                    MESSAGE.PAYLOAD
-                  </label>
-                  <textarea
+                  <motion.textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
-                    required
+                    placeholder="Transmit your data stream..."
                     rows={6}
-                    className={`w-full px-4 py-3 bg-black/50 border-2 ${
-                      focusedField === 'message' ? 'border-cyber-cyan shadow-neon-cyan' : 'border-cyber-cyan/30'
-                    } photon-white font-mono ultra-light outline-none transition-all resize-none`}
-                    placeholder="Initialize data stream..."
+                    className="w-full px-4 py-3 bg-black border-2 border-cyber-purple/50 
+                             text-white placeholder-gray-500 font-mono resize-none
+                             focus:border-cyber-cyan focus:outline-none focus:shadow-neon-cyan
+                             transition-all duration-300"
+                    animate={{
+                      borderColor: focusedField === 'message' ? '#00ffff' : 'rgba(255, 0, 255, 0.5)',
+                      boxShadow: focusedField === 'message' 
+                        ? '0 0 20px rgba(0, 255, 255, 0.5)' 
+                        : '0 0 0px rgba(0, 255, 255, 0)'
+                    }}
+                    required
                   />
-                  {focusedField === 'message' && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyber-cyan animate-pulse" />
-                  )}
-                </div>
+                </motion.div>
 
-                {/* Submit Button */}
-                <button
+                {/* Enhanced Submit Button */}
+                <motion.button
                   type="submit"
-                  disabled={isSubmitting || submitStatus === 'success'}
-                  className="w-full cyber-button relative disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-black border-2 border-cyber-cyan text-cyber-cyan 
+                           font-mono font-bold uppercase tracking-wider
+                           hover:bg-cyber-cyan hover:text-black hover:shadow-neon-cyan
+                           disabled:opacity-50 disabled:cursor-not-allowed
+                           transition-all duration-300 relative overflow-hidden group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2 solar-yellow ultra-thin">
-                      <span className="animate-spin">⟳</span> TRANSMITTING...
-                    </span>
-                  ) : submitStatus === 'success' ? (
-                    <span className="aurora-green ultra-light">✓ TRANSMISSION.COMPLETE</span>
-                  ) : (
-                    <span className="plasma-cyan ultra-thin">TRANSMIT MESSAGE</span>
-                  )}
-                </button>
-
-                {/* Status Message */}
-                {submitStatus === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center aurora-green font-mono text-sm ultra-thin"
+                  <motion.span
+                    animate={isSubmitting ? {
+                      opacity: [1, 0.5, 1]
+                    } : {}}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity
+                    }}
                   >
-                    CONNECTION.ESTABLISHED.SUCCESSFULLY
-                  </motion.div>
-                )}
+                    {isSubmitting ? 'TRANSMITTING...' : 'INITIATE.TRANSMISSION'}
+                  </motion.span>
+                  
+                  {/* Scanning effect on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/20 to-transparent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{
+                      x: '100%',
+                      transition: {
+                        duration: 0.8,
+                        repeat: Infinity,
+                        ease: 'linear'
+                      }
+                    }}
+                  />
+                </motion.button>
               </form>
 
-              {/* Contact Links */}
-              <div className="mt-12 pt-8 border-t border-cyber-cyan/20">
-                <h3 className="solar-yellow font-mono text-sm ultra-thin mb-6">
-                  ALTERNATIVE.CHANNELS
-                </h3>
-                
-                <div className="space-y-4">
-                  {/* GitHub */}
-                  <a href="#" className="block border border-cyber-purple/30 bg-black/30 p-4 
-                                        hover:border-cyber-purple transition-all group">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="nebula-pink font-mono text-sm ultra-thin">GITHUB.REPO</div>
-                        <div className="quantum-blue text-xs ultra-thin mt-1">@yourusername</div>
-                      </div>
-                      <span className="nebula-pink ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </span>
-                    </div>
-                  </a>
-
-                  {/* LinkedIn */}
-                  <a href="#" className="block border border-cyber-cyan/30 bg-black/30 p-4 
-                                        hover:border-cyber-cyan transition-all group">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="plasma-cyan font-mono text-sm ultra-thin">LINKEDIN.PROFILE</div>
-                        <div className="quantum-blue text-xs ultra-thin mt-1">/in/yourprofile</div>
-                      </div>
-                      <span className="plasma-cyan ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </span>
-                    </div>
-                  </a>
-
-                  {/* Email */}
-                  <a href="mailto:hello@domain.com" className="block border border-cyber-pink/30 bg-black/30 p-4 
-                                                               hover:border-cyber-pink transition-all group">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="fusion-orange font-mono text-sm ultra-thin">EMAIL.DIRECT</div>
-                        <div className="quantum-blue text-xs ultra-thin mt-1">hello@domain.com</div>
-                      </div>
-                      <span className="fusion-orange ultra-thin opacity-0 group-hover:opacity-100 transition-opacity">
-                        →
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              </div>
-            </div>
+              {/* Enhanced Footer */}
+              <motion.div 
+                variants={staggerItem}
+                className="mt-8 pt-8 border-t border-cyber-purple/30"
+              >
+                <p className="text-gray-500 font-mono text-xs text-center">
+                  ENCRYPTED.END-TO-END // QUANTUM.SECURED
+                </p>
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
