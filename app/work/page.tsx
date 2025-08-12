@@ -161,16 +161,121 @@ export default function WorkPage() {
                   </span>
                 ))}
               </motion.div>
-            </div>
 
-            <motion.div
-              className="absolute bottom-20 left-1/2 -translate-x-1/2"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <div className="text-cyber-cyan opacity-50 text-sm">SCROLL TO EXPLORE</div>
-              <div className="w-px h-16 bg-gradient-to-b from-cyber-cyan to-transparent mx-auto mt-2" />
-            </motion.div>
+              {/* Scroll to Explore - Centered below experience text */}
+              <motion.div
+                className="mt-16 flex flex-col items-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+              >
+                <motion.div 
+                  className="relative"
+                  animate={{ 
+                    y: [0, 8, 0],
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  {/* Glow effect behind text */}
+                  <div className="absolute inset-0 blur-2xl bg-cyber-cyan/20 -z-10 scale-150" />
+                  
+                  {/* Main text with enhanced visibility */}
+                  <div className="text-cyber-cyan text-center">
+                    <motion.div 
+                      className="font-bold text-lg tracking-[0.3em] uppercase"
+                      animate={{ 
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      SCROLL TO EXPLORE
+                    </motion.div>
+                    
+                    {/* Animated arrows */}
+                    <div className="flex justify-center gap-4 mt-2">
+                      <motion.span
+                        className="text-2xl"
+                        animate={{ 
+                          y: [0, 5, 0],
+                          opacity: [0.4, 1, 0.4]
+                        }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
+                      >
+                        ▼
+                      </motion.span>
+                      <motion.span
+                        className="text-2xl"
+                        animate={{ 
+                          y: [0, 5, 0],
+                          opacity: [0.4, 1, 0.4]
+                        }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
+                      >
+                        ▼
+                      </motion.span>
+                      <motion.span
+                        className="text-2xl"
+                        animate={{ 
+                          y: [0, 5, 0],
+                          opacity: [0.4, 1, 0.4]
+                        }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
+                      >
+                        ▼
+                      </motion.span>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* Enhanced animated line */}
+                <motion.div 
+                  className="w-px h-24 bg-gradient-to-b from-cyber-cyan via-cyber-cyan/30 to-transparent mt-4 relative"
+                  animate={{ 
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  {/* Animated dots moving down the line */}
+                  <motion.div
+                    className="absolute w-1.5 h-1.5 bg-cyber-cyan rounded-full left-1/2 -translate-x-1/2 shadow-[0_0_10px_rgba(0,255,255,0.8)]"
+                    animate={{ 
+                      top: ['0%', '100%'],
+                      opacity: [1, 0]
+                    }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity,
+                      ease: "easeIn"
+                    }}
+                  />
+                  <motion.div
+                    className="absolute w-1.5 h-1.5 bg-cyber-cyan rounded-full left-1/2 -translate-x-1/2 shadow-[0_0_10px_rgba(0,255,255,0.8)]"
+                    animate={{ 
+                      top: ['0%', '100%'],
+                      opacity: [1, 0]
+                    }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity,
+                      ease: "easeIn",
+                      delay: 0.5
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </motion.section>
 
