@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePostHog } from 'posthog-js/react'
 import GlitchText from './GlitchText'
 import LightBulbText from './LightBulbText'
 import { commandEvents } from '@/utils/commandEvents'
@@ -27,6 +28,7 @@ interface TerminalProps {
 }
 
 const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
+  const posthog = usePostHog()
   const [commands, setCommands] = useState<Command[]>([
     {
       id: 1,
@@ -55,6 +57,14 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()
     let output: string | React.ReactNode = ''
+
+    // Track command usage
+    if (posthog && trimmedCmd) {
+      posthog.capture('terminal_command', {
+        command: trimmedCmd,
+        timestamp: new Date().toISOString(),
+      })
+    }
 
     switch (trimmedCmd) {
       case 'help':

@@ -6,6 +6,8 @@ import DataStream from '@/components/DataStream'
 import HolographicOverlay from '@/components/HolographicOverlay'
 import ScanLines from '@/components/ScanLines'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
+import { CSPostHogProvider } from './providers'
+import PostHogPageView from './PostHogPageView'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -88,16 +90,19 @@ export default function RootLayout({
           </>
         )}
         <ErrorBoundary>
-          <div className="fixed inset-0 bg-cyber-darker -z-50" />
-          <div className="fixed inset-0 opacity-30 -z-40">
-            <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px]" />
-          </div>
-          <CircuitBoard />
-          <HolographicOverlay />
-          <DataStream />
-          <ScanLines />
-          {children}
-          <PerformanceMonitor />
+          <CSPostHogProvider>
+            <PostHogPageView />
+            <div className="fixed inset-0 bg-cyber-darker -z-50" />
+            <div className="fixed inset-0 opacity-30 -z-40">
+              <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px]" />
+            </div>
+            <CircuitBoard />
+            <HolographicOverlay />
+            <DataStream />
+            <ScanLines />
+            {children}
+            <PerformanceMonitor />
+          </CSPostHogProvider>
         </ErrorBoundary>
       </body>
     </html>
