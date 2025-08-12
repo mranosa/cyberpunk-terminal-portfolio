@@ -79,6 +79,15 @@
 }
 
 @layer components {
+  /* Hide scrollbar for terminal but keep functionality */
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
   .ultra-thin-border {
     position: relative;
     border: 0.5px solid rgba(0, 255, 255, 0.3);

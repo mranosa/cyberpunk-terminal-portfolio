@@ -46,14 +46,171 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
   const [showScrollHint, setShowScrollHint] = useState(false)
+  const [isScrollable, setIsScrollable] = useState(false)
+  const [scrollThumbPosition, setScrollThumbPosition] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragStartY, setDragStartY] = useState(0)
+  const [dragStartScrollTop, setDragStartScrollTop] = useState(0)
+  const [lastScrollTime, setLastScrollTime] = useState(Date.now())
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const scrollbarRef = useRef<HTMLDivElement>(null)
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Check if content is scrollable
+  const checkScrollable = () => {
+    if (terminalRef.current) {
+      const hasScroll = terminalRef.current.scrollHeight > terminalRef.current.clientHeight
+      setIsScrollable(hasScroll)
+    }
+  }
+
+  // Calculate scrollbar thumb position and size
+  const getThumbDimensions = () => {
+    if (!terminalRef.current) return { height: 40, position: 0 }
+    
+    const { scrollTop, scrollHeight, clientHeight } = terminalRef.current
+    const thumbHeight = Math.max(30, (clientHeight / scrollHeight) * clientHeight)
+    const maxScrollTop = scrollHeight - clientHeight
+    const scrollPercent = maxScrollTop > 0 ? scrollTop / maxScrollTop : 0
+    const maxThumbTop = clientHeight - thumbHeight - 16 // 16px for padding (8px top + 8px bottom)
+    const thumbPosition = 8 + (scrollPercent * maxThumbTop) // 8px top padding
+    
+    return { height: thumbHeight, position: thumbPosition }
+  }
+
+  // Update scrollbar thumb position
+  const updateScrollThumbPosition = () => {
+    if (terminalRef.current && isScrollable) {
+      const { position } = getThumbDimensions()
+      setScrollThumbPosition(position)
+    }
+  }
+
+  // Handle scrollbar drag (works for both thumb and hint)
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!terminalRef.current) return
+    
+    setIsDragging(true)
+    setDragStartY(e.clientY)
+    setDragStartScrollTop(terminalRef.current.scrollTop)
+    setShowScrollHint(true) // Show hint while dragging
+    
+    // Clear any existing hide timeout
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+    
+    // Prevent text selection while dragging
+    e.preventDefault()
+  }
+
+  // Auto-hide scroll hint after 3 seconds of inactivity
+  const scheduleHideHint = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+    
+    hideTimeoutRef.current = setTimeout(() => {
+      if (!isDragging) {
+        setShowScrollHint(false)
+      }
+    }, 3000)
+  }
+
+  // Show hint and schedule auto-hide
+  const showHintWithAutoHide = () => {
+    setShowScrollHint(true)
+    scheduleHideHint()
+  }
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || !terminalRef.current) return
+      
+      const deltaY = e.clientY - dragStartY
+      const { scrollHeight, clientHeight } = terminalRef.current
+      const maxScroll = scrollHeight - clientHeight
+      
+      // Calculate new scroll position based on drag distance
+      const scrollRatio = deltaY / clientHeight
+      const newScrollTop = dragStartScrollTop + (scrollRatio * scrollHeight)
+      
+      // Clamp scroll position
+      terminalRef.current.scrollTop = Math.max(0, Math.min(maxScroll, newScrollTop))
+      updateScrollThumbPosition()
+    }
+
+    const handleMouseUp = () => {
+      setIsDragging(false)
+      scheduleHideHint() // Start auto-hide timer when dragging stops
+    }
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove)
+      document.addEventListener('mouseup', handleMouseUp)
+      
+      // Add cursor style while dragging
+      document.body.style.cursor = 'grabbing'
+      document.body.style.userSelect = 'none'
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+      document.body.style.cursor = ''
+      document.body.style.userSelect = ''
+    }
+  }, [isDragging, dragStartY, dragStartScrollTop])
 
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
+      checkScrollable()
+      // Small delay to ensure DOM is updated before calculating position
+      setTimeout(() => updateScrollThumbPosition(), 0)
     }
   }, [commands])
+
+  // Check scrollable on window resize and when scrollable state changes
+  useEffect(() => {
+    const handleResize = () => {
+      checkScrollable()
+      updateScrollThumbPosition()
+    }
+    
+    window.addEventListener('resize', handleResize)
+    handleResize() // Initial check
+    
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  
+  // Update thumb position when scrollable state changes
+  useEffect(() => {
+    if (isScrollable) {
+      updateScrollThumbPosition()
+    }
+  }, [isScrollable])
+
+  // Handle scroll events to track activity
+  const handleScroll = () => {
+    updateScrollThumbPosition()
+    setLastScrollTime(Date.now())
+    
+    // Show hint on scroll and schedule auto-hide
+    if (isScrollable) {
+      showHintWithAutoHide()
+    }
+  }
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    }
+  }, [])
 
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()
@@ -233,31 +390,13 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
           </div>
 
           {/* Terminal Body */}
-          <div
-            ref={terminalRef}
-            className="h-[500px] overflow-y-auto p-4 font-mono text-sm bg-black/50 backdrop-blur-sm relative group"
-            onClick={() => inputRef.current?.focus()}
-            onMouseEnter={() => setShowScrollHint(true)}
-            onMouseLeave={() => setShowScrollHint(false)}
-          >
-            {/* Scroll Hint */}
-            <AnimatePresence>
-              {showScrollHint && (
-                <motion.div
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                >
-                  <div className="bg-cyber-cyan/10 backdrop-blur-sm border border-cyber-cyan/30 rounded px-2 py-1">
-                    <span className="text-xs font-mono plasma-cyan ultra-thin whitespace-nowrap">
-                      ↕ Drag to scroll
-                    </span>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="relative h-[500px] bg-black/50">
+            <div
+              ref={terminalRef}
+              className="h-full overflow-y-auto p-4 font-mono text-sm backdrop-blur-sm hide-scrollbar"
+              onClick={() => inputRef.current?.focus()}
+              onScroll={handleScroll}
+            >
             {commands.map((cmd) => (
               <div key={cmd.id} className="mb-4">
                 {cmd.command && (
@@ -290,6 +429,68 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                 />
               </div>
             </div>
+          </div>
+          
+            {/* Custom Draggable Scrollbar */}
+            {isScrollable && (
+              <div 
+                ref={scrollbarRef}
+                className="absolute right-0 top-0 h-full w-4 group/scrollbar"
+                onMouseEnter={showHintWithAutoHide}
+                onMouseLeave={() => {
+                  if (!isDragging) {
+                    scheduleHideHint()
+                  }
+                }}
+                onClick={showHintWithAutoHide}
+              >
+                {/* Scrollbar Track */}
+                <div className="absolute right-1 top-2 bottom-2 w-2 bg-cyber-dark/50 rounded-full">
+                {/* Scrollbar Thumb */}
+                <div
+                  className="absolute right-0 w-2 bg-gradient-to-b from-cyber-cyan to-cyber-purple rounded-full transition-all duration-200 hover:from-cyber-cyan hover:via-cyber-purple hover:to-cyber-pink hover:shadow-[0_0_10px_rgba(0,255,255,0.5)] cursor-grab active:cursor-grabbing"
+                  style={{
+                    top: `${scrollThumbPosition}px`,
+                    height: `${getThumbDimensions().height}px`,
+                  }}
+                  onMouseDown={handleMouseDown}
+                />
+              </div>
+              <AnimatePresence>
+                {showScrollHint && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: isDragging ? 1 : [1, 1.1, 1],
+                    }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ 
+                      duration: 0.3,
+                      scale: isDragging ? {} : {
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        duration: 1.5
+                      }
+                    }}
+                    className="absolute right-6 z-20"
+                    style={{ 
+                      top: `${scrollThumbPosition + getThumbDimensions().height / 2 - 16}px`,
+                      cursor: isDragging ? 'grabbing' : 'grab',
+                      pointerEvents: 'auto'
+                    }}
+                    onMouseDown={handleMouseDown}
+                  >
+                    <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-3 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
+                      <span className="text-xs font-mono plasma-cyan ultra-thin whitespace-nowrap select-none">
+                        ↕ Drag
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
         </motion.div>
 
