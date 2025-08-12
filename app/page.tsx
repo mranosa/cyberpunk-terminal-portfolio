@@ -6,22 +6,16 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import { AnimatePresence } from 'framer-motion'
 
 const SplashScreen = dynamic(() => import('@/components/SplashScreen'), {
-  ssr: false,
   loading: () => null,
 })
 
 const Terminal = dynamic(() => import('@/components/Terminal'), {
-  ssr: false,
   loading: () => <div className="w-full h-screen bg-cyber-darker" />,
 })
 
-const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'), {
-  ssr: false,
-})
+const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'))
 
-const MatrixRain = dynamic(() => import('@/components/MatrixRainWrapper'), {
-  ssr: false,
-})
+const MatrixRain = dynamic(() => import('@/components/MatrixRainWrapper'))
 
 function HomeContent() {
   const [showSplash, setShowSplash] = useState(true)

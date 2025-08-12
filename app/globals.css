@@ -63,7 +63,18 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-cyber-cyan to-cyber-purple rounded-full;
+    @apply bg-gradient-to-b from-cyber-cyan to-cyber-purple rounded-full transition-all duration-200;
+    position: relative;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-cyber-cyan via-cyber-purple to-cyber-pink;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    @apply from-cyber-pink to-cyber-cyan;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
   }
 }
 

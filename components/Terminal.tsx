@@ -45,6 +45,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
   const [currentCommand, setCurrentCommand] = useState('')
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
+  const [showScrollHint, setShowScrollHint] = useState(false)
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -234,9 +235,29 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
           {/* Terminal Body */}
           <div
             ref={terminalRef}
-            className="h-[500px] overflow-y-auto p-4 font-mono text-sm bg-black/50 backdrop-blur-sm"
+            className="h-[500px] overflow-y-auto p-4 font-mono text-sm bg-black/50 backdrop-blur-sm relative group"
             onClick={() => inputRef.current?.focus()}
+            onMouseEnter={() => setShowScrollHint(true)}
+            onMouseLeave={() => setShowScrollHint(false)}
           >
+            {/* Scroll Hint */}
+            <AnimatePresence>
+              {showScrollHint && (
+                <motion.div
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                >
+                  <div className="bg-cyber-cyan/10 backdrop-blur-sm border border-cyber-cyan/30 rounded px-2 py-1">
+                    <span className="text-xs font-mono plasma-cyan ultra-thin whitespace-nowrap">
+                      ↕ Drag to scroll
+                    </span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
             {commands.map((cmd) => (
               <div key={cmd.id} className="mb-4">
                 {cmd.command && (
