@@ -344,7 +344,7 @@ function SectionTitle({ number, title, subtitle }: { number: string; title: stri
 function TimelineItem({ job, index, isLeft }: any) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [showAllTech, setShowAllTech] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <motion.div
@@ -354,56 +354,170 @@ function TimelineItem({ job, index, isLeft }: any) {
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className={`w-1/2 ${isLeft ? 'text-right pr-12' : 'pl-12'}`}>
+      <div className={`w-1/2 ${isLeft ? 'text-right pr-8' : 'pl-8'}`}>
         <motion.div
-          className="inline-block w-full max-w-md"
-          whileHover={{ scale: 1.02 }}
+          className={`inline-block w-full ${isLeft ? 'ml-auto' : 'mr-auto'}`}
+          initial={false}
+          animate={{
+            scale: isHovered ? 1.02 : 1,
+            y: isHovered ? -5 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            duration: 0.3
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="border border-cyber-cyan/30 p-6 bg-black/80 backdrop-blur-sm hover:border-cyber-cyan/60 transition-all h-[280px] flex flex-col">
-            <div className="text-cyber-cyan text-sm mb-2">{job.duration}</div>
-            <h3 className="text-xl font-bold text-white mb-1 line-clamp-1">{job.position}</h3>
-            <div className="text-cyber-green mb-2 line-clamp-1">{job.company}</div>
-            <div className="text-gray-500 text-sm mb-4">{job.location} • {job.type}</div>
+          <motion.div 
+            className={`border border-cyber-cyan/30 p-6 flex flex-col relative overflow-hidden`}
+            animate={{
+              borderColor: isHovered ? 'rgba(0, 255, 255, 0.6)' : 'rgba(0, 255, 255, 0.3)',
+              height: isHovered ? 'auto' : '150px',
+              minHeight: isHovered ? '280px' : '150px'
+            }}
+            transition={{
+              height: {
+                type: "spring",
+                stiffness: 200,
+                damping: 25,
+                duration: 0.4
+              },
+              borderColor: {
+                duration: 0.3
+              }
+            }}
+            style={{ backgroundColor: '#0a0a0a' }}
+          >
+            {/* Glow effect on hover */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent"
+              initial={{ x: '-100%' }}
+              animate={{
+                x: isHovered ? '100%' : '-100%'
+              }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut"
+              }}
+              style={{ pointerEvents: 'none' }}
+            />
+            <motion.div 
+              className="text-cyber-cyan text-sm mb-2"
+              animate={{ opacity: isHovered ? 1 : 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              {job.duration}
+            </motion.div>
+            <motion.h3 
+              className={`text-xl font-bold text-white mb-1 ${!isHovered && 'line-clamp-1'}`}
+              animate={{ 
+                scale: isHovered ? 1.02 : 1,
+                color: isHovered ? '#ffffff' : '#f0f0f0'
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {job.position}
+            </motion.h3>
+            <motion.div 
+              className={`text-cyber-green mb-2 ${!isHovered && 'line-clamp-1'}`}
+              animate={{ opacity: isHovered ? 1 : 0.85 }}
+              transition={{ duration: 0.2 }}
+            >
+              {job.company}
+            </motion.div>
+            <motion.div 
+              className="text-gray-500 text-sm"
+              animate={{ 
+                marginBottom: isHovered ? '16px' : '0px',
+                opacity: isHovered ? 1 : 0.8
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {job.location} • {job.type}
+            </motion.div>
             
-            <div className="space-y-2 flex-grow overflow-hidden">
-              {job.achievements.slice(0, 2).map((achievement: string, i: number) => (
-                <div key={i} className="text-gray-400 text-sm line-clamp-2">
+            {/* Achievements - Only visible on hover */}
+            <motion.div 
+              className="space-y-2 flex-grow"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ 
+                opacity: isHovered ? 1 : 0,
+                height: isHovered ? 'auto' : 0,
+                marginBottom: isHovered ? '16px' : '0px'
+              }}
+              transition={{ 
+                duration: 0.4,
+                ease: "easeInOut"
+              }}
+            >
+              {job.achievements.map((achievement: string, i: number) => (
+                <motion.div 
+                  key={i} 
+                  className="text-gray-400 text-sm"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ 
+                    opacity: isHovered ? 1 : 0, 
+                    x: isHovered ? 0 : -20
+                  }}
+                  transition={{
+                    delay: isHovered ? i * 0.05 : 0,
+                    duration: 0.3
+                  }}
+                >
                   <span className="text-cyber-cyan mr-2">▸</span>
                   {achievement}
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-1 mt-4 relative">
-              {job.technologies.slice(0, 4).map((tech: string) => (
-                <span key={tech} className="text-xs border border-cyber-cyan/20 px-2 py-1 text-gray-500">
-                  {tech}
-                </span>
-              ))}
-              {job.technologies.length > 4 && (
-                <span 
-                  className="text-xs text-gray-600 hover:text-cyber-cyan cursor-pointer relative px-1"
-                  onMouseEnter={() => setShowAllTech(true)}
-                  onMouseLeave={() => setShowAllTech(false)}
+            {/* Technologies - Only visible on hover, showing all */}
+            <motion.div 
+              className="flex flex-wrap gap-1"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ 
+                opacity: isHovered ? 1 : 0,
+                height: isHovered ? 'auto' : 0
+              }}
+              transition={{ 
+                duration: 0.3,
+                delay: isHovered ? 0.1 : 0
+              }}
+            >
+              {job.technologies.map((tech: string, i: number) => (
+                <motion.span 
+                  key={tech} 
+                  className="text-xs border border-cyber-cyan/20 px-2 py-1 text-gray-500 hover:border-cyber-cyan/40 hover:text-gray-400 transition-all"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ 
+                    opacity: isHovered ? 1 : 0,
+                    scale: isHovered ? 1 : 0.8
+                  }}
+                  transition={{
+                    delay: isHovered ? i * 0.02 : 0,
+                    duration: 0.2
+                  }}
                 >
-                  +{job.technologies.length - 4}
-                  {showAllTech && (
-                    <div className={`absolute ${isLeft ? 'right-0' : 'left-0'} bottom-full mb-2 p-2 bg-black/95 border border-cyber-cyan/50 rounded z-20 whitespace-nowrap`}>
-                      <div className="flex flex-wrap gap-1 max-w-xs">
-                        {job.technologies.slice(4).map((tech: string) => (
-                          <span key={tech} className="text-xs border border-cyber-cyan/30 px-2 py-0.5 text-gray-400">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </span>
-              )}
-            </div>
-          </div>
+                  {tech}
+                </motion.span>
+              ))}
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Connection Line from Card to Timeline */}
+      <motion.div
+        className={`absolute top-1/2 -translate-y-1/2 h-px bg-cyber-cyan/30 ${
+          isLeft ? 'right-1/2 left-8' : 'left-1/2 right-8'
+        }`}
+        initial={{ scaleX: 0 }}
+        animate={isInView ? { scaleX: 1 } : {}}
+        transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
+        style={{ originX: isLeft ? 1 : 0 }}
+      />
 
       {/* Timeline Dot */}
       <motion.div
@@ -418,108 +532,234 @@ function TimelineItem({ job, index, isLeft }: any) {
 
 // Component: Skill Card
 function SkillCard({ title, skills, color, delay }: any) {
+  const [isHovered, setIsHovered] = useState(false)
+  
   const colorClasses: any = {
-    cyan: 'border-cyber-cyan/30 hover:border-cyber-cyan text-cyber-cyan',
-    purple: 'border-nova-purple/30 hover:border-nova-purple text-nova-purple',
-    green: 'border-cyber-green/30 hover:border-cyber-green text-cyber-green',
-    orange: 'border-cyber-orange/30 hover:border-cyber-orange text-cyber-orange',
-    pink: 'border-pink-400/30 hover:border-pink-400 text-pink-400'
+    cyan: 'border-cyber-cyan/30 text-cyber-cyan',
+    purple: 'border-nova-purple/30 text-nova-purple',
+    green: 'border-cyber-green/30 text-cyber-green',
+    orange: 'border-cyber-orange/30 text-cyber-orange',
+    pink: 'border-pink-400/30 text-pink-400'
+  }
+  
+  const glowColors: any = {
+    cyan: 'rgba(0, 255, 255, 0.05)',
+    purple: 'rgba(147, 112, 219, 0.05)',
+    green: 'rgba(0, 250, 154, 0.05)',
+    orange: 'rgba(255, 140, 0, 0.05)',
+    pink: 'rgba(255, 105, 180, 0.05)'
   }
 
   return (
     <motion.div
-      className={`border p-6 bg-black/60 backdrop-blur-sm transition-all ${colorClasses[color]}`}
-      initial={{ opacity: 0, y: 20, rotateX: -10 }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-      whileHover={{ y: -5, scale: 1.02 }}
+      className={`relative ${colorClasses[color]}`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      style={{ transformStyle: 'preserve-3d' }}
+      animate={{
+        scale: isHovered ? 1.02 : 1,
+        y: isHovered ? -5 : 0,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <h3 className="font-bold mb-4 text-sm uppercase tracking-wider">{title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {skills?.map((skill: any, i: number) => (
-          <motion.span
-            key={skill.name}
-            className="text-xs border border-current/30 px-3 py-1 text-gray-400 hover:text-current hover:border-current/60 transition-all"
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: delay + i * 0.05 }}
-            whileHover={{ scale: 1.1 }}
-          >
-            {skill.name}
-          </motion.span>
-        ))}
-      </div>
+      <motion.div
+        className={`border p-6 relative overflow-hidden ${colorClasses[color]}`}
+        animate={{
+          borderColor: isHovered ? 
+            color === 'cyan' ? 'rgba(0, 255, 255, 0.6)' :
+            color === 'purple' ? 'rgba(147, 112, 219, 0.6)' :
+            color === 'green' ? 'rgba(0, 250, 154, 0.6)' :
+            color === 'orange' ? 'rgba(255, 140, 0, 0.6)' :
+            'rgba(255, 105, 180, 0.6)' 
+            : undefined,
+          height: isHovered ? 'auto' : '100px',
+          minHeight: isHovered ? '100px' : '100px'
+        }}
+        transition={{
+          height: { type: "spring", stiffness: 200, damping: 25 },
+          borderColor: { duration: 0.3 }
+        }}
+        style={{ backgroundColor: '#0a0a0a' }}
+      >
+        {/* Glow effect on hover */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ x: '-100%' }}
+          animate={{ x: isHovered ? '100%' : '-100%' }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          style={{ 
+            background: `linear-gradient(90deg, transparent, ${glowColors[color]}, transparent)`,
+            pointerEvents: 'none' 
+          }}
+        />
+        
+        <motion.h3 
+          className="font-bold mb-4 text-sm uppercase tracking-wider"
+          animate={{ scale: isHovered ? 1.05 : 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          {title}
+        </motion.h3>
+        
+        <motion.div 
+          className="flex flex-wrap gap-2"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            height: isHovered ? 'auto' : 0
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {skills?.map((skill: any, i: number) => (
+            <motion.span
+              key={skill.name}
+              className="text-xs border border-current/30 px-3 py-1 text-gray-400 hover:text-current hover:border-current/60 transition-all"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isHovered ? 1 : 0,
+                scale: isHovered ? 1 : 0.8
+              }}
+              transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
+            >
+              {skill.name}
+            </motion.span>
+          ))}
+        </motion.div>
+      </motion.div>
     </motion.div>
   )
 }
 
 // Component: Project Card
 function ProjectCard({ project, index }: any) {
-  const [showAllTech, setShowAllTech] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
   
   return (
     <motion.div
-      className="group relative"
+      className="relative"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
+      animate={{
+        scale: isHovered ? 1.02 : 1,
+        y: isHovered ? -5 : 0,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className="border border-nova-purple/30 p-6 bg-black/60 backdrop-blur-sm hover:border-nova-purple/60 transition-all h-full"
-        whileHover={{ scale: 1.02, y: -5 }}
+        className="border border-nova-purple/30 p-6 relative overflow-hidden"
+        animate={{
+          borderColor: isHovered ? 'rgba(147, 112, 219, 0.6)' : 'rgba(147, 112, 219, 0.3)',
+          height: isHovered ? 'auto' : '180px',
+          minHeight: isHovered ? '180px' : '180px'
+        }}
+        transition={{
+          height: { type: "spring", stiffness: 200, damping: 25 },
+          borderColor: { duration: 0.3 }
+        }}
+        style={{ backgroundColor: '#0a0a0a' }}
       >
+        {/* Glow effect on hover */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/5 to-transparent"
+          initial={{ x: '-100%' }}
+          animate={{ x: isHovered ? '100%' : '-100%' }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          style={{ pointerEvents: 'none' }}
+        />
+        
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="text-xl font-bold text-cyber-cyan mb-1">{project.title}</h3>
+            <motion.h3 
+              className="text-xl font-bold text-cyber-cyan mb-1"
+              animate={{ scale: isHovered ? 1.02 : 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              {project.title}
+            </motion.h3>
             <div className="text-sm text-nova-purple">{project.type}</div>
           </div>
-          <span className="text-xs border border-cyber-orange text-cyber-orange px-2 py-1">
+          <motion.span 
+            className="text-xs border border-cyber-orange text-cyber-orange px-2 py-1"
+            animate={{ 
+              borderColor: isHovered ? 'rgba(255, 140, 0, 0.8)' : 'rgba(255, 140, 0, 0.5)',
+              scale: isHovered ? 1.05 : 1
+            }}
+            transition={{ duration: 0.3 }}
+          >
             MVP
-          </span>
+          </motion.span>
         </div>
 
-        <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+        <motion.p 
+          className="text-gray-400 text-sm"
+          animate={{ 
+            marginBottom: isHovered ? '16px' : '0px',
+            opacity: isHovered ? 1 : 0.8
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {project.description}
+        </motion.p>
 
+        {/* Highlights - Only visible on hover */}
         {project.highlights && (
-          <div className="space-y-1 mb-4">
-            {project.highlights.slice(0, 2).map((highlight: string, i: number) => (
-              <div key={i} className="text-gray-500 text-xs">
+          <motion.div 
+            className="space-y-1"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ 
+              opacity: isHovered ? 1 : 0,
+              height: isHovered ? 'auto' : 0,
+              marginBottom: isHovered ? '16px' : '0px'
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {project.highlights.map((highlight: string, i: number) => (
+              <motion.div 
+                key={i} 
+                className="text-gray-500 text-xs"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ 
+                  opacity: isHovered ? 1 : 0,
+                  x: isHovered ? 0 : -20
+                }}
+                transition={{ delay: isHovered ? i * 0.05 : 0, duration: 0.3 }}
+              >
                 <span className="text-cyber-green">▸</span> {highlight}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
 
-        <div className="flex flex-wrap gap-1 relative">
-          {project.tech.slice(0, 5).map((tech: string) => (
-            <span key={tech} className="text-xs border border-nova-purple/20 px-2 py-0.5 text-gray-500">
-              {tech}
-            </span>
-          ))}
-          {project.tech.length > 5 && (
-            <span 
-              className="text-xs text-gray-600 hover:text-cyber-cyan cursor-pointer relative"
-              onMouseEnter={() => setShowAllTech(true)}
-              onMouseLeave={() => setShowAllTech(false)}
+        {/* Technologies - Only visible on hover, showing all */}
+        <motion.div 
+          className="flex flex-wrap gap-1"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            height: isHovered ? 'auto' : 0
+          }}
+          transition={{ duration: 0.3, delay: isHovered ? 0.1 : 0 }}
+        >
+          {project.tech.map((tech: string, i: number) => (
+            <motion.span 
+              key={tech} 
+              className="text-xs border border-nova-purple/20 px-2 py-0.5 text-gray-500 hover:border-nova-purple/40 hover:text-gray-400 transition-all"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isHovered ? 1 : 0,
+                scale: isHovered ? 1 : 0.8
+              }}
+              transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
             >
-              +{project.tech.length - 5}
-              {showAllTech && (
-                <div className="absolute bottom-full left-0 mb-2 p-2 bg-black/95 border border-cyber-cyan/50 rounded z-20 whitespace-nowrap">
-                  <div className="flex flex-wrap gap-1 max-w-xs">
-                    {project.tech.slice(5).map((tech: string) => (
-                      <span key={tech} className="text-xs border border-nova-purple/30 px-2 py-0.5 text-gray-400">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </span>
-          )}
-        </div>
+              {tech}
+            </motion.span>
+          ))}
+        </motion.div>
       </motion.div>
     </motion.div>
   )
@@ -597,38 +837,112 @@ function TestimonialMarquee() {
 
 // Component: Testimonial Card
 function TestimonialCard({ rec, onHover, cardId }: any) {
+  const [isHovered, setIsHovered] = useState(false)
+  
   return (
-    <div 
+    <motion.div 
       className="flex-shrink-0 w-[400px]"
-      onMouseEnter={() => onHover(cardId)}
-      onMouseLeave={() => onHover(null)}
+      onMouseEnter={() => {
+        onHover(cardId)
+        setIsHovered(true)
+      }}
+      onMouseLeave={() => {
+        onHover(null)
+        setIsHovered(false)
+      }}
+      animate={{
+        scale: isHovered ? 1.02 : 1,
+        y: isHovered ? -5 : 0,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        duration: 0.3
+      }}
     >
       <motion.div
-        className="border border-pink-400/30 p-4 bg-black/60 backdrop-blur-sm hover:border-pink-400/60 transition-all min-h-[200px] flex flex-col"
-        whileHover={{ scale: 1.02 }}
+        className="border border-pink-400/30 p-4 relative overflow-hidden flex flex-col"
+        animate={{
+          borderColor: isHovered ? 'rgba(255, 105, 180, 0.6)' : 'rgba(255, 105, 180, 0.3)',
+          height: isHovered ? 'auto' : '120px',
+          minHeight: isHovered ? '200px' : '120px'
+        }}
+        transition={{
+          height: { type: "spring", stiffness: 200, damping: 25 },
+          borderColor: { duration: 0.3 }
+        }}
+        style={{ backgroundColor: '#0a0a0a' }}
       >
+        {/* Glow effect on hover */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/5 to-transparent"
+          initial={{ x: '-100%' }}
+          animate={{ x: isHovered ? '100%' : '-100%' }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          style={{ pointerEvents: 'none' }}
+        />
+        
         <div className="flex items-start gap-3 mb-3">
-          <div className="text-2xl">{rec.avatar}</div>
+          <motion.div 
+            className="text-2xl"
+            animate={{ scale: isHovered ? 1.1 : 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {rec.avatar}
+          </motion.div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-bold text-cyber-cyan truncate">{rec.name}</h3>
-              <div className="flex gap-0.5 flex-shrink-0">
+              <motion.h3 
+                className={`text-sm font-bold text-cyber-cyan ${!isHovered && 'truncate'}`}
+                animate={{ scale: isHovered ? 1.02 : 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                {rec.name}
+              </motion.h3>
+              <motion.div 
+                className="flex gap-0.5 flex-shrink-0"
+                animate={{ opacity: isHovered ? 1 : 0.7 }}
+                transition={{ duration: 0.3 }}
+              >
                 {[...Array(5)].map((_, i) => (
                   <StarIcon key={i} className="w-2.5 h-2.5 text-cyber-orange" />
                 ))}
-              </div>
+              </motion.div>
             </div>
-            <div className="text-xs text-gray-400 truncate">
+            <motion.div 
+              className={`text-xs text-gray-400 ${!isHovered && 'truncate'}`}
+              animate={{ opacity: isHovered ? 1 : 0.8 }}
+              transition={{ duration: 0.3 }}
+            >
               {rec.position} at {rec.company}
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        <blockquote className="text-gray-300 text-xs italic flex-grow overflow-y-auto">
+        {/* Quote - Only fully visible on hover */}
+        <motion.blockquote 
+          className="text-gray-300 text-xs italic flex-grow"
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            marginBottom: isHovered ? '12px' : '0px'
+          }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
           "{rec.recommendation}"
-        </blockquote>
+        </motion.blockquote>
 
-        <div className="mt-3 text-xs text-gray-500">
+        {/* LinkedIn link - Only visible on hover */}
+        <motion.div 
+          className="text-xs text-gray-500"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            height: isHovered ? 'auto' : 0
+          }}
+          transition={{ duration: 0.3 }}
+        >
           <a 
             href={`https://${rec.contact.linkedin}`}
             target="_blank"
@@ -638,9 +952,9 @@ function TestimonialCard({ rec, onHover, cardId }: any) {
             <LinkIcon className="w-3 h-3 mr-1" />
             LinkedIn
           </a>
-        </div>
+        </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
