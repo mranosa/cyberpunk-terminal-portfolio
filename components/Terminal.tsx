@@ -48,6 +48,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
   const [showScrollHint, setShowScrollHint] = useState(false)
   const [isScrollable, setIsScrollable] = useState(false)
   const [scrollThumbPosition, setScrollThumbPosition] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [dragStartY, setDragStartY] = useState(0)
   const [dragStartScrollTop, setDragStartScrollTop] = useState(0)
@@ -177,6 +178,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
     const handleResize = () => {
       checkScrollable()
       updateScrollThumbPosition()
+      setIsMobile(window.innerWidth <= 768)
     }
     
     window.addEventListener('resize', handleResize)
@@ -211,6 +213,15 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
       }
     }
   }, [])
+
+  const executeCommand = () => {
+    // Emit command event for matrix rain effect
+    if (currentCommand.trim()) {
+      commandEvents.emit(currentCommand.trim())
+    }
+    processCommand(currentCommand)
+    setCurrentCommand('')
+  }
 
   const processCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()
@@ -301,12 +312,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      // Emit command event for matrix rain effect
-      if (currentCommand.trim()) {
-        commandEvents.emit(currentCommand.trim())
-      }
-      processCommand(currentCommand)
-      setCurrentCommand('')
+      executeCommand()
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       if (historyIndex < commandHistory.length - 1) {
@@ -423,8 +429,8 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
             ))}
 
             {/* Current Input Line */}
-            <div className="flex items-start gap-2">
-              <span className="pulsar-lime ultra-light">$</span>
+            <div className="flex items-center gap-2">
+              <span className="pulsar-lime ultra-light self-start">$</span>
               <div className="flex-1 relative">
                 <div className="flex items-center">
                   <span className="plasma-cyan ultra-thin">{currentCommand}</span>
@@ -441,6 +447,19 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                   spellCheck={false}
                 />
               </div>
+              {/* Execute Button - Mobile Only */}
+              {isMobile && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={executeCommand}
+                  className="md:hidden px-4 py-1.5 bg-cyber-cyan/20 hover:bg-cyber-cyan/30 border border-cyber-cyan/50 rounded text-cyber-cyan text-xs font-mono font-bold transition-all active:bg-cyber-cyan/40 shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+                  style={{ minWidth: '70px' }}
+                >
+                  RUN →
+                </motion.button>
+              )}
             </div>
           </div>
           
