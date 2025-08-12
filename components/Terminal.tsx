@@ -496,7 +496,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                   >
                     <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-3 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
                       <span className="text-xs font-mono plasma-cyan ultra-thin whitespace-nowrap select-none">
-                        ↕ Drag
+                        ↕ Drag Me
                       </span>
                     </div>
                   </motion.div>
