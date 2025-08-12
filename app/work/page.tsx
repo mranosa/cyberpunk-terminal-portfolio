@@ -115,7 +115,7 @@ export default function WorkPage() {
             }} />
           </div>
 
-          <div className="relative z-10 text-center px-8 pb-32">
+          <div className="relative z-10 text-center px-4 md:px-8 pb-16 md:pb-32">
             <motion.button
               onClick={handleBackToTerminal}
               className="mb-8 text-cyber-cyan hover:text-cyber-green transition-colors inline-flex items-center gap-2 group"
@@ -280,7 +280,7 @@ export default function WorkPage() {
         </motion.section>
 
         {/* Work Experience Timeline */}
-        <section className="scroll-section min-h-screen py-32 px-8 relative">
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="max-w-7xl mx-auto"
             initial={{ opacity: 0 }}
@@ -294,8 +294,8 @@ export default function WorkPage() {
             />
 
             <div className="relative mt-16">
-              {/* Timeline Line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan via-cyber-green to-transparent" />
+              {/* Timeline Line - Left on mobile, center on desktop */}
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan via-cyber-green to-transparent" />
 
               {workExperience.map((job, index) => (
                 <TimelineItem
@@ -310,7 +310,7 @@ export default function WorkPage() {
         </section>
 
         {/* Skills Matrix */}
-        <section className="scroll-section min-h-screen py-32 px-8 relative overflow-hidden">
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
           <FloatingParticles />
           
           <motion.div
@@ -325,7 +325,7 @@ export default function WorkPage() {
               subtitle="TOOLS OF THE TRADE"
             />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-16">
               <SkillCard title="LANGUAGES" skills={skills.languages} color="cyan" delay={0} />
               <SkillCard title="FRAMEWORKS" skills={skills.frameworks} color="purple" delay={0.1} />
               <SkillCard title="TOOLS & TESTING" skills={skills.tools} color="green" delay={0.2} />
@@ -336,7 +336,7 @@ export default function WorkPage() {
         </section>
 
         {/* Projects Showcase */}
-        <section className="scroll-section min-h-screen py-32 px-8 relative">
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="max-w-7xl mx-auto"
             initial={{ opacity: 0 }}
@@ -349,7 +349,7 @@ export default function WorkPage() {
               subtitle="EXPERIMENTS IN CODE"
             />
 
-            <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-16">
               {projects.map((project, i) => (
                 <ProjectCard key={project.id} project={project} index={i} />
               ))}
@@ -358,9 +358,9 @@ export default function WorkPage() {
         </section>
 
         {/* Recommendations */}
-        <section className="scroll-section min-h-screen py-32 relative overflow-hidden">
+        <section className="scroll-section min-h-screen py-16 md:py-32 relative overflow-hidden">
           <motion.div
-            className="max-w-7xl mx-auto px-8"
+            className="max-w-7xl mx-auto px-4 md:px-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -378,7 +378,7 @@ export default function WorkPage() {
         </section>
 
         {/* CV Download */}
-        <section className="scroll-section min-h-screen flex items-center justify-center py-32 px-8 relative">
+        <section className="scroll-section min-h-screen flex items-center justify-center py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -432,15 +432,15 @@ export default function WorkPage() {
 function SectionTitle({ number, title, subtitle }: { number: string; title: string; subtitle: string }) {
   return (
     <motion.div
-      className="text-center mb-16"
+      className="text-center mb-8 md:mb-16"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
       <div className="text-cyber-cyan text-sm mb-2">[{number}]</div>
-      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 glitch-text">{title}</h2>
-      <div className="text-gray-500 text-sm uppercase tracking-widest">{subtitle}</div>
+      <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-4 glitch-text">{title}</h2>
+      <div className="text-gray-500 text-xs sm:text-sm uppercase tracking-widest px-4">{subtitle}</div>
     </motion.div>
   )
 }
@@ -454,12 +454,15 @@ function TimelineItem({ job, index, isLeft }: any) {
   return (
     <motion.div
       ref={ref}
-      className={`relative flex items-center mb-24 ${isLeft ? 'flex-row-reverse' : ''}`}
+      className={`relative flex items-center mb-12 md:mb-24 
+        ${isLeft ? 'md:flex-row-reverse' : ''}`}
       initial={{ opacity: 0, x: isLeft ? 50 : -50 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className={`w-1/2 ${isLeft ? 'text-right pr-8' : 'pl-8'}`}>
+      {/* Mobile: all items on right, Desktop: alternating */}
+      <div className={`w-full md:w-1/2 pl-12 md:pl-0 
+        ${isLeft ? 'md:text-right md:pr-8' : 'md:pl-8'}`}>
         <motion.div
           className={`inline-block w-full ${isLeft ? 'ml-auto' : 'mr-auto'}`}
           initial={false}
@@ -613,20 +616,22 @@ function TimelineItem({ job, index, isLeft }: any) {
         </motion.div>
       </div>
 
-      {/* Connection Line from Card to Timeline */}
+      {/* Connection Line from Card to Timeline - Mobile: short horizontal line */}
       <motion.div
-        className={`absolute top-1/2 -translate-y-1/2 h-px bg-cyber-cyan/30 ${
-          isLeft ? 'right-1/2 left-8' : 'left-1/2 right-8'
-        }`}
+        className={`absolute top-8 md:top-1/2 md:-translate-y-1/2 h-px bg-cyber-cyan/30 
+          left-8 w-4 md:w-auto
+          ${isLeft ? 'md:right-1/2 md:left-8' : 'md:left-1/2 md:right-8'}`}
         initial={{ scaleX: 0 }}
         animate={isInView ? { scaleX: 1 } : {}}
         transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
         style={{ originX: isLeft ? 1 : 0 }}
       />
 
-      {/* Timeline Dot */}
+      {/* Timeline Dot - Mobile: left side, Desktop: center */}
       <motion.div
-        className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-cyber-cyan rounded-full border-2 border-black z-10"
+        className="absolute left-4 md:left-1/2 top-8 md:top-1/2 
+          -translate-x-1/2 md:-translate-y-1/2 
+          w-4 h-4 bg-cyber-cyan rounded-full border-2 border-black z-10"
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ delay: index * 0.1 + 0.3 }}
@@ -946,7 +951,7 @@ function TestimonialCard({ rec, onHover, cardId }: any) {
   
   return (
     <motion.div 
-      className="flex-shrink-0 w-[400px]"
+      className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px]"
       onMouseEnter={() => {
         onHover(cardId)
         setIsHovered(true)
