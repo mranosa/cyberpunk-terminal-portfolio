@@ -8,6 +8,11 @@ if (typeof window !== 'undefined') {
     person_profiles: 'identified_only',
     capture_pageview: false,
     capture_pageleave: true,
+    enable_recording_console_log: true,
+    session_recording: {
+      maskAllInputs: false,
+      maskTextContent: false,
+    }
   })
 }
 
