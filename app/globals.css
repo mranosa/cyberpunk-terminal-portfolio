@@ -312,10 +312,9 @@
   }
   .neon-text {
     text-shadow:
+      0 0 5px currentColor,
       0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor,
-      0 0 40px currentColor;
+      0 0 15px rgba(0, 255, 255, 0.5);
   }
 
   .glitch-text {
@@ -556,21 +555,19 @@
       opacity: 1;
       transform: scale(1);
       text-shadow: 
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 30px currentColor,
-        0 0 40px rgba(255, 215, 0, 0.8);
-      filter: brightness(1.5) saturate(1.5);
+        0 0 3px currentColor,
+        0 0 6px currentColor,
+        0 0 10px rgba(255, 215, 0, 0.5);
+      filter: brightness(1.2) saturate(1.3);
     }
     20% {
       opacity: 1;
-      transform: scale(1.15);
+      transform: scale(1.1);
       text-shadow: 
-        0 0 15px currentColor,
-        0 0 30px currentColor,
-        0 0 45px currentColor,
-        0 0 60px rgba(255, 215, 0, 0.6);
-      filter: brightness(1.8) saturate(1.8);
+        0 0 4px currentColor,
+        0 0 8px currentColor,
+        0 0 12px rgba(255, 215, 0, 0.4);
+      filter: brightness(1.3) saturate(1.4);
     }
     50%, 95% {
       opacity: 0;
@@ -582,11 +579,10 @@
       opacity: 1;
       transform: scale(1);
       text-shadow: 
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 30px currentColor,
-        0 0 40px rgba(255, 215, 0, 0.8);
-      filter: brightness(1.5) saturate(1.5);
+        0 0 3px currentColor,
+        0 0 6px currentColor,
+        0 0 10px rgba(255, 215, 0, 0.5);
+      filter: brightness(1.2) saturate(1.3);
     }
   }
 
@@ -595,11 +591,10 @@
     color: var(--plasma-cyan);
     font-weight: 100;
     text-shadow: 
-      0 0 10px var(--plasma-cyan),
-      0 0 20px var(--plasma-cyan),
-      0 0 30px var(--plasma-cyan),
-      0 0 var(--glow-intense) var(--plasma-cyan);
-    filter: brightness(1.5) saturate(1.5) contrast(1.2);
+      0 0 3px rgba(0, 255, 255, 0.8),
+      0 0 8px rgba(0, 255, 255, 0.4),
+      0 0 12px rgba(0, 255, 255, 0.2);
+    filter: brightness(1.3) saturate(1.3) contrast(1.1);
     animation: plasma-pulse 2s ease-in-out infinite;
     letter-spacing: 0.05em;
   }
@@ -608,10 +603,9 @@
     color: var(--quantum-blue);
     font-weight: 200;
     text-shadow: 
-      0 0 10px var(--quantum-blue),
-      0 0 25px var(--quantum-blue),
-      0 0 var(--glow-medium) var(--quantum-blue);
-    filter: brightness(1.4) saturate(1.4);
+      0 0 3px rgba(65, 105, 225, 0.8),
+      0 0 8px rgba(65, 105, 225, 0.4);
+    filter: brightness(1.2) saturate(1.3);
     animation: quantum-wave 2.5s ease-in-out infinite;
     letter-spacing: 0.03em;
   }
@@ -620,11 +614,10 @@
     color: var(--solar-yellow);
     font-weight: 100;
     text-shadow: 
-      0 0 15px var(--solar-yellow),
-      0 0 30px var(--solar-yellow),
-      0 0 45px #FFED4E,
-      0 0 var(--glow-extreme) var(--solar-yellow);
-    filter: brightness(1.6) saturate(1.3) contrast(1.1);
+      0 0 3px rgba(255, 215, 0, 0.9),
+      0 0 8px rgba(255, 215, 0, 0.5),
+      0 0 12px rgba(255, 215, 0, 0.3);
+    filter: brightness(1.3) saturate(1.2) contrast(1.05);
     animation: solar-flare 3s ease-in-out infinite;
     letter-spacing: 0.04em;
   }
@@ -633,10 +626,9 @@
     color: var(--fusion-orange);
     font-weight: 200;
     text-shadow: 
-      0 0 12px var(--fusion-orange),
-      0 0 24px var(--fusion-orange),
-      0 0 var(--glow-intense) #FF6500;
-    filter: brightness(1.5) saturate(1.4);
+      0 0 3px rgba(255, 140, 0, 0.8),
+      0 0 8px rgba(255, 140, 0, 0.4);
+    filter: brightness(1.3) saturate(1.3);
     animation: fusion-burn 2.8s ease-in-out infinite;
     letter-spacing: 0.03em;
   }
@@ -645,11 +637,9 @@
     color: var(--nova-purple);
     font-weight: 100;
     text-shadow: 
-      0 0 10px var(--nova-purple),
-      0 0 20px var(--nova-purple),
-      0 0 30px #B19CD9,
-      0 0 var(--glow-medium) var(--nova-purple);
-    filter: brightness(1.4) saturate(1.5);
+      0 0 3px rgba(147, 112, 219, 0.8),
+      0 0 8px rgba(147, 112, 219, 0.4);
+    filter: brightness(1.2) saturate(1.3);
     animation: nova-burst 3.2s ease-in-out infinite;
     letter-spacing: 0.04em;
   }
@@ -658,10 +648,9 @@
     color: var(--aurora-green);
     font-weight: 200;
     text-shadow: 
-      0 0 10px var(--aurora-green),
-      0 0 20px var(--aurora-green),
-      0 0 var(--glow-intense) #00FF7F;
-    filter: brightness(1.5) saturate(1.3);
+      0 0 3px rgba(0, 250, 154, 0.8),
+      0 0 8px rgba(0, 250, 154, 0.4);
+    filter: brightness(1.3) saturate(1.2);
     animation: aurora-dance 2.6s ease-in-out infinite;
     letter-spacing: 0.03em;
   }
@@ -670,11 +659,9 @@
     color: var(--nebula-pink);
     font-weight: 100;
     text-shadow: 
-      0 0 10px var(--nebula-pink),
-      0 0 20px var(--nebula-pink),
-      0 0 30px #FF1493,
-      0 0 var(--glow-medium) var(--nebula-pink);
-    filter: brightness(1.4) saturate(1.4);
+      0 0 3px rgba(255, 105, 180, 0.8),
+      0 0 8px rgba(255, 105, 180, 0.4);
+    filter: brightness(1.2) saturate(1.3);
     animation: nebula-swirl 3.5s ease-in-out infinite;
     letter-spacing: 0.04em;
   }
@@ -683,11 +670,9 @@
     color: var(--photon-white);
     font-weight: 100;
     text-shadow: 
-      0 0 5px rgba(255, 255, 255, 0.9),
-      0 0 10px rgba(255, 255, 255, 0.8),
-      0 0 20px rgba(255, 255, 255, 0.7),
-      0 0 var(--glow-soft) rgba(255, 255, 255, 0.5);
-    filter: brightness(1.3);
+      0 0 2px rgba(255, 255, 255, 0.8),
+      0 0 5px rgba(255, 255, 255, 0.4);
+    filter: brightness(1.1);
     letter-spacing: 0.02em;
   }
 
@@ -695,10 +680,9 @@
     color: var(--pulsar-lime);
     font-weight: 200;
     text-shadow: 
-      0 0 10px var(--pulsar-lime),
-      0 0 20px var(--pulsar-lime),
-      0 0 var(--glow-medium) #90EE90;
-    filter: brightness(1.5) saturate(1.4);
+      0 0 3px rgba(50, 205, 50, 0.8),
+      0 0 8px rgba(50, 205, 50, 0.4);
+    filter: brightness(1.3) saturate(1.3);
     animation: pulsar-beat 1.8s ease-in-out infinite;
     letter-spacing: 0.03em;
   }
@@ -772,9 +756,8 @@
     -webkit-text-stroke: 0.5px var(--plasma-cyan);
     text-stroke: 0.5px var(--plasma-cyan);
     text-shadow:
-      0 0 20px var(--plasma-cyan),
-      0 0 40px var(--plasma-cyan),
-      0 0 60px var(--quantum-blue);
+      0 0 5px rgba(0, 255, 255, 0.6),
+      0 0 10px rgba(0, 255, 255, 0.3);
     animation: neon-stroke-pulse 2s ease-in-out infinite;
   }
 
@@ -786,129 +769,127 @@
   /* 🎆 ULTRA-BRIGHT ANIMATION KEYFRAMES 🎆 */
   @keyframes plasma-pulse {
     0%, 100% { 
-      filter: brightness(1.5) saturate(1.5) contrast(1.2);
+      filter: brightness(1.2) saturate(1.3) contrast(1.1);
       transform: translateZ(0) scale(1);
     }
     50% { 
-      filter: brightness(1.8) saturate(1.8) contrast(1.3);
-      transform: translateZ(0) scale(1.02);
+      filter: brightness(1.3) saturate(1.4) contrast(1.15);
+      transform: translateZ(0) scale(1.01);
     }
   }
 
   @keyframes quantum-wave {
     0% { 
-      filter: brightness(1.4) saturate(1.4);
+      filter: brightness(1.2) saturate(1.3);
       transform: translateX(0);
     }
     25% { 
-      filter: brightness(1.6) saturate(1.6);
-      transform: translateX(-1px);
+      filter: brightness(1.3) saturate(1.35);
+      transform: translateX(-0.5px);
     }
     75% { 
-      filter: brightness(1.5) saturate(1.5);
-      transform: translateX(1px);
+      filter: brightness(1.25) saturate(1.32);
+      transform: translateX(0.5px);
     }
     100% { 
-      filter: brightness(1.4) saturate(1.4);
+      filter: brightness(1.2) saturate(1.3);
       transform: translateX(0);
     }
   }
 
   @keyframes solar-flare {
     0%, 100% { 
-      filter: brightness(1.6) saturate(1.3) contrast(1.1);
+      filter: brightness(1.3) saturate(1.2) contrast(1.05);
       text-shadow: 
-        0 0 15px var(--solar-yellow),
-        0 0 30px var(--solar-yellow),
-        0 0 45px #FFED4E,
-        0 0 var(--glow-extreme) var(--solar-yellow);
+        0 0 3px rgba(255, 215, 0, 0.9),
+        0 0 8px rgba(255, 215, 0, 0.5),
+        0 0 12px rgba(255, 215, 0, 0.3);
     }
     50% { 
-      filter: brightness(2) saturate(1.5) contrast(1.2);
+      filter: brightness(1.4) saturate(1.3) contrast(1.1);
       text-shadow: 
-        0 0 20px var(--solar-yellow),
-        0 0 40px var(--solar-yellow),
-        0 0 60px #FFED4E,
-        0 0 100px var(--solar-yellow);
+        0 0 4px rgba(255, 215, 0, 1),
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 0 15px rgba(255, 215, 0, 0.4);
     }
   }
 
   @keyframes fusion-burn {
     0%, 100% { 
-      filter: brightness(1.5) saturate(1.4);
+      filter: brightness(1.3) saturate(1.3);
       opacity: 1;
     }
     25% { 
-      filter: brightness(1.7) saturate(1.6);
-      opacity: 0.95;
+      filter: brightness(1.35) saturate(1.35);
+      opacity: 0.98;
     }
     75% { 
-      filter: brightness(1.6) saturate(1.5);
-      opacity: 0.98;
+      filter: brightness(1.32) saturate(1.32);
+      opacity: 0.99;
     }
   }
 
   @keyframes nova-burst {
     0%, 100% { 
-      filter: brightness(1.4) saturate(1.5);
+      filter: brightness(1.2) saturate(1.3);
       transform: rotate(0deg) scale(1);
     }
     50% { 
-      filter: brightness(1.7) saturate(1.7);
-      transform: rotate(0.5deg) scale(1.01);
+      filter: brightness(1.3) saturate(1.35);
+      transform: rotate(0.3deg) scale(1.005);
     }
   }
 
   @keyframes aurora-dance {
     0% { 
-      filter: brightness(1.5) saturate(1.3);
+      filter: brightness(1.3) saturate(1.2);
       transform: skewX(0deg);
     }
     25% { 
-      filter: brightness(1.6) saturate(1.4);
-      transform: skewX(0.5deg);
+      filter: brightness(1.32) saturate(1.25);
+      transform: skewX(0.3deg);
     }
     75% { 
-      filter: brightness(1.7) saturate(1.5);
-      transform: skewX(-0.5deg);
+      filter: brightness(1.35) saturate(1.28);
+      transform: skewX(-0.3deg);
     }
     100% { 
-      filter: brightness(1.5) saturate(1.3);
+      filter: brightness(1.3) saturate(1.2);
       transform: skewX(0deg);
     }
   }
 
   @keyframes nebula-swirl {
     0%, 100% { 
-      filter: brightness(1.4) saturate(1.4);
+      filter: brightness(1.2) saturate(1.3);
       transform: rotate(0deg);
     }
     33% { 
-      filter: brightness(1.6) saturate(1.6);
-      transform: rotate(1deg);
+      filter: brightness(1.28) saturate(1.35);
+      transform: rotate(0.5deg);
     }
     66% { 
-      filter: brightness(1.5) saturate(1.5);
-      transform: rotate(-1deg);
+      filter: brightness(1.25) saturate(1.32);
+      transform: rotate(-0.5deg);
     }
   }
 
   @keyframes pulsar-beat {
     0%, 100% { 
-      filter: brightness(1.5) saturate(1.4);
+      filter: brightness(1.3) saturate(1.3);
       transform: scale(1);
     }
     25% { 
-      filter: brightness(1.8) saturate(1.6);
-      transform: scale(1.05);
+      filter: brightness(1.38) saturate(1.35);
+      transform: scale(1.02);
     }
     50% { 
-      filter: brightness(1.3) saturate(1.2);
-      transform: scale(0.98);
+      filter: brightness(1.2) saturate(1.2);
+      transform: scale(0.99);
     }
     75% { 
-      filter: brightness(1.7) saturate(1.5);
-      transform: scale(1.03);
+      filter: brightness(1.35) saturate(1.32);
+      transform: scale(1.01);
     }
   }
 
