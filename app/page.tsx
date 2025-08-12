@@ -4,10 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { AnimatePresence } from 'framer-motion'
-
-const SplashScreen = dynamic(() => import('@/components/SplashScreen'), {
-  loading: () => null,
-})
+import SplashScreen from '@/components/SplashScreen'
 
 const Terminal = dynamic(() => import('@/components/Terminal'), {
   loading: () => <div className="w-full h-screen bg-cyber-darker" />,
@@ -18,39 +15,49 @@ const ContactDrawer = dynamic(() => import('@/components/ContactDrawer'))
 const MatrixRain = dynamic(() => import('@/components/MatrixRainWrapper'))
 
 function HomeContent() {
-  const [showSplash, setShowSplash] = useState(true)
+  // Check initial state based on sessionStorage
+  const [showSplash, setShowSplash] = useState<boolean | null>(null)
   const [isContactOpen, setIsContactOpen] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
   const searchParams = useSearchParams()
   const router = useRouter()
 
   useEffect(() => {
-    setIsMounted(true)
+    console.log('=== SPLASH DEBUG ===')
     
     // Check if we should skip splash (coming from internal navigation)
     const skipSplash = searchParams.get('skipSplash') === 'true'
+    console.log('Skip splash param:', skipSplash)
     
     // Check if splash was already shown in this session
-    const splashShown = sessionStorage.getItem('splashShown') === 'true'
+    const splashShown = typeof window !== 'undefined' ? sessionStorage.getItem('splashShown') === 'true' : false
+    console.log('Session storage splashShown:', splashShown)
 
-    if (skipSplash || splashShown) {
-      // Coming from internal navigation or already shown, don't show splash
+    if (skipSplash) {
+      // Coming from internal navigation, don't show splash
+      console.log('Skipping splash due to URL param')
       setShowSplash(false)
       // Clean up the URL by removing the query parameter
-      if (skipSplash) {
-        router.replace('/', { scroll: false })
-      }
+      router.replace('/', { scroll: false })
+    } else if (!splashShown) {
+      // First visit in this session, show splash
+      console.log('First visit - SHOWING SPLASH')
+      setShowSplash(true)
     } else {
-      // Mark splash as shown for this session
-      sessionStorage.setItem('splashShown', 'true')
+      // Splash was already shown in this session
+      console.log('Splash already shown in session')
+      setShowSplash(false)
     }
+    console.log('===================')
   }, [searchParams, router])
 
   const handleSplashComplete = () => {
+    console.log('Splash screen completed')
+    sessionStorage.setItem('splashShown', 'true')
     setShowSplash(false)
   }
 
-  if (!isMounted) {
+  // Wait for initial state to be determined
+  if (showSplash === null) {
     return (
       <main className="relative w-full h-screen bg-cyber-darker">
         <MatrixRain />
@@ -58,16 +65,19 @@ function HomeContent() {
     )
   }
 
+  console.log('Rendering main content, showSplash:', showSplash)
+  
+  // Simplified rendering for debugging
+  if (showSplash) {
+    console.log('Rendering SplashScreen component')
+    return <SplashScreen onComplete={handleSplashComplete} />
+  }
+  
   return (
     <main className="relative">
       <MatrixRain />
       <ContactDrawer isOpen={isContactOpen} onOpenChange={setIsContactOpen} />
-
-      <AnimatePresence mode="wait">
-        {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      </AnimatePresence>
-
-      {!showSplash && <Terminal onContactOpen={() => setIsContactOpen(true)} />}
+      <Terminal onContactOpen={() => setIsContactOpen(true)} />
     </main>
   )
 }

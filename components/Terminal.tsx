@@ -264,6 +264,19 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
         ])
         return
 
+      case 'reload':
+        output = (
+          <div className="space-y-2">
+            <div className="cyber-cyan">Clearing session storage...</div>
+            <div className="cyber-green">Reloading in 2 seconds...</div>
+          </div>
+        )
+        setTimeout(() => {
+          sessionStorage.removeItem('splashShown')
+          window.location.reload()
+        }, 2000)
+        break
+
       default:
         if (trimmedCmd === '') {
           return

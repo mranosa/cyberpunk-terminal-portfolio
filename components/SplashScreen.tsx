@@ -10,6 +10,7 @@ interface SplashScreenProps {
 }
 
 export default function SplashScreen({ onComplete }: SplashScreenProps) {
+  console.log('SplashScreen component mounted')
   const [text, setText] = useState('')
   const fullText = 'SOFTWARE ENGINEER'
   const [showCursor, setShowCursor] = useState(true)
@@ -375,9 +376,8 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       >
         <div className="flex items-center gap-2 text-cyber-cyan/40 font-mono text-[10px] sm:text-xs">
           <div 
-            className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-cyber-cyan rounded-full"
+            className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-cyber-cyan rounded-full splash-pulse"
             style={{
-              animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               transform: 'translate3d(0, 0, 0)',
             }}
           />

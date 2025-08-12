@@ -227,6 +227,16 @@ button:active, a:active {
   outline-offset: 4px;
 }
 
+/* Add pulse animation for splash screen */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* Mobile optimizations - Disable most animations */
 @media (max-width: 768px) {
   * {
@@ -237,6 +247,11 @@ button:active, a:active {
   /* Keep only essential transitions for usability */
   button, a, input, textarea {
     transition: opacity 0.2s ease, background-color 0.2s ease !important;
+  }
+  
+  /* Keep pulse animation for splash screen indicator */
+  .splash-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
   }
   
   /* Disable all keyframe animations */

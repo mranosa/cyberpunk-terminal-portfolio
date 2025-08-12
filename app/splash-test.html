@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0f;
+            color: #00ffff;
+            font-family: monospace;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background: #9d00ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+        }
+        button:hover {
+            background: #7d00df;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #00ffff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Splash Screen Test Suite</h1>
+    
+    <div class="status" id="status">
+        Session Storage Status: <span id="sessionStatus">Checking...</span>
+    </div>
+    
+    <div>
+        <button onclick="clearSession()">Clear Session Storage</button>
+        <button onclick="loadWithSplash()">Load With Splash</button>
+        <button onclick="loadWithoutSplash()">Load Without Splash (Skip)</button>
+        <button onclick="checkStatus()">Check Status</button>
+    </div>
+    
+    <iframe id="testFrame" src="http://localhost:3000" title="Test Frame"></iframe>
+    
+    <script>
+        function checkStatus() {
+            const frame = document.getElementById('testFrame');
+            try {
+                const storage = frame.contentWindow.sessionStorage.getItem('splashShown');
+                document.getElementById('sessionStatus').textContent = storage || 'Not set';
+            } catch(e) {
+                document.getElementById('sessionStatus').textContent = 'Cannot access (cross-origin)';
+            }
+        }
+        
+        function clearSession() {
+            const frame = document.getElementById('testFrame');
+            frame.src = 'about:blank';
+            setTimeout(() => {
+                frame.src = 'http://localhost:3000';
+                document.getElementById('sessionStatus').textContent = 'Cleared and reloading...';
+            }, 100);
+        }
+        
+        function loadWithSplash() {
+            const frame = document.getElementById('testFrame');
+            // Clear session by navigating away and back
+            frame.src = 'about:blank';
+            setTimeout(() => {
+                frame.src = 'http://localhost:3000';
+            }, 100);
+        }
+        
+        function loadWithoutSplash() {
+            const frame = document.getElementById('testFrame');
+            frame.src = 'http://localhost:3000?skipSplash=true';
+        }
+        
+        // Check status on load
+        window.onload = () => {
+            setTimeout(checkStatus, 1000);
+        };
+    </script>
+</body>
+</html>

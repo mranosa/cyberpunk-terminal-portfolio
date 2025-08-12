@@ -17,6 +17,9 @@ export function HelpCommand() {
       <div className="ultra-light">
         <span className="fusion-orange">matrix</span> - Enter the matrix
       </div>
+      <div className="ultra-light">
+        <span className="cyber-purple">reload</span> - Reload with splash screen
+      </div>
     </div>
   )
 }
