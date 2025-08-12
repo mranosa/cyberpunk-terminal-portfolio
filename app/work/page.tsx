@@ -623,6 +623,14 @@ function TimelineItem({ job, index, isLeft }: any) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <motion.div
@@ -655,9 +663,9 @@ function TimelineItem({ job, index, isLeft }: any) {
           <motion.div 
             className={`border border-cyber-cyan/30 p-6 flex flex-col relative overflow-hidden`}
             animate={{
-              borderColor: isHovered ? 'rgba(0, 255, 255, 0.6)' : 'rgba(0, 255, 255, 0.3)',
-              height: isHovered ? 'auto' : '150px',
-              minHeight: isHovered ? '280px' : '150px'
+              borderColor: (isHovered || isMobile) ? 'rgba(0, 255, 255, 0.6)' : 'rgba(0, 255, 255, 0.3)',
+              height: (isHovered || isMobile) ? 'auto' : '150px',
+              minHeight: (isHovered || isMobile) ? '280px' : '150px'
             }}
             transition={{
               height: {
@@ -720,14 +728,14 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.location} • {job.type}
             </motion.div>
             
-            {/* Achievements - Only visible on hover */}
+            {/* Achievements - Only visible on hover or mobile */}
             <motion.div 
               className="space-y-2 flex-grow"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
-                opacity: isHovered ? 1 : 0,
-                height: isHovered ? 'auto' : 0,
-                marginBottom: isHovered ? '16px' : '0px'
+                opacity: (isHovered || isMobile) ? 1 : 0,
+                height: (isHovered || isMobile) ? 'auto' : 0,
+                marginBottom: (isHovered || isMobile) ? '16px' : '0px'
               }}
               transition={{ 
                 duration: 0.4,
@@ -740,8 +748,8 @@ function TimelineItem({ job, index, isLeft }: any) {
                   className="text-gray-400 text-sm"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ 
-                    opacity: isHovered ? 1 : 0, 
-                    x: isHovered ? 0 : -20
+                    opacity: (isHovered || isMobile) ? 1 : 0, 
+                    x: (isHovered || isMobile) ? 0 : -20
                   }}
                   transition={{
                     delay: isHovered ? i * 0.05 : 0,
@@ -754,13 +762,13 @@ function TimelineItem({ job, index, isLeft }: any) {
               ))}
             </motion.div>
 
-            {/* Technologies - Only visible on hover, showing all */}
+            {/* Technologies - Only visible on hover or mobile, showing all */}
             <motion.div 
               className="flex flex-wrap gap-1"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
-                opacity: isHovered ? 1 : 0,
-                height: isHovered ? 'auto' : 0
+                opacity: (isHovered || isMobile) ? 1 : 0,
+                height: (isHovered || isMobile) ? 'auto' : 0
               }}
               transition={{ 
                 duration: 0.3,
@@ -773,8 +781,8 @@ function TimelineItem({ job, index, isLeft }: any) {
                   className="text-xs border border-cyber-cyan/20 px-2 py-1 text-gray-500 hover:border-cyber-cyan/40 hover:text-gray-400 transition-all"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ 
-                    opacity: isHovered ? 1 : 0,
-                    scale: isHovered ? 1 : 0.8
+                    opacity: (isHovered || isMobile) ? 1 : 0,
+                    scale: (isHovered || isMobile) ? 1 : 0.8
                   }}
                   transition={{
                     delay: isHovered ? i * 0.02 : 0,
@@ -816,6 +824,14 @@ function TimelineItem({ job, index, isLeft }: any) {
 // Component: Skill Card
 function SkillCard({ title, skills, color, delay }: any) {
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   const colorClasses: any = {
     cyan: 'border-cyber-cyan/30 text-cyber-cyan',
@@ -850,15 +866,15 @@ function SkillCard({ title, skills, color, delay }: any) {
       <motion.div
         className={`border p-6 relative overflow-hidden ${colorClasses[color]}`}
         animate={{
-          borderColor: isHovered ? 
+          borderColor: (isHovered || isMobile) ? 
             color === 'cyan' ? 'rgba(0, 255, 255, 0.6)' :
             color === 'purple' ? 'rgba(147, 112, 219, 0.6)' :
             color === 'green' ? 'rgba(0, 250, 154, 0.6)' :
             color === 'orange' ? 'rgba(255, 140, 0, 0.6)' :
             'rgba(255, 105, 180, 0.6)' 
             : undefined,
-          height: isHovered ? 'auto' : '100px',
-          minHeight: isHovered ? '100px' : '100px'
+          height: (isHovered || isMobile) ? 'auto' : '100px',
+          minHeight: (isHovered || isMobile) ? '100px' : '100px'
         }}
         transition={{
           height: { type: "spring", stiffness: 200, damping: 25 },
@@ -890,8 +906,8 @@ function SkillCard({ title, skills, color, delay }: any) {
           className="flex flex-wrap gap-2"
           initial={{ opacity: 0, height: 0 }}
           animate={{ 
-            opacity: isHovered ? 1 : 0,
-            height: isHovered ? 'auto' : 0
+            opacity: (isHovered || isMobile) ? 1 : 0,
+            height: (isHovered || isMobile) ? 'auto' : 0
           }}
           transition={{ duration: 0.3 }}
         >
@@ -901,8 +917,8 @@ function SkillCard({ title, skills, color, delay }: any) {
               className="text-xs border border-current/30 px-3 py-1 text-gray-400 hover:text-current hover:border-current/60 transition-all"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ 
-                opacity: isHovered ? 1 : 0,
-                scale: isHovered ? 1 : 0.8
+                opacity: (isHovered || isMobile) ? 1 : 0,
+                scale: (isHovered || isMobile) ? 1 : 0.8
               }}
               transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
             >
@@ -918,6 +934,14 @@ function SkillCard({ title, skills, color, delay }: any) {
 // Component: Project Card
 function ProjectCard({ project, index }: any) {
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   return (
     <motion.div
@@ -936,9 +960,9 @@ function ProjectCard({ project, index }: any) {
       <motion.div
         className="border border-nova-purple/30 p-6 relative overflow-hidden"
         animate={{
-          borderColor: isHovered ? 'rgba(147, 112, 219, 0.6)' : 'rgba(147, 112, 219, 0.3)',
-          height: isHovered ? 'auto' : '180px',
-          minHeight: isHovered ? '180px' : '180px'
+          borderColor: (isHovered || isMobile) ? 'rgba(147, 112, 219, 0.6)' : 'rgba(147, 112, 219, 0.3)',
+          height: (isHovered || isMobile) ? 'auto' : '180px',
+          minHeight: (isHovered || isMobile) ? '180px' : '180px'
         }}
         transition={{
           height: { type: "spring", stiffness: 200, damping: 25 },
@@ -989,15 +1013,15 @@ function ProjectCard({ project, index }: any) {
           {project.description}
         </motion.p>
 
-        {/* Highlights - Only visible on hover */}
+        {/* Highlights - Only visible on hover or mobile */}
         {project.highlights && (
           <motion.div 
             className="space-y-1"
             initial={{ opacity: 0, height: 0 }}
             animate={{ 
-              opacity: isHovered ? 1 : 0,
-              height: isHovered ? 'auto' : 0,
-              marginBottom: isHovered ? '16px' : '0px'
+              opacity: (isHovered || isMobile) ? 1 : 0,
+              height: (isHovered || isMobile) ? 'auto' : 0,
+              marginBottom: (isHovered || isMobile) ? '16px' : '0px'
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
@@ -1007,8 +1031,8 @@ function ProjectCard({ project, index }: any) {
                 className="text-gray-500 text-xs"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ 
-                  opacity: isHovered ? 1 : 0,
-                  x: isHovered ? 0 : -20
+                  opacity: (isHovered || isMobile) ? 1 : 0,
+                  x: (isHovered || isMobile) ? 0 : -20
                 }}
                 transition={{ delay: isHovered ? i * 0.05 : 0, duration: 0.3 }}
               >
@@ -1018,13 +1042,13 @@ function ProjectCard({ project, index }: any) {
           </motion.div>
         )}
 
-        {/* Technologies - Only visible on hover, showing all */}
+        {/* Technologies - Only visible on hover or mobile, showing all */}
         <motion.div 
           className="flex flex-wrap gap-1"
           initial={{ opacity: 0, height: 0 }}
           animate={{ 
-            opacity: isHovered ? 1 : 0,
-            height: isHovered ? 'auto' : 0
+            opacity: (isHovered || isMobile) ? 1 : 0,
+            height: (isHovered || isMobile) ? 'auto' : 0
           }}
           transition={{ duration: 0.3, delay: isHovered ? 0.1 : 0 }}
         >
@@ -1034,8 +1058,8 @@ function ProjectCard({ project, index }: any) {
               className="text-xs border border-nova-purple/20 px-2 py-0.5 text-gray-500 hover:border-nova-purple/40 hover:text-gray-400 transition-all"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ 
-                opacity: isHovered ? 1 : 0,
-                scale: isHovered ? 1 : 0.8
+                opacity: (isHovered || isMobile) ? 1 : 0,
+                scale: (isHovered || isMobile) ? 1 : 0.8
               }}
               transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
             >
@@ -1121,6 +1145,14 @@ function TestimonialMarquee() {
 // Component: Testimonial Card
 function TestimonialCard({ rec, onHover, cardId }: any) {
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   return (
     <motion.div 
@@ -1147,9 +1179,9 @@ function TestimonialCard({ rec, onHover, cardId }: any) {
       <motion.div
         className="border border-pink-400/30 p-4 relative overflow-hidden flex flex-col"
         animate={{
-          borderColor: isHovered ? 'rgba(255, 105, 180, 0.6)' : 'rgba(255, 105, 180, 0.3)',
-          height: isHovered ? 'auto' : '120px',
-          minHeight: isHovered ? '200px' : '120px'
+          borderColor: (isHovered || isMobile) ? 'rgba(255, 105, 180, 0.6)' : 'rgba(255, 105, 180, 0.3)',
+          height: (isHovered || isMobile) ? 'auto' : '120px',
+          minHeight: (isHovered || isMobile) ? '200px' : '120px'
         }}
         transition={{
           height: { type: "spring", stiffness: 200, damping: 25 },
@@ -1203,26 +1235,26 @@ function TestimonialCard({ rec, onHover, cardId }: any) {
           </div>
         </div>
 
-        {/* Quote - Only fully visible on hover */}
+        {/* Quote - Only fully visible on hover or mobile */}
         <motion.blockquote 
           className="text-gray-300 text-xs italic flex-grow"
           initial={{ opacity: 0 }}
           animate={{ 
-            opacity: isHovered ? 1 : 0,
-            marginBottom: isHovered ? '12px' : '0px'
+            opacity: (isHovered || isMobile) ? 1 : 0,
+            marginBottom: (isHovered || isMobile) ? '12px' : '0px'
           }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           "{rec.recommendation}"
         </motion.blockquote>
 
-        {/* LinkedIn link - Only visible on hover */}
+        {/* LinkedIn link - Only visible on hover or mobile */}
         <motion.div 
           className="text-xs text-gray-500"
           initial={{ opacity: 0, height: 0 }}
           animate={{ 
-            opacity: isHovered ? 1 : 0,
-            height: isHovered ? 'auto' : 0
+            opacity: (isHovered || isMobile) ? 1 : 0,
+            height: (isHovered || isMobile) ? 'auto' : 0
           }}
           transition={{ duration: 0.3 }}
         >
