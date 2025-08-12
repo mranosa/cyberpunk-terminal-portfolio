@@ -11,7 +11,6 @@ if (typeof window !== 'undefined') {
     enable_recording_console_log: true,
     session_recording: {
       maskAllInputs: false,
-      maskTextContent: false,
     }
   })
 }
