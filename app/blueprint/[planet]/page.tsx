@@ -33,11 +33,11 @@ export default function PlanetPage() {
           className="mb-8"
         >
           <button
-            onClick={() => router.push('/blueprint')}
+            onClick={() => router.push('/')}
             className="flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors mb-4"
           >
             <ArrowLeftIcon className="w-5 h-5" />
-            <span>Back to Cosmic Blueprint</span>
+            <span>Back to Terminal</span>
           </button>
           
           <h1 className="text-4xl font-bold text-green-400 mb-2">
