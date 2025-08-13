@@ -41,9 +41,13 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
                 <td className="py-2 text-yellow-300 font-semibold">Aspects Given</td>
                 <td className="py-2">4</td>
               </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-yellow-300 font-semibold">Conjunct With</td>
+                <td className="py-2">Jupiter, Rahu</td>
+              </tr>
               <tr>
                 <td className="py-2 text-yellow-300 font-semibold">Aspected By</td>
-                <td className="py-2">KETU</td>
+                <td className="py-2">Ketu</td>
               </tr>
             </tbody>
           </table>
@@ -285,8 +289,24 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
           🤝 PLANETARY CONJUNCTIONS — BLENDED KARMA
         </h4>
         <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-          <p className="text-amber-300 font-semibold">Conjunct With: RAHU & JUPITER</p>
+          <p className="text-amber-300 font-semibold">Conjunct With: JUPITER & RAHU</p>
           
+          <div className="mt-3">
+            <p className="text-amber-300 font-semibold">Jupiter Conjunction: The Wisdom King</p>
+            <p>
+              Jupiter conjunct Sun creates <span className="text-white font-semibold">enlightened authority</span>. 
+              This is a royal conjunction — the guru and the king united. Your soul purpose (Sun) is infused with 
+              <span className="text-amber-300">divine wisdom</span> (Jupiter). You're meant to lead through teaching, 
+              to have authority through understanding.
+            </p>
+            <p>
+              This combination grants <span className="text-white font-semibold">natural fortune in leadership</span>. 
+              Doors open for you when you embody your dharmic purpose. Your presence itself becomes a teaching, 
+              your success a blessing to others. Jupiter expands your Sun's light into 
+              <span className="text-amber-300">benevolent radiance</span>.
+            </p>
+          </div>
+
           <div className="mt-3">
             <p className="text-amber-300 font-semibold">Rahu Conjunction: The Eclipse King</p>
             <p>
@@ -302,31 +322,22 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
             </p>
           </div>
 
-          <div className="mt-3">
-            <p className="text-amber-300 font-semibold">Jupiter Conjunction: The Wisdom King</p>
-            <p>
-              Jupiter conjunct Sun creates <span className="text-white font-semibold">enlightened authority</span>. 
-              This is a royal conjunction — the guru and the king united. Your soul purpose (Sun) is infused with 
-              <span className="text-amber-300">divine wisdom</span> (Jupiter). You're meant to lead through teaching, 
-              to have authority through understanding.
-            </p>
-            <p>
-              This combination grants <span className="text-white font-semibold">natural fortune in leadership</span>. 
-              Doors open for you when you embody your dharmic purpose. Your presence itself becomes a teaching, 
-              your success a blessing to others.
-            </p>
-          </div>
-
           <p className="mt-3">
-            <span className="text-amber-300 font-semibold">The Triple Crown:</span><br/>
+            <span className="text-amber-300 font-semibold">The Triple Crown Dynamic:</span><br/>
+            • Sun + Jupiter = <span className="text-white">Wise leadership that expands consciousness</span><br/>
             • Sun + Rahu = <span className="text-white">Revolutionary authority that breaks tradition</span><br/>
-            • Sun + Jupiter = <span className="text-white">Wise leadership that inspires growth</span><br/>
-            • Sun + Rahu + Jupiter = <span className="text-white">The spiritual revolutionary who leads through awakening</span>
+            • Sun + Jupiter + Rahu = <span className="text-white">The enlightened revolutionary who leads humanity's evolution</span>
           </p>
           
           <p className="italic text-white font-semibold">
-            "Three forces share your solar throne — the Sun brings divine authority, Rahu brings revolutionary hunger, 
-            Jupiter brings cosmic wisdom. You are the eclipse that illuminates new paths."
+            "Three cosmic forces share your solar throne — the Sun brings divine authority, Jupiter brings expansive wisdom, 
+            Rahu brings revolutionary hunger. You are the eclipse that births new dawn, the teacher who breaks old paradigms."
+          </p>
+          <p>
+            This triple conjunction in Pisces in the 10th house creates a <span className="text-amber-300 font-semibold">mystical revolutionary leader</span>. 
+            You're designed to <span className="text-white">expand consciousness</span> (Jupiter), 
+            <span className="text-white">break spiritual traditions</span> (Rahu), while 
+            <span className="text-white">embodying divine authority</span> (Sun) — all in the most visible way possible (10th house).
           </p>
         </div>
       </div>
@@ -387,16 +398,16 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
             "You are not here to escape your karma — you are here to master it."
           </p>
           <p>
-            Your Sun in Pisces in the 10th house, in Uttarabhadra nakshatra, aspected by Ketu, is not a random cosmic accident. 
-            This is your <span className="text-white font-semibold">soul's conscious choice</span> — a deliberately designed curriculum 
-            for mastering the paradox of spiritual leadership.
+            Your Sun in Pisces in the 10th house, in Uttarabhadra nakshatra, conjunct Jupiter and Rahu, aspected by Ketu, 
+            is not a random cosmic accident. This is your <span className="text-white font-semibold">soul's conscious choice</span> — 
+            a deliberately designed curriculum for mastering the paradox of revolutionary spiritual leadership.
           </p>
           <p>
-            You chose to be a <span className="text-yellow-300 font-semibold">public mystic</span> in an age that desperately needs bridges 
-            between the spiritual and material worlds. Your Pisces Sun makes you fluid enough to understand all perspectives, while your 
-            10th house placement ensures you have the platform to share this understanding. Uttarabhadra gives you the 
-            <span className="text-white font-semibold">patience to persist</span> when the path seems impossible, while Ketu's aspect ensures 
-            you never forget that all of this is ultimately maya — divine play.
+            You chose to be a <span className="text-yellow-300 font-semibold">revolutionary wisdom teacher</span> in an age that desperately needs 
+            spiritual evolution. Your Pisces Sun makes you fluid enough to understand all perspectives, Jupiter expands your consciousness 
+            to cosmic proportions, Rahu gives you the hunger to break old paradigms, while your 10th house placement ensures you have 
+            the platform to manifest this transformation publicly. Uttarabhadra gives you the <span className="text-white font-semibold">patience to persist</span> 
+            when the path seems impossible, while Ketu's aspect ensures you never forget that all of this is ultimately maya — divine play.
           </p>
           <p>
             Your dharma is to demonstrate that <span className="text-yellow-300 font-semibold">success and spirituality are not opposites</span>, 
