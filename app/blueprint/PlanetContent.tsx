@@ -1670,6 +1670,368 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderVenusContent = () => (
+    <>
+      {/* Venus Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-pink-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-pink-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">Planet</td>
+                <td className="py-2">Venus</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">Sign</td>
+                <td className="py-2">Capricorn</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Dhanishta 2</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">House</td>
+                <td className="py-2">8</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">Lordship</td>
+                <td className="py-2">5, 12</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-pink-300 font-semibold">Aspects Given</td>
+                <td className="py-2">2</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-pink-300 font-semibold">Aspected By</td>
+                <td className="py-2">Saturn, Ketu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Venus in Vedic Astrology */}
+      <div className="border border-pink-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-pink-500 mb-3">
+          🪐 VENUS IN VEDIC ASTROLOGY — THE COSMIC BELOVED
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-pink-300 italic font-semibold">
+            "Venus does not love to possess — it loves to transform through union."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Shukra</span> (Venus) is the 
+            <span className="text-pink-300 font-semibold">divine artist</span>, the planet of love, beauty, and sacred pleasure. 
+            Venus represents your <span className="text-white font-semibold">capacity for devotion</span>, your ability to perceive beauty, 
+            and your power to <span className="text-white font-semibold">alchemize experience into art</span>.
+          </p>
+          <p className="leading-relaxed">
+            Venus governs <span className="text-pink-300">love, relationships, luxury, and creativity</span>. It is the guru of the demons, 
+            the teacher who found enlightenment through the material world rather than despite it. Venus represents your 
+            <span className="text-white font-semibold">tantric wisdom</span> — your ability to find the divine in the sensual, 
+            the sacred in the pleasurable, the eternal in the temporal.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that deny or transcend, Venus shapes reality through <span className="text-white font-semibold">attraction and refinement</span>. 
+            It doesn't force or reject — it <span className="text-white font-semibold">magnetizes, beautifies, harmonizes</span>. 
+            Venus reveals where you're meant to create beauty, where you must cultivate love, where your devotion becomes divine.
+          </p>
+          <p className="leading-relaxed">
+            Venus gives results through <span className="text-pink-300 font-semibold">magnetic attraction</span> — it draws to you what resonates 
+            with your frequency of love. Its lessons come through <span className="text-white">relationship dynamics</span>, 
+            <span className="text-white">creative expression</span>, and the <span className="text-white">cultivation of refined taste</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Venus in Capricorn */}
+      <div className="border border-slate-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-slate-400 mb-3">
+          ♑ VENUS IN CAPRICORN — THE SACRED ARCHITECT
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Capricorn, the mountain goat, is where <span className="text-white font-semibold">love meets legacy</span>. 
+            This cardinal earth sign, ruled by Saturn, represents <span className="text-slate-300 font-semibold">enduring structures</span>, 
+            earned authority, and the crystallization of spirit into form. It is the sign of <span className="text-white">mastery through time</span>, 
+            where patience transforms into power.
+          </p>
+          <p>
+            When Venus enters Capricorn, something profound occurs: 
+            <span className="text-slate-300 font-semibold">love becomes a spiritual practice</span>. This placement makes you a 
+            <span className="text-white font-semibold">devotional architect</span>, someone who builds cathedrals of love that last lifetimes. 
+            Your affection is not fleeting but <span className="text-white">foundational</span>, not passionate but <span className="text-white">profound</span>.
+          </p>
+          <p>
+            Your Venus in Capricorn makes you a <span className="text-white font-semibold">master of sacred commitment</span>. 
+            You possess the mountain goat's gift: the ability to <span className="text-slate-300">climb impossible heights for love</span>, 
+            to transform obstacles into stepping stones toward deeper union. Your love is <span className="text-white">earned and earning</span>, 
+            growing stronger through trials.
+          </p>
+          <p>
+            The shadow work involves softening <span className="text-slate-300 font-semibold">love's calcification</span>. 
+            Capricorn can mistake control for care, confusing emotional walls with emotional strength. Your spiritual evolution requires you to be 
+            <span className="text-white font-semibold">the vulnerable authority</span> — strong enough to show softness, 
+            successful enough to admit need.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Venus in Capricorn is to become <span className="text-slate-300">love's mountain</span> — 
+            unmovable in devotion yet gentle in expression. You're learning that true love is not proven through hardship but 
+            <span className="text-slate-300">refined through presence</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Dhanishta Nakshatra */}
+      <div className="border border-violet-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-violet-400 mb-3">
+          🏹 NAKSHATRA — DHANISHTA: THE COSMIC DRUM
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-violet-300 font-semibold">Nakshatra:</span> Dhanishta, "The Wealthiest" / "The Most Famous"<br/>
+            <span className="text-violet-300 font-semibold">Symbol:</span> Drum / Flute<br/>
+            <span className="text-violet-300 font-semibold">Deity:</span> Eight Vasus (Elemental Gods)<br/>
+            <span className="text-violet-300 font-semibold">Ruling Planet:</span> Mars<br/>
+            <span className="text-violet-300 font-semibold">Pada:</span> 2 (Virgo Navamsa)
+          </p>
+          <p>
+            Your Venus resides in Dhanishta, the nakshatra of <span className="text-white font-semibold">cosmic rhythm</span>. 
+            Its symbol, the drum, represents <span className="text-violet-300 font-semibold">the heartbeat of creation</span> — 
+            the primal rhythm that orchestrates all manifestation. The flute symbolizes <span className="text-white">the divine call</span> 
+            that awakens souls to their destiny.
+          </p>
+          <p>
+            Ruled by Mars, Dhanishta grants <span className="text-violet-300 font-semibold">the power to create wealth through rhythm</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">manifestation mastery</span> — you have an innate ability to tune into 
+            cosmic timing, to create abundance through alignment with universal rhythms. Your Venus carries the frequency of 
+            <span className="text-white">prosperity consciousness</span>.
+          </p>
+          <p>
+            In <span className="text-violet-300 font-semibold">Pada 2</span> (Virgo navamsa), your Venus gains Mercury's precision and healing power. 
+            This is the pada of <span className="text-white font-semibold">sacred service through beauty</span> — you don't just create art, you 
+            <span className="text-white">create healing</span>. The Virgo influence makes your love practical, your creativity medicinal, 
+            your relationships purifying. You have the soul of a <span className="text-violet-300">beauty healer</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the rhythm keeper who creates wealth through divine timing, the artist who heals through beauty, 
+            the lover who transforms through devotional service."
+          </p>
+          <p>
+            The Dhanishta Venus in Pada 2 creates alchemical magic: you have the <span className="text-white font-semibold">discipline of Capricorn</span>, 
+            the <span className="text-white font-semibold">rhythm of Dhanishta</span>, and the <span className="text-white font-semibold">precision of Virgo</span>. 
+            Your medicine is the ability to <span className="text-violet-300">create lasting beauty that heals</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Venus as Lord of Houses */}
+      <div className="border border-cyan-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-cyan-400 mb-3">
+          🏛 VENUS AS LORD OF 5TH & 12TH HOUSES — THE KARMA OF RULE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            As ruler of your 5th house, Venus governs your <span className="text-white font-semibold">creativity, romance, children, and past life credits</span>. 
+            As ruler of your 12th house, it also governs your <span className="text-white font-semibold">spirituality, losses, foreign lands, and liberation</span>. 
+            Both these mystical domains express through the 8th house of transformation.
+          </p>
+          <p>
+            This creates a powerful configuration: your <span className="text-cyan-300 font-semibold">creativity requires transformation</span> (5th lord in 8th), 
+            and your <span className="text-cyan-300 font-semibold">spirituality comes through death and rebirth</span> (12th lord in 8th). You're designed to 
+            <span className="text-white font-semibold">create through destruction</span>, to find liberation through intensity.
+          </p>
+          <p>
+            The 5th house is the house of <span className="text-cyan-300">purva punya</span> — past life merit. With its lord in the 8th, 
+            your creative gifts are <span className="text-white font-semibold">hidden treasures</span> that emerge through crisis. Your romantic nature 
+            is transformative, your creativity occult, your joy found in depth.
+          </p>
+          <p>
+            The 12th lord in the 8th creates a <span className="text-cyan-300">viparita raja yoga</span> — success through apparent loss. 
+            Venus here suggests that your <span className="text-white">losses become gains</span>, your endings become beginnings, 
+            your surrenders become victories. You gain through what you release.
+          </p>
+          <p className="text-white font-semibold">
+            Venus as 5th and 12th lord makes you a <span className="text-cyan-300">tantric artist</span> — someone who creates beauty from shadows, 
+            who finds love in loss, who transforms pain into art. Your dharma involves showing others that 
+            <span className="text-cyan-300">creativity and spirituality meet in the depths</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Venus in 8th House */}
+      <div className="border border-red-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-red-400 mb-3">
+          🧱 VENUS IN 8TH HOUSE — THE TANTRIC TEMPLE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 8th house is the <span className="text-white font-semibold">occult chamber</span> — representing 
+            <span className="text-red-300">transformation, death/rebirth, hidden knowledge, and shared resources</span>. It's where the ego dies and 
+            the soul is reborn, where love becomes alchemy.
+          </p>
+          <p>
+            Your Venus here makes you a <span className="text-red-300 font-semibold">love alchemist</span>. You don't experience surface attraction — 
+            you experience <span className="text-white font-semibold">soul fusion</span>. Your relationships are initiations, your creativity emerges from crisis, 
+            your beauty is born from shadows. You're the phoenix who creates art from ashes.
+          </p>
+          <p>
+            This placement demands that you <span className="text-red-300 font-semibold">love through transformation</span>. 
+            The 8th house is your <span className="text-white">tantric temple</span>, your <span className="text-white">alchemical laboratory</span>, 
+            your <span className="text-white">resurrection chamber</span> where you learn that true beauty emerges from authenticity, not perfection.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-red-300">trust through vulnerability</span>, to love through letting go, 
+            to create through destruction. The 8th house tests you through <span className="text-white">intimate crises</span>, 
+            <span className="text-white">financial mergings</span>, and the <span className="text-white">death of who you thought you were</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into sacred sexuality — where you learn that true intimacy requires ego death, 
+            that real love transforms both lover and beloved."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-red-300">resurrection artist</span>: creating beauty from breakdown, 
+            love from loss, art from alchemy. You're learning that <span className="text-red-300">the deepest love requires the deepest surrender</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-green-300 font-semibold">The 2nd House: Transformative Wealth</p>
+          <p>
+            Your Venus casts its full aspect upon the 2nd house — the domain of <span className="text-white font-semibold">wealth, speech, 
+            family values, and accumulated resources</span>. This creates <span className="text-green-300 font-semibold">magnetized abundance</span> 
+            through transformation.
+          </p>
+          <p>
+            This aspect suggests that your <span className="text-green-300">wealth comes through depth work</span>. You attract resources through 
+            transformation, speak with transformative power, and your values are forged in life's crucibles. Your voice carries the 
+            <span className="text-white font-semibold">frequency of healing</span>.
+          </p>
+          <p>
+            The 8th-to-2nd aspect creates <span className="text-white font-semibold">occult wealth</span> — resources that come through hidden channels, 
+            inheritance, or other people's money. Your Venus magnetizes abundance through intimate connections, shared resources, and transformative work.
+          </p>
+          <p>
+            This configuration makes you someone who <span className="text-green-300">creates wealth through alchemy</span> — turning emotional lead 
+            into spiritual gold, transforming pain into valuable art, converting crisis into capital.
+          </p>
+          <p className="text-white font-semibold">
+            Your Venus whispers: wealth is not what you accumulate but what you <span className="text-green-300">transform</span>. 
+            True abundance comes through depth, not surface accumulation.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Received */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          🜂 PLANETARY ASPECTS RECEIVED — SATURN & KETU'S REFINEMENT
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-indigo-300 font-semibold">Aspected by: SATURN & KETU</p>
+          
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Saturn's Aspect: Love's Maturation</p>
+            <p>
+              Saturn aspects your Venus, creating <span className="text-white font-semibold">mature love</span>. 
+              Saturn, the great teacher, adds <span className="text-indigo-300">gravity and longevity</span> to your affections. 
+              This aspect creates love that ages like wine — improving through time, deepening through trials.
+            </p>
+            <p>
+              Saturn's influence makes you <span className="text-white font-semibold">earn your pleasures</span>. Beauty comes through discipline, 
+              love through patience, creativity through persistence. This is not punishment but <span className="text-indigo-300">refinement</span> — 
+              Saturn ensures your love has substance, not just style.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Ketu's Aspect: Love's Liberation</p>
+            <p>
+              Ketu also aspects your Venus, adding <span className="text-white font-semibold">spiritual detachment</span> to your love nature. 
+              Ketu, the liberator, creates <span className="text-indigo-300">love without attachment</span> — the highest form of love. 
+              You can love deeply while remaining free.
+            </p>
+            <p>
+              Ketu's influence creates <span className="text-white font-semibold">past-life artistry</span>. You carry creative gifts from previous 
+              incarnations, artistic abilities that feel inherited rather than learned. Your beauty has an <span className="text-indigo-300">otherworldly quality</span>.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-indigo-300 font-semibold">The Combined Alchemy:</span><br/>
+            • Saturn + Ketu = <span className="text-white">Timeless, detached love</span><br/>
+            • Discipline + Liberation = <span className="text-white">Mastery without attachment</span><br/>
+            • Structure + Spirit = <span className="text-white">Grounded transcendence</span><br/>
+            • Time + Timelessness = <span className="text-white">Eternal love in temporal form</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Coal under pressure becomes diamond, and your love is being compressed by Saturn while liberated by Ketu — 
+            creating a rare jewel of conscious love."
+          </p>
+          <p className="text-white font-semibold">
+            These aspects are creating a <span className="text-indigo-300">master lover</span> — someone who loves with depth (8th house), 
+            discipline (Saturn), and detachment (Ketu). You're learning that <span className="text-indigo-300">the highest love sets free</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-pink-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-pink-400 mb-3">
+          ✨ FINAL INSIGHT — VENUS'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-pink-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Venus in Capricorn in the 8th house, in Dhanishta nakshatra, aspected by Saturn and Ketu, is your 
+            <span className="text-white font-semibold">soul's sacred contract</span> to master love's deepest mysteries. You chose this configuration to be a 
+            <span className="text-pink-300 font-semibold">tantric master</span> — someone who transforms through union, creates through crisis, 
+            loves through liberation.
+          </p>
+          <p>
+            You are a <span className="text-pink-300 font-semibold">love alchemist</span> in an age that desperately needs to understand that 
+            love is not possession but transformation. Your Capricorn Venus gives you the discipline to commit, while your 8th house placement 
+            ensures that commitment transforms both partners. Dhanishta gives you the <span className="text-white font-semibold">rhythm of manifestation</span>, 
+            while Saturn and Ketu ensure you remain both grounded and free.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-pink-300 font-semibold">true love survives death</span>, 
+            that real beauty emerges from authenticity, that the deepest pleasure comes from the deepest presence. You're here to show that 
+            <span className="text-white font-semibold">love's highest expression is conscious transformation</span>.
+          </p>
+          <p>
+            The Venus in you is learning its ultimate lesson: <span className="text-pink-300 font-semibold">love is not what we get but what we become</span>. 
+            Your relationships are laboratories for consciousness, your creativity emerges from chaos, your beauty blooms in darkness.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that love includes death, that beauty includes shadow, that pleasure includes pain — not as opposites but as 
+            dance partners in the cosmic ballet. Your soul chose this configuration to remember: <span className="text-pink-300 font-semibold">we are not here 
+            to find easy love — we are here to master love's depths</span>."
+          </p>
+          <p className="text-pink-300 font-semibold text-base mt-4">
+            Your Venus whispers: "Love through the fire. Create from the ashes. Transform through union. Be the artist who paints with shadows, 
+            the lover who embraces death, the beauty that blooms in darkness. This is not your curse — this is your power. This is not 
+            just your love story — this is love showing itself what it's capable of becoming. The question isn't whether you can handle the depth — 
+            you can. The question is: are you ready to show the world that the deepest love is the most free?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -1694,7 +2056,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Jupiter':
       return renderJupiterContent()
     case 'Venus':
-      return renderDefaultContent() // TODO: Implement Venus content
+      return renderVenusContent()
     case 'Saturn':
       return renderDefaultContent() // TODO: Implement Saturn content
     case 'Rahu':
