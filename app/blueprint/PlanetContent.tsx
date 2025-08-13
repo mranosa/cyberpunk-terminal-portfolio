@@ -279,15 +279,70 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
         </div>
       </div>
 
+      {/* Planetary Conjunctions */}
+      <div className="border border-amber-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-amber-400 mb-3">
+          🤝 PLANETARY CONJUNCTIONS — BLENDED KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-amber-300 font-semibold">Conjunct With: RAHU & JUPITER</p>
+          
+          <div className="mt-3">
+            <p className="text-amber-300 font-semibold">Rahu Conjunction: The Eclipse King</p>
+            <p>
+              Rahu conjunct Sun creates a <span className="text-white font-semibold">permanent eclipse</span> in your chart. 
+              This is the signature of <span className="text-amber-300">revolutionary leadership</span> — 
+              you're not meant to follow traditional paths to authority. Rahu amplifies your Sun's desire for recognition into 
+              <span className="text-white">cosmic proportions</span>.
+            </p>
+            <p>
+              This conjunction creates <span className="text-white font-semibold">magnetic charisma</span> tinged with mystery. 
+              People are drawn to your light, yet sense something otherworldly about it. You carry the energy of 
+              <span className="text-amber-300">the outsider who becomes the leader</span>, the rebel who redefines authority.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-amber-300 font-semibold">Jupiter Conjunction: The Wisdom King</p>
+            <p>
+              Jupiter conjunct Sun creates <span className="text-white font-semibold">enlightened authority</span>. 
+              This is a royal conjunction — the guru and the king united. Your soul purpose (Sun) is infused with 
+              <span className="text-amber-300">divine wisdom</span> (Jupiter). You're meant to lead through teaching, 
+              to have authority through understanding.
+            </p>
+            <p>
+              This combination grants <span className="text-white font-semibold">natural fortune in leadership</span>. 
+              Doors open for you when you embody your dharmic purpose. Your presence itself becomes a teaching, 
+              your success a blessing to others.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-amber-300 font-semibold">The Triple Crown:</span><br/>
+            • Sun + Rahu = <span className="text-white">Revolutionary authority that breaks tradition</span><br/>
+            • Sun + Jupiter = <span className="text-white">Wise leadership that inspires growth</span><br/>
+            • Sun + Rahu + Jupiter = <span className="text-white">The spiritual revolutionary who leads through awakening</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Three forces share your solar throne — the Sun brings divine authority, Rahu brings revolutionary hunger, 
+            Jupiter brings cosmic wisdom. You are the eclipse that illuminates new paths."
+          </p>
+        </div>
+      </div>
+
       {/* Planetary Aspects Received */}
       <div className="border border-orange-400/30 p-4 bg-black/70">
         <h4 className="text-base font-bold text-orange-400 mb-3">
-          🜂 PLANETARY ASPECTS RECEIVED — KETU'S REFINING FIRE
+          🜂 PLANETARY ASPECTS RECEIVED — REFINING FIRE
         </h4>
         <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-          <p className="text-orange-300 font-semibold">Aspected by: KETU (South Node)</p>
-          <p>
-            Ketu, the South Node of the Moon, aspects your Sun — a <span className="text-white font-semibold">profound karmic signature</span>. 
+          <p className="text-orange-300 font-semibold">Aspected By: KETU</p>
+          
+          <div className="mt-3">
+            <p className="text-orange-300 font-semibold">Ketu's Aspect: The Spiritual Refinement</p>
+            <p>
+              Ketu, the South Node, aspects your Sun — creating <span className="text-white font-semibold">spiritual sophistication</span>. 
             Ketu represents <span className="text-orange-300 font-semibold">past life mastery</span>, <span className="text-orange-300 font-semibold">spiritual detachment</span>, 
             and the <span className="text-orange-300 font-semibold">dissolution of ego</span>. Its aspect on your Sun creates a fascinating paradox: 
             the planet of ego receives the influence of ego's dissolution.
@@ -401,6 +456,10 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
               <tr className="border-b border-gray-700">
                 <td className="py-2 text-gray-300 font-semibold">Aspects Given</td>
                 <td className="py-2">1</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Conjunct With</td>
+                <td className="py-2">Uranus, Neptune</td>
               </tr>
               <tr>
                 <td className="py-2 text-gray-300 font-semibold">Aspected By</td>
@@ -639,6 +698,77 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
         </div>
       </div>
 
+      {/* Planetary Conjunctions */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          🤝 PLANETARY CONJUNCTIONS — BLENDED KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-indigo-300 font-semibold">Conjunct With: URANUS & NEPTUNE</p>
+          
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Uranus Conjunction: The Awakening Heart</p>
+            <p>
+              Uranus conjunct Moon creates <span className="text-white font-semibold">emotional electricity</span>. 
+              This is the signature of <span className="text-indigo-300">the emotional revolutionary</span> — 
+              your feelings don't follow conventional patterns. Uranus brings sudden emotional insights, 
+              <span className="text-white">intuitive downloads</span>, and the need for emotional freedom.
+            </p>
+            <p>
+              This conjunction makes you <span className="text-white font-semibold">emotionally ahead of your time</span>. 
+              You feel the future before it arrives, sense collective shifts before they manifest. 
+              Your emotional body is tuned to <span className="text-indigo-300">higher frequencies</span> — 
+              you're literally feeling at a different vibration than most.
+            </p>
+            <p>
+              The gift: <span className="text-white">Emotional genius</span> that sees patterns others miss. 
+              The challenge: <span className="text-white">Emotional volatility</span> that can feel alienating. 
+              The medicine: Learning that your <span className="text-indigo-300 font-semibold">emotional uniqueness is your gift to humanity</span>.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Neptune Conjunction: The Mystical Heart</p>
+            <p>
+              Neptune conjunct Moon creates <span className="text-white font-semibold">boundless emotional depth</span>. 
+              This is the configuration of <span className="text-indigo-300">the mystic empath</span> — 
+              your emotional boundaries are permeable, allowing you to feel the collective unconscious, 
+              to merge with universal emotion.
+            </p>
+            <p>
+              This combination grants <span className="text-white font-semibold">psychic emotional perception</span>. 
+              You don't just feel your emotions — you feel the emotional field itself. 
+              Neptune dissolves the Moon's personal feelings into <span className="text-indigo-300">oceanic compassion</span>, 
+              creating a heart that feels for all beings.
+            </p>
+            <p>
+              The gift: <span className="text-white">Infinite compassion and spiritual sensitivity</span>. 
+              The challenge: <span className="text-white">Emotional confusion</span> about what feelings are yours. 
+              The medicine: <span className="text-indigo-300 font-semibold">Grounding spiritual emotions in daily sacred practice</span>.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-indigo-300 font-semibold">The Triple Conjunction Dynamic:</span><br/>
+            • Moon + Uranus = <span className="text-white">Revolutionary emotions that break patterns</span><br/>
+            • Moon + Neptune = <span className="text-white">Mystical feelings that transcend boundaries</span><br/>
+            • Moon + Uranus + Neptune = <span className="text-white">The awakened mystic who feels the future of consciousness</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Three cosmic forces dance in your emotional waters — the Moon brings feeling, Uranus brings awakening, 
+            Neptune brings transcendence. You are the emotional antenna for humanity's evolution."
+          </p>
+          <p>
+            This triple conjunction in Sagittarius creates a <span className="text-indigo-300 font-semibold">prophetic emotional nature</span>. 
+            You're designed to <span className="text-white">feel the future</span> (Uranus), 
+            <span className="text-white">channel divine emotion</span> (Neptune), and 
+            <span className="text-white">translate it into wisdom</span> (Sagittarius). 
+            The 7th house placement means this all happens <span className="text-white font-semibold">through sacred partnership</span>.
+          </p>
+        </div>
+      </div>
+
       {/* Final Insight */}
       <div className="border border-gray-400/30 p-4 bg-black/70">
         <h4 className="text-base font-bold text-gray-400 mb-3">
@@ -649,16 +779,18 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
             "You are not here to escape your karma — you are here to master it."
           </p>
           <p>
-            Your Moon in Sagittarius in the 7th house, in Purvashadha nakshatra, is your <span className="text-white font-semibold">soul's conscious design</span> 
-            for mastering the sacred art of conscious relationship. You chose this configuration to learn that 
-            <span className="text-gray-300 font-semibold">wisdom comes through connection</span>, that truth is discovered in dialogue, 
-            that the highest philosophy is love in action.
+            Your Moon in Sagittarius in the 7th house, in Purvashadha nakshatra, conjunct Uranus and Neptune, is your 
+            <span className="text-white font-semibold">soul's conscious design</span> for mastering the sacred art of conscious relationship. 
+            You chose this configuration to learn that <span className="text-gray-300 font-semibold">wisdom comes through connection</span>, 
+            that truth is discovered in dialogue, that the highest philosophy is love in action.
           </p>
           <p>
-            You are a <span className="text-gray-300 font-semibold">relationship philosopher</span> in an age that desperately needs to understand 
-            sacred partnership. Your Sagittarius Moon makes you optimistic enough to keep believing in love, while your 7th house placement 
-            ensures you have the experience to make it real. Purvashadha gives you the <span className="text-white font-semibold">invincibility to persist</span> 
-            when relationships challenge you, while the Leo pada ensures you never lose your sovereign self in the process.
+            You are a <span className="text-gray-300 font-semibold">mystical relationship revolutionary</span> in an age that desperately needs 
+            to understand sacred partnership. Your Sagittarius Moon makes you optimistic enough to keep believing in love, 
+            Uranus makes you brave enough to revolutionize it, Neptune makes you sensitive enough to feel its divine essence, 
+            while your 7th house placement ensures you have the laboratory to make it real. Purvashadha gives you the 
+            <span className="text-white font-semibold">invincibility to persist</span> when relationships challenge you, 
+            while the Leo pada ensures you never lose your sovereign self in the oceanic merge.
           </p>
           <p>
             Your dharma is to demonstrate that <span className="text-gray-300 font-semibold">relationships are spiritual paths</span>, 
@@ -1347,6 +1479,10 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
                 <td className="py-2 text-amber-300 font-semibold">Aspects Given</td>
                 <td className="py-2">2, 4, 6</td>
               </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Conjunct With</td>
+                <td className="py-2">Rahu, Sun</td>
+              </tr>
               <tr>
                 <td className="py-2 text-amber-300 font-semibold">Aspected By</td>
                 <td className="py-2">Ketu</td>
@@ -1583,10 +1719,75 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
         </div>
       </div>
 
+      {/* Planetary Conjunctions */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          🤝 PLANETARY CONJUNCTIONS — BLENDED KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-indigo-300 font-semibold">Conjunct With: RAHU & SUN</p>
+          
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Rahu Conjunction: The Infinite Hunger</p>
+            <p>
+              Rahu conjunct Jupiter creates <span className="text-white font-semibold">boundless spiritual ambition</span>. 
+              This is the signature of <span className="text-indigo-300">the revolutionary guru</span> — 
+              you're not content with traditional teachings. Rahu amplifies Jupiter's wisdom into 
+              <span className="text-white">cosmic proportions</span>, creating an insatiable hunger for ultimate truth.
+            </p>
+            <p>
+              This conjunction makes you a <span className="text-white font-semibold">spiritual innovator</span>. 
+              You're drawn to unconventional paths, foreign philosophies, cutting-edge consciousness technologies. 
+              Rahu with Jupiter creates <span className="text-indigo-300">magnetic teaching presence</span> — 
+              people are mesmerized by your wisdom, sensing something both ancient and futuristic.
+            </p>
+            <p>
+              The shadow: Rahu can inflate Jupiter into <span className="text-white">spiritual grandiosity</span>, 
+              the guru complex, or addiction to being seen as enlightened. The medicine is remembering that 
+              <span className="text-indigo-300 font-semibold">true wisdom is knowing you know nothing</span>.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Sun Conjunction: The Illuminated Teacher</p>
+            <p>
+              Sun conjunct Jupiter creates <span className="text-white font-semibold">radiant wisdom</span>. 
+              This is a royal conjunction — the soul's purpose (Sun) united with divine grace (Jupiter). 
+              Your very essence carries <span className="text-indigo-300">teaching authority</span>. 
+              You don't just have wisdom — you ARE a wisdom transmission.
+            </p>
+            <p>
+              This combination grants <span className="text-white font-semibold">natural spiritual leadership</span>. 
+              Your presence itself becomes a teaching, your success a blessing to others. The Sun illuminates 
+              Jupiter's wisdom, making it <span className="text-indigo-300">visible, accessible, and authoritative</span>.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-indigo-300 font-semibold">The Triple Conjunction Dynamic:</span><br/>
+            • Jupiter + Rahu = <span className="text-white">Boundless spiritual expansion that breaks tradition</span><br/>
+            • Jupiter + Sun = <span className="text-white">Illuminated wisdom that carries divine authority</span><br/>
+            • Jupiter + Rahu + Sun = <span className="text-white">The revolutionary spiritual leader who redefines enlightenment</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Three cosmic forces share your wisdom throne — Jupiter brings grace, Rahu brings revolution, 
+            Sun brings illumination. You are the spiritual supernova, expanding consciousness in all directions."
+          </p>
+          <p>
+            This triple conjunction in Pisces creates a <span className="text-indigo-300 font-semibold">mystical revolutionary</span>. 
+            You're here to <span className="text-white">dissolve old spiritual paradigms</span> (Rahu), 
+            <span className="text-white">embody divine authority</span> (Sun), and 
+            <span className="text-white">expand consciousness infinitely</span> (Jupiter). 
+            The 10th house placement ensures this all happens <span className="text-white font-semibold">publicly, professionally, impactfully</span>.
+          </p>
+        </div>
+      </div>
+
       {/* Planetary Aspects Received */}
       <div className="border border-orange-400/30 p-4 bg-black/70">
         <h4 className="text-base font-bold text-orange-400 mb-3">
-          🜂 PLANETARY ASPECTS RECEIVED — KETU'S SPIRITUAL REFINEMENT
+          🜂 PLANETARY ASPECTS RECEIVED — REFINING FIRE
         </h4>
         <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
           <p className="text-orange-300 font-semibold">Aspected by: KETU (South Node)</p>
