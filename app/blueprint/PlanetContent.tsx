@@ -373,6 +373,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
             who rises by having no fear of falling. You're learning that the highest expression of the Sun — <span className="text-orange-300">pure consciousness</span> — 
             emerges only when the ego has been refined in Ketu's spiritual fire.
           </p>
+          </div>
         </div>
       </div>
 
