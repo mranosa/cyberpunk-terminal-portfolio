@@ -7,7 +7,7 @@ export function BlueprintCommand() {
   const router = useRouter()
 
   const handleViewBlueprint = () => {
-    router.push('/blueprint')
+    router.push('/blueprint/sun')
   }
 
   const planetHighlights = [
