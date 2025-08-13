@@ -9,16 +9,10 @@ export function HelpCommand() {
         <span className="cyber-purple">blueprint</span> - My karmic blueprint via vedic astrology
       </div>
       <div className="ultra-light">
-        <span className="aurora-green">thoughts</span> - Display random thoughts
-      </div>
-      <div className="ultra-light">
         <span className="nebula-pink">about</span> - About this terminal
       </div>
       <div className="ultra-light">
         <span className="nebula-pink">clear</span> - Clear terminal
-      </div>
-      <div className="ultra-light">
-        <span className="fusion-orange">matrix</span> - Enter the matrix
       </div>
       <div className="ultra-light">
         <span className="cyber-purple">reload</span> - Reload with splash screen

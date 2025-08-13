@@ -11,9 +11,7 @@ import {
   HelpCommand,
   BlogListCommand,
   WorkExperienceCommand,
-  ThoughtsCommand,
   AboutCommand,
-  MatrixCommand,
   BlueprintCommand
 } from './terminal/commands'
 
@@ -249,16 +247,8 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
         output = <WorkExperienceCommand />
         break
 
-      case 'thoughts':
-        output = <ThoughtsCommand />
-        break
-
       case 'about':
         output = <AboutCommand />
-        break
-
-      case 'matrix':
-        output = <MatrixCommand />
         break
 
       case 'blueprint':

@@ -1,5 +1,5 @@
 export { HelpCommand } from './HelpCommand'
 export { BlogListCommand } from './BlogCommand'
 export { WorkExperienceCommand } from './WorkExperienceCommand'
-export { ThoughtsCommand, AboutCommand, MatrixCommand } from './OtherCommands'
+export { AboutCommand } from './OtherCommands'
 export { BlueprintCommand } from './BlueprintCommand'
