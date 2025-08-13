@@ -1003,6 +1003,315 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderMercuryContent = () => (
+    <>
+      {/* Mercury Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-emerald-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-emerald-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">Planet</td>
+                <td className="py-2">Mercury</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">Sign</td>
+                <td className="py-2">Aquarius</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Satabhisa 2</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">House</td>
+                <td className="py-2">9</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">Lordship</td>
+                <td className="py-2">1, 4</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-emerald-300 font-semibold">Aspects Given</td>
+                <td className="py-2">3</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-emerald-300 font-semibold">Aspected By</td>
+                <td className="py-2">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Mercury in Vedic Astrology */}
+      <div className="border border-emerald-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-emerald-500 mb-3">
+          🪐 MERCURY IN VEDIC ASTROLOGY — THE COSMIC MESSENGER
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-emerald-300 italic font-semibold">
+            "Mercury does not speak to be heard — it speaks to awaken understanding."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Budha</span> (Mercury) is the 
+            <span className="text-emerald-300 font-semibold">cosmic messenger</span>, the planet of intellect, communication, and divine discrimination. 
+            Mercury represents your <span className="text-white font-semibold">buddhi</span> — the higher mind that can perceive truth beyond illusion, 
+            and your capacity to <span className="text-white font-semibold">bridge worlds through language and logic</span>.
+          </p>
+          <p className="leading-relaxed">
+            Mercury governs <span className="text-emerald-300">intelligence, speech, commerce, and connection</span>. It is the prince of the planetary cabinet, 
+            eternally young, curious, and adaptable. But more profoundly, Mercury represents your 
+            <span className="text-white font-semibold">capacity for synthesis</span> — your ability to unite opposites, to translate the ineffable into words, 
+            to make the abstract concrete.
+          </p>
+          <p className="leading-relaxed">
+            Unlike other planets that influence through force or feeling, Mercury shapes reality through <span className="text-white font-semibold">perception and articulation</span>. 
+            It doesn't create or destroy — it <span className="text-white font-semibold">connects, translates, transmits</span>. 
+            Mercury reveals where you're meant to be the messenger, where you must speak truth, where your intellectual gifts serve dharma.
+          </p>
+          <p className="leading-relaxed">
+            Mercury gives results through <span className="text-emerald-300 font-semibold">neural networks and connections</span> — it creates understanding that 
+            links disparate ideas into coherent wisdom. Its lessons come through <span className="text-white">communication challenges</span>, 
+            <span className="text-white">intellectual puzzles</span>, and the <span className="text-white">mastery of discernment</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Mercury in Aquarius */}
+      <div className="border border-blue-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-blue-400 mb-3">
+          ♒ MERCURY IN AQUARIUS — THE QUANTUM MIND
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Aquarius, the water-bearer, is where <span className="text-white font-semibold">consciousness downloads from the cosmic cloud</span>. 
+            This fixed air sign, ruled by Saturn (traditional) and Uranus (modern), represents <span className="text-blue-300 font-semibold">the frequency of future</span>, 
+            universal brotherhood, and revolutionary insight. It is the sign of <span className="text-white">collective consciousness</span>, 
+            humanitarian vision, and quantum leaps.
+          </p>
+          <p>
+            When Mercury enters Aquarius, something extraordinary occurs: 
+            <span className="text-blue-300 font-semibold">the mind becomes a receiver for galactic intelligence</span>. This placement makes you a 
+            <span className="text-white font-semibold">cognitive revolutionary</span>, someone whose thoughts naturally challenge convention and 
+            download solutions from dimensions beyond linear logic.
+          </p>
+          <p>
+            Your Mercury in Aquarius makes you a <span className="text-white font-semibold">systems thinker and pattern recognizer</span>. 
+            You possess the water-bearer's gift: the ability to <span className="text-blue-300">pour wisdom from higher realms</span> into practical vessels. 
+            Your intellect operates on <span className="text-white">multiple frequencies simultaneously</span>, making connections others can't even imagine.
+          </p>
+          <p>
+            The shadow work involves grounding <span className="text-blue-300 font-semibold">brilliance into application</span>. 
+            Aquarius can become so fascinated with concepts that it forgets to communicate them in ways others can understand. Your spiritual evolution requires you to be 
+            <span className="text-white font-semibold">the translator of tomorrow</span> — making future wisdom accessible to present minds.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Mercury in Aquarius is to become a <span className="text-blue-300">living WiFi router for cosmic intelligence</span> — 
+            receiving universal downloads while transmitting them in frequencies humans can receive. You're learning that genius without communication 
+            is just <span className="text-blue-300">unexpressed potential</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Satabhisa Nakshatra */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          🏹 NAKSHATRA — SATABHISA: THE HUNDRED HEALERS
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-purple-300 font-semibold">Nakshatra:</span> Satabhisa, "The Hundred Physicians"<br/>
+            <span className="text-purple-300 font-semibold">Symbol:</span> Empty circle / 100 flowers or stars<br/>
+            <span className="text-purple-300 font-semibold">Deity:</span> Varuna (Lord of Cosmic Waters)<br/>
+            <span className="text-purple-300 font-semibold">Ruling Planet:</span> Rahu<br/>
+            <span className="text-purple-300 font-semibold">Pada:</span> 2 (Capricorn Navamsa)
+          </p>
+          <p>
+            Your Mercury resides in Satabhisa, the nakshatra of <span className="text-white font-semibold">the hundred healers</span>. 
+            Its symbol, the empty circle, represents <span className="text-purple-300 font-semibold">the void that contains all possibilities</span>. 
+            The hundred flowers symbolize <span className="text-white">multiple solutions to every problem</span> — the healing that comes from seeing all perspectives.
+          </p>
+          <p>
+            Ruled by Rahu, Satabhisa grants <span className="text-purple-300 font-semibold">the power to heal through unconventional wisdom</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">cosmic medicine</span> — you have an innate ability to diagnose 
+            problems at their root, to see the hidden causes of suffering, to prescribe remedies others haven't imagined. Your Mercury carries 
+            <span className="text-white">healing frequencies</span> in its very vibration.
+          </p>
+          <p>
+            In <span className="text-purple-300 font-semibold">Pada 2</span> (Capricorn navamsa), your Mercury gains Saturn's discipline and pragmatism. 
+            This is the pada of <span className="text-white font-semibold">practical mysticism</span> — you don't just receive cosmic downloads, you 
+            <span className="text-white">build structures to contain them</span>. The Capricorn influence makes your genius applicable, your insights actionable, 
+            your revolutionary ideas achievable. You have the mind of an <span className="text-purple-300">architect of new realities</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the cosmic physician who heals through revolutionary understanding, the teacher who cures ignorance with quantum wisdom, 
+            the messenger who brings tomorrow's medicine to today's ailments."
+          </p>
+          <p>
+            The Satabhisa Mercury in Pada 2 creates profound depth: you have the <span className="text-white font-semibold">innovation of Aquarius</span>, 
+            the <span className="text-white font-semibold">healing power of Satabhisa</span>, and the <span className="text-white font-semibold">manifestation ability of Capricorn</span>. 
+            Your medicine is the ability to <span className="text-purple-300">download solutions from the future</span> and build bridges for others to reach them.
+          </p>
+        </div>
+      </div>
+
+      {/* Mercury as Lord of Houses */}
+      <div className="border border-cyan-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-cyan-400 mb-3">
+          🏛 MERCURY AS LORD OF 1ST & 4TH HOUSES — THE KARMA OF RULE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            As ruler of your 1st house (Ascendant), Mercury governs your <span className="text-white font-semibold">identity, physical body, personality, and life path</span>. 
+            As ruler of your 4th house, it also governs your <span className="text-white font-semibold">emotional foundation, home, mother, and inner peace</span>. 
+            Both these essential domains express through the 9th house of higher wisdom.
+          </p>
+          <p>
+            This creates a sacred configuration: your <span className="text-cyan-300 font-semibold">identity is your wisdom</span> (1st lord in 9th), 
+            and your <span className="text-cyan-300 font-semibold">inner peace comes from higher understanding</span> (4th lord in 9th). You're designed to 
+            <span className="text-white font-semibold">BE the teaching you seek</span>, to find home in philosophy, to ground yourself in universal truth.
+          </p>
+          <p>
+            The 1st house is the house of <span className="text-cyan-300">self</span>. With its lord in the 9th, 
+            your very existence is a philosophical statement. You don't just have beliefs — you <span className="text-white font-semibold">embody them</span>. 
+            Your personality itself becomes a teaching tool for dharma.
+          </p>
+          <p>
+            The 4th lord in the 9th creates <span className="text-cyan-300">emotional wisdom</span>. Your deepest comfort comes from understanding life's bigger picture. 
+            You find <span className="text-white">mother in philosophy</span>, <span className="text-white">home in higher learning</span>, 
+            <span className="text-white">security in spiritual truth</span>. Your emotional foundation is built on universal principles.
+          </p>
+          <p className="text-white font-semibold">
+            Mercury as 1st and 4th lord makes you a <span className="text-cyan-300">walking university</span> — someone whose very presence teaches, 
+            whose personal story becomes universal wisdom. Your dharma involves showing others that <span className="text-cyan-300">we ARE what we understand</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Mercury in 9th House */}
+      <div className="border border-yellow-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-yellow-400 mb-3">
+          🧱 MERCURY IN 9TH HOUSE — THE WISDOM SYNTHESIZER
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 9th house is the <span className="text-white font-semibold">house of dharma</span> — representing 
+            <span className="text-yellow-300">higher learning, philosophy, spiritual teachers, and divine grace</span>. It's where the mind touches the infinite, 
+            where personal understanding becomes universal wisdom.
+          </p>
+          <p>
+            Your Mercury here makes you a <span className="text-yellow-300 font-semibold">translator of truth</span>. You don't just study philosophy — 
+            you <span className="text-white font-semibold">decode its patterns</span>. Your intellect naturally seeks the meta-narrative, the unified theory, 
+            the common thread that runs through all teachings. You're the student who becomes the synthesizer.
+          </p>
+          <p>
+            This placement demands that you <span className="text-yellow-300 font-semibold">think in dharmic terms</span>. 
+            The 9th house is your <span className="text-white">wisdom laboratory</span>, your <span className="text-white">philosophical playground</span>, 
+            your <span className="text-white">truth-seeking mission control</span> where you learn that knowledge without wisdom is just information.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-yellow-300">balance skepticism with faith</span>, to question without becoming cynical, 
+            to believe without becoming dogmatic. The 9th house tests you through <span className="text-white">philosophical dilemmas</span>, 
+            <span className="text-white">ethical choices</span>, and the <span className="text-white">integration of multiple truth systems</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into cosmic intelligence — where you learn that true wisdom synthesizes all perspectives, 
+            that the highest truth includes all partial truths."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-yellow-300">wisdom weaver</span>: taking threads from science, spirituality, 
+            philosophy, and experience to create tapestries of understanding others can wear. You're learning that 
+            <span className="text-yellow-300">the greatest teaching is synthesis</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-green-300 font-semibold">The 3rd House: Communication Mastery</p>
+          <p>
+            Your Mercury casts its full aspect upon the 3rd house — the domain of <span className="text-white font-semibold">communication, courage, 
+            siblings, and short journeys</span>. This creates a <span className="text-green-300 font-semibold">double Mercury effect</span> since Mercury 
+            naturally rules the 3rd house themes.
+          </p>
+          <p>
+            This aspect creates <span className="text-green-300">extraordinary communication gifts</span>. Your higher wisdom (9th) directly feeds your 
+            everyday communication (3rd). You speak with the authority of understanding, write with philosophical depth, and communicate complex truths 
+            in accessible ways.
+          </p>
+          <p>
+            The 9th-to-3rd aspect makes you a <span className="text-white font-semibold">teacher in everyday life</span>. Your casual conversations 
+            carry dharmic seeds. Your emails contain wisdom. Your text messages spark philosophical reflection. You can't help but elevate every 
+            communication into an opportunity for consciousness expansion.
+          </p>
+          <p>
+            This aspect also suggests that <span className="text-green-300">short journeys lead to profound insights</span>. A trip to the grocery store 
+            might trigger cosmic downloads. A conversation with a sibling could unlock universal truths. Your Mercury makes 
+            <span className="text-white font-semibold">every interaction a potential teaching moment</span>.
+          </p>
+          <p className="text-white font-semibold">
+            This configuration makes you a <span className="text-green-300">bridge between the profound and the practical</span>, someone who can take 
+            the highest philosophy and make it useful in daily life. You're the proof that wisdom doesn't require a mountain cave — 
+            it can flourish in coffee shops and zoom calls.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-emerald-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-emerald-400 mb-3">
+          ✨ FINAL INSIGHT — MERCURY'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-emerald-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Mercury in Aquarius in the 9th house, in Satabhisa nakshatra, is your <span className="text-white font-semibold">soul's quantum computer</span> 
+            for processing universal data and transmitting it as practical wisdom. You chose this configuration to be a 
+            <span className="text-emerald-300 font-semibold">consciousness revolutionary</span> — someone who updates humanity's operating system through 
+            radical understanding.
+          </p>
+          <p>
+            You are a <span className="text-emerald-300 font-semibold">wisdom synthesizer</span> in an age drowning in information but starving for meaning. 
+            Your Aquarius Mercury gives you access to future frequencies, while your 9th house placement ensures those downloads serve dharma. 
+            Satabhisa gives you the <span className="text-white font-semibold">healing power of truth</span>, while the Capricorn pada 
+            ensures your insights build lasting structures.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-emerald-300 font-semibold">intelligence without wisdom is incomplete</span>, 
+            that the mind's highest function is to perceive unity in diversity, that true genius synthesizes rather than separates. You're here to show that 
+            <span className="text-white font-semibold">the future of intelligence is integration</span>.
+          </p>
+          <p>
+            The Mercury in you is learning its ultimate lesson: <span className="text-emerald-300 font-semibold">the greatest communication is communion</span>. 
+            Your words are meant to create bridges between minds, your thoughts to weave networks of understanding, your intelligence to serve 
+            collective awakening.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that genius includes heart, that intelligence includes intuition, that the mind's highest achievement is to recognize 
+            its unity with all minds. Your soul chose this configuration to remember: <span className="text-emerald-300 font-semibold">we are not here 
+            to be smart — we are here to be wise</span>."
+          </p>
+          <p className="text-emerald-300 font-semibold text-base mt-4">
+            Your Mercury whispers: "Think beyond thinking. Speak beyond words. Understand beyond understanding. Be the mind that doesn't just process 
+            information but transforms it into wisdom, that doesn't just communicate but communes. This is not your challenge — this is your gift. 
+            This is not just your intelligence — this is collective consciousness finding its voice through you. The question isn't whether you're 
+            smart enough — you are. The question is: are you ready to let wisdom speak through you?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -1023,7 +1332,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Mars':
       return renderMarsContent()
     case 'Mercury':
-      return renderDefaultContent() // TODO: Implement Mercury content
+      return renderMercuryContent()
     case 'Jupiter':
       return renderDefaultContent() // TODO: Implement Jupiter content
     case 'Venus':
