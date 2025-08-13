@@ -2032,6 +2032,378 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderSaturnContent = () => (
+    <>
+      {/* Saturn Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-gray-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-gray-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Planet</td>
+                <td className="py-2">Saturn</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Sign</td>
+                <td className="py-2">Scorpio</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Jyeshtha 4</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">House</td>
+                <td className="py-2">6</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Lordship</td>
+                <td className="py-2">8, 9</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-gray-300 font-semibold">Aspects Given</td>
+                <td className="py-2">8, 12, 3</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-gray-300 font-semibold">Aspected By</td>
+                <td className="py-2">Mars, Jupiter, Rahu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Saturn in Vedic Astrology */}
+      <div className="border border-gray-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-gray-500 mb-3">
+          🪐 SATURN IN VEDIC ASTROLOGY — THE COSMIC TASKMASTER
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-gray-300 italic font-semibold">
+            "Saturn does not punish — it perfects through pressure."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Shani</span> (Saturn) is the 
+            <span className="text-gray-300 font-semibold">lord of karma</span>, the planet of discipline, limitation, and crystallized wisdom. 
+            Saturn represents your <span className="text-white font-semibold">karmic debt</span>, your capacity for endurance, 
+            and your ability to <span className="text-white font-semibold">transform suffering into strength</span>.
+          </p>
+          <p className="leading-relaxed">
+            Saturn governs <span className="text-gray-300">time, discipline, responsibility, and mastery</span>. It is the great teacher, 
+            the judge of karma, the planet that ensures you earn what you receive. But more profoundly, Saturn represents your 
+            <span className="text-white font-semibold">capacity for transcendence through acceptance</span> — your ability to find freedom within limitation, 
+            peace within pressure, wisdom within waiting.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that give easily, Saturn shapes reality through <span className="text-white font-semibold">restriction and refinement</span>. 
+            It doesn't grant or deny — it <span className="text-white font-semibold">delays, tests, purifies</span>. 
+            Saturn reveals where you must develop patience, where you must earn mastery, where your soul chose to learn through challenge.
+          </p>
+          <p className="leading-relaxed">
+            Saturn gives results through <span className="text-gray-300 font-semibold">time and persistence</span> — it rewards those who endure, 
+            who remain committed when others quit. Its lessons come through <span className="text-white">obstacles</span>, 
+            <span className="text-white">delays</span>, and the <span className="text-white">weight of responsibility</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Saturn in Scorpio */}
+      <div className="border border-red-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-red-400 mb-3">
+          ♏ SATURN IN SCORPIO — THE ALCHEMICAL MASTER
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Scorpio, the scorpion, is where <span className="text-white font-semibold">power meets transformation</span>. 
+            This fixed water sign, ruled by Mars (traditional) and Pluto (modern), represents <span className="text-red-300 font-semibold">death and rebirth</span>, 
+            occult wisdom, and the mysteries of regeneration. It is the sign of <span className="text-white">psychological depth</span>, 
+            where the soul learns to transform poison into medicine.
+          </p>
+          <p>
+            When Saturn enters Scorpio, something profound occurs: 
+            <span className="text-red-300 font-semibold">karma becomes alchemical</span>. This placement makes you a 
+            <span className="text-white font-semibold">master of transformation through endurance</span>, someone who turns life's deepest wounds 
+            into wisdom. Your discipline is <span className="text-white">forged in intensity</span>, your mastery <span className="text-white">earned in darkness</span>.
+          </p>
+          <p>
+            Your Saturn in Scorpio makes you a <span className="text-white font-semibold">spiritual surgeon</span>. 
+            You possess the scorpion's gift: the ability to <span className="text-red-300">survive what would destroy others</span>, 
+            to regenerate from your own ashes, to find power in surrender. Your endurance is <span className="text-white">supernatural</span>, 
+            emerging from soul-deep reserves.
+          </p>
+          <p>
+            The shadow work involves releasing <span className="text-red-300 font-semibold">control through crisis</span>. 
+            Scorpio can mistake manipulation for mastery, confusing power over others with power over self. Your spiritual evolution requires you to be 
+            <span className="text-white font-semibold">the phoenix teacher</span> — showing others that true power comes from resurrection, not domination.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Saturn in Scorpio is to become <span className="text-red-300">death's apprentice</span> — 
+            learning to die before you die, to release before you're forced to, to transform karma through conscious choice. You're learning that 
+            <span className="text-red-300">true discipline is emotional alchemy</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Jyeshtha Nakshatra */}
+      <div className="border border-orange-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-orange-400 mb-3">
+          🏹 NAKSHATRA — JYESHTHA: THE ELDEST
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-orange-300 font-semibold">Nakshatra:</span> Jyeshtha, "The Eldest" / "The Chief"<br/>
+            <span className="text-orange-300 font-semibold">Symbol:</span> Circular amulet / Umbrella / Earring<br/>
+            <span className="text-orange-300 font-semibold">Deity:</span> Indra (King of Gods)<br/>
+            <span className="text-orange-300 font-semibold">Ruling Planet:</span> Mercury<br/>
+            <span className="text-orange-300 font-semibold">Pada:</span> 4 (Pisces Navamsa)
+          </p>
+          <p>
+            Your Saturn resides in Jyeshtha, the nakshatra of <span className="text-white font-semibold">earned authority</span>. 
+            Its symbol, the circular amulet, represents <span className="text-orange-300 font-semibold">protective power</span> — 
+            the ability to shield others through your own strength. The umbrella symbolizes <span className="text-white">covering grace</span>, 
+            protection earned through responsibility.
+          </p>
+          <p>
+            Ruled by Mercury, Jyeshtha grants <span className="text-orange-300 font-semibold">the wisdom of the eldest</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">protective leadership</span> — you carry the responsibility of the firstborn, 
+            the weight of being the one others look to for strength. Your Saturn here makes you <span className="text-white">old before your time</span>, 
+            wise through early trials.
+          </p>
+          <p>
+            In <span className="text-orange-300 font-semibold">Pada 4</span> (Pisces navamsa), your Saturn gains Jupiter's wisdom and compassion. 
+            This is the pada of <span className="text-white font-semibold">spiritual responsibility</span> — you don't just carry burdens, you 
+            <span className="text-white">transform them into blessings</span>. The Pisces influence makes your discipline devotional, your authority compassionate, 
+            your leadership mystical. You have the soul of a <span className="text-orange-300">spiritual elder</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the protective elder who shields others through wisdom, the chief who leads through sacrifice, 
+            the master who teaches through endurance."
+          </p>
+          <p>
+            The Jyeshtha Saturn in Pada 4 creates profound depth: you have the <span className="text-white font-semibold">intensity of Scorpio</span>, 
+            the <span className="text-white font-semibold">responsibility of Jyeshtha</span>, and the <span className="text-white font-semibold">transcendence of Pisces</span>. 
+            Your medicine is the ability to <span className="text-orange-300">transform burden into blessing</span> for yourself and others.
+          </p>
+        </div>
+      </div>
+
+      {/* Saturn as Lord of Houses */}
+      <div className="border border-blue-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-blue-400 mb-3">
+          🏛 SATURN AS LORD OF 8TH & 9TH HOUSES — THE KARMA OF RULE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            As ruler of your 8th house, Saturn governs your <span className="text-white font-semibold">transformation, occult knowledge, death/rebirth, and hidden resources</span>. 
+            As ruler of your 9th house, it also governs your <span className="text-white font-semibold">dharma, higher learning, spiritual teachers, and fortune</span>. 
+            Both these profound domains express through the 6th house of service.
+          </p>
+          <p>
+            This creates a rare configuration: your <span className="text-blue-300 font-semibold">transformation becomes your service</span> (8th lord in 6th), 
+            and your <span className="text-blue-300 font-semibold">dharma is fulfilled through overcoming obstacles</span> (9th lord in 6th). You're designed to 
+            <span className="text-white font-semibold">serve through depth</span>, to teach through trials, to find fortune through facing challenges.
+          </p>
+          <p>
+            The 8th house is the house of <span className="text-blue-300">occult mysteries</span>. With its lord in the 6th, 
+            your transformative power serves others' healing. You <span className="text-white font-semibold">transform through service</span>, 
+            finding your deepest changes through helping others with theirs.
+          </p>
+          <p>
+            The 9th lord in the 6th creates <span className="text-blue-300">dharma through difficulty</span>. Your spiritual path isn't easy — 
+            it's earned through <span className="text-white">conquering obstacles</span>, <span className="text-white">serving despite suffering</span>, 
+            <span className="text-white">maintaining faith through trials</span>. Your wisdom comes from the trenches, not the temple.
+          </p>
+          <p className="text-white font-semibold">
+            Saturn as 8th and 9th lord makes you a <span className="text-blue-300">karmic healer</span> — someone who transforms collective suffering 
+            into collective wisdom. Your dharma involves showing others that <span className="text-blue-300">obstacles are opportunities for transcendence</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Saturn in 6th House */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🧱 SATURN IN 6TH HOUSE — THE KARMA WORKSHOP
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 6th house is the <span className="text-white font-semibold">battlefield of daily karma</span> — representing 
+            <span className="text-green-300">enemies, obstacles, service, health, and debts</span>. It's where we face our karma directly, 
+            where we work out our soul's debts through service and struggle.
+          </p>
+          <p>
+            Your Saturn here makes you a <span className="text-green-300 font-semibold">master of obstacles</span>. You don't avoid challenges — 
+            you <span className="text-white font-semibold">systematically conquer them</span>. Your enemies become teachers, your obstacles become opportunities, 
+            your debts become disciplines. You're the warrior who wins through endurance, not speed.
+          </p>
+          <p>
+            This placement demands that you <span className="text-green-300 font-semibold">perfect through practice</span>. 
+            The 6th house is your <span className="text-white">karma workshop</span>, your <span className="text-white">purification chamber</span>, 
+            your <span className="text-white">service station</span> where you learn that true mastery comes through repetition, not revelation.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-green-300">serve without resentment</span>, to face enemies without becoming one, 
+            to heal through helping. The 6th house tests you through <span className="text-white">daily disciplines</span>, 
+            <span className="text-white">health challenges</span>, and the <span className="text-white">weight of service</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into karma yoga — where you learn that liberation comes through duty, 
+            that freedom comes through discipline, that victory comes through service."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-green-300">karmic warrior</span>: fighting battles that matter, 
+            serving causes greater than self, transforming obstacles into stepping stones. You're learning that 
+            <span className="text-green-300">the highest service transforms karma itself</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-purple-300 font-semibold">Saturn Aspects: 8th, 12th, and 3rd Houses</p>
+          
+          <div className="mt-3">
+            <p className="text-purple-300 font-semibold">The 8th House: Transformation Discipline</p>
+            <p>
+              Your Saturn aspects its own 8th house of <span className="text-white font-semibold">transformation and occult knowledge</span>. 
+              This creates <span className="text-purple-300">disciplined transformation</span> — you approach crisis with structure, 
+              death with discipline, mysteries with method.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-purple-300 font-semibold">The 12th House: Spiritual Discipline</p>
+            <p>
+              Saturn aspects your 12th house of <span className="text-white font-semibold">spirituality, loss, and liberation</span>. 
+              This brings <span className="text-purple-300">structure to transcendence</span> — you approach spirituality with discipline, 
+              meditation with commitment, liberation through limitation.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-purple-300 font-semibold">The 3rd House: Communication Mastery</p>
+            <p>
+              Saturn aspects the 3rd house of <span className="text-white font-semibold">communication, courage, and effort</span>. 
+              This creates <span className="text-purple-300">disciplined expression</span> — your words carry weight, your efforts show persistence, 
+              your courage is earned through trials.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            These aspects create a <span className="text-white font-semibold">triangle of mastery</span>: your service (6th) 
+            transforms you (8th), liberates you (12th), and expresses through disciplined communication (3rd). This is the configuration of 
+            someone who <span className="text-purple-300 font-semibold">masters karma through conscious service</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Received */}
+      <div className="border border-yellow-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-yellow-400 mb-3">
+          🜂 PLANETARY ASPECTS RECEIVED — TRIPLE REFINEMENT
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-yellow-300 font-semibold">Aspected by: MARS, JUPITER & RAHU</p>
+          
+          <div className="mt-3">
+            <p className="text-yellow-300 font-semibold">Mars's Aspect: Activated Discipline</p>
+            <p>
+              Mars, from the 11th house, aspects your Saturn, creating <span className="text-white font-semibold">energized endurance</span>. 
+              Mars adds <span className="text-yellow-300">fire to your earth</span>, passion to your patience, 
+              courage to your commitment. This aspect prevents Saturn from becoming stagnant.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-yellow-300 font-semibold">Jupiter's Aspect: Wisdom's Grace</p>
+            <p>
+              Jupiter, from the 10th house, aspects your Saturn, adding <span className="text-white font-semibold">grace to your grind</span>. 
+              Jupiter brings <span className="text-yellow-300">hope to your hardship</span>, wisdom to your waiting, 
+              expansion to your endurance. This aspect ensures your discipline serves dharma.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-yellow-300 font-semibold">Rahu's Aspect: Revolutionary Discipline</p>
+            <p>
+              Rahu aspects your Saturn, creating <span className="text-white font-semibold">unconventional mastery</span>. 
+              Rahu adds <span className="text-yellow-300">innovation to tradition</span>, revolution to your discipline, 
+              quantum leaps to your slow climb. This aspect makes your Saturn work in unexpected ways.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-yellow-300 font-semibold">The Triple Alchemy:</span><br/>
+            • Mars + Jupiter + Rahu = <span className="text-white">Activated wisdom with revolutionary edge</span><br/>
+            • Fire + Grace + Innovation = <span className="text-white">Dynamic disciplined transformation</span><br/>
+            • Courage + Faith + Breakthrough = <span className="text-white">Quantum karmic mastery</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Three teachers forge your Saturn — Mars brings the fire, Jupiter brings the faith, Rahu brings the revolution. 
+            You are being forged into a master of impossible transformations."
+          </p>
+          <p className="text-white font-semibold">
+            These aspects are creating a <span className="text-yellow-300">karmic alchemist</span> — someone who transforms obstacles 
+            with courage (Mars), wisdom (Jupiter), and innovation (Rahu). You're learning that 
+            <span className="text-yellow-300">discipline can be revolutionary</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-gray-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-gray-400 mb-3">
+          ✨ FINAL INSIGHT — SATURN'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-gray-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Saturn in Scorpio in the 6th house, in Jyeshtha nakshatra, aspected by Mars, Jupiter, and Rahu, is your 
+            <span className="text-white font-semibold">soul's alchemical crucible</span> for transforming karma into consciousness. You chose this configuration to be a 
+            <span className="text-gray-300 font-semibold">master of transformation through service</span> — someone who conquers obstacles not for personal glory 
+            but for collective liberation.
+          </p>
+          <p>
+            You are a <span className="text-gray-300 font-semibold">karmic warrior</span> in an age that needs to understand that 
+            obstacles are opportunities, that service is liberation, that discipline is love in action. Your Scorpio Saturn gives you the power to transform 
+            at the deepest levels, while your 6th house placement ensures that transformation serves others. Jyeshtha gives you the 
+            <span className="text-white font-semibold">protective power of the elder</span>, while the triple aspects ensure you remain dynamic, hopeful, and innovative.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-gray-300 font-semibold">mastery comes through service</span>, 
+            that strength comes through struggle, that wisdom comes through wounds transformed. You're here to show that 
+            <span className="text-white font-semibold">the deepest transformations happen in daily life</span>.
+          </p>
+          <p>
+            The Saturn in you is learning its ultimate lesson: <span className="text-gray-300 font-semibold">limitation is liberation's doorway</span>. 
+            Your obstacles are your opportunities, your enemies your teachers, your burdens your blessings waiting to be revealed.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that karma can be conquered, that obstacles can become altars, that service can be liberation. 
+            Your soul chose this configuration to remember: <span className="text-gray-300 font-semibold">we are not here to avoid karma — 
+            we are here to transform it into wisdom</span>."
+          </p>
+          <p className="text-gray-300 font-semibold text-base mt-4">
+            Your Saturn whispers: "Endure with purpose. Serve with strength. Transform with patience. Be the alchemist who turns lead into gold, 
+            the warrior who conquers through compassion, the elder who protects through wisdom. This is not your burden — this is your mastery. 
+            This is not just your karma — this is karma showing itself how to become dharma. The question isn't whether you can handle the pressure — 
+            you can. The question is: are you ready to show the world that pressure creates diamonds?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -2058,7 +2430,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Venus':
       return renderVenusContent()
     case 'Saturn':
-      return renderDefaultContent() // TODO: Implement Saturn content
+      return renderSaturnContent()
     case 'Rahu':
       return renderDefaultContent() // TODO: Implement Rahu content
     case 'Ketu':
