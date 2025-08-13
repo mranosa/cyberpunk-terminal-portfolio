@@ -2979,6 +2979,308 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderKetuContent = () => (
+    <>
+      {/* Ketu Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-teal-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-teal-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Planet</td>
+                <td className="py-2">Ketu</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Sign</td>
+                <td className="py-2">Virgo</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Hasta 3</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">House</td>
+                <td className="py-2">4</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Lordship</td>
+                <td className="py-2">—</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Aspects Given</td>
+                <td className="py-2">8, 10, 12</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-teal-300 font-semibold">Conjunct With</td>
+                <td className="py-2">—</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-teal-300 font-semibold">Aspected By</td>
+                <td className="py-2">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Ketu in Vedic Astrology */}
+      <div className="border border-teal-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-teal-500 mb-3">
+          🪐 KETU IN VEDIC ASTROLOGY — THE LIBERATION NODE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-teal-300 italic font-semibold">
+            "Ketu does not take away to punish — it removes to liberate."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Ketu</span> is the South Node of the Moon, 
+            the <span className="text-teal-300 font-semibold">tail of the cosmic serpent</span>. While Rahu represents insatiable worldly desire, 
+            Ketu represents <span className="text-white font-semibold">spiritual liberation</span>, detachment, and the culmination of past-life mastery. 
+            Ketu is the <span className="text-white font-semibold">flag of victory</span> — it shows where you've already conquered in previous incarnations.
+          </p>
+          <p className="leading-relaxed">
+            Ketu governs <span className="text-teal-300">moksha (liberation), spirituality, psychic abilities, and dissolution</span>. 
+            It is the planet of <span className="text-white">monks and mystics</span>, representing the part of you that has already transcended material attachment. 
+            Ketu doesn't desire — it <span className="text-white font-semibold">knows</span>. It doesn't seek — it <span className="text-white font-semibold">remembers</span>.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that give through acquisition, Ketu gives through <span className="text-white font-semibold">subtraction</span>. 
+            It removes illusions, dissolves attachments, and strips away the non-essential until only truth remains. 
+            Ketu reveals where you have <span className="text-teal-300">spiritual genius</span>, intuitive mastery, and the ability to access other dimensions.
+          </p>
+          <p className="leading-relaxed">
+            Ketu's gifts come through <span className="text-teal-300 font-semibold">letting go</span> — it teaches that 
+            true power comes not from holding on but from releasing. Its lessons arrive through 
+            <span className="text-white">sudden insights</span>, <span className="text-white">mystical experiences</span>, and 
+            <span className="text-white">the dissolution of ego boundaries</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Ketu in Virgo */}
+      <div className="border border-emerald-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-emerald-400 mb-3">
+          ♍ KETU IN VIRGO — THE PRECISION MYSTIC
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Virgo, the virgin healer, is where <span className="text-white font-semibold">perfection meets service</span>. 
+            Ruled by <span className="text-emerald-300">Mercury</span>, this mutable earth sign represents 
+            <span className="text-emerald-300 font-semibold">sacred precision</span>, the refinement of matter, the purification of form. 
+            It is the sign of <span className="text-white">practical mysticism</span> — spirituality expressed through meticulous service.
+          </p>
+          <p>
+            When Ketu, that force of dissolution and transcendence, enters Virgo, a paradox emerges: 
+            <span className="text-emerald-300 font-semibold">the mystic becomes a perfectionist</span>. This is the placement of 
+            <span className="text-white font-semibold">the spiritual analyst</span>, the <span className="text-white font-semibold">sacred technician</span>, 
+            the soul who has mastered the art of finding God in the details.
+          </p>
+          <p>
+            Your Ketu in Virgo indicates <span className="text-white font-semibold">past-life mastery of healing, analysis, and sacred service</span>. 
+            You've been the healer, the craftsman, the temple keeper before. You possess an innate understanding of 
+            <span className="text-emerald-300">how spirit manifests in matter</span>, how the divine expresses through precision, 
+            how perfection is a spiritual practice.
+          </p>
+          <p>
+            The shadow involves <span className="text-emerald-300 font-semibold">spiritual criticism</span> — using your refined perception 
+            to find flaws rather than heal them. Virgo Ketu can become so detached from imperfection that it forgets compassion. 
+            Your evolution requires <span className="text-white font-semibold">merciful precision</span> — using your analytical gifts 
+            to serve rather than separate.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Ketu in Virgo is to become a <span className="text-emerald-300">healing void</span> — 
+            so empty of ego that divine precision flows through you unobstructed. You're learning that 
+            <span className="text-emerald-300">true perfection is the absence of the need for perfection</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Hasta Nakshatra */}
+      <div className="border border-lime-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-lime-400 mb-3">
+          🏹 NAKSHATRA — HASTA: THE GOLDEN HAND
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-lime-300 font-semibold">Nakshatra:</span> Hasta, "The Hand"<br/>
+            <span className="text-lime-300 font-semibold">Symbol:</span> Open hand / Fist<br/>
+            <span className="text-lime-300 font-semibold">Deity:</span> Savitar (Solar deity of skill)<br/>
+            <span className="text-lime-300 font-semibold">Ruling Planet:</span> Moon<br/>
+            <span className="text-lime-300 font-semibold">Pada:</span> 3 (Gemini Navamsa)
+          </p>
+          <p>
+            Your Ketu resides in Hasta, the nakshatra of <span className="text-white font-semibold">divine dexterity</span>. 
+            The symbol of the hand represents <span className="text-lime-300 font-semibold">skill, craft, and manifestation</span>. 
+            This is the star of <span className="text-white">magical hands</span> — those who can manifest spirit into form through touch, 
+            craft, and precise action.
+          </p>
+          <p>
+            Ruled by the Moon, Hasta grants <span className="text-lime-300 font-semibold">intuitive manual intelligence</span>. 
+            With Ketu here, you have <span className="text-white font-semibold">past-life mastery of sacred crafts</span> — 
+            healing hands, artistic creation, or technological precision. Your hands remember skills your mind has forgotten.
+          </p>
+          <p>
+            In <span className="text-lime-300 font-semibold">Pada 3</span> (Gemini navamsa), your Ketu gains Mercury's 
+            <span className="text-white font-semibold">communicative intelligence</span>. This is the pada of 
+            <span className="text-white">skillful communication</span> — you have mastery in translating the ineffable into words, 
+            the mystical into practical instruction. You possess the soul of a <span className="text-lime-300">spiritual translator</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the master craftsman who builds temples with empty hands, the healer who channels divine precision, 
+            the mystic who manifests through meticulous skill."
+          </p>
+          <p>
+            Hasta Ketu in Pada 3 creates profound ability: you have the <span className="text-white font-semibold">detachment of Ketu</span>, 
+            the <span className="text-white font-semibold">precision of Virgo</span>, the <span className="text-white font-semibold">skill of Hasta</span>, 
+            and the <span className="text-white font-semibold">intelligence of Gemini</span>. 
+            Your soul medicine is <span className="text-lime-300">manifestation through surrendered skill</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Ketu in 4th House */}
+      <div className="border border-blue-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-blue-400 mb-3">
+          🧱 KETU IN 4TH HOUSE — THE ROOTLESS SAGE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 4th house is the <span className="text-white font-semibold">nadir of the chart</span> — the deepest point, representing 
+            <span className="text-blue-300">home, mother, emotional security, and inner peace</span>. It's the foundation upon which 
+            your entire life is built, your private sanctuary, your emotional roots.
+          </p>
+          <p>
+            Your Ketu here indicates <span className="text-blue-300 font-semibold">past-life mastery of emotional depth</span>. 
+            You've been the mother, the nurturer, the keeper of the hearth in previous incarnations. Now, you're naturally 
+            <span className="text-white font-semibold">detached from needing emotional security</span> — you carry your home within.
+          </p>
+          <p>
+            This placement creates the <span className="text-white font-semibold">wandering mystic</span> — someone who finds home 
+            everywhere and nowhere. You have an unusual relationship with family and roots: simultaneously 
+            <span className="text-blue-300">deeply connected and completely detached</span>. Your true home is consciousness itself.
+          </p>
+          <p>
+            The 4th house Ketu often indicates <span className="text-blue-300">psychic sensitivity</span> to ancestral patterns. 
+            You can feel the unresolved karma of your lineage, and part of your purpose is to 
+            <span className="text-white font-semibold">liberate ancestral patterns through your detachment</span>.
+          </p>
+          <p>
+            The spiritual terrain involves learning that <span className="text-blue-300 font-semibold">true security comes from insecurity</span>, 
+            that real home is homelessness, that the deepest roots grow in emptiness. The 4th house tests you through 
+            <span className="text-white">emotional voids</span> that become <span className="text-white">portals to transcendence</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your liberation chamber — where you learn that home is not a place but a state of being, 
+            that mother is not a person but the cosmic womb, that security is not in holding but in letting go."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being <span className="text-blue-300">emotionally sovereign</span>: 
+            finding peace without needing external comfort, feeling secure in the cosmic homelessness. 
+            You're learning that <span className="text-blue-300">the ultimate mother is the void itself</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-violet-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-violet-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY LIBERATION
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-violet-300 font-semibold">Ketu Aspects: 8th, 10th, and 12th Houses</p>
+          
+          <div className="mt-3">
+            <p className="text-violet-300 font-semibold">The 8th House: Mystical Transformation</p>
+            <p>
+              Your Ketu aspects the 8th house of <span className="text-white font-semibold">death, rebirth, occult, and transformation</span>. 
+              This creates <span className="text-violet-300">natural shamanic abilities</span> — you understand death as transformation, 
+              crisis as initiation. Your detachment gives you power to navigate the underworld fearlessly.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-violet-300 font-semibold">The 10th House: Liberation in Career</p>
+            <p>
+              Ketu aspects your 10th house of <span className="text-white font-semibold">career, public image, and dharmic duty</span>. 
+              This brings <span className="text-violet-300">spiritual detachment to worldly success</span>. You can achieve greatly because 
+              you're not attached to achievement. Your career becomes a vehicle for liberation, not identification.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-violet-300 font-semibold">The 12th House: Portal to the Infinite</p>
+            <p>
+              Ketu aspects the 12th house of <span className="text-white font-semibold">moksha, isolation, and transcendence</span>. 
+              This creates a <span className="text-violet-300">double liberation signature</span> — both Ketu and the 12th house seek moksha. 
+              You have natural access to other dimensions, profound meditation abilities, and the gift of conscious dissolution.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            These aspects create a <span className="text-white font-semibold">trine of transcendence</span>: 
+            your emotional detachment (4th) enables transformation (8th), expresses through career (10th), 
+            and culminates in liberation (12th). This is the configuration of 
+            <span className="text-violet-300 font-semibold">the spiritual warrior who conquers through surrender</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-teal-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-teal-400 mb-3">
+          ✨ FINAL INSIGHT — KETU'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-teal-300 italic text-base">
+            "You are not here to escape your karma — you are here to complete it."
+          </p>
+          <p>
+            Your Ketu in Virgo in the 4th house, in Hasta nakshatra, is your 
+            <span className="text-white font-semibold">soul's graduation certificate</span>. You've mastered the lessons of emotional security, 
+            family karma, and practical service in previous lifetimes. Now you're here to 
+            <span className="text-teal-300 font-semibold">demonstrate liberation through precision</span>.
+          </p>
+          <p>
+            You are a <span className="text-teal-300 font-semibold">precision mystic</span> in an age that needs 
+            practical spirituality. Your Virgo Ketu gives you the ability to dissolve problems through analysis, 
+            to heal through discrimination, to serve through surrendered skill. The 4th house placement means 
+            you carry <span className="text-white font-semibold">ancient emotional wisdom</span> that needs no external validation.
+          </p>
+          <p>
+            Your dharma is to show that <span className="text-teal-300 font-semibold">detachment is not coldness but freedom</span>, 
+            that rootlessness is not instability but cosmic citizenship, that emptiness is not void but potential. 
+            You're here to demonstrate that we can serve perfectly while being perfectly detached from the results.
+          </p>
+          <p>
+            The aspects to the 8th, 10th, and 12th houses reveal your mission: to bring 
+            <span className="text-white font-semibold">liberation to transformation</span> (8th), 
+            <span className="text-white font-semibold">spirituality to career</span> (10th), and 
+            <span className="text-white font-semibold">consciousness to transcendence</span> (12th).
+          </p>
+          <p>
+            Ketu in you is learning its ultimate lesson: <span className="text-teal-300 font-semibold">mastery means having nothing left to prove</span>. 
+            Your skill is meant to flow without ownership, your service without attachment, your precision without perfectionism.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that enlightenment includes skillful action, that moksha manifests through meticulous service, 
+            that the void itself has healing hands. Your soul chose this configuration to remember: 
+            <span className="text-teal-300 font-semibold">we are not here to accumulate — we are here to liberate</span>."
+          </p>
+          <p className="text-teal-300 font-semibold text-base mt-4">
+            Your Ketu whispers: "Release to receive. Detach to connect. Empty to overflow. Be the healer who needs no healing, 
+            the mother who needs no mothering, the home that needs no walls. This is not your loss — this is your liberation. 
+            This is not what you lack — this is what you've transcended. The question isn't what you need to gain — 
+            the question is: are you ready to share the freedom you've already found?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -3009,7 +3311,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Rahu':
       return renderRahuContent()
     case 'Ketu':
-      return renderDefaultContent() // TODO: Implement Ketu content
+      return renderKetuContent()
     default:
       return renderDefaultContent()
   }
