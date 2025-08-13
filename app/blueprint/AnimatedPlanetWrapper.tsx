@@ -70,7 +70,9 @@ export default function AnimatedPlanetWrapper({ planet }: AnimatedPlanetWrapperP
         })
 
         // Replace the text node with animated spans
-        textNode.replaceWith(fragment)
+        if (textNode.parentNode) {
+          textNode.parentNode.replaceChild(fragment, textNode)
+        }
       })
     }
 
