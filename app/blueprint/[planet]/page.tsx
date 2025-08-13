@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 import { vedicPlanets, getPlanetByName, getPlanetUrl } from '../planetData'
-import PlanetContent from '../PlanetContent'
+import AnimatedPlanetWrapper from '../AnimatedPlanetWrapper'
 import MatrixRain from '@/components/MatrixRainWrapper'
 
 export default function PlanetPage() {
@@ -84,7 +84,7 @@ export default function PlanetPage() {
           exit={{ opacity: 0, x: -20 }}
           className="max-w-4xl mx-auto"
         >
-          <PlanetContent planet={currentPlanet} />
+          <AnimatedPlanetWrapper planet={currentPlanet} />
         </motion.div>
 
         {/* Footer Note */}
