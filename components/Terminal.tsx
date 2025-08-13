@@ -13,7 +13,8 @@ import {
   WorkExperienceCommand,
   ThoughtsCommand,
   AboutCommand,
-  MatrixCommand
+  MatrixCommand,
+  BlueprintCommand
 } from './terminal/commands'
 
 interface Command {
@@ -258,6 +259,10 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
       case 'matrix':
         output = <MatrixCommand />
+        break
+
+      case 'blueprint':
+        output = <BlueprintCommand />
         break
 
       case 'clear':

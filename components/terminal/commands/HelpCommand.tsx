@@ -6,6 +6,9 @@ export function HelpCommand() {
         <span className="quantum-blue">work</span> - Career highlights teaser (click to see full experience)
       </div>
       <div className="ultra-light">
+        <span className="cyber-purple">blueprint</span> - My karmic blueprint via vedic astrology
+      </div>
+      <div className="ultra-light">
         <span className="aurora-green">thoughts</span> - Display random thoughts
       </div>
       <div className="ultra-light">
