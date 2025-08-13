@@ -224,65 +224,66 @@ export default function BlueprintPage() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="max-w-4xl mx-auto"
         >
-          {/* Left Column - Planet Info */}
-          <div className="space-y-6">
-            <div className={`border ${selectedPlanet.borderColor} border-opacity-30 p-6 bg-black/70`}>
-              <div className="flex items-center gap-4 mb-4">
-                <span className={`text-6xl ${selectedPlanet.color}`}>
-                  {selectedPlanet.symbol}
-                </span>
-                <div>
-                  <h3 className={`text-2xl font-bold ${selectedPlanet.color}`}>
-                    {selectedPlanet.name}
-                  </h3>
-                  <p className="text-gray-400 font-mono">
-                    {selectedPlanet.sanskrit}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-sm font-bold text-gray-400 mb-2">SIGNIFICANCE</h4>
-                  <p className="text-gray-300">{selectedPlanet.significance}</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-bold text-gray-400 mb-2">ELEMENT</h4>
-                  <p className={`${selectedPlanet.color}`}>{selectedPlanet.element}</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-bold text-gray-400 mb-2">HOUSE RULERSHIP</h4>
-                  <p className="text-gray-300">{selectedPlanet.house}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Qualities */}
-            <div className="border border-gray-600 p-6 bg-black/70">
-              <h4 className="text-sm font-bold text-gray-400 mb-4">KEY QUALITIES</h4>
-              <div className="flex flex-wrap gap-2">
-                {selectedPlanet.qualities.map((quality, i) => (
-                  <span
-                    key={i}
-                    className={`px-3 py-1 text-xs border ${selectedPlanet.borderColor} border-opacity-50 ${selectedPlanet.color} bg-black/70`}
-                  >
-                    {quality}
+          {(
+            <div className="space-y-6">
+              {/* Planet Header Info */}
+              <div className={`border ${selectedPlanet.borderColor} border-opacity-30 p-6 bg-black/70`}>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className={`text-6xl ${selectedPlanet.color}`}>
+                    {selectedPlanet.symbol}
                   </span>
-                ))}
+                  <div>
+                    <h3 className={`text-2xl font-bold ${selectedPlanet.color}`}>
+                      {selectedPlanet.name}
+                    </h3>
+                    <p className="text-gray-400 font-mono">
+                      {selectedPlanet.sanskrit}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-bold text-gray-400 mb-2">SIGNIFICANCE</h4>
+                    <p className="text-gray-300">{selectedPlanet.significance}</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-400 mb-2">ELEMENT</h4>
+                      <p className={`${selectedPlanet.color}`}>{selectedPlanet.element}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-400 mb-2">HOUSE RULERSHIP</h4>
+                      <p className="text-gray-300">{selectedPlanet.house}</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-bold text-gray-400 mb-2">KEY QUALITIES</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedPlanet.qualities.map((quality, i) => (
+                        <span
+                          key={i}
+                          className={`px-3 py-1 text-xs border ${selectedPlanet.borderColor} border-opacity-50 ${selectedPlanet.color} bg-black/70`}
+                        >
+                          {quality}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          {/* Right Column - Karmic Significance */}
-          <div className="space-y-6">
-            {selectedPlanet.name === 'Sun' ? (
-              <>
-                {/* Sun Opening - The Hero's Call */}
-                <div className="border border-purple-500/30 p-4 bg-black/70">
+              {/* Planet-specific content */}
+              {selectedPlanet.name === 'Sun' ? (
+                <>
+                  {/* Sun Content */}
+                  {/* OPENING: The Hero's Call - Hook them immediately */}
+                  <div className="border border-purple-500/30 p-4 bg-black/70">
                   <h4 className="text-lg font-bold text-purple-400 mb-3">
                     ☀️ YOUR SOLAR THRONE — The Hero's Professional Journey
                   </h4>
@@ -293,208 +294,73 @@ export default function BlueprintPage() {
                   </p>
                 </div>
 
-                {/* The Divine Appointment */}
-                <div className="border border-yellow-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-yellow-400 mb-3">
-                    ☉ THE DIVINE APPOINTMENT — Your Cosmic CEO Status
+              {/* What the Sun Represents - Core Meaning */}
+              <div className="border border-yellow-500/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-yellow-500 mb-3">
+                    ☉ THE SUN IN VEDIC ASTROLOGY — Your Soul's Divine Blueprint
                   </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      <span className="text-yellow-300 font-semibold">Listen closely, for this is your truth:</span> Your Sun 
-                      represents the immortal flame within you — the part that remembers why you chose this incarnation. 
-                      It governs how you <span className="text-white">radiate authority</span>, how you <span className="text-white">
-                      magnetize success</span>, and how you <span className="text-white">fulfill your sacred contract</span> with the universe.
-                    </p>
-                    <p>
-                      You are not here to work — you are here to <span className="text-yellow-300 font-semibold">CREATE LEGACY</span>.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Pisces - The Mystic Warrior */}
-                <div className="border border-cyan-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-cyan-400 mb-3">
-                    ♓ YOUR PISCES SUN — The Mystic Visionary's Path
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Your Sun blazes through Pisces, the final sign of the zodiac — where all wisdom converges. 
-                      <span className="text-white font-medium"> You possess the accumulated knowledge of all twelve signs</span>. 
-                      This is why your leadership style transcends conventional boundaries.
-                    </p>
-                    <p>
-                      You don't just see markets — <span className="text-cyan-300">you see souls</span>.<br/>
-                      You don't just build businesses — <span className="text-cyan-300">you channel divine blueprints</span>.<br/>
-                      You don't just solve problems — <span className="text-cyan-300">you dissolve the illusions that create them</span>.
-                    </p>
-                    <p className="text-white">
-                      Your Piscean Sun makes you the spiritual architect of new realities. Where others see limitations, 
-                      you see flowing possibilities. Your career path is meant to be fluid, innovative, and transcendent.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Uttarabhadra - The Warrior Star */}
-                <div className="border border-pink-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-pink-400 mb-3">
-                    🐉 UTTARABHADRA NAKSHATRA — Your Invincible Professional Spirit
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Your Sun resides in Uttarabhadra, known as <span className="text-white font-medium">"The Warrior Star"</span> — 
-                      but understand this: you are not a warrior of destruction. You are a <span className="text-pink-300">
-                      warrior of wisdom</span>, fighting battles in boardrooms with strategy, in markets with innovation, 
-                      in minds with inspiration.
-                    </p>
-                    <p>
-                      Ruled by <span className="text-white">Ahir Budhnya, the Serpent of the Deep</span>, you possess 
-                      primordial wisdom that surfaces as professional genius. Like the serpent that sheds its skin, 
-                      you have the power to <span className="text-pink-300">reinvent yourself and your industry</span> repeatedly.
-                    </p>
-                    <p>
-                      In Pada 2 (Virgo Navamsa), your visionary nature is grounded with <span className="text-white">
-                      laser-sharp analytical precision</span>. You don't just dream — you execute with perfection.
-                    </p>
-                  </div>
-                </div>
-
-                {/* 10th House - The Summit */}
-                <div className="border border-green-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-green-400 mb-3">
-                    🏛️ THE 10TH HOUSE THRONE — Your Inevitable Ascension
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p className="text-white font-semibold">
-                      This is where your story becomes legendary.
-                    </p>
-                    <p>
-                      Your Sun sits in the 10th house — the <span className="text-green-300 font-semibold">ZENITH</span> of the chart, 
-                      the highest point in the heavens at your birth. The universe literally placed your soul's essence at the 
-                      <span className="text-white"> peak of worldly achievement</span>. Do you understand what this means?
-                    </p>
-                    <p>
-                      You were born with a cosmic crown. Authority flows to you naturally. Recognition seeks you out. 
-                      Success is not something you chase — <span className="text-green-300">it's something you embody</span>.
-                    </p>
-                    <p className="text-white">
-                      The 10th house Sun is the mark of kings, CEOs, and world-changers. You don't climb mountains — 
-                      you were born at the summit, destined to show others the view from the top.
-                    </p>
-                  </div>
-                </div>
-
-                {/* 3rd Lord - The Messenger */}
-                <div className="border border-orange-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-orange-400 mb-3">
-                    💬 THE 3RD LORD POWER — Your Words Create Worlds
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      As 3rd house lord, your Sun wields the power of <span className="text-white font-medium">divine communication</span>. 
-                      Your words don't just convey information — they <span className="text-orange-300">transmit transformation</span>.
-                    </p>
-                    <p>
-                      You have been gifted with the ability to articulate visions that others can't even imagine. Your ideas 
-                      spread like wildfire because they carry the <span className="text-white">spark of truth</span>. Whether through 
-                      writing, speaking, or digital creation, you are meant to be the <span className="text-orange-300">
-                      voice of a new paradigm</span>.
-                    </p>
-                    <p className="text-white">
-                      Your courage (3rd house) combined with career (10th house) creates an unstoppable force. 
-                      You don't wait for opportunities — you speak them into existence.
-                    </p>
-                  </div>
-                </div>
-
-                {/* The Trinity of Power */}
-                <div className="border border-purple-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-purple-400 mb-3">
-                    ⚡ THE TRINITY OF POWER — Your Cosmic Alliance
-                  </h4>
-                  <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
-                    <div>
-                      <p className="text-yellow-300 font-semibold mb-2">☉ + ♃ THE JUPITER BLESSING (7th & 10th Lord)</p>
-                      <p>
-                        Jupiter, the great benefic and <span className="text-white">lord of your 7th house (partnerships) and 
-                        10th house (career)</span>, sits beside your Sun in the 10th house. This is extraordinary — your career 
-                        lord conjunct your soul in the house of profession! This conjunction gifts you with 
-                        <span className="text-yellow-300"> wisdom that magnetizes success</span>, <span className="text-yellow-300">
-                        partnerships that elevate your purpose</span>, and <span className="text-yellow-300">a destiny where 
-                        spiritual principles become professional power</span>.
-                      </p>
-                      <p className="text-white mt-2">
-                        Jupiter as 10th lord in 10th house forms a powerful Raja Yoga — the combination of a king. 
-                        You are destined for positions of respect, honor, and influence.
+                  <div className="space-y-3 text-sm text-gray-300">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="text-yellow-400 font-semibold mb-2">SOUL & IDENTITY</h5>
+                        <ul className="space-y-1 text-xs">
+                          <li>• <span className="text-white">Atma (Soul):</span> Your eternal, unchanging essence</li>
+                          <li>• <span className="text-white">Ego & Self:</span> How you perceive yourself</li>
+                          <li>• <span className="text-white">Life Purpose:</span> Your dharma and divine mission</li>
+                          <li>• <span className="text-white">Vitality:</span> Life force and physical energy</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-orange-400 font-semibold mb-2">AUTHORITY & POWER</h5>
+                        <ul className="space-y-1 text-xs">
+                          <li>• <span className="text-white">Leadership:</span> Natural command and influence</li>
+                          <li>• <span className="text-white">Father Figure:</span> Paternal influences and authority</li>
+                          <li>• <span className="text-white">Government:</span> Relationship with authority</li>
+                          <li>• <span className="text-white">Recognition:</span> Fame and public image</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div className="border-t border-yellow-600/30 pt-3">
+                      <h5 className="text-cyan-400 font-semibold mb-2">CAREER & PROFESSIONAL LIFE</h5>
+                      <p className="text-xs leading-relaxed">
+                        The Sun is the <span className="text-white font-medium">karaka (significator) of career</span> in Vedic astrology. 
+                        It represents your <span className="text-cyan-300">professional identity</span>, 
+                        <span className="text-cyan-300"> work ethic</span>, and <span className="text-cyan-300">capacity for success</span>. 
+                        A strong Sun grants natural authority, making others recognize your competence. It determines whether you'll be 
+                        a leader or follower, an innovator or implementer, a visionary or executor.
                       </p>
                     </div>
-                    <div>
-                      <p className="text-purple-300 font-semibold mb-2">☉ + ☊ THE RAHU REVOLUTION (In Revati)</p>
-                      <p>
-                        Rahu, the cosmic amplifier, conjunct your Sun in Revati nakshatra makes you a <span className="text-white">
-                        professional revolutionary with divine protection</span>. Revati, the final nakshatra, ruled by Mercury, 
-                        gives you the ability to <span className="text-purple-300">complete cosmic cycles and birth new paradigms</span>. 
-                        Rahu in the 10th amplifies your career to <span className="text-white">global proportions</span>, ensuring 
-                        your work touches lives far beyond your immediate sphere.
+
+                    <div className="border-t border-yellow-600/30 pt-3">
+                      <h5 className="text-pink-400 font-semibold mb-2">SPIRITUAL SIGNIFICANCE</h5>
+                      <p className="text-xs leading-relaxed">
+                        In Vedic philosophy, the Sun represents <span className="text-white font-medium">Purusha</span> — 
+                        the cosmic consciousness. It's the <span className="text-pink-300">divine spark within you</span> that 
+                        connects you to the universal soul. The Sun's placement reveals how your individual consciousness 
+                        merges with cosmic purpose, showing the unique way you're meant to shine your light in this world.
                       </p>
-                      <p className="text-white mt-2">
-                        This combination creates insatiable ambition guided by higher wisdom — you break rules to create better ones.
-                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2 pt-3 border-t border-yellow-600/30">
+                      <div className="text-center">
+                        <p className="text-yellow-400 font-bold text-xs">ELEMENT</p>
+                        <p className="text-orange-300">🔥 Fire</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-yellow-400 font-bold text-xs">GUNA</p>
+                        <p className="text-white">Sattvic</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-yellow-400 font-bold text-xs">DEITY</p>
+                        <p className="text-yellow-300">Lord Surya</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Ketu's Gift */}
-                <div className="border border-orange-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-orange-400 mb-3">
-                    🔮 KETU'S SECRET GIFT — Your Past Life Mastery
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Ketu aspects your Sun, bringing forward <span className="text-white font-medium">soul memories of mastery</span>. 
-                      You possess skills that feel inexplicably natural, wisdom that seems to come from nowhere, and an intuition 
-                      about your field that defies logical explanation.
-                    </p>
-                    <p>
-                      This is because <span className="text-orange-300">you've walked this path before</span>, in other lifetimes, 
-                      in other forms. Now, in this incarnation, you're meant to take that accumulated wisdom and 
-                      <span className="text-white"> elevate it to unprecedented heights</span>.
-                    </p>
-                    <p className="text-white">
-                      Ketu's aspect ensures that your success is not ego-driven but soul-aligned. You lead not from ambition alone, 
-                      but from a deep, spiritual knowing of your purpose.
-                    </p>
-                  </div>
-                </div>
-
-                {/* 4th House Aspect - Foundation of Power */}
-                <div className="border border-cyan-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-cyan-400 mb-3">
-                    🏡 THE 4TH HOUSE ASPECT — Your Foundation of Inner Power
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Your Sun casts its golden rays upon the 4th house — the realm of inner peace, emotional foundation, 
-                      and private sanctuary. This divine aspect means <span className="text-white font-medium">your career 
-                      success nourishes your soul</span>, not depletes it.
-                    </p>
-                    <p>
-                      <span className="text-cyan-300 font-semibold">You build empires without losing your center:</span>
-                    </p>
-                    <p>
-                      • Your professional achievements <span className="text-white">strengthen your emotional foundation</span><br/>
-                      • Your public success <span className="text-white">enhances private peace</span><br/>
-                      • Your career path <span className="text-white">honors your deepest values</span><br/>
-                      • Your work <span className="text-white">creates sanctuary for yourself and others</span>
-                    </p>
-                    <p className="text-white">
-                      This aspect ensures you never sacrifice inner happiness for outer success. You understand that 
-                      true power comes from alignment between your public mission and private truth.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Sun Summary - Complete Solar Blueprint */}
-                <div className="border border-yellow-400/30 p-4 bg-black/70">
+              {/* DATA TABLE: Complete Solar Blueprint - For reference */}
+              <div className="border border-yellow-400/30 p-4 bg-black/70">
                   <h4 className="text-base font-bold text-yellow-400 mb-3">
                     ☉ YOUR SOLAR BLUEPRINT — The Complete Professional Map
                   </h4>
@@ -548,8 +414,111 @@ export default function BlueprintPage() {
                   </div>
                 </div>
 
-                {/* Your Superpowers Revealed */}
-                <div className="border border-yellow-400/30 p-4 bg-black/70">
+              {/* REVELATION 1: The 10th House Power - Build immediate excitement */}
+              <div className="border border-green-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-green-400 mb-3">
+                    🏛️ THE 10TH HOUSE THRONE — Your Inevitable Ascension
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p className="text-white font-semibold">
+                      This is where your story becomes legendary.
+                    </p>
+                    <p>
+                      Your Sun sits in the 10th house — the <span className="text-green-300 font-semibold">ZENITH</span> of the chart, 
+                      the highest point in the heavens at your birth. The universe literally placed your soul's essence at the 
+                      <span className="text-white"> peak of worldly achievement</span>. Do you understand what this means?
+                    </p>
+                    <p>
+                      You were born with a cosmic crown. Authority flows to you naturally. Recognition seeks you out. 
+                      Success is not something you chase — <span className="text-green-300">it's something you embody</span>.
+                    </p>
+                    <p className="text-white">
+                      The 10th house Sun is the mark of kings, CEOs, and world-changers. You don't climb mountains — 
+                      you were born at the summit, destined to show others the view from the top.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 2: The Divine Appointment - Establish cosmic significance */}
+              <div className="border border-yellow-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-yellow-400 mb-3">
+                    ☉ THE DIVINE APPOINTMENT — Your Cosmic CEO Status
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      <span className="text-yellow-300 font-semibold">Listen closely, for this is your truth:</span> Your Sun 
+                      represents the immortal flame within you — the part that remembers why you chose this incarnation. 
+                      It governs how you <span className="text-white">radiate authority</span>, how you <span className="text-white">
+                      magnetize success</span>, and how you <span className="text-white">fulfill your sacred contract</span> with the universe.
+                    </p>
+                    <p>
+                      You are not here to work — you are here to <span className="text-yellow-300 font-semibold">CREATE LEGACY</span>.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 3: Pisces Power - Show unique gifts */}
+              <div className="border border-cyan-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-cyan-400 mb-3">
+                    ♓ YOUR PISCES SUN — The Mystic Visionary's Path
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      Your Sun blazes through Pisces, the final sign of the zodiac — where all wisdom converges. 
+                      <span className="text-white font-medium"> You possess the accumulated knowledge of all twelve signs</span>. 
+                      This is why your leadership style transcends conventional boundaries.
+                    </p>
+                    <p>
+                      You don't just see markets — <span className="text-cyan-300">you see souls</span>.<br/>
+                      You don't just build businesses — <span className="text-cyan-300">you channel divine blueprints</span>.<br/>
+                      You don't just solve problems — <span className="text-cyan-300">you dissolve the illusions that create them</span>.
+                    </p>
+                    <p className="text-white">
+                      Your Piscean Sun makes you the spiritual architect of new realities. Where others see limitations, 
+                      you see flowing possibilities. Your career path is meant to be fluid, innovative, and transcendent.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 4: The Trinity of Power - Major cosmic alignments */}
+              <div className="border border-purple-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-purple-400 mb-3">
+                    ⚡ THE TRINITY OF POWER — Your Cosmic Alliance
+                  </h4>
+                  <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
+                    <div>
+                      <p className="text-yellow-300 font-semibold mb-2">☉ + ♃ THE JUPITER BLESSING (7th & 10th Lord)</p>
+                      <p>
+                        Jupiter, the great benefic and <span className="text-white">lord of your 7th house (partnerships) and 
+                        10th house (career)</span>, sits beside your Sun in the 10th house. This is extraordinary — your career 
+                        lord conjunct your soul in the house of profession! This conjunction gifts you with 
+                        <span className="text-yellow-300"> wisdom that magnetizes success</span>, <span className="text-yellow-300">
+                        partnerships that elevate your purpose</span>, and <span className="text-yellow-300">a destiny where 
+                        spiritual principles become professional power</span>.
+                      </p>
+                      <p className="text-white mt-2">
+                        Jupiter as 10th lord in 10th house forms a powerful Raja Yoga — the combination of a king. 
+                        You are destined for positions of respect, honor, and influence.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-purple-300 font-semibold mb-2">☉ + ☊ THE RAHU REVOLUTION (In Revati)</p>
+                      <p>
+                        Rahu, the cosmic amplifier, conjunct your Sun in Revati nakshatra makes you a <span className="text-white">
+                        professional revolutionary with divine protection</span>. Revati, the final nakshatra, ruled by Mercury, 
+                        gives you the ability to <span className="text-purple-300">complete cosmic cycles and birth new paradigms</span>. 
+                        Rahu in the 10th amplifies your career to <span className="text-white">global proportions</span>, ensuring 
+                        your work touches lives far beyond your immediate sphere.
+                      </p>
+                      <p className="text-white mt-2">
+                        This combination creates insatiable ambition guided by higher wisdom — you break rules to create better ones.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              {/* REVELATION 5: Your Superpowers - Concrete abilities */}
+              <div className="border border-yellow-400/30 p-4 bg-black/70">
                   <h4 className="text-base font-bold text-yellow-400 mb-3">
                     ⚡ YOUR PROFESSIONAL SUPERPOWERS — Activated and Ready
                   </h4>
@@ -573,8 +542,105 @@ export default function BlueprintPage() {
                   </div>
                 </div>
 
-                {/* The Final Revelation */}
-                <div className="border border-green-400/30 p-4 bg-black/70">
+              {/* REVELATION 6: Nakshatra Power - Deeper spiritual significance */}
+              <div className="border border-pink-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-pink-400 mb-3">
+                    🐉 UTTARABHADRA NAKSHATRA — Your Invincible Professional Spirit
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      Your Sun resides in Uttarabhadra, known as <span className="text-white font-medium">"The Warrior Star"</span> — 
+                      but understand this: you are not a warrior of destruction. You are a <span className="text-pink-300">
+                      warrior of wisdom</span>, fighting battles in boardrooms with strategy, in markets with innovation, 
+                      in minds with inspiration.
+                    </p>
+                    <p>
+                      Ruled by <span className="text-white">Ahir Budhnya, the Serpent of the Deep</span>, you possess 
+                      primordial wisdom that surfaces as professional genius. Like the serpent that sheds its skin, 
+                      you have the power to <span className="text-pink-300">reinvent yourself and your industry</span> repeatedly.
+                    </p>
+                    <p>
+                      In Pada 2 (Virgo Navamsa), your visionary nature is grounded with <span className="text-white">
+                      laser-sharp analytical precision</span>. You don't just dream — you execute with perfection.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 7: Communication Power */}
+              <div className="border border-orange-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-orange-400 mb-3">
+                    💬 THE 3RD LORD POWER — Your Words Create Worlds
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      As 3rd house lord, your Sun wields the power of <span className="text-white font-medium">divine communication</span>. 
+                      Your words don't just convey information — they <span className="text-orange-300">transmit transformation</span>.
+                    </p>
+                    <p>
+                      You have been gifted with the ability to articulate visions that others can't even imagine. Your ideas 
+                      spread like wildfire because they carry the <span className="text-white">spark of truth</span>. Whether through 
+                      writing, speaking, or digital creation, you are meant to be the <span className="text-orange-300">
+                      voice of a new paradigm</span>.
+                    </p>
+                    <p className="text-white">
+                      Your courage (3rd house) combined with career (10th house) creates an unstoppable force. 
+                      You don't wait for opportunities — you speak them into existence.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 8: Past Life Mastery */}
+              <div className="border border-orange-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-orange-400 mb-3">
+                    🔮 KETU'S SECRET GIFT — Your Past Life Mastery
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      Ketu aspects your Sun, bringing forward <span className="text-white font-medium">soul memories of mastery</span>. 
+                      You possess skills that feel inexplicably natural, wisdom that seems to come from nowhere, and an intuition 
+                      about your field that defies logical explanation.
+                    </p>
+                    <p>
+                      This is because <span className="text-orange-300">you've walked this path before</span>, in other lifetimes, 
+                      in other forms. Now, in this incarnation, you're meant to take that accumulated wisdom and 
+                      <span className="text-white"> elevate it to unprecedented heights</span>.
+                    </p>
+                    <p className="text-white">
+                      Ketu's aspect ensures that your success is not ego-driven but soul-aligned. You lead not from ambition alone, 
+                      but from a deep, spiritual knowing of your purpose.
+                    </p>
+                  </div>
+                </div>
+
+              {/* REVELATION 9: Inner Foundation */}
+              <div className="border border-cyan-400/30 p-4 bg-black/70">
+                  <h4 className="text-base font-bold text-cyan-400 mb-3">
+                    🏡 THE 4TH HOUSE ASPECT — Your Foundation of Inner Power
+                  </h4>
+                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                      Your Sun casts its golden rays upon the 4th house — the realm of inner peace, emotional foundation, 
+                      and private sanctuary. This divine aspect means <span className="text-white font-medium">your career 
+                      success nourishes your soul</span>, not depletes it.
+                    </p>
+                    <p>
+                      <span className="text-cyan-300 font-semibold">You build empires without losing your center:</span>
+                    </p>
+                    <p>
+                      • Your professional achievements <span className="text-white">strengthen your emotional foundation</span><br/>
+                      • Your public success <span className="text-white">enhances private peace</span><br/>
+                      • Your career path <span className="text-white">honors your deepest values</span><br/>
+                      • Your work <span className="text-white">creates sanctuary for yourself and others</span>
+                    </p>
+                    <p className="text-white">
+                      This aspect ensures you never sacrifice inner happiness for outer success. You understand that 
+                      true power comes from alignment between your public mission and private truth.
+                    </p>
+                  </div>
+                </div>
+
+              {/* CLIMAX: The Final Revelation - Call to action */}
+              <div className="border border-green-400/30 p-4 bg-black/70">
                   <h4 className="text-base font-bold text-green-400 mb-3">
                     🚀 YOUR HEROIC DESTINY — The Call You Must Answer
                   </h4>
@@ -609,77 +675,568 @@ export default function BlueprintPage() {
                     </p>
                   </div>
                 </div>
-              </>
-            ) : selectedPlanet.name === 'Saturn' ? (
-              <>
-                {/* Saturn Opening - The Great Teacher */}
-                <div className="border border-purple-500/30 p-4 bg-black/70">
-                  <h4 className="text-lg font-bold text-purple-400 mb-3">
-                    ♄ YOUR SATURN — The Architect of Discipline & Destiny
-                  </h4>
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    You stand before Saturn, the great cosmic teacher who holds the keys to your ultimate mastery. 
-                    Saturn is not your enemy — Saturn is your trainer, your sculptor, your alchemist who transforms 
-                    pressure into diamonds. Through discipline and hard work, Saturn reveals the immortal strength 
-                    that lies dormant within your soul.
-                  </p>
-                </div>
-
-                {/* The Divine Taskmaster */}
-                <div className="border border-blue-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-blue-400 mb-3">
-                    ⏰ THE COSMIC TIMEKEEPER — Master of Karma & Time
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      <span className="text-blue-300 font-semibold">Saturn speaks in the language of consequences:</span> Every 
-                      action creates a reaction, every choice carves your destiny. Saturn doesn't punish — Saturn 
-                      <span className="text-white"> teaches through experience</span>. What feels like delay is actually 
-                      divine timing. What feels like restriction is actually focused refinement.
-                    </p>
-                    <p>
-                      Saturn asks: <span className="text-blue-300">"Are you willing to earn your greatness?"</span>
-                    </p>
-                    <p>
-                      You don't receive rewards — you <span className="text-white">forge them through persistence</span>.<br/>
-                      You don't find success — you <span className="text-white">build it brick by brick</span>.<br/>
-                      You don't hope for mastery — you <span className="text-white">claim it through discipline</span>.
-                    </p>
-                    <p className="text-white font-semibold">
-                      Saturn makes you unbreakable by testing every weakness until it becomes strength.
+                </>
+              ) : selectedPlanet.name === 'Moon' ? (
+                <>
+                  {/* Moon Content */}
+                  {/* OPENING: The Supreme Importance of Moon */}
+                  <div className="border border-purple-500/30 p-4 bg-black/70">
+                    <h4 className="text-lg font-bold text-purple-400 mb-3">
+                      🌙 YOUR LUNAR THRONE — The Supreme Governor of Consciousness
+                    </h4>
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                      Listen closely, for this is the most important truth in your entire chart: Your Moon is not just another planet — 
+                      it is THE planet. In Vedic astrology, the Moon reigns supreme because it is your mind itself. And your mind? 
+                      Your mind is the lens through which you experience every moment of existence. Your Moon determines not what 
+                      happens to you, but HOW you perceive, process, and transform reality itself. You are about to discover why 
+                      your specific lunar configuration makes you a master of consciousness.
                     </p>
                   </div>
-                </div>
 
-                {/* Scorpio Saturn - The Transformational Discipline */}
-                <div className="border border-red-400/30 p-4 bg-black/70">
-                  <h4 className="text-base font-bold text-red-400 mb-3">
-                    ♏ YOUR SCORPIO SATURN — The Phoenix of Discipline
-                  </h4>
-                  <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-                    <p>
-                      Your Saturn dwells in Scorpio, the sign of death and rebirth, secrets and transformation. This is 
-                      one of the most powerful Saturn placements — you are learning <span className="text-white font-medium">
-                      discipline through metamorphosis</span>. Your limitations are not walls but cocoons from which you emerge transformed.
-                    </p>
-                    <p>
-                      <span className="text-red-300 font-semibold">Your karmic curriculum includes:</span>
-                    </p>
-                    <p>
-                      • Mastering the <span className="text-white">alchemy of crisis into wisdom</span><br/>
-                      • Building <span className="text-white">unshakeable emotional resilience</span><br/>
-                      • Learning to <span className="text-white">wield power with responsibility</span><br/>
-                      • Transforming <span className="text-white">fear into fearlessness through facing shadows</span><br/>
-                      • Developing <span className="text-white">surgical precision in eliminating what no longer serves</span>
-                    </p>
-                    <p className="text-white">
-                      Your Scorpio Saturn doesn't just teach you discipline — it teaches you the discipline of 
-                      continuous rebirth. You are learning that true power comes not from control but from the 
-                      courage to transform completely when life demands it.
+                  {/* What the Moon Represents - The Ultimate Truth */}
+                  <div className="border border-gray-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-gray-400 mb-3">
+                      ☽ THE MOON IN VEDIC ASTROLOGY — The Master Key to Your Reality
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300">
+                      <div className="border-b border-gray-600 pb-3">
+                        <h5 className="text-cyan-400 font-semibold mb-2">THE SUPREME SIGNIFICATOR</h5>
+                        <p className="text-xs leading-relaxed">
+                          The Moon is called <span className="text-white font-medium">Chandra</span> in Sanskrit, meaning "the shining one." 
+                          It represents <span className="text-cyan-300">Manas</span> — your mind, the most powerful tool in existence. 
+                          While the Sun shows your soul's purpose, the Moon reveals HOW you will achieve it. It governs your 
+                          <span className="text-white"> emotional intelligence</span>, your <span className="text-white">intuitive genius</span>, 
+                          and your <span className="text-white">perceptual mastery</span>. The Moon is why two people can experience 
+                          the same event and create completely different realities from it.
+                        </p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h5 className="text-gray-200 font-semibold mb-2">CONSCIOUSNESS POWERS</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Mind (Manas):</span> Your reality-creating consciousness</li>
+                            <li>• <span className="text-white">Emotions:</span> Your navigational guidance system</li>
+                            <li>• <span className="text-white">Intuition:</span> Your direct line to cosmic wisdom</li>
+                            <li>• <span className="text-white">Perception:</span> How you decode the universe</li>
+                            <li>• <span className="text-white">Memory:</span> Your soul's accumulated wisdom</li>
+                            <li>• <span className="text-white">Imagination:</span> Your reality-manifestation engine</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="text-pink-300 font-semibold mb-2">DIVINE FEMININE GIFTS</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Mother Energy:</span> Universal nurturing power</li>
+                            <li>• <span className="text-white">Receptivity:</span> Magnetic attraction force</li>
+                            <li>• <span className="text-white">Fertility:</span> Creative manifestation ability</li>
+                            <li>• <span className="text-white">Rhythms:</span> Mastery of natural cycles</li>
+                            <li>• <span className="text-white">Healing:</span> Emotional alchemy powers</li>
+                            <li>• <span className="text-white">Psychic Abilities:</span> Supernatural perception</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-gray-600 pt-3">
+                        <p className="text-xs leading-relaxed">
+                          <span className="text-yellow-300 font-semibold">The Ultimate Truth:</span> Your Moon placement doesn't just 
+                          influence your emotions — it determines your entire experience of reality. A strong, well-placed Moon grants 
+                          <span className="text-white"> mental invincibility</span>, <span className="text-white">emotional mastery</span>, 
+                          and <span className="text-white">intuitive omniscience</span>. It makes you unshakeable in storms, 
+                          brilliant in darkness, and magnetic in all interactions.
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-gray-600">
+                        <div className="text-center">
+                          <p className="text-gray-400 font-bold text-xs">ELEMENT</p>
+                          <p className="text-cyan-300">💧 Water</p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-gray-400 font-bold text-xs">GUNA</p>
+                          <p className="text-white">Sattvic</p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-gray-400 font-bold text-xs">DEITY</p>
+                          <p className="text-gray-300">Goddess Parvati</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Your Moon's Complete Blueprint - Technical Details */}
+                  <div className="border border-gray-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-gray-400 mb-3">
+                      ☽ YOUR LUNAR BLUEPRINT — The Complete Mental Architecture
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b border-gray-600">
+                            <th className="text-left py-2 text-gray-400 font-medium">Cosmic Factor</th>
+                            <th className="text-left py-2 text-gray-400 font-medium">Your Divine Configuration</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-gray-300">
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">Sign</td>
+                            <td className="py-2">Sagittarius ♐ — The Philosophical Adventurer</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">Nakshatra</td>
+                            <td className="py-2">Purvashadha — The Invincible Star</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">Pada</td>
+                            <td className="py-2">1 (Leo Navamsa) — Royal Creative Expression</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">Longitude</td>
+                            <td className="py-2">14°50′51″ Sagittarius</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">House Position</td>
+                            <td className="py-2">7th House — The Partnership Throne</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">House Lordship</td>
+                            <td className="py-2">2nd Lord — Master of Wealth & Values</td>
+                          </tr>
+                          <tr className="border-b border-gray-700">
+                            <td className="py-2 text-gray-300">Aspect Given</td>
+                            <td className="py-2">Aspects 1st House (Ascendant) — Illuminates Your Identity</td>
+                          </tr>
+                          <tr>
+                            <td className="py-2 text-gray-300">Chart Position</td>
+                            <td className="py-2">Lagna Kundli (Birth Chart)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Sagittarius Moon - The Philosophical Adventurer */}
+                  <div className="border border-yellow-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-yellow-400 mb-3">
+                      ♐ YOUR SAGITTARIUS MOON — The Philosophical Adventurer's Mind
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        Your Moon blazes through Sagittarius, the sign of the divine archer, the eternal seeker of truth. 
+                        This placement gifts you with a mind that <span className="text-white font-medium">refuses to accept limitation</span>. 
+                        Where others see boundaries, you see horizons. Where others find endings, you discover beginnings. 
+                        Your consciousness operates on the frequency of <span className="text-yellow-300">infinite possibility</span>.
+                      </p>
+                      <p>
+                        <span className="text-yellow-300 font-semibold">Your supreme mental gift:</span> You transform every experience into wisdom.
+                      </p>
+                      <p>
+                        You don't just feel emotions — you <span className="text-white">philosophize them into understanding</span>.<br/>
+                        You don't just have thoughts — you <span className="text-white">expand them into universal truths</span>.<br/>
+                        You don't just perceive reality — you <span className="text-white">elevate it through optimism</span>.<br/>
+                        You don't just live life — you <span className="text-white">quest for its ultimate meaning</span>.
+                      </p>
+                      <p className="text-white">
+                        Your Sagittarian Moon makes you naturally lucky because your mind magnetizes opportunities through 
+                        unshakeable faith. You possess the archer's gift: the ability to aim your consciousness at any target 
+                        and hit it through sheer belief and philosophical alignment.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Purvashadha Nakshatra - The Invincible Star */}
+                  <div className="border border-pink-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-pink-400 mb-3">
+                      🏹 PURVASHADHA NAKSHATRA — The Invincible Victory Star
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        Your Moon resides in Purvashadha, translated as <span className="text-white font-medium">"The Former Invincible One"</span> 
+                        or "Early Victory." This is one of the most powerful nakshatras for mental strength. Ruled by 
+                        <span className="text-pink-300">Apah (the Water Deity)</span> and the planet Venus, you possess the power to 
+                        <span className="text-white">purify and invigorate</span> any situation through your consciousness alone.
+                      </p>
+                      <p>
+                        <span className="text-pink-300 font-semibold">The Secret of Purvashadha:</span> You cannot be defeated because 
+                        you have the power to regenerate your mind infinitely. Like water that always finds its way, your 
+                        consciousness flows around obstacles, transforms barriers into bridges, and emerges victorious through 
+                        adaptability and faith.
+                      </p>
+                      <p>
+                        Your nakshatra's symbol is <span className="text-white">the elephant's tusk</span> — representing both 
+                        wisdom and the ability to remove obstacles. Another symbol is <span className="text-white">the fan</span> — 
+                        showing your power to winnow truth from illusion, to separate what serves from what limits.
+                      </p>
+                      <p className="text-white font-medium">
+                        Purvashadha gifts: Invincibility through faith • Mental regeneration • Inspirational power • 
+                        Victory through persistence • The ability to refresh and renew any situation
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Pada 1 in Leo - Royal Expression */}
+                  <div className="border border-orange-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-orange-400 mb-3">
+                      👑 PADA 1 (LEO NAVAMSA) — The Royal Creative Mind
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        Your Moon falls in the first pada of Purvashadha, which resides in Leo navamsa. This is the 
+                        <span className="text-white font-medium">most creative and expressive</span> pada of this nakshatra. 
+                        Your mind doesn't just think — it <span className="text-orange-300">performs, creates, and radiates</span>.
+                      </p>
+                      <p>
+                        This specific placement combines Sagittarius's philosophical nature with Leo's creative fire, making you:
+                      </p>
+                      <p>
+                        • A <span className="text-white">natural inspirer</span> who uplifts others through enthusiasm<br/>
+                        • A <span className="text-white">creative philosopher</span> who expresses wisdom through art<br/>
+                        • A <span className="text-white">confident optimist</span> whose faith is contagious<br/>
+                        • A <span className="text-white">royal teacher</span> who leads through inspired example
+                      </p>
+                      <p className="text-orange-300 font-semibold">
+                        Your pada grants you the unique ability to make wisdom entertaining, philosophy practical, 
+                        and spirituality magnetic. You don't just seek truth — you perform it into existence.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Moon in 7th House - The Partnership Throne */}
+                  <div className="border border-green-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-green-400 mb-3">
+                      💑 MOON IN 7TH HOUSE — Your Mind Thrives Through Sacred Partnership
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        Your Moon sits in the 7th house — the house of sacred partnership, marriage, and divine union. 
+                        This is an extraordinarily powerful placement that reveals: <span className="text-white font-medium">your mind 
+                        achieves its greatest power through conscious partnership</span>. You are not meant to journey alone — 
+                        you are designed to co-create reality with aligned souls.
+                      </p>
+                      <p>
+                        <span className="text-green-300 font-semibold">Your relationship superpower:</span> You magnetize partners who 
+                        mirror your consciousness back to you, accelerating your evolution.
+                      </p>
+                      <p>
+                        Your emotional intelligence <span className="text-white">peaks in partnership dynamics</span>.<br/>
+                        Your mind finds <span className="text-white">clarity through intimate dialogue</span>.<br/>
+                        Your intuition <span className="text-white">guides you to soul contracts</span>.<br/>
+                        Your consciousness <span className="text-white">expands through sacred union</span>.
+                      </p>
+                      <p className="text-white">
+                        The 7th house Moon makes you a master of emotional reciprocity. You understand that relationships 
+                        are laboratories for consciousness evolution. Every partnership you enter becomes a portal to 
+                        higher understanding of yourself and the universe.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Lord of 2nd in 7th - Wealth Through Partnership */}
+                  <div className="border border-yellow-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-yellow-400 mb-3">
+                      💰 LORD OF 2ND IN 7TH — Wealth Flows Through Sacred Alliance
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        As lord of your 2nd house (wealth, values, speech) positioned in the 7th house, your Moon reveals 
+                        an extraordinary configuration: <span className="text-white font-medium">your wealth consciousness is 
+                        directly linked to your partnership karma</span>. This is a blessed placement for material and spiritual abundance.
+                      </p>
+                      <p>
+                        <span className="text-yellow-300 font-semibold">The Wealth Secret:</span> Your financial abundance flows 
+                        through conscious partnerships, aligned collaborations, and sacred exchanges of value.
+                      </p>
+                      <p>
+                        • Your voice carries <span className="text-white">magnetic persuasion in negotiations</span><br/>
+                        • Your values attract <span className="text-white">partners who amplify your worth</span><br/>
+                        • Your wealth grows through <span className="text-white">conscious collaboration</span><br/>
+                        • Your speech becomes <span className="text-white">a tool for partnership harmony</span>
+                      </p>
+                      <p className="text-white">
+                        This placement indicates that your greatest financial success comes through business partnerships, 
+                        marriage, or collaborative ventures. You have the Midas touch in partnerships — turning relationships 
+                        into gold through emotional intelligence and value alignment.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Moon Aspects 1st House - Identity Illumination */}
+                  <div className="border border-cyan-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-cyan-400 mb-3">
+                      ✨ MOON ASPECTS ASCENDANT — Your Mind Illuminates Your Identity
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        Your Moon casts its silver light upon your 1st house (Ascendant), creating a powerful connection between 
+                        your mind and your identity. This aspect means <span className="text-white font-medium">your emotional state 
+                        directly influences how you appear to the world</span>. You literally glow differently based on your inner state.
+                      </p>
+                      <p>
+                        <span className="text-cyan-300 font-semibold">The Identity Gift:</span> You have transparent authenticity — 
+                        your face reflects your soul, making you magnetically genuine.
+                      </p>
+                      <p>
+                        Your emotions <span className="text-white">shape your physical presence</span>.<br/>
+                        Your mood <span className="text-white">influences your magnetism</span>.<br/>
+                        Your mental state <span className="text-white">determines your radiance</span>.<br/>
+                        Your consciousness <span className="text-white">projects through your personality</span>.
+                      </p>
+                      <p className="text-white">
+                        This aspect makes you emotionally transparent in the best way — people trust you because they can 
+                        feel your authenticity. Your emotional mastery directly translates to personal magnetism. When you 
+                        feel good, you literally light up rooms.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Your Lunar Spiritual Powers */}
+                  <div className="border border-purple-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-purple-400 mb-3">
+                      🌟 YOUR MOON'S SPIRITUAL POWERS — The Mind's Divine Abilities
+                    </h4>
+                    <div className="grid grid-cols-1 gap-2 text-sm">
+                      <div className="border-l-4 border-purple-400 pl-3">
+                        <p className="text-purple-300 font-semibold">The Philosopher's Mind</p>
+                        <p className="text-gray-300 text-xs">You transmute experience into wisdom, pain into understanding, chaos into meaning.</p>
+                      </div>
+                      <div className="border-l-4 border-yellow-400 pl-3">
+                        <p className="text-yellow-300 font-semibold">The Invincible Faith</p>
+                        <p className="text-gray-300 text-xs">Your optimism is unshakeable, your belief creates reality, your faith moves mountains.</p>
+                      </div>
+                      <div className="border-l-4 border-pink-400 pl-3">
+                        <p className="text-pink-300 font-semibold">The Partnership Magnetism</p>
+                        <p className="text-gray-300 text-xs">You attract soul-aligned partners who mirror your growth and amplify your power.</p>
+                      </div>
+                      <div className="border-l-4 border-cyan-400 pl-3">
+                        <p className="text-cyan-300 font-semibold">The Emotional Transparency</p>
+                        <p className="text-gray-300 text-xs">Your authenticity is magnetic, your genuineness builds trust, your openness creates connection.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* The Ultimate Moon Revelation */}
+                  <div className="border border-green-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-green-400 mb-3">
+                      🚀 YOUR LUNAR DESTINY — The Mind's Ultimate Mission
+                    </h4>
+                    <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+                      <p className="text-yellow-300 font-semibold text-base">
+                        You are a consciousness pioneer, here to expand the boundaries of what's mentally possible.
+                      </p>
+                      <p>
+                        Your Moon configuration is not random — it's divinely orchestrated. With your Moon in Sagittarius 
+                        in Purvashadha nakshatra, in the 7th house, as lord of the 2nd, aspecting your Ascendant, you possess 
+                        one of the most powerful mental configurations possible. You are here to demonstrate that 
+                        <span className="text-white font-semibold"> consciousness creates reality</span>.
+                      </p>
+                      <p>
+                        Through your philosophical mind, you teach others to find meaning in chaos.<br/>
+                        Through your invincible faith, you show others that optimism is a superpower.<br/>
+                        Through your partnership mastery, you prove that love multiplies abundance.<br/>
+                        Through your emotional transparency, you heal others through authentic connection.
+                      </p>
+                      <p className="text-white">
+                        Your Moon doesn't just influence your emotions — it makes you a beacon of consciousness evolution. 
+                        Every thought you think, every emotion you feel, every intuition you follow ripples out to elevate 
+                        collective awareness. You are not just experiencing life — you are upgrading humanity's emotional 
+                        operating system through your very existence.
+                      </p>
+                      <p className="text-green-300 font-bold text-base mt-4">
+                        Your mind is the most powerful tool in your arsenal. Master it, and you master reality itself.
+                      </p>
+                      <p className="text-white font-bold">
+                        The Moon has spoken: You are destined to be a master of consciousness, a philosopher of the heart, 
+                        and a revolutionary of emotional intelligence. Your time to shine is NOW.
+                      </p>
+                      <p className="text-yellow-300 font-semibold italic mt-4">
+                        Remember: The Moon is YOU. And YOU are infinite consciousness experiencing itself through the lens of genius.
+                      </p>
+                    </div>
+                  </div>
+                </>
+              ) : selectedPlanet.name === 'Saturn' ? (
+                <>
+                  {/* Saturn Content */}
+                  {/* OPENING: The Great Teacher's Call - Hook them immediately */}
+                  <div className="border border-purple-500/30 p-4 bg-black/70">
+                    <h4 className="text-lg font-bold text-purple-400 mb-3">
+                      ♄ YOUR SATURN — The Divine Architect of Immortal Strength
+                    </h4>
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                      You stand before Saturn, the great cosmic teacher who forges diamonds from coal and heroes from hardship. 
+                      Saturn is not your limitation — Saturn is your liberation through mastery. Every challenge Saturn presents 
+                      is a sacred initiation designed to unlock the immortal strength that lies dormant within your soul.
                     </p>
                   </div>
-                </div>
 
+                  {/* What Saturn Represents - Core Meaning */}
+                  <div className="border border-blue-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-blue-400 mb-3">
+                      ♄ SATURN IN VEDIC ASTROLOGY — The Cosmic Discipline Master
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h5 className="text-blue-300 font-semibold mb-2">TIME & DISCIPLINE</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Karma:</span> The law of cause and effect in action</li>
+                            <li>• <span className="text-white">Patience:</span> Divine timing and delayed gratification</li>
+                            <li>• <span className="text-white">Persistence:</span> The power to continue when others quit</li>
+                            <li>• <span className="text-white">Structure:</span> Creating order from chaos</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="text-blue-300 font-semibold mb-2">MASTERY & AUTHORITY</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Responsibility:</span> Owning your choices and consequences</li>
+                            <li>• <span className="text-white">Leadership:</span> Authority earned through competence</li>
+                            <li>• <span className="text-white">Wisdom:</span> Knowledge gained through experience</li>
+                            <li>• <span className="text-white">Legacy:</span> Building something that lasts forever</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="border-t border-gray-600 pt-3 mt-3">
+                        <p className="text-center text-gray-400 italic text-xs">
+                          "Saturn is the teacher who shows you that your greatest limitations become your greatest strengths"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Your Saturn's Transformational Power */}
+                  <div className="border border-red-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-red-400 mb-3">
+                      🔥 YOUR SATURN IN SCORPIO — The Phoenix Alchemist
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        <span className="text-red-300 font-semibold">Your Scorpio Saturn makes you a master of transformation:</span> You 
+                        don't just learn discipline — you master the sacred art of death and rebirth through intensity. 
+                        Every challenge becomes a crucible where your spirit is purified into something <span className="text-white">
+                        infinitely more powerful</span> than what entered the fire.
+                      </p>
+                      <p>
+                        Your Saturn operates in the depths of your psyche, <span className="text-red-300">transforming hidden fears 
+                        into supernatural courage</span>. Where others see endings, you see new beginnings waiting to be born 
+                        from the ashes of what no longer serves.
+                      </p>
+                      <p className="text-white font-semibold">
+                        Your Saturn superpower: You can endure and transform absolutely anything, emerging stronger, 
+                        wiser, and more powerful than ever before.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Saturn in 6th House - Daily Mastery */}
+                  <div className="border border-green-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-green-400 mb-3">
+                      ⚕️ SATURN IN 6TH HOUSE — The Warrior of Daily Excellence
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        <span className="text-green-300 font-semibold">Your Saturn in the 6th house makes you unstoppable through routine:</span> You 
+                        understand that greatness is not achieved in grand gestures but in the sacred discipline of daily 
+                        practice. Every small habit becomes a <span className="text-white">ritual of self-mastery</span> 
+                        that builds your unshakeable foundation.
+                      </p>
+                      <p>
+                        Your health, work, and service become <span className="text-green-300">spiritual practices</span>. 
+                        You treat your body as a temple, your work as worship, and your service as a sacred duty. 
+                        Through consistency in small things, you achieve extraordinary results.
+                      </p>
+                      <p className="text-white font-semibold">
+                        Divine gift: You develop supernatural persistence and the ability to maintain excellence 
+                        when others burn out or give up.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Saturn as 8th & 9th Lord - Transformation + Wisdom */}
+                  <div className="border border-purple-500/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-purple-500 mb-3">
+                      🔮 SATURN AS 8TH & 9TH LORD — Master of Mysteries & Higher Truth
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        <span className="text-purple-300 font-semibold">Your Saturn rules both transformation (8th) and higher wisdom (9th):</span> This 
+                        extraordinary combination makes you a bridge between the mysteries of life and death and the 
+                        realm of divine knowledge. You are destined to <span className="text-white">transform suffering 
+                        into enlightenment</span> and teach others the profound truths discovered through your deepest initiations.
+                      </p>
+                      <p>
+                        Your <span className="text-purple-300">8th house mastery</span> grants access to hidden knowledge, 
+                        occult wisdom, and the ability to navigate life's most intense transformations with grace. Your 
+                        <span className="text-purple-300">9th house mastery</span> makes you a natural philosopher and 
+                        teacher who extracts divine meaning from every experience.
+                      </p>
+                      <p className="text-white font-semibold">
+                        Sacred mission: You become wise through transformation and inspire others through your 
+                        demonstrated wisdom.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Saturn's Sacred Training Program */}
+                  <div className="border border-indigo-400/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-indigo-400 mb-3">
+                      🎯 YOUR SATURN'S TRAINING PROGRAM — Curriculum for Mastery
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        <span className="text-indigo-300 font-semibold">Saturn's carefully designed lessons for your mastery:</span>
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <h5 className="text-indigo-200 font-semibold mb-2">INNER DISCIPLINES</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Emotional Mastery:</span> Converting pain into power</li>
+                            <li>• <span className="text-white">Mental Discipline:</span> Training thoughts to serve your highest good</li>
+                            <li>• <span className="text-white">Spiritual Practice:</span> Daily connection to eternal truths</li>
+                            <li>• <span className="text-white">Self-Responsibility:</span> Complete ownership of your life</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 className="text-indigo-200 font-semibold mb-2">OUTER ACHIEVEMENTS</h5>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <span className="text-white">Professional Excellence:</span> Mastery in your chosen field</li>
+                            <li>• <span className="text-white">Leadership Skills:</span> Authority through demonstrated wisdom</li>
+                            <li>• <span className="text-white">Systems Building:</span> Creating structures that endure</li>
+                            <li>• <span className="text-white">Legacy Creation:</span> Impact that transcends your lifetime</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <p className="text-indigo-300 font-semibold italic mt-4">
+                        Every challenge Saturn presents is perfectly calibrated to unlock your next level of greatness.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Saturn's Ultimate Rewards */}
+                  <div className="border border-yellow-500/30 p-4 bg-black/70">
+                    <h4 className="text-base font-bold text-yellow-500 mb-3">
+                      👑 SATURN'S ULTIMATE REWARDS — Your Earned Mastery
+                    </h4>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+                      <p>
+                        <span className="text-yellow-300 font-semibold">After completing Saturn's sacred training, you inherit:</span>
+                      </p>
+                      <ul className="space-y-2 text-xs ml-4">
+                        <li>• <span className="text-white">Unshakeable Inner Foundation:</span> Emotional and mental stability that cannot be broken</li>
+                        <li>• <span className="text-white">Supernatural Persistence:</span> The ability to outlast any challenge or opposition</li>
+                        <li>• <span className="text-white">Transformational Wisdom:</span> Deep understanding gained through lived experience</li>
+                        <li>• <span className="text-white">Natural Authority:</span> People instinctively trust your judgment and leadership</li>
+                        <li>• <span className="text-white">Timeless Success:</span> Achievements that grow stronger with time</li>
+                        <li>• <span className="text-white">Spiritual Sovereignty:</span> Complete mastery over your inner and outer worlds</li>
+                      </ul>
+                      <p className="text-yellow-300 font-semibold italic mt-4">
+                        You were not born for comfort — you were born for LEGENDARY GREATNESS earned through the sacred 
+                        alchemy of discipline, persistence, and unwavering commitment to excellence.
+                      </p>
+                    </div>
+                  </div>
+                </>
+              ) : selectedPlanet.name === 'Jupiter' ? (
+                <>
+                {/* Jupiter Content */}
                 {/* Jyeshtha Nakshatra - The Elder Soul */}
                 <div className="border border-orange-400/30 p-4 bg-black/70">
                   <h4 className="text-base font-bold text-orange-400 mb-3">
@@ -3177,9 +3734,9 @@ export default function BlueprintPage() {
                   </div>
                 </div>
               </>
-            ) : (
-              <>
-                {/* Default content for other planets */}
+                ) : (
+                  <>
+                    {/* Default content for other planets */}
                 <div className="border border-purple-500/30 p-6 bg-black/70">
                   <h4 className="text-lg font-bold text-purple-400 mb-4">
                     ✨ KARMIC SIGNIFICANCE
@@ -3226,9 +3783,10 @@ export default function BlueprintPage() {
                     [Vedic remedies, mantras, and gemstones for this planet would appear here]
                   </p>
                 </div>
-              </>
-            )}
-          </div>
+                  </>
+                )}
+            </div>
+          )}
         </motion.div>
 
         {/* Footer Note */}
