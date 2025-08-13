@@ -686,6 +686,323 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderMarsContent = () => (
+    <>
+      {/* Mars Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-red-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-red-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">Planet</td>
+                <td className="py-2">Mars</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">Sign</td>
+                <td className="py-2">Aries</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Krittika 1</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">House</td>
+                <td className="py-2">11</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">Lordship</td>
+                <td className="py-2">6, 11</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-red-300 font-semibold">Aspects Given</td>
+                <td className="py-2">2, 5, 6</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-red-300 font-semibold">Aspected By</td>
+                <td className="py-2">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Mars in Vedic Astrology */}
+      <div className="border border-red-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-red-500 mb-3">
+          🪐 MARS IN VEDIC ASTROLOGY — THE COSMIC WARRIOR
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-red-300 italic font-semibold">
+            "Mars does not fight to destroy — it fights to become."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Mangal</span> (Mars) is the 
+            <span className="text-red-300 font-semibold">cosmic warrior</span>, the planet of action, courage, and transformation through conflict. 
+            Mars represents your <span className="text-white font-semibold">vital force</span>, your ability to assert will into reality, 
+            and your capacity to <span className="text-white font-semibold">cut through obstacles</span> with the precision of a sacred blade.
+          </p>
+          <p className="leading-relaxed">
+            Mars governs <span className="text-red-300">energy, ambition, passion, and conquest</span>. It is the commander-in-chief of the planetary cabinet, 
+            the natural significator of brothers, land, and physical strength. But more profoundly, Mars represents your 
+            <span className="text-white font-semibold">spiritual warrior nature</span> — your ability to fight for dharma, to protect the sacred, 
+            to transform raw energy into purposeful action.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that influence through emotion or thought, Mars shapes reality through <span className="text-white font-semibold">direct action</span>. 
+            It doesn't contemplate or feel — it <span className="text-white font-semibold">moves, strikes, transforms</span>. 
+            Mars reveals where you're meant to be courageous, where you must take initiative, where your warrior spirit awakens.
+          </p>
+          <p className="leading-relaxed">
+            Mars gives results through <span className="text-red-300 font-semibold">friction and fire</span> — it creates heat that either 
+            forges you into steel or consumes you in rage. Its lessons come through <span className="text-white">conflict resolution</span>, 
+            <span className="text-white">tests of courage</span>, and the <span className="text-white">mastery of your own power</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Mars in Aries */}
+      <div className="border border-orange-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-orange-400 mb-3">
+          ♈ MARS IN ARIES — THE PRIMORDIAL WARRIOR
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Aries, the ram, is where <span className="text-white font-semibold">pure life force explodes into existence</span>. 
+            This cardinal fire sign, ruled by Mars itself, represents <span className="text-orange-300 font-semibold">the initial spark of creation</span>, 
+            the first breath of spring, the primal "I AM" that births all experience. It is the sign of 
+            <span className="text-white">new beginnings</span>, raw courage, and pioneering spirit.
+          </p>
+          <p>
+            When Mars returns home to Aries, something magnificent occurs: 
+            <span className="text-orange-300 font-semibold">the warrior finds its throne</span>. This is Mars in its own sign (swakshetra), 
+            operating at <span className="text-white font-semibold">maximum power and purity</span>. You don't just have Mars energy — you 
+            <span className="text-white font-semibold">ARE Mars energy</span>, unfiltered and uncompromised.
+          </p>
+          <p>
+            Your Mars in Aries makes you a <span className="text-white font-semibold">natural-born leader and initiator</span>. 
+            You possess the ram's gift: the ability to <span className="text-orange-300">break through any barrier</span> with sheer force of will. 
+            Your courage is not learned — it's <span className="text-white">instinctual</span>, arising from a soul that remembers its divine warrior nature.
+          </p>
+          <p>
+            The shadow work involves mastering <span className="text-orange-300 font-semibold">the difference between assertion and aggression</span>. 
+            Aries can mistake destruction for creation, confusing the thrill of conflict with the joy of achievement. Your spiritual evolution requires you to be 
+            <span className="text-white font-semibold">the sacred warrior</span> — fighting for something greater than personal victory.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Mars in Aries is to become <span className="text-orange-300">pure directed will</span> — action without anger, 
+            courage without cruelty, leadership without domination. You're learning that true strength is not in conquering others but in 
+            <span className="text-orange-300">conquering your own lower nature</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Krittika Nakshatra */}
+      <div className="border border-yellow-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-yellow-400 mb-3">
+          🏹 NAKSHATRA — KRITTIKA: THE COSMIC BLADE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-yellow-300 font-semibold">Nakshatra:</span> Krittika, "The Cutter"<br/>
+            <span className="text-yellow-300 font-semibold">Symbol:</span> Razor, Flame, Axe<br/>
+            <span className="text-yellow-300 font-semibold">Deity:</span> Agni (God of Fire) / Karttikeya (God of War)<br/>
+            <span className="text-yellow-300 font-semibold">Ruling Planet:</span> Sun<br/>
+            <span className="text-yellow-300 font-semibold">Pada:</span> 1 (Sagittarius Navamsa)
+          </p>
+          <p>
+            Your Mars resides in Krittika, the nakshatra of <span className="text-white font-semibold">the cosmic blade</span>. 
+            Its symbol, the razor, represents <span className="text-yellow-300 font-semibold">the power to cut through illusion</span> with surgical precision. 
+            The flame symbolizes <span className="text-white">purification through fire</span> — burning away the unnecessary to reveal the essential.
+          </p>
+          <p>
+            Ruled by the Sun, Krittika grants <span className="text-yellow-300 font-semibold">the power of spiritual surgery</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">divine discernment</span> — you have an innate ability to separate 
+            truth from falsehood, to cut karmic cords, to perform necessary destructions that enable new growth. Your Mars carries the quality of 
+            <span className="text-white">sacred fire</span> that both destroys and purifies.
+          </p>
+          <p>
+            In <span className="text-yellow-300 font-semibold">Pada 1</span> (Sagittarius navamsa), your Mars gains Jupiter's wisdom and righteousness. 
+            This is the pada of <span className="text-white font-semibold">the dharmic warrior</span> — you don't just fight, you 
+            <span className="text-white">fight for truth</span>. The Sagittarius influence makes your aggression philosophical, your courage principled, 
+            your battles meaningful. You have the soul of a <span className="text-yellow-300">crusader for justice</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the spiritual warrior who wields truth as a weapon, the revolutionary who burns down corruption to plant seeds of dharma, 
+            the protector who guards the sacred flame."
+          </p>
+          <p>
+            The Krittika Mars in Pada 1 creates divine fire: you have the <span className="text-white font-semibold">courage of Aries</span>, 
+            the <span className="text-white font-semibold">precision of Krittika</span>, and the <span className="text-white font-semibold">wisdom of Sagittarius</span>. 
+            Your medicine is the ability to <span className="text-yellow-300">transform conflict into consciousness</span>, to use every battle as an opportunity 
+            for spiritual growth.
+          </p>
+        </div>
+      </div>
+
+      {/* Mars as Lord of Houses */}
+      <div className="border border-cyan-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-cyan-400 mb-3">
+          🏛 MARS AS LORD OF 6TH & 11TH HOUSES — THE KARMA OF RULE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            As ruler of your 6th house, Mars governs your <span className="text-white font-semibold">enemies, obstacles, service, health, and daily battles</span>. 
+            As ruler of your 11th house, it also governs your <span className="text-white font-semibold">gains, friendships, networks, and highest aspirations</span>. 
+            Both these domains express through the 11th house itself.
+          </p>
+          <p>
+            This creates a powerful karmic configuration: your <span className="text-cyan-300 font-semibold">obstacles become your opportunities</span> (6th to 11th), 
+            and your <span className="text-cyan-300 font-semibold">gains come through conquest</span> (11th lord in 11th). You're designed to 
+            <span className="text-white font-semibold">transform enemies into allies</span>, problems into profits, conflicts into connections.
+          </p>
+          <p>
+            The 6th house is the house of <span className="text-cyan-300">karma yoga</span> — selfless service. With its lord in the 11th, 
+            your service to others becomes your path to fulfillment. You gain most when you <span className="text-white font-semibold">fight for collective benefit</span>, 
+            not personal glory.
+          </p>
+          <p>
+            The 11th lord in its own house creates a <span className="text-cyan-300">dhana yoga</span> (wealth combination). Mars here suggests gains through 
+            <span className="text-white">courageous action</span>, <span className="text-white">pioneering ventures</span>, and 
+            <span className="text-white">leading group efforts</span>. Your wealth comes from being the warrior who fights for the tribe.
+          </p>
+          <p className="text-white font-semibold">
+            Mars as 6th and 11th lord makes you a <span className="text-cyan-300">karmic alchemist</span> — someone who transforms conflict into community, 
+            competition into collaboration. Your dharma involves showing others that <span className="text-cyan-300">we rise by lifting others</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Mars in 11th House */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          🧱 MARS IN 11TH HOUSE — THE NETWORK WARRIOR
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 11th house is the <span className="text-white font-semibold">house of gains</span> — representing 
+            <span className="text-purple-300">friendships, networks, aspirations, and collective consciousness</span>. It's where individual effort 
+            meets collective reward, where personal ambition serves universal purpose.
+          </p>
+          <p>
+            Your Mars here makes you a <span className="text-purple-300 font-semibold">warrior for collective causes</span>. You don't fight alone — 
+            you <span className="text-white font-semibold">mobilize armies</span>. Your courage inspires groups, your energy catalyzes movements, 
+            your passion ignites collective action. You're the spark that lights the revolutionary fire.
+          </p>
+          <p>
+            This placement demands that you <span className="text-purple-300 font-semibold">channel aggression into aspiration</span>. 
+            The 11th house is your <span className="text-white">networking dojo</span>, your <span className="text-white">friendship battlefield</span>, 
+            your <span className="text-white">collective mission field</span> where you learn that true victory is shared victory.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-purple-300">lead without dominating</span>, to inspire without intimidating, 
+            to achieve without alienating. The 11th house tests you through <span className="text-white">group dynamics</span>, 
+            <span className="text-white">collective goals</span>, and the <span className="text-white">balance between personal and collective gain</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into collective power — where you learn that the strongest warrior is the one who makes others strong, 
+            that the greatest victory is the one everyone shares."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-purple-300">network activator</span>: using your Mars energy to 
+            energize entire communities, to fight for collective dreams, to pioneer paths that others can follow. You're learning that 
+            <span className="text-purple-300">true leadership creates more leaders</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-green-300 font-semibold">Mars Aspects: 2nd, 5th, and 6th Houses</p>
+          
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 2nd House: Warrior's Wealth</p>
+            <p>
+              Your Mars aspects the 2nd house of <span className="text-white font-semibold">wealth, speech, and family values</span>. 
+              This creates <span className="text-green-300">aggressive accumulation</span> — you fight for financial security, speak with warrior force, 
+              and defend family values with fierce loyalty.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 5th House: Creative Fire</p>
+            <p>
+              Mars aspects your 5th house of <span className="text-white font-semibold">creativity, intelligence, and children</span>. 
+              This ignites <span className="text-green-300">creative courage</span> — you approach creative projects like battles to win, 
+              romance with warrior passion, and protect children with fierce devotion.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 6th House: Conquering Obstacles</p>
+            <p>
+              Mars aspects its own 6th house of <span className="text-white font-semibold">enemies, obstacles, and service</span>. 
+              This creates a <span className="text-green-300">double warrior effect</span> — you're especially powerful at defeating enemies, 
+              overcoming obstacles, and transforming service into strength.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            These aspects create a <span className="text-white font-semibold">triangle of manifestation</span>: your network energy (11th) 
+            fuels your resources (2nd), ignites your creativity (5th), and conquers your obstacles (6th). This is the configuration of someone who 
+            <span className="text-green-300 font-semibold">creates wealth through creative courage and collaborative conquest</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-red-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-red-400 mb-3">
+          ✨ FINAL INSIGHT — MARS'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-red-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Mars in Aries in the 11th house, in Krittika nakshatra, is your <span className="text-white font-semibold">soul's divine weapon</span> 
+            for cutting through collective karma and pioneering new paths for humanity. You chose this configuration to be a 
+            <span className="text-red-300 font-semibold">spiritual revolutionary</span> — someone who transforms society through sacred action.
+          </p>
+          <p>
+            You are a <span className="text-red-300 font-semibold">network warrior</span> in an age that needs collective courage. 
+            Your Aries Mars gives you the pure fire to initiate change, while your 11th house placement ensures that change serves the collective good. 
+            Krittika gives you the <span className="text-white font-semibold">precision to cut through illusion</span>, while the Sagittarius pada 
+            ensures your battles serve truth.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-red-300 font-semibold">strength multiplies when shared</span>, 
+            that courage is contagious, that one warrior can awaken an army of light-bearers. You're here to show that we don't need to fight 
+            each other — we need to <span className="text-white font-semibold">fight together against ignorance, injustice, and illusion</span>.
+          </p>
+          <p>
+            The Mars in you is learning its ultimate lesson: <span className="text-red-300 font-semibold">true power is not in domination but in 
+            activation</span>. Your fire is meant to light other fires, your courage to awaken courage in others, your victories to create 
+            platforms for collective triumph.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that the warrior path includes brotherhood, that strength includes service, that victory includes everyone. 
+            Your soul chose this configuration to remember: <span className="text-red-300 font-semibold">we are not here to win alone — 
+            we are here to ensure everyone wins</span>."
+          </p>
+          <p className="text-red-300 font-semibold text-base mt-4">
+            Your Mars whispers: "Fight with love. Lead with courage. Win by lifting others. Be the warrior who doesn't just break down walls but 
+            builds bridges from the rubble. This is not your burden — this is your blessing. This is not just your fight — this is humanity's 
+            fight, and you were born to lead the charge. The question isn't whether you're strong enough — you are. The question is: 
+            are you ready to show others their strength too?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -704,7 +1021,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Moon':
       return renderMoonContent()
     case 'Mars':
-      return renderDefaultContent() // TODO: Implement Mars content
+      return renderMarsContent()
     case 'Mercury':
       return renderDefaultContent() // TODO: Implement Mercury content
     case 'Jupiter':
