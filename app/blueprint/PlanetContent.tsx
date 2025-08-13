@@ -2404,6 +2404,380 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderRahuContent = () => (
+    <>
+      {/* Rahu Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Planet</td>
+                <td className="py-2">Rahu (North Node)</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Sign</td>
+                <td className="py-2">Pisces</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Revati 1</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">House</td>
+                <td className="py-2">10</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Lordship</td>
+                <td className="py-2">—</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Aspects Given</td>
+                <td className="py-2">2, 4, 6</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-purple-300 font-semibold">Conjunct With</td>
+                <td className="py-2">Sun, Jupiter</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-purple-300 font-semibold">Aspected By</td>
+                <td className="py-2">Ketu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Rahu in Vedic Astrology */}
+      <div className="border border-purple-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-500 mb-3">
+          🪐 RAHU IN VEDIC ASTROLOGY — THE COSMIC HUNGER
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-purple-300 italic font-semibold">
+            "Rahu does not consume to satisfy — it consumes to become."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Rahu</span> is the 
+            <span className="text-purple-300 font-semibold">dragon's head</span>, the North Node of the Moon, representing insatiable desire, 
+            evolutionary hunger, and the soul's future trajectory. Rahu is not a planet but a <span className="text-white font-semibold">karmic point</span> — 
+            the place where eclipses occur, where light gets swallowed and reborn.
+          </p>
+          <p className="leading-relaxed">
+            Rahu governs <span className="text-purple-300">obsession, innovation, illusion, and breakthrough</span>. It is the cosmic rebel, 
+            the rule-breaker, the force that propels you beyond your comfort zone into uncharted territory. Rahu represents your 
+            <span className="text-white font-semibold">unfulfilled desires from past lives</span> — what you came here to master, 
+            to experience, to integrate into your soul's totality.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that have inherent nature, Rahu <span className="text-white font-semibold">amplifies and distorts</span> whatever it touches. 
+            It doesn't create — it <span className="text-white font-semibold">magnifies, obsesses, revolutionizes</span>. 
+            Rahu reveals where you're meant to break tradition, where you must innovate, where your soul hungers for new experience.
+          </p>
+          <p className="leading-relaxed">
+            Rahu gives results through <span className="text-purple-300 font-semibold">obsessive pursuit and sudden breakthroughs</span> — 
+            it creates intense focus that can lead to mastery or madness. Its lessons come through <span className="text-white">illusion</span>, 
+            <span className="text-white">addiction</span>, and ultimately <span className="text-white">transcendence of material desire</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Rahu in Pisces */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          ♓ RAHU IN PISCES — THE MYSTICAL REVOLUTIONARY
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Pisces, the cosmic ocean, is where <span className="text-white font-semibold">all boundaries dissolve</span>. 
+            This mutable water sign, ruled by Jupiter (traditional) and Neptune (modern), represents 
+            <span className="text-indigo-300 font-semibold">spiritual transcendence</span>, universal consciousness, and the ultimate merger with the divine. 
+            It is the sign of <span className="text-white">moksha</span> — liberation from the wheel of desire.
+          </p>
+          <p>
+            When Rahu enters Pisces, something paradoxical occurs: 
+            <span className="text-indigo-300 font-semibold">the dragon hungers for enlightenment</span>. This placement makes you a 
+            <span className="text-white font-semibold">spiritual revolutionary</span>, someone obsessed with transcendence, addicted to mystical experience, 
+            hungry for union with the infinite. Your desires are <span className="text-white">cosmic in scope</span>.
+          </p>
+          <p>
+            Your Rahu in Pisces makes you a <span className="text-white font-semibold">consciousness explorer</span>. 
+            You possess an insatiable hunger for <span className="text-indigo-300">spiritual experience</span>, mystical states, and transcendent understanding. 
+            You're drawn to the occult, the mystical, the ineffable — everything that dissolves the boundaries of ordinary consciousness.
+          </p>
+          <p>
+            The shadow work involves discerning <span className="text-indigo-300 font-semibold">genuine spirituality from spiritual bypassing</span>. 
+            Rahu in Pisces can create spiritual addiction, using transcendence to escape rather than transform. Your evolution requires you to be 
+            <span className="text-white font-semibold">grounded in your seeking</span> — pursuing enlightenment while remaining engaged with the world.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Rahu in Pisces is to become a <span className="text-indigo-300">bridge between dimensions</span> — 
+            someone who can access higher realms while remaining functional in this one. You're learning that true spirituality 
+            <span className="text-indigo-300">includes and transcends all experience</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Revati Nakshatra */}
+      <div className="border border-cyan-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-cyan-400 mb-3">
+          🏹 NAKSHATRA — REVATI: THE COSMIC SHEPHERD
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-cyan-300 font-semibold">Nakshatra:</span> Revati, "The Wealthy" / "The Nourisher"<br/>
+            <span className="text-cyan-300 font-semibold">Symbol:</span> Fish swimming / Drum<br/>
+            <span className="text-cyan-300 font-semibold">Deity:</span> Pushan (Shepherd of Souls)<br/>
+            <span className="text-cyan-300 font-semibold">Ruling Planet:</span> Mercury<br/>
+            <span className="text-cyan-300 font-semibold">Pada:</span> 1 (Sagittarius Navamsa)
+          </p>
+          <p>
+            Your Rahu resides in Revati, the final nakshatra, representing <span className="text-white font-semibold">the journey's end and new beginning</span>. 
+            Its symbol, fish swimming in opposite directions, represents <span className="text-cyan-300 font-semibold">navigating between worlds</span> — 
+            the material and spiritual, the known and unknown. The drum symbolizes <span className="text-white">the rhythm that guides souls home</span>.
+          </p>
+          <p>
+            Ruled by Mercury, Revati grants <span className="text-cyan-300 font-semibold">the ability to shepherd consciousness</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">divine guidance</span> — your Rahu here makes you hungry to guide others 
+            to their spiritual destination. You have an obsessive need to <span className="text-white">protect and nourish</span> souls on their journey.
+          </p>
+          <p>
+            In <span className="text-cyan-300 font-semibold">Pada 1</span> (Sagittarius navamsa), your Rahu gains Jupiter's wisdom and optimism. 
+            This is the pada of <span className="text-white font-semibold">philosophical seeking</span> — your spiritual hunger has direction, purpose, meaning. 
+            The Sagittarius influence makes your mystical obsession philosophical, your transcendent desires principled. 
+            You have the soul of a <span className="text-cyan-300">wisdom revolutionary</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the cosmic shepherd who guides through revolutionary wisdom, the mystic who breaks rules to reveal truth, 
+            the spiritual pioneer who charts new territories of consciousness."
+          </p>
+          <p>
+            The Revati Rahu in Pada 1 creates divine hunger: you have the <span className="text-white font-semibold">spiritual obsession of Rahu</span>, 
+            the <span className="text-white font-semibold">transcendent nature of Pisces</span>, the <span className="text-white font-semibold">guiding wisdom of Revati</span>, 
+            and the <span className="text-white font-semibold">philosophical fire of Sagittarius</span>. Your medicine is the ability to 
+            <span className="text-cyan-300">revolutionize spirituality itself</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Rahu in 10th House */}
+      <div className="border border-yellow-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-yellow-400 mb-3">
+          🧱 RAHU IN 10TH HOUSE — THE PUBLIC MYSTIC
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 10th house is the <span className="text-white font-semibold">summit of visibility</span> — representing 
+            <span className="text-yellow-300">career, public image, authority, and dharmic contribution</span>. It's where private purpose becomes public mission, 
+            where individual dharma serves collective evolution.
+          </p>
+          <p>
+            Your Rahu here makes you <span className="text-yellow-300 font-semibold">obsessed with public impact</span>. You don't want a career — 
+            you want a <span className="text-white font-semibold">revolutionary mission</span>. Your hunger for recognition is not ego but soul deep — 
+            you came here to be seen doing your dharma, to publicly demonstrate spiritual possibility.
+          </p>
+          <p>
+            This placement demands that you <span className="text-yellow-300 font-semibold">innovate in the public sphere</span>. 
+            The 10th house is your <span className="text-white">revolutionary platform</span>, your <span className="text-white">visibility laboratory</span>, 
+            your <span className="text-white">public altar</span> where you demonstrate that spirituality can be successful, that mysticism can be practical.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-yellow-300">handle fame without losing soul</span>, 
+            to achieve without attaching, to lead through inspiration rather than manipulation. The 10th house tests you through 
+            <span className="text-white">public scrutiny</span>, <span className="text-white">authority challenges</span>, and 
+            the <span className="text-white">temptation of worldly power</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into spiritual leadership — where you learn that true authority comes from authenticity, 
+            that real success is consciousness expansion made visible."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-yellow-300">public mystic</span>: achieving worldly success 
+            while maintaining spiritual essence, gaining recognition while remaining humble, leading masses while serving the divine. 
+            You're learning that <span className="text-yellow-300">the highest career is awakening others</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-green-300 font-semibold">Rahu Aspects: 2nd, 4th, and 6th Houses</p>
+          
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 2nd House: Revolutionary Resources</p>
+            <p>
+              Your Rahu aspects the 2nd house of <span className="text-white font-semibold">wealth, speech, and values</span>. 
+              This creates <span className="text-green-300">unconventional abundance</span> — your wealth comes through innovation, 
+              your speech carries revolutionary power, your values challenge tradition.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 4th House: Mystical Foundation</p>
+            <p>
+              Rahu aspects your 4th house of <span className="text-white font-semibold">home, emotions, and inner peace</span>. 
+              This brings <span className="text-green-300">spiritual revolution to your roots</span> — your home becomes a portal, 
+              your emotions carry mystical depth, your peace comes through transcendence.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 6th House: Revolutionary Service</p>
+            <p>
+              Rahu aspects the 6th house of <span className="text-white font-semibold">service, enemies, and daily work</span>. 
+              This creates <span className="text-green-300">innovative problem-solving</span> — you serve through revolution, 
+              transform enemies through unexpected tactics, approach daily work as spiritual practice.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            These aspects create a <span className="text-white font-semibold">triangle of transformation</span>: your public mission (10th) 
+            revolutionizes your resources (2nd), transforms your foundation (4th), and innovates your service (6th). This is the configuration of 
+            someone who <span className="text-green-300 font-semibold">changes the world by changing consciousness</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Conjunctions */}
+      <div className="border border-orange-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-orange-400 mb-3">
+          🤝 PLANETARY CONJUNCTIONS — BLENDED KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-orange-300 font-semibold">Conjunct With: SUN & JUPITER</p>
+          
+          <div className="mt-3">
+            <p className="text-orange-300 font-semibold">Sun Conjunction: Eclipsed Authority</p>
+            <p>
+              The Sun conjunct Rahu creates a <span className="text-white font-semibold">permanent eclipse</span> in your chart. 
+              Rahu swallows the Sun's light, creating <span className="text-orange-300">obsession with identity</span>, 
+              hunger for recognition, and the drive to be seen as special. This conjunction makes you 
+              <span className="text-white">magnetically charismatic</span> but constantly seeking validation.
+            </p>
+            <p>
+              Yet this eclipse also grants <span className="text-white font-semibold">revolutionary leadership</span> — 
+              you break traditional authority models, innovate new ways of shining, create unconventional paths to success.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-orange-300 font-semibold">Jupiter Conjunction: Amplified Wisdom</p>
+            <p>
+              Jupiter conjunct Rahu creates <span className="text-white font-semibold">spiritual amplification</span>. 
+              Rahu magnifies Jupiter's wisdom into <span className="text-orange-300">cosmic proportions</span> — 
+              you don't just seek truth, you hunger for ultimate reality. This conjunction makes you a 
+              <span className="text-white">wisdom revolutionary</span>, breaking religious dogma to reveal universal truth.
+            </p>
+            <p>
+              This combination creates <span className="text-white font-semibold">Guru Chandal Yoga</span> — 
+              the teacher who breaks all rules to teach the ultimate rule: there are no rules, only consciousness.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            <span className="text-orange-300 font-semibold">The Combined Alchemy:</span><br/>
+            • Sun + Rahu = <span className="text-white">Eclipsed identity seeking revolutionary expression</span><br/>
+            • Jupiter + Rahu = <span className="text-white">Guru Chandal Yoga — wisdom that breaks all rules</span><br/>
+            • Sun + Jupiter + Rahu = <span className="text-white">The spiritual authority who revolutionizes tradition</span>
+          </p>
+          
+          <p className="italic text-white font-semibold">
+            "Two gods share Rahu's throne — the Sun brings divine authority, Jupiter brings cosmic wisdom, 
+            while Rahu amplifies both into revolutionary proportions."
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Received */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          🜂 PLANETARY ASPECTS RECEIVED — REFINING FIRE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-indigo-300 font-semibold">Aspected By: KETU</p>
+          
+          <div className="mt-3">
+            <p className="text-indigo-300 font-semibold">Ketu's Aspect: The Karmic Axis</p>
+            <p>
+              Ketu always aspects Rahu, creating the <span className="text-white font-semibold">karmic axis</span>. 
+              This is not just an aspect — it's <span className="text-indigo-300">your soul's timeline</span>, 
+              the bridge between who you were and who you're becoming.
+            </p>
+            <p>
+              While Rahu hungers for future experience, Ketu releases past mastery. This creates 
+              <span className="text-white font-semibold">evolutionary tension</span> — you're simultaneously 
+              obsessed with transcendence (Rahu in Pisces) while detached from worldly achievement (Ketu's influence). 
+              You seek the new while carrying the wisdom of the old.
+            </p>
+            <p>
+              This aspect creates <span className="text-indigo-300">spiritual sophistication</span> — 
+              your hunger for enlightenment is tempered by the knowing that you've been here before. 
+              Ketu's aspect ensures you don't get lost in Rahu's obsessions but use them as fuel for liberation.
+            </p>
+          </div>
+          
+          <p className="italic text-white font-semibold">
+            "Forged in karma's fire, your Rahu is constantly refined by Ketu's detachment — 
+            creating a soul that seeks while knowing, hungers while being full, climbs while already arrived."
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          ✨ FINAL INSIGHT — RAHU'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-purple-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Rahu in Pisces in the 10th house, in Revati nakshatra, conjunct Sun and Jupiter, is your 
+            <span className="text-white font-semibold">soul's cosmic commission</span> to be a spiritual revolutionary. You chose this configuration to 
+            <span className="text-purple-300 font-semibold">break every rule about enlightenment</span> — to show that mystics can be successful, 
+            that spirituality can be innovative, that transcendence can be achieved through engagement, not escape.
+          </p>
+          <p>
+            You are a <span className="text-purple-300 font-semibold">consciousness pioneer</span> in an age that desperately needs new maps to navigate 
+            shifting realities. Your Rahu in Pisces gives you insatiable hunger for transcendence, while your 10th house placement ensures that 
+            hunger serves public awakening. Revati makes you a <span className="text-white font-semibold">shepherd of souls</span>, 
+            while the Sun-Jupiter conjunction ensures you lead with wisdom and authority.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-purple-300 font-semibold">spirituality needs revolution</span>, 
+            that mysticism needs innovation, that enlightenment needs updating for the modern age. You're here to show that 
+            <span className="text-white font-semibold">the future of spirituality is integration, not isolation</span>.
+          </p>
+          <p>
+            The Rahu in you is learning its ultimate lesson: <span className="text-purple-300 font-semibold">the greatest hunger is for freedom from hunger</span>. 
+            Your obsession with transcendence will ultimately lead you to transcend obsession itself. Your public mission will teach you that 
+            true success is helping others find their own path.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that enlightenment can wear a three-piece suit, that mystics can have LinkedIn profiles, that spiritual revolution 
+            can happen in boardrooms as easily as in ashrams. Your soul chose this configuration to remember: 
+            <span className="text-purple-300 font-semibold">we are not here to escape the world — we are here to evolve it</span>."
+          </p>
+          <p className="text-purple-300 font-semibold text-base mt-4">
+            Your Rahu whispers: "Hunger for the infinite. Obsess over consciousness. Revolutionize spirituality. Be the eclipse that swallows old light 
+            to birth new dawn, the mystic who breaks tradition to reveal truth, the leader who guides souls home by going there first. 
+            This is not your addiction — this is your mission. This is not just your hunger — this is evolution's hunger expressing through you. 
+            The question isn't whether you're spiritual enough — you are. The question is: are you ready to show the world what spirituality is becoming?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -2432,7 +2806,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Saturn':
       return renderSaturnContent()
     case 'Rahu':
-      return renderDefaultContent() // TODO: Implement Rahu content
+      return renderRahuContent()
     case 'Ketu':
       return renderDefaultContent() // TODO: Implement Ketu content
     default:
