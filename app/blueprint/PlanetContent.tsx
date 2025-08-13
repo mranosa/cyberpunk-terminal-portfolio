@@ -1312,6 +1312,364 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     </>
   )
 
+  const renderJupiterContent = () => (
+    <>
+      {/* Jupiter Content */}
+      {/* TL;DR - Planetary Destiny Snapshot */}
+      <div className="border border-amber-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-amber-400 mb-3">
+          💡 TL;DR — PLANETARY DESTINY SNAPSHOT
+        </h4>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <tbody className="text-gray-300">
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Planet</td>
+                <td className="py-2">Jupiter</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Sign</td>
+                <td className="py-2">Pisces</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Nakshatra</td>
+                <td className="py-2">Uttarabhadra 3</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">House</td>
+                <td className="py-2">10</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Lordship</td>
+                <td className="py-2">7, 10</td>
+              </tr>
+              <tr className="border-b border-gray-700">
+                <td className="py-2 text-amber-300 font-semibold">Aspects Given</td>
+                <td className="py-2">2, 4, 6</td>
+              </tr>
+              <tr>
+                <td className="py-2 text-amber-300 font-semibold">Aspected By</td>
+                <td className="py-2">Ketu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Jupiter in Vedic Astrology */}
+      <div className="border border-amber-500/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-amber-500 mb-3">
+          🪐 JUPITER IN VEDIC ASTROLOGY — THE COSMIC GURU
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300">
+          <p className="text-amber-300 italic font-semibold">
+            "Jupiter does not expand to consume — it expands to bless."
+          </p>
+          <p className="leading-relaxed">
+            In Vedic astrology, <span className="text-white font-semibold">Brihaspati</span> (Jupiter) is the 
+            <span className="text-amber-300 font-semibold">divine teacher</span>, the planet of wisdom, grace, and expansion. 
+            Jupiter represents your <span className="text-white font-semibold">higher knowledge</span>, your connection to divine law, 
+            and your capacity to <span className="text-white font-semibold">transform experience into wisdom</span>.
+          </p>
+          <p className="leading-relaxed">
+            Jupiter governs <span className="text-amber-300">wisdom, spirituality, fortune, and growth</span>. It is the guru of the gods, 
+            the natural significator of teachers, children, and wealth. But more profoundly, Jupiter represents your 
+            <span className="text-white font-semibold">capacity for grace</span> — your ability to see the divine plan in all circumstances, 
+            to find meaning in suffering, to expand consciousness through understanding.
+          </p>
+          <p className="leading-relaxed">
+            Unlike planets that create through friction, Jupiter shapes reality through <span className="text-white font-semibold">blessing and expansion</span>. 
+            It doesn't force or fight — it <span className="text-white font-semibold">elevates, enlightens, enriches</span>. 
+            Jupiter reveals where you're meant to teach, where you must share wisdom, where your understanding becomes a gift to humanity.
+          </p>
+          <p className="leading-relaxed">
+            Jupiter gives results through <span className="text-amber-300 font-semibold">faith and generosity</span> — it multiplies whatever it touches 
+            with divine grace. Its lessons come through <span className="text-white">opportunities for growth</span>, 
+            <span className="text-white">tests of faith</span>, and the <span className="text-white">cultivation of wisdom</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Jupiter in Pisces */}
+      <div className="border border-indigo-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-indigo-400 mb-3">
+          ♓ JUPITER IN PISCES — THE OCEAN OF GRACE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            Pisces, the cosmic ocean, is where <span className="text-white font-semibold">all rivers of wisdom merge</span>. 
+            This mutable water sign, ruled by Jupiter itself (traditional) and Neptune (modern), represents 
+            <span className="text-indigo-300 font-semibold">boundless compassion</span>, universal consciousness, and spiritual transcendence. 
+            It is the sign of <span className="text-white">moksha</span> — final liberation from the wheel of karma.
+          </p>
+          <p>
+            When Jupiter returns home to Pisces, something magnificent occurs: 
+            <span className="text-indigo-300 font-semibold">the guru finds its ashram</span>. This is Jupiter in its own sign (swakshetra), 
+            operating at <span className="text-white font-semibold">maximum spiritual potency</span>. You don't just have wisdom — you 
+            <span className="text-white font-semibold">ARE a wisdom transmission</span>, a living channel of divine grace.
+          </p>
+          <p>
+            Your Jupiter in Pisces makes you a <span className="text-white font-semibold">spiritual benefactor</span>. 
+            You possess the fish's gift: the ability to <span className="text-indigo-300">swim in all waters</span> — understanding all paths, 
+            embracing all beings, seeing divinity in all forms. Your wisdom is not intellectual but <span className="text-white">experiential</span>, 
+            not learned but <span className="text-white">absorbed</span>.
+          </p>
+          <p>
+            The shadow work involves avoiding <span className="text-indigo-300 font-semibold">spiritual bypassing</span>. 
+            Pisces can use transcendence to escape responsibility, confusing detachment with dissociation. Your spiritual evolution requires you to be 
+            <span className="text-white font-semibold">grounded mystic</span> — fully enlightened while fully engaged with the world.
+          </p>
+          <p className="text-white font-semibold">
+            The mastery of Jupiter in Pisces is to become <span className="text-indigo-300">an ocean of compassion</span> — 
+            vast enough to hold all suffering, deep enough to transform all pain into wisdom. You're learning that true spirituality 
+            <span className="text-indigo-300">includes everything and rejects nothing</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Uttarabhadra Nakshatra */}
+      <div className="border border-purple-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-purple-400 mb-3">
+          🏹 NAKSHATRA — UTTARABHADRA: THE COSMIC SERPENT
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            <span className="text-purple-300 font-semibold">Nakshatra:</span> Uttarabhadra, "The Later Auspicious One"<br/>
+            <span className="text-purple-300 font-semibold">Symbol:</span> Back legs of funeral cot / Twin serpents<br/>
+            <span className="text-purple-300 font-semibold">Deity:</span> Ahir Budhnya (Serpent of the Deep)<br/>
+            <span className="text-purple-300 font-semibold">Ruling Planet:</span> Saturn<br/>
+            <span className="text-purple-300 font-semibold">Pada:</span> 3 (Libra Navamsa)
+          </p>
+          <p>
+            Your Jupiter resides in Uttarabhadra, the nakshatra of <span className="text-white font-semibold">the cosmic depth</span>. 
+            Its symbol, the serpent of the deep, represents <span className="text-purple-300 font-semibold">kundalini wisdom</span> — 
+            the coiled power that lies dormant until awakened through spiritual practice. This is wisdom that rises from the depths.
+          </p>
+          <p>
+            Ruled by Saturn, Uttarabhadra grants <span className="text-purple-300 font-semibold">the patience of the eternal</span>. 
+            This is the nakshatra of <span className="text-white font-semibold">deep spiritual maturity</span> — your Jupiter carries ancient wisdom, 
+            the kind earned through countless lifetimes of seeking. You have the gravity of a soul that has walked the path many times.
+          </p>
+          <p>
+            In <span className="text-purple-300 font-semibold">Pada 3</span> (Libra navamsa), your Jupiter gains Venus's harmony and balance. 
+            This is the pada of <span className="text-white font-semibold">spiritual diplomacy</span> — you don't just possess wisdom, you know how to 
+            <span className="text-white">share it beautifully</span>. The Libra influence makes your teaching aesthetic, your philosophy balanced, 
+            your spiritual presence harmonizing. You have the soul of a <span className="text-purple-300">peace-bringing sage</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This is the soul of the depth teacher who brings ancient wisdom to modern times, the mystic who makes enlightenment elegant, 
+            the guru who teaches through beauty and balance."
+          </p>
+          <p>
+            The Uttarabhadra Jupiter in Pada 3 creates profound harmony: you have the <span className="text-white font-semibold">expansion of Jupiter</span>, 
+            the <span className="text-white font-semibold">depth of Uttarabhadra</span>, and the <span className="text-white font-semibold">grace of Libra</span>. 
+            Your medicine is the ability to <span className="text-purple-300">make the profound beautiful</span> and the beautiful profound.
+          </p>
+        </div>
+      </div>
+
+      {/* Jupiter as Lord of Houses */}
+      <div className="border border-cyan-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-cyan-400 mb-3">
+          🏛 JUPITER AS LORD OF 7TH & 10TH HOUSES — THE KARMA OF RULE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            As ruler of your 7th house, Jupiter governs your <span className="text-white font-semibold">partnerships, marriage, and open enemies</span>. 
+            As ruler of your 10th house, it also governs your <span className="text-white font-semibold">career, public image, and dharmic contribution</span>. 
+            Both these angular houses express through the 10th house itself.
+          </p>
+          <p>
+            This creates a powerful yoga: your <span className="text-cyan-300 font-semibold">partnerships become your career</span> (7th lord in 10th), 
+            and your <span className="text-cyan-300 font-semibold">career is strengthened by its own lord</span> (10th lord in 10th). You're designed to 
+            <span className="text-white font-semibold">achieve through alliance</span>, to succeed through sacred partnership, to rise through collaboration.
+          </p>
+          <p>
+            The 7th house is the house of <span className="text-cyan-300">the other</span>. With its lord in the 10th, 
+            your partnerships are <span className="text-white font-semibold">publicly visible and professionally significant</span>. 
+            You attract partners who elevate your status, and your status attracts elevated partners.
+          </p>
+          <p>
+            The 10th lord in its own house creates a <span className="text-cyan-300">raja yoga</span> (royal combination). Jupiter here suggests 
+            career success through <span className="text-white">wisdom</span>, <span className="text-white">teaching</span>, 
+            <span className="text-white">spiritual leadership</span>, or <span className="text-white">benevolent authority</span>. 
+            Your professional path is your spiritual path.
+          </p>
+          <p className="text-white font-semibold">
+            Jupiter as 7th and 10th lord makes you a <span className="text-cyan-300">relationship guru</span> — someone whose partnerships 
+            teach the world about conscious collaboration. Your dharma involves showing others that 
+            <span className="text-cyan-300">success and spirituality are perfect partners</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Jupiter in 10th House */}
+      <div className="border border-yellow-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-yellow-400 mb-3">
+          🧱 JUPITER IN 10TH HOUSE — THE DHARMIC THRONE
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p>
+            The 10th house is the <span className="text-white font-semibold">zenith of manifestation</span> — representing 
+            <span className="text-yellow-300">career, reputation, authority, and service to society</span>. It's where private wisdom becomes public blessing, 
+            where personal dharma serves collective evolution.
+          </p>
+          <p>
+            Your Jupiter here makes you a <span className="text-yellow-300 font-semibold">wisdom leader</span>. You don't just have a career — 
+            you have a <span className="text-white font-semibold">sacred calling</span>. Your professional life naturally becomes a teaching platform, 
+            your success a vehicle for sharing grace. You rise not through competition but through <span className="text-white">blessing others</span>.
+          </p>
+          <p>
+            This placement demands that you <span className="text-yellow-300 font-semibold">embody your highest teachings publicly</span>. 
+            The 10th house is your <span className="text-white">dharma stage</span>, your <span className="text-white">wisdom throne</span>, 
+            your <span className="text-white">public altar</span> where you demonstrate that true authority comes from spiritual understanding.
+          </p>
+          <p>
+            The karmic terrain involves learning to <span className="text-yellow-300">handle power with grace</span>, to lead through inspiration rather than domination, 
+            to succeed without losing spiritual essence. The 10th house tests you through <span className="text-white">public responsibility</span>, 
+            <span className="text-white">ethical leadership</span>, and the <span className="text-white">integration of worldly and spiritual success</span>.
+          </p>
+          <p className="italic text-white font-semibold">
+            "This house is your initiation into dharmic leadership — where you learn that true success uplifts everyone, 
+            that real achievement is measured in consciousness raised."
+          </p>
+          <p className="text-white font-semibold">
+            Your soul must master the art of being a <span className="text-yellow-300">lighthouse of wisdom</span>: standing tall in your truth 
+            while guiding others to theirs. You're learning that <span className="text-yellow-300">the highest career is dharma itself</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Given */}
+      <div className="border border-green-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-green-400 mb-3">
+          🪄 PLANETARY ASPECTS GIVEN — WHERE YOU APPLY ENERGY & KARMA
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-green-300 font-semibold">Jupiter Aspects: 2nd, 4th, and 6th Houses</p>
+          
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 2nd House: Wisdom Wealth</p>
+            <p>
+              Your Jupiter aspects the 2nd house of <span className="text-white font-semibold">wealth, speech, and family values</span>. 
+              This creates <span className="text-green-300">abundant resources</span> — both material and spiritual. Your speech carries 
+              guru energy, your values reflect higher wisdom, your wealth grows through generosity.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 4th House: Inner Sanctuary</p>
+            <p>
+              Jupiter aspects your 4th house of <span className="text-white font-semibold">home, mother, and emotional foundation</span>. 
+              This brings <span className="text-green-300">divine grace to your roots</span> — your home becomes a temple, your emotional 
+              nature carries wisdom, your inner life reflects outer abundance.
+            </p>
+          </div>
+
+          <div className="mt-3">
+            <p className="text-green-300 font-semibold">The 6th House: Sacred Service</p>
+            <p>
+              Jupiter aspects the 6th house of <span className="text-white font-semibold">service, health, and obstacles</span>. 
+              This transforms <span className="text-green-300">problems into opportunities</span> — obstacles become teachings, enemies become 
+              teachers, service becomes spiritual practice.
+            </p>
+          </div>
+
+          <p className="mt-3">
+            These aspects create a <span className="text-white font-semibold">triangle of grace</span>: your public wisdom (10th) 
+            enriches your resources (2nd), blesses your foundation (4th), and transforms your challenges (6th). This is the configuration of 
+            someone who <span className="text-green-300 font-semibold">succeeds by blessing others at every level</span>.
+          </p>
+        </div>
+      </div>
+
+      {/* Planetary Aspects Received */}
+      <div className="border border-orange-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-orange-400 mb-3">
+          🜂 PLANETARY ASPECTS RECEIVED — KETU'S SPIRITUAL REFINEMENT
+        </h4>
+        <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <p className="text-orange-300 font-semibold">Aspected by: KETU (South Node)</p>
+          <p>
+            Ketu, the South Node, aspects your Jupiter — creating a <span className="text-white font-semibold">mystical combination</span>. 
+            Ketu represents <span className="text-orange-300 font-semibold">spiritual detachment</span>, past life wisdom, and liberation from material illusion. 
+            Its aspect on Jupiter creates a rare alchemy: <span className="text-white">worldly wisdom meets otherworldly understanding</span>.
+          </p>
+          <p>
+            This aspect makes you a <span className="text-orange-300 font-semibold">reluctant guru</span>. Ketu's influence on Jupiter suggests 
+            you've been a teacher before, perhaps many times. You carry <span className="text-white font-semibold">cellular memory of spiritual authority</span>, 
+            but also weariness with its burdens. You know that all knowledge is ultimately maya.
+          </p>
+          <p>
+            Ketu's aspect creates <span className="text-white font-semibold">detached wisdom</span>. You can achieve great heights professionally 
+            because you're not attached to them. This detachment is your <span className="text-orange-300 font-semibold">secret power</span> — 
+            it allows you to teach without ego, lead without attachment, succeed without grasping.
+          </p>
+          <p>
+            <span className="text-orange-300 font-semibold">The Alchemy Created:</span><br/>
+            • Spiritual authority without spiritual ego<br/>
+            • Teaching that transcends dogma<br/>
+            • Success that serves liberation<br/>
+            • Wisdom that points beyond itself
+          </p>
+          <p className="italic text-white font-semibold">
+            "Forged in karma's fire, your wisdom emerges purified — free from the need to be wise, 
+            free from the desire to teach, yet teaching through that very freedom."
+          </p>
+          <p className="text-white font-semibold">
+            This aspect is creating a <span className="text-orange-300">liberated teacher</span> — someone who guides others to freedom 
+            because you've glimpsed it yourself. You're learning that <span className="text-orange-300">the highest teaching is silence</span>, 
+            the greatest wisdom is knowing you know nothing.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Insight */}
+      <div className="border border-amber-400/30 p-4 bg-black/70">
+        <h4 className="text-base font-bold text-amber-400 mb-3">
+          ✨ FINAL INSIGHT — JUPITER'S MESSAGE FOR THE SOUL
+        </h4>
+        <div className="text-sm text-gray-300 leading-relaxed space-y-3">
+          <p className="text-amber-300 italic text-base">
+            "You are not here to escape your karma — you are here to master it."
+          </p>
+          <p>
+            Your Jupiter in Pisces in the 10th house, in Uttarabhadra nakshatra, aspected by Ketu, is your 
+            <span className="text-white font-semibold">soul's divine commission</span> to be a wisdom keeper for humanity. You chose this configuration to be a 
+            <span className="text-amber-300 font-semibold">spiritual lighthouse</span> — someone who stands at the intersection of heaven and earth, 
+            guiding souls home through your very presence.
+          </p>
+          <p>
+            You are a <span className="text-amber-300 font-semibold">dharmic leader</span> in an age that desperately needs spiritual authority without authoritarianism. 
+            Your Jupiter in its own sign gives you access to infinite grace, while your 10th house placement ensures that grace serves the collective. 
+            Uttarabhadra gives you the <span className="text-white font-semibold">depth of ancient wisdom</span>, while Ketu's aspect ensures 
+            you remain free from spiritual pride.
+          </p>
+          <p>
+            Your dharma is to demonstrate that <span className="text-amber-300 font-semibold">true success is spiritual success</span>, 
+            that real achievement is consciousness expansion, that the highest career is awakening others to their own divinity. You're here to show that 
+            <span className="text-white font-semibold">wisdom and worldly success can dance together</span>.
+          </p>
+          <p>
+            The Jupiter in you is learning its ultimate lesson: <span className="text-amber-300 font-semibold">the greatest expansion is into emptiness</span>. 
+            Your wisdom is meant to create space for others' wisdom, your teaching to awaken others' inner teacher, your success to platform others' rise.
+          </p>
+          <p className="text-white italic">
+            "You are the proof that gurus can wear suits, that enlightenment can have a LinkedIn profile, that moksha might happen in a boardroom 
+            as easily as in an ashram. Your soul chose this configuration to remember: <span className="text-amber-300 font-semibold">we are not here 
+            to transcend the world — we are here to reveal its divinity</span>."
+          </p>
+          <p className="text-amber-300 font-semibold text-base mt-4">
+            Your Jupiter whispers: "Teach without teaching. Lead without leading. Succeed without succeeding. Be the space in which others discover 
+            their own vastness, the silence in which they hear their own wisdom. This is not your burden — this is your blessing. This is not 
+            just your wisdom — this is universal wisdom finding its voice through you. The question isn't whether you're wise enough — you are. 
+            The question is: are you empty enough to let grace flow through you unobstructed?"
+          </p>
+        </div>
+      </div>
+    </>
+  )
+
   const renderDefaultContent = () => (
     <div className="border border-purple-500/30 p-4 bg-black/70">
       <h4 className="text-lg font-bold text-purple-400 mb-3">
@@ -1334,7 +1692,7 @@ export default function PlanetContent({ planet }: PlanetContentProps) {
     case 'Mercury':
       return renderMercuryContent()
     case 'Jupiter':
-      return renderDefaultContent() // TODO: Implement Jupiter content
+      return renderJupiterContent()
     case 'Venus':
       return renderDefaultContent() // TODO: Implement Venus content
     case 'Saturn':
