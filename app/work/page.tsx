@@ -323,23 +323,9 @@ export default function WorkPage() {
                 <TypewriterText text="Full Stack Engineer • 15+ Years • Remote" />
               </motion.div>
 
-              <motion.div
-                className="flex flex-wrap justify-center gap-4 text-sm"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-              >
-                {['Experience', 'Skills', 'Projects', 'Recommendations', 'CV'].map((item, i) => (
-                  <span key={item} className="text-cyber-cyan opacity-60">
-                    {item}
-                    {i < 4 && <span className="ml-4 text-gray-600">•</span>}
-                  </span>
-                ))}
-              </motion.div>
-
               {/* Scroll to Explore - Centered below experience text */}
               <motion.div
-                className="mt-16 flex flex-col items-center"
+                className="mt-8 flex flex-col items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
