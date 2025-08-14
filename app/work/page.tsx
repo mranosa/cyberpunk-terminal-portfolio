@@ -1094,16 +1094,18 @@ function TestimonialMarquee() {
   // For mobile, show static grid instead of marquee
   if (isMobile) {
     return (
-      <div className="grid grid-cols-1 gap-4">
-        {recommendations.map((rec) => (
-          <TestimonialCard 
-            key={rec.id} 
-            rec={rec} 
-            onHover={() => {}}
-            cardId={rec.id}
-            isMobileGrid={true}
-          />
-        ))}
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 gap-4">
+          {recommendations.map((rec) => (
+            <TestimonialCard 
+              key={rec.id} 
+              rec={rec} 
+              onHover={() => {}}
+              cardId={rec.id}
+              isMobileGrid={true}
+            />
+          ))}
+        </div>
       </div>
     )
   }
