@@ -649,19 +649,11 @@ function TimelineItem({ job, index, isLeft }: any) {
           onMouseLeave={() => setIsHovered(false)}
         >
           <motion.div 
-            className={`border border-cyber-cyan/30 p-6 flex flex-col relative overflow-hidden`}
+            className={`border border-cyber-cyan/30 p-8 flex flex-col relative overflow-hidden`}
             animate={{
-              borderColor: (isHovered || isMobile) ? 'rgba(0, 255, 255, 0.6)' : 'rgba(0, 255, 255, 0.3)',
-              height: (isHovered || isMobile) ? 'auto' : '150px',
-              minHeight: (isHovered || isMobile) ? '280px' : '150px'
+              borderColor: isHovered ? 'rgba(0, 255, 255, 0.6)' : 'rgba(0, 255, 255, 0.3)'
             }}
             transition={{
-              height: {
-                type: "spring",
-                stiffness: 200,
-                damping: 25,
-                duration: 0.4
-              },
               borderColor: {
                 duration: 0.3
               }
@@ -689,7 +681,7 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.duration}
             </motion.div>
             <motion.h3 
-              className={`text-xl font-bold text-white mb-2 ${!isHovered && 'line-clamp-1'}`}
+              className={`text-xl font-bold text-white mb-2`}
               animate={{ 
                 scale: isHovered ? 1.02 : 1,
                 color: isHovered ? '#ffffff' : '#f0f0f0'
@@ -699,7 +691,7 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.position}
             </motion.h3>
             <motion.div 
-              className={`text-cyber-green mb-2 ${!isHovered && 'line-clamp-1'}`}
+              className={`text-cyber-green mb-2`}
               animate={{ opacity: isHovered ? 1 : 0.85 }}
               transition={{ duration: 0.2 }}
             >
@@ -716,18 +708,17 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.location} • {job.type}
             </motion.div>
             
-            {/* Achievements - Only visible on hover or mobile */}
+            {/* Achievements */}
             <motion.div 
-              className="space-y-2 flex-grow"
-              initial={{ opacity: 0, height: 0 }}
+              className="space-y-2 flex-grow mb-4"
+              initial={{ opacity: 0 }}
               animate={{ 
-                opacity: (isHovered || isMobile) ? 1 : 0,
-                height: (isHovered || isMobile) ? 'auto' : 0,
-                marginBottom: (isHovered || isMobile) ? '16px' : '0px'
+                opacity: 1
               }}
               transition={{ 
-                duration: 0.4,
-                ease: "easeInOut"
+                duration: 0.5,
+                ease: "easeOut",
+                delay: index * 0.05
               }}
             >
               {job.achievements.map((achievement: string, i: number) => (
@@ -736,12 +727,12 @@ function TimelineItem({ job, index, isLeft }: any) {
                   className="text-gray-400 text-sm"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ 
-                    opacity: (isHovered || isMobile) ? 1 : 0, 
-                    x: (isHovered || isMobile) ? 0 : -20
+                    opacity: 1, 
+                    x: 0
                   }}
                   transition={{
-                    delay: isHovered ? i * 0.05 : 0,
-                    duration: 0.3
+                    delay: index * 0.05 + i * 0.03,
+                    duration: 0.4
                   }}
                 >
                   <span className="text-cyber-cyan mr-2">▸</span>
@@ -750,17 +741,16 @@ function TimelineItem({ job, index, isLeft }: any) {
               ))}
             </motion.div>
 
-            {/* Technologies - Only visible on hover or mobile, showing all */}
+            {/* Technologies */}
             <motion.div 
               className="flex flex-wrap gap-2"
-              initial={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0 }}
               animate={{ 
-                opacity: (isHovered || isMobile) ? 1 : 0,
-                height: (isHovered || isMobile) ? 'auto' : 0
+                opacity: 1
               }}
               transition={{ 
-                duration: 0.3,
-                delay: isHovered ? 0.1 : 0
+                duration: 0.4,
+                delay: index * 0.05 + 0.2
               }}
             >
               {job.technologies.map((tech: string, i: number) => (
@@ -769,12 +759,12 @@ function TimelineItem({ job, index, isLeft }: any) {
                   className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500 hover:border-cyber-cyan/40 hover:text-gray-400 transition-all"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ 
-                    opacity: (isHovered || isMobile) ? 1 : 0,
-                    scale: (isHovered || isMobile) ? 1 : 0.8
+                    opacity: 1,
+                    scale: 1
                   }}
                   transition={{
-                    delay: isHovered ? i * 0.02 : 0,
-                    duration: 0.2
+                    delay: index * 0.05 + 0.2 + i * 0.02,
+                    duration: 0.3
                   }}
                 >
                   {tech}
