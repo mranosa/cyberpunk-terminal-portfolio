@@ -24,6 +24,14 @@ function HomeContent() {
   useEffect(() => {
     console.log('=== SPLASH DEBUG ===')
     
+    // Check if mobile user
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) {
+      console.log('Mobile user detected - redirecting to /work')
+      router.push('/work')
+      return
+    }
+    
     // Check if we should skip splash (coming from internal navigation)
     const skipSplash = searchParams.get('skipSplash') === 'true'
     console.log('Skip splash param:', skipSplash)
