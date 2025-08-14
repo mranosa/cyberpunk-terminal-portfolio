@@ -34,7 +34,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
       id: 1,
       command: '',
       output: (
-        <div className="space-y-1">
+        <div className="space-y-2">
           <div className="plasma-cyan ultra-thin">Terminal v0.0.1</div>
           <div className="solar-yellow ultra-light">Click/Tap inside terminal and Type 'help'</div>
         </div>
@@ -358,7 +358,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
   return (
     <motion.section 
-      className="min-h-screen py-20 px-4 relative"
+      className="min-h-screen py-24 px-4 md:px-8 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -424,7 +424,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                     <span className="plasma-cyan ultra-thin">{cmd.command}</span>
                   </div>
                 )}
-                <div className="mt-1 photon-white ultra-thin bg-black/20 rounded px-2 py-1">{cmd.output}</div>
+                <div className="mt-2 photon-white ultra-thin bg-black/20 rounded px-2 py-2">{cmd.output}</div>
               </div>
             ))}
 
@@ -454,7 +454,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                   animate={{ opacity: 1, scale: 1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={executeCommand}
-                  className="md:hidden px-4 py-1.5 bg-cyber-cyan/20 hover:bg-cyber-cyan/30 border border-cyber-cyan/50 rounded text-cyber-cyan text-xs font-mono font-bold transition-all active:bg-cyber-cyan/40 shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+                  className="md:hidden px-4 py-2 bg-cyber-cyan/20 hover:bg-cyber-cyan/30 border border-cyber-cyan/50 rounded text-cyber-cyan text-xs font-mono font-bold transition-all active:bg-cyber-cyan/40 shadow-[0_0_10px_rgba(0,255,255,0.3)]"
                   style={{ minWidth: '70px' }}
                 >
                   RUN →
@@ -513,7 +513,7 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
                     }}
                     onMouseDown={handleMouseDown}
                   >
-                    <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-3 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
+                    <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-4 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
                       <span className="text-xs font-mono plasma-cyan ultra-thin whitespace-nowrap select-none">
                         ↕ Drag Me
                       </span>

@@ -32,7 +32,7 @@ export function BlueprintCommand() {
       
       {/* Mystical introduction */}
       <div className="border border-purple-500/30 p-4 bg-purple-900/10">
-        <div className="text-purple-400 mb-3 font-semibold">
+        <div className="text-purple-400 mb-4 font-semibold">
           ✨ MY COSMIC SIGNATURE AWAITS
         </div>
         <p className="text-gray-300 text-sm leading-relaxed">
@@ -44,8 +44,8 @@ export function BlueprintCommand() {
       {/* Planet preview grid */}
       <div className="grid grid-cols-3 gap-4 mb-6">
         {planetHighlights.map((item, index) => (
-          <div key={index} className="border border-purple-500/30 p-3 bg-black/40 hover:bg-purple-900/20 transition-all">
-            <div className={`${item.color} text-xl font-bold mb-1`}>
+          <div key={index} className="border border-purple-500/30 p-4 bg-black/40 hover:bg-purple-900/20 transition-all">
+            <div className={`${item.color} text-xl font-bold mb-2`}>
               {item.planet}
             </div>
             <div className="text-gray-400 text-xs">
@@ -57,7 +57,7 @@ export function BlueprintCommand() {
 
       {/* Compelling teaser points */}
       <div className="border border-cyber-cyan/30 p-4 bg-black/30">
-        <div className="text-cyan-400 mb-3 font-semibold">
+        <div className="text-cyan-400 mb-4 font-semibold">
           🔮 WHAT MY BLUEPRINT REVEALS:
         </div>
         <ul className="space-y-2">
@@ -74,11 +74,11 @@ export function BlueprintCommand() {
         <div className="text-yellow-400 mb-2 font-semibold">
           🪐 9 VEDIC PLANETS ANALYZED
         </div>
-        <div className="flex flex-wrap gap-2 mb-3">
+        <div className="flex flex-wrap gap-2 mb-4">
           {['Sun', 'Moon', 'Mars', 'Mercury', 'Jupiter', 'Venus', 'Saturn', 'Rahu', 'Ketu'].map((planet, i) => (
             <span
               key={i}
-              className="text-xs border border-yellow-400/50 px-2 py-1 text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition-all"
+              className="text-xs border border-yellow-400/50 px-2 py-2 text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition-all"
             >
               {planet}
             </span>
@@ -97,7 +97,7 @@ export function BlueprintCommand() {
         >
           <span>UNVEIL MY COSMIC MAP</span>
           <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-          <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded animate-pulse">
+          <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-2 py-2 rounded animate-pulse">
             DESTINY
           </span>
         </button>

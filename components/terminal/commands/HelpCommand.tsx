@@ -1,6 +1,6 @@
 export function HelpCommand() {
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <div className="solar-yellow ultra-thin">Available commands:</div>
       <div className="ultra-light">
         <span className="nebula-pink">about</span> - About this terminal

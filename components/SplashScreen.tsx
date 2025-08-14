@@ -140,14 +140,14 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               {/* Optimized loading bars */}
               <motion.div 
                 variants={staggerContainer}
-                className="space-y-3 w-72 sm:w-80 mx-auto px-4"
+                className="space-y-4 w-72 sm:w-80 mx-auto px-4"
               >
                 {['NEURAL.PATHWAYS', 'CYBER.INTERFACE', 'MATRIX.PROTOCOLS'].map(
                   (item, i) => (
                     <motion.div 
                       key={item} 
                       variants={staggerItem}
-                      className="flex items-center gap-3"
+                      className="flex items-center gap-4"
                     >
                       <span className="text-cyber-green font-mono text-[10px] sm:text-xs w-28 sm:w-32 truncate">
                         {item}
@@ -252,7 +252,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               transition={{ duration: 0.4 }}
               className="absolute inset-0 flex flex-col items-center justify-center space-y-6 z-20"
             >
-              <div className="space-y-3 text-center">
+              <div className="space-y-4 text-center">
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}

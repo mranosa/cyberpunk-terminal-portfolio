@@ -163,7 +163,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
           initial={{ opacity: 0, y: 10 }}
           whileHover={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="absolute bottom-full mb-2 px-3 py-1 bg-black border border-plasma-cyan 
+          className="absolute bottom-full mb-2 px-4 py-2 bg-black border border-plasma-cyan 
                      plasma-cyan text-xs font-mono ultra-thin whitespace-nowrap 
                      pointer-events-none right-0"
         >
@@ -306,7 +306,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                       onFocus={() => setFocusedField(field.name)}
                       onBlur={() => setFocusedField(null)}
                       placeholder={field.placeholder}
-                      className="w-full px-4 py-3 bg-black border-2 border-cyber-purple/50 
+                      className="w-full px-4 py-4 bg-black border-2 border-cyber-purple/50 
                                text-white placeholder-gray-500 font-mono
                                focus:border-cyber-cyan focus:outline-none focus:shadow-neon-cyan
                                transition-all duration-300"
@@ -344,7 +344,7 @@ export default function ContactDrawer({ isOpen: externalIsOpen, onOpenChange }: 
                     onBlur={() => setFocusedField(null)}
                     placeholder="Transmit your data stream..."
                     rows={6}
-                    className="w-full px-4 py-3 bg-black border-2 border-cyber-purple/50 
+                    className="w-full px-4 py-4 bg-black border-2 border-cyber-purple/50 
                              text-white placeholder-gray-500 font-mono resize-none
                              focus:border-cyber-cyan focus:outline-none focus:shadow-neon-cyan
                              transition-all duration-300"

@@ -233,7 +233,7 @@ export default function WorkPage() {
               onMouseDown={handleDragStart}
               onTouchStart={handleDragStart}
             >
-              <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-3 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
+              <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-4 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
                 <span className="text-xs font-mono text-cyber-cyan whitespace-nowrap select-none">
                   ↕ Drag Me
                 </span>
@@ -267,7 +267,7 @@ export default function WorkPage() {
                   setActiveSection(i)
                 }}
               />
-              <span className="absolute right-6 top-1/2 -translate-y-1/2 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              <span className="absolute right-8 top-1/2 -translate-y-1/2 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 {label}
               </span>
             </motion.div>
@@ -302,7 +302,7 @@ export default function WorkPage() {
               </motion.button>
             )}
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -689,7 +689,7 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.duration}
             </motion.div>
             <motion.h3 
-              className={`text-xl font-bold text-white mb-1 ${!isHovered && 'line-clamp-1'}`}
+              className={`text-xl font-bold text-white mb-2 ${!isHovered && 'line-clamp-1'}`}
               animate={{ 
                 scale: isHovered ? 1.02 : 1,
                 color: isHovered ? '#ffffff' : '#f0f0f0'
@@ -752,7 +752,7 @@ function TimelineItem({ job, index, isLeft }: any) {
 
             {/* Technologies - Only visible on hover or mobile, showing all */}
             <motion.div 
-              className="flex flex-wrap gap-1"
+              className="flex flex-wrap gap-2"
               initial={{ opacity: 0, height: 0 }}
               animate={{ 
                 opacity: (isHovered || isMobile) ? 1 : 0,
@@ -766,7 +766,7 @@ function TimelineItem({ job, index, isLeft }: any) {
               {job.technologies.map((tech: string, i: number) => (
                 <motion.span 
                   key={tech} 
-                  className="text-xs border border-cyber-cyan/20 px-2 py-1 text-gray-500 hover:border-cyber-cyan/40 hover:text-gray-400 transition-all"
+                  className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500 hover:border-cyber-cyan/40 hover:text-gray-400 transition-all"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ 
                     opacity: (isHovered || isMobile) ? 1 : 0,
@@ -852,7 +852,7 @@ function SkillCard({ title, skills, color, delay }: any) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className={`border p-6 relative overflow-hidden ${colorClasses[color]}`}
+        className={`border p-8 relative overflow-hidden ${colorClasses[color]}`}
         animate={{
           borderColor: (isHovered || isMobile) ? 
             color === 'cyan' ? 'rgba(0, 255, 255, 0.6)' :
@@ -902,7 +902,7 @@ function SkillCard({ title, skills, color, delay }: any) {
           {skills?.map((skill: any, i: number) => (
             <motion.span
               key={skill.name}
-              className="text-xs border border-current/30 px-3 py-1 text-gray-400 hover:text-current hover:border-current/60 transition-all"
+              className="text-xs border border-current/30 px-4 py-2 text-gray-400 hover:text-current hover:border-current/60 transition-all"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ 
                 opacity: (isHovered || isMobile) ? 1 : 0,
@@ -946,7 +946,7 @@ function ProjectCard({ project, index }: any) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        className="border border-nova-purple/30 p-6 relative overflow-hidden"
+        className="border border-nova-purple/30 p-8 relative overflow-hidden"
         animate={{
           borderColor: (isHovered || isMobile) ? 'rgba(147, 112, 219, 0.6)' : 'rgba(147, 112, 219, 0.3)',
           height: (isHovered || isMobile) ? 'auto' : '180px',
@@ -970,7 +970,7 @@ function ProjectCard({ project, index }: any) {
         <div className="flex items-start justify-between mb-4">
           <div>
             <motion.h3 
-              className="text-xl font-bold text-cyber-cyan mb-1"
+              className="text-xl font-bold text-cyber-cyan mb-2"
               animate={{ scale: isHovered ? 1.02 : 1 }}
               transition={{ duration: 0.3 }}
             >
@@ -1004,7 +1004,7 @@ function ProjectCard({ project, index }: any) {
         {/* Highlights - Only visible on hover or mobile */}
         {project.highlights && (
           <motion.div 
-            className="space-y-1"
+            className="space-y-2"
             initial={{ opacity: 0, height: 0 }}
             animate={{ 
               opacity: (isHovered || isMobile) ? 1 : 0,
@@ -1032,7 +1032,7 @@ function ProjectCard({ project, index }: any) {
 
         {/* Technologies - Only visible on hover or mobile, showing all */}
         <motion.div 
-          className="flex flex-wrap gap-1"
+          className="flex flex-wrap gap-2"
           initial={{ opacity: 0, height: 0 }}
           animate={{ 
             opacity: (isHovered || isMobile) ? 1 : 0,
@@ -1043,7 +1043,7 @@ function ProjectCard({ project, index }: any) {
           {project.tech.map((tech: string, i: number) => (
             <motion.span 
               key={tech} 
-              className="text-xs border border-nova-purple/20 px-2 py-0.5 text-gray-500 hover:border-nova-purple/40 hover:text-gray-400 transition-all"
+              className="text-xs border border-nova-purple/20 px-2 py-2 text-gray-500 hover:border-nova-purple/40 hover:text-gray-400 transition-all"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ 
                 opacity: (isHovered || isMobile) ? 1 : 0,
@@ -1097,7 +1097,7 @@ function TestimonialMarquee() {
   }
   
   return (
-    <div className="space-y-6 relative">
+    <div className="space-y-8 relative">
       {/* First Row - Left to Right */}
       <div className="relative overflow-hidden">
         <motion.div 
@@ -1192,7 +1192,7 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
       }}
     >
       <motion.div
-        className="border border-pink-400/30 p-4 relative overflow-hidden flex flex-col"
+        className="border border-pink-400/30 p-6 relative overflow-hidden flex flex-col"
         animate={{
           borderColor: (isHovered || isMobile) ? 'rgba(255, 105, 180, 0.6)' : 'rgba(255, 105, 180, 0.3)',
           height: (isHovered || isMobile) ? 'auto' : '120px',
@@ -1213,7 +1213,7 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
           style={{ pointerEvents: 'none' }}
         />
         
-        <div className="flex items-start gap-3 mb-3">
+        <div className="flex items-start gap-4 mb-4">
           <motion.div 
             className="text-2xl"
             animate={{ scale: isHovered ? 1.1 : 1 }}
@@ -1222,7 +1222,7 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
             {rec.avatar}
           </motion.div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-2">
               <motion.h3 
                 className={`text-sm font-bold text-cyber-cyan ${!isHovered && 'truncate'}`}
                 animate={{ scale: isHovered ? 1.02 : 1 }}
@@ -1231,12 +1231,12 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
                 {rec.name}
               </motion.h3>
               <motion.div 
-                className="flex gap-0.5 flex-shrink-0"
+                className="flex gap-1 flex-shrink-0"
                 animate={{ opacity: isHovered ? 1 : 0.7 }}
                 transition={{ duration: 0.3 }}
               >
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className="w-2.5 h-2.5 text-cyber-orange" />
+                  <StarIcon key={i} className="w-3 h-3 text-cyber-orange" />
                 ))}
               </motion.div>
             </div>
@@ -1279,7 +1279,7 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
             rel="noopener noreferrer"
             className="hover:text-cyber-cyan transition-colors inline-flex items-center"
           >
-            <LinkIcon className="w-3 h-3 mr-1" />
+            <LinkIcon className="w-4 h-4 mr-2" />
             LinkedIn
           </a>
         </motion.div>

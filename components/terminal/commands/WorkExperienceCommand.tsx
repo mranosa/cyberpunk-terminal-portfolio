@@ -42,8 +42,8 @@ export function WorkExperienceCommand() {
       {/* Eye-catching stats grid */}
       <div className="grid grid-cols-3 gap-4 mb-6">
         {highlights.map((stat, index) => (
-          <div key={index} className="border border-cyber-green/30 p-3 bg-black/40 hover:bg-black/60 transition-all">
-            <div className={`${stat.color} text-2xl font-bold mb-1`}>
+          <div key={index} className="border border-cyber-green/30 p-4 bg-black/40 hover:bg-black/60 transition-all">
+            <div className={`${stat.color} text-2xl font-bold mb-2`}>
               {stat.value}
             </div>
             <div className="text-gray-400 text-xs uppercase">
@@ -55,7 +55,7 @@ export function WorkExperienceCommand() {
 
       {/* Compelling teaser content */}
       <div className="border border-cyber-cyan/30 p-4 bg-black/30">
-        <div className="text-pink-400 mb-3 font-semibold">
+        <div className="text-pink-400 mb-4 font-semibold">
           🔥 CAREER HIGHLIGHTS:
         </div>
         <ul className="space-y-2 mb-4">
@@ -69,19 +69,19 @@ export function WorkExperienceCommand() {
 
       {/* Tech stack preview */}
       <div className="border border-cyber-green/30 p-4 bg-black/30">
-        <div className="text-cyber-green mb-3 font-semibold">
+        <div className="text-cyber-green mb-4 font-semibold">
           💻 TECH ARSENAL:
         </div>
         <div className="flex flex-wrap gap-2">
           {techStack.map((tech, i) => (
             <span
               key={i}
-              className="text-xs border border-cyber-cyan/50 px-2 py-1 text-gray-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all"
+              className="text-xs border border-cyber-cyan/50 px-2 py-2 text-gray-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all"
             >
               {tech}
             </span>
           ))}
-          <span className="text-xs px-2 py-1 text-yellow-400 animate-pulse">
+          <span className="text-xs px-2 py-2 text-yellow-400 animate-pulse">
             +20 more...
           </span>
         </div>
@@ -107,7 +107,7 @@ export function WorkExperienceCommand() {
         >
           <span>DISCOVER FULL JOURNEY</span>
           <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-          <span className="absolute -top-2 -right-2 bg-pink-400 text-black text-xs px-2 py-1 rounded">
+          <span className="absolute -top-2 -right-2 bg-pink-400 text-black text-xs px-2 py-2 rounded">
             9 COMPANIES
           </span>
         </button>

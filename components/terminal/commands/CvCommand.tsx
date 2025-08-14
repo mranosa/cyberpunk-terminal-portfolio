@@ -19,7 +19,7 @@ export function CvCommand() {
       </div>
       
       <div className="border border-cyber-cyan/30 p-4 bg-cyber-cyan/5">
-        <div className="text-cyan-400 mb-3 font-semibold">
+        <div className="text-cyan-400 mb-4 font-semibold">
           📄 PROFESSIONAL PROFILE
         </div>
         <div className="space-y-2">
@@ -42,7 +42,7 @@ export function CvCommand() {
         <div className="text-purple-400 mb-2 font-semibold">
           ✨ WHAT'S INCLUDED:
         </div>
-        <ul className="space-y-1 text-gray-300 text-sm">
+        <ul className="space-y-2 text-gray-300 text-sm">
           <li>• Professional experience & achievements</li>
           <li>• Technical skills & expertise</li>
           <li>• Education & certifications</li>
@@ -57,7 +57,7 @@ export function CvCommand() {
         >
           <span>DOWNLOAD CV</span>
           <ArrowDownIcon className="w-5 h-5 group-hover:translate-y-2 transition-transform" />
-          <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded animate-pulse">
+          <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs px-2 py-2 rounded animate-pulse">
             PDF
           </span>
         </button>

@@ -55,7 +55,7 @@ export default function PlanetPage() {
           transition={{ delay: 0.2 }}
           className="mb-8"
         >
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-4">
             {vedicPlanets.map((planet, index) => (
               <motion.button
                 key={planet.name}
