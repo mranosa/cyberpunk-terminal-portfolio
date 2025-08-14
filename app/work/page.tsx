@@ -289,16 +289,18 @@ export default function WorkPage() {
           </div>
 
           <div className="relative z-10 text-center px-4 md:px-8 pb-16 md:pb-32">
-            <motion.button
-              onClick={handleBackToTerminal}
-              className="mb-8 text-cyber-cyan hover:text-cyber-green transition-colors inline-flex items-center gap-2 group"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              <span>Back to Terminal</span>
-            </motion.button>
+            {!isMobile && (
+              <motion.button
+                onClick={handleBackToTerminal}
+                className="mb-8 text-cyber-cyan hover:text-cyber-green transition-colors inline-flex items-center gap-2 group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                <span>Back to Terminal</span>
+              </motion.button>
+            )}
 
             <div className="space-y-6">
               <motion.div
@@ -1075,11 +1077,36 @@ function ProjectCard({ project, index }: any) {
 // Component: Testimonial Marquee
 function TestimonialMarquee() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   // Split recommendations into two rows
   const halfLength = Math.ceil(recommendations.length / 2)
   const firstRow = recommendations.slice(0, halfLength)
   const secondRow = recommendations.slice(halfLength)
+  
+  // For mobile, show static grid instead of marquee
+  if (isMobile) {
+    return (
+      <div className="grid grid-cols-1 gap-4">
+        {recommendations.map((rec) => (
+          <TestimonialCard 
+            key={rec.id} 
+            rec={rec} 
+            onHover={() => {}}
+            cardId={rec.id}
+            isMobileGrid={true}
+          />
+        ))}
+      </div>
+    )
+  }
   
   return (
     <div className="space-y-6 relative">
@@ -1143,7 +1170,7 @@ function TestimonialMarquee() {
 }
 
 // Component: Testimonial Card
-function TestimonialCard({ rec, onHover, cardId }: any) {
+function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
   const [isHovered, setIsHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -1156,7 +1183,7 @@ function TestimonialCard({ rec, onHover, cardId }: any) {
   
   return (
     <motion.div 
-      className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px]"
+      className={isMobileGrid ? "w-full" : "flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px]"}
       onMouseEnter={() => {
         onHover(cardId)
         setIsHovered(true)
