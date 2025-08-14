@@ -12,6 +12,9 @@ export function HelpCommand() {
         <span className="nebula-pink">clear</span> - Clear terminal
       </div>
       <div className="ultra-light">
+        <span className="nebula-pink">cv</span> - Download my CV
+      </div>
+      <div className="ultra-light">
         <span className="nebula-pink">reload</span> - Reload with splash screen
       </div>
       <div className="ultra-light">

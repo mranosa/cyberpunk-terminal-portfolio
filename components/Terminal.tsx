@@ -12,7 +12,8 @@ import {
   BlogListCommand,
   WorkExperienceCommand,
   AboutCommand,
-  BlueprintCommand
+  BlueprintCommand,
+  CvCommand
 } from './terminal/commands'
 
 interface Command {
@@ -253,6 +254,10 @@ const Terminal = memo(function Terminal({ onContactOpen }: TerminalProps = {}) {
 
       case 'blueprint':
         output = <BlueprintCommand />
+        break
+
+      case 'cv':
+        output = <CvCommand />
         break
 
       case 'clear':
