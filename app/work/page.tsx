@@ -4,12 +4,10 @@ import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-mo
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import { recommendations } from '@/components/terminal/data/recommendations'
-import { skills } from '@/components/terminal/data/skills'
-import { projects } from '@/components/terminal/data/projects'
 import MatrixRain from '@/components/MatrixRainWrapper'
 import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { StarIcon, LinkIcon } from '@heroicons/react/24/solid'
-import { useRef, useEffect, useState, useMemo } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 
 export default function WorkPage() {
@@ -249,7 +247,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -1177,53 +1175,6 @@ export default function WorkPage() {
           </motion.div>
         </section>
 
-        {/* Skills Matrix */}
-        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
-          <FloatingParticles />
-          
-          <motion.div
-            className="max-w-7xl mx-auto relative z-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <SectionTitle 
-              number="07" 
-              title="TECHNICAL ARSENAL" 
-              subtitle="TOOLS OF THE TRADE"
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-16">
-              <SkillCard title="LANGUAGES" skills={skills.languages} color="cyan" delay={0} />
-              <SkillCard title="FRAMEWORKS" skills={skills.frameworks} color="purple" delay={0.1} />
-              <SkillCard title="TOOLS & TESTING" skills={skills.tools} color="green" delay={0.2} />
-              <SkillCard title="DATABASES" skills={skills.databases} color="orange" delay={0.3} />
-              {skills.aiml && <SkillCard title="AI/ML" skills={skills.aiml} color="pink" delay={0.4} />}
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Projects Showcase */}
-        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
-          <motion.div
-            className="max-w-7xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <SectionTitle 
-              number="08" 
-              title="PET PROJECTS" 
-              subtitle="EXPERIMENTS IN CODE"
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-16">
-              {projects.map((project, i) => (
-                <ProjectCard key={project.id} project={project} index={i} />
-              ))}
-            </div>
-          </motion.div>
-        </section>
 
         {/* Recommendations */}
         <section className="scroll-section min-h-screen py-16 md:py-32 relative overflow-hidden">
@@ -1234,7 +1185,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="09" 
+              number="07" 
               title="TESTIMONIALS" 
               subtitle="WORDS FROM COLLEAGUES"
             />
@@ -1254,7 +1205,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="10" 
+              number="08" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
@@ -1569,226 +1520,33 @@ function TimelineItem({ job, index = 0, isLeft }: any) {
   )
 }
 
-// Component: Skill Card
-function SkillCard({ title, skills, color, delay }: any) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
+// Component: Typewriter Effect
+function TypewriterText({ text }: { text: string }) {
+  const [displayText, setDisplayText] = useState('')
+  
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-  
-  const colorClasses: any = {
-    cyan: 'border-cyber-cyan/30 text-cyber-cyan',
-    purple: 'border-nova-purple/30 text-nova-purple',
-    green: 'border-cyber-green/30 text-cyber-green',
-    orange: 'border-cyber-orange/30 text-cyber-orange',
-    pink: 'border-pink-400/30 text-pink-400'
-  }
-  
-  const glowColors: any = {
-    cyan: 'rgba(0, 255, 255, 0.05)',
-    purple: 'rgba(147, 112, 219, 0.05)',
-    green: 'rgba(0, 250, 154, 0.05)',
-    orange: 'rgba(255, 140, 0, 0.05)',
-    pink: 'rgba(255, 105, 180, 0.05)'
-  }
+    let i = 0
+    const interval = setInterval(() => {
+      if (i < text.length) {
+        setDisplayText(text.slice(0, i + 1))
+        i++
+      } else {
+        clearInterval(interval)
+      }
+    }, 50)
+    return () => clearInterval(interval)
+  }, [text])
 
   return (
-    <motion.div
-      className={`relative ${colorClasses[color]}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay }}
-      animate={{
-        scale: isHovered ? 1.02 : 1,
-        y: isHovered ? -5 : 0,
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <motion.div
-        className={`border p-8 relative overflow-hidden ${colorClasses[color]}`}
-        animate={{
-          borderColor: (isHovered || isMobile) ? 
-            color === 'cyan' ? 'rgba(0, 255, 255, 0.6)' :
-            color === 'purple' ? 'rgba(147, 112, 219, 0.6)' :
-            color === 'green' ? 'rgba(0, 250, 154, 0.6)' :
-            color === 'orange' ? 'rgba(255, 140, 0, 0.6)' :
-            'rgba(255, 105, 180, 0.6)' 
-            : undefined,
-          height: (isHovered || isMobile) ? 'auto' : '100px',
-          minHeight: (isHovered || isMobile) ? '100px' : '100px'
-        }}
-        transition={{
-          height: { type: "spring", stiffness: 200, damping: 25 },
-          borderColor: { duration: 0.3 }
-        }}
-        style={{ backgroundColor: '#0a0a0a' }}
+    <span>
+      {displayText}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.5, repeat: Infinity }}
       >
-        {/* Glow effect on hover */}
-        <motion.div
-          className="absolute inset-0"
-          initial={{ x: '-100%' }}
-          animate={{ x: isHovered ? '100%' : '-100%' }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          style={{ 
-            background: `linear-gradient(90deg, transparent, ${glowColors[color]}, transparent)`,
-            pointerEvents: 'none' 
-          }}
-        />
-        
-        <motion.h3 
-          className="font-bold mb-4 text-sm uppercase tracking-wider"
-          animate={{ scale: isHovered ? 1.05 : 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          {title}
-        </motion.h3>
-        
-        <motion.div 
-          className="flex flex-wrap gap-2"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: (isHovered || isMobile) ? 1 : 0,
-            height: (isHovered || isMobile) ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          {skills?.map((skill: any, i: number) => (
-            <motion.span
-              key={skill.name}
-              className="text-xs border border-current/30 px-4 py-2 text-gray-400 hover:text-current hover:border-current/60 transition-all"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: (isHovered || isMobile) ? 1 : 0,
-                scale: (isHovered || isMobile) ? 1 : 0.8
-              }}
-              transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
-            >
-              {skill.name}
-            </motion.span>
-          ))}
-        </motion.div>
-      </motion.div>
-    </motion.div>
-  )
-}
-
-// Component: Project Card
-function ProjectCard({ project, index = 0 }: any) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-  
-  return (
-    <motion.div
-      className="relative"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      animate={{
-        scale: isHovered ? 1.02 : 1,
-        y: isHovered ? -5 : 0,
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <motion.div
-        className="border border-nova-purple/30 p-8 relative overflow-hidden"
-        animate={{
-          borderColor: (isHovered || isMobile) ? 'rgba(147, 112, 219, 0.6)' : 'rgba(147, 112, 219, 0.3)',
-          height: (isHovered || isMobile) ? 'auto' : '180px',
-          minHeight: (isHovered || isMobile) ? '180px' : '180px'
-        }}
-        transition={{
-          height: { type: "spring", stiffness: 200, damping: 25 },
-          borderColor: { duration: 0.3 }
-        }}
-        style={{ backgroundColor: '#0a0a0a' }}
-      >
-        {/* Glow effect on hover */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/5 to-transparent"
-          initial={{ x: '-100%' }}
-          animate={{ x: isHovered ? '100%' : '-100%' }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          style={{ pointerEvents: 'none' }}
-        />
-        
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <motion.h3 
-              className="text-xl font-bold text-cyber-cyan mb-2"
-              animate={{ scale: isHovered ? 1.02 : 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              {project.title}
-            </motion.h3>
-            <div className="text-sm text-nova-purple">{project.type}</div>
-          </div>
-          <motion.span 
-            className="text-xs border border-cyber-orange text-cyber-orange px-2 py-1"
-            animate={{ 
-              borderColor: isHovered ? 'rgba(255, 140, 0, 0.8)' : 'rgba(255, 140, 0, 0.5)',
-              scale: isHovered ? 1.05 : 1
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            MVP
-          </motion.span>
-        </div>
-
-        <motion.p 
-          className="text-gray-400 text-sm"
-          animate={{ 
-            marginBottom: isHovered ? '16px' : '0px',
-            opacity: isHovered ? 1 : 0.8
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          {project.description}
-        </motion.p>
-
-
-        {/* Technologies - Only visible on hover or mobile, showing all */}
-        <motion.div 
-          className="flex flex-wrap gap-2"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: (isHovered || isMobile) ? 1 : 0,
-            height: (isHovered || isMobile) ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3, delay: isHovered ? 0.1 : 0 }}
-        >
-          {project.tech.map((tech: string, i: number) => (
-            <motion.span 
-              key={tech} 
-              className="text-xs border border-nova-purple/20 px-2 py-2 text-gray-500 hover:border-nova-purple/40 hover:text-gray-400 transition-all"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: (isHovered || isMobile) ? 1 : 0,
-                scale: (isHovered || isMobile) ? 1 : 0.8
-              }}
-              transition={{ delay: isHovered ? i * 0.02 : 0, duration: 0.2 }}
-            >
-              {tech}
-            </motion.span>
-          ))}
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        |
+      </motion.span>
+    </span>
   )
 }
 
@@ -2017,85 +1775,5 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
         </motion.div>
       </motion.div>
     </motion.div>
-  )
-}
-
-// Component: Typewriter Effect
-function TypewriterText({ text }: { text: string }) {
-  const [displayText, setDisplayText] = useState('')
-  
-  useEffect(() => {
-    let i = 0
-    const interval = setInterval(() => {
-      if (i < text.length) {
-        setDisplayText(text.slice(0, i + 1))
-        i++
-      } else {
-        clearInterval(interval)
-      }
-    }, 50)
-    return () => clearInterval(interval)
-  }, [text])
-
-  return (
-    <span>
-      {displayText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity }}
-      >
-        |
-      </motion.span>
-    </span>
-  )
-}
-
-// Component: Floating Particles
-function FloatingParticles() {
-  const [mounted, setMounted] = useState(false)
-  
-  // Generate stable random values that won't change between renders
-  const particles = useMemo(() => {
-    if (!mounted) return []
-    return [...Array(20)].map((_, i) => ({
-      id: i,
-      initialX: Math.random() * window.innerWidth,
-      initialY: Math.random() * window.innerHeight,
-      animateX: Math.random() * window.innerWidth,
-      animateY: Math.random() * window.innerHeight,
-      duration: Math.random() * 20 + 10
-    }))
-  }, [mounted])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <div className="absolute inset-0 overflow-hidden" />
-  }
-
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className="absolute w-1 h-1 bg-cyber-cyan/30 rounded-full"
-          initial={{
-            x: particle.initialX,
-            y: particle.initialY,
-          }}
-          animate={{
-            x: particle.animateX,
-            y: particle.animateY,
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      ))}
-    </div>
   )
 }
