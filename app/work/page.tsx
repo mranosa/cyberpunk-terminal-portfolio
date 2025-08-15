@@ -455,10 +455,6 @@ export default function WorkPage() {
                       <span className="text-cyber-green mr-2">▸</span>
                       Delivered time-critical features
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-green mr-2">▸</span>
-                      Demo-first reviews. Parallel test envs to cut risk
-                    </li>
                   </ul>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">TypeScript</span>
@@ -469,7 +465,7 @@ export default function WorkPage() {
                   </div>
                   <div className="mt-4 pt-4 border-t border-cyber-green/20">
                     <p className="text-cyber-green font-semibold">
-                      Result: Helped close &gt;$1M in deals. Faster cycles. Fewer slips.
+                      Result: Helped close &gt;$1M in deals.
                     </p>
                   </div>
                 </div>
@@ -502,10 +498,6 @@ export default function WorkPage() {
                     <li className="flex items-start">
                       <span className="text-cyber-cyan mr-2">▸</span>
                       Added LocalStack and containerized fixtures
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Per-PR validation. Confident merges
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
@@ -554,11 +546,7 @@ export default function WorkPage() {
                   <ul className="space-y-2 text-gray-300 mb-4">
                     <li className="flex items-start">
                       <span className="text-amber-500 mr-2">▸</span>
-                      Refactored slow, flaky suites
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-amber-500 mr-2">▸</span>
-                      Faster releases. Clearer signals
+                      Refactored slow, flakey suites.
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
