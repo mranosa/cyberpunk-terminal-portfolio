@@ -16,6 +16,21 @@ export const recommendations = [
   },
   {
     id: 2,
+    name: 'Kayla Koch',
+    position: 'Product Design Manager',
+    company: 'Newsela',
+    relationship: 'Colleague',
+    duration: 'Worked together at Newsela',
+    avatar: '🎨',
+    rating: 5,
+    recommendation: 'Ken was always a pleasure to work with on both front-end and back-end tasks. He is humble, approachable, and highly communicative throughout the development process. He made a positive contribution to team culture and approached every challenge with openness and determination.',
+    skills: ['Frontend', 'Backend', 'Communication', 'Team Culture', 'Problem Solving'],
+    contact: {
+      linkedin: 'linkedin.com/in/kayla-koch'
+    }
+  },
+  {
+    id: 3,
     name: 'Yong La',
     position: 'Software Engineer',
     company: 'Formative',
@@ -30,7 +45,7 @@ export const recommendations = [
     }
   },
   {
-    id: 3,
+    id: 4,
     name: 'Tiffani Latrell',
     position: 'Project Manager',
     company: 'Formative',
@@ -45,7 +60,7 @@ export const recommendations = [
     }
   },
   {
-    id: 4,
+    id: 5,
     name: 'Ronald Phan',
     position: 'Software Engineer',
     company: 'Formative',
@@ -60,7 +75,7 @@ export const recommendations = [
     }
   },
   {
-    id: 5,
+    id: 6,
     name: 'Peter Milan',
     position: 'Senior Backend Engineer',
     company: 'Factor Eleven',
@@ -75,7 +90,7 @@ export const recommendations = [
     }
   },
   {
-    id: 6,
+    id: 7,
     name: 'Reginald Eli Deinla',
     position: 'Engineering Manager',
     company: 'Agoda',
@@ -90,7 +105,7 @@ export const recommendations = [
     }
   },
   {
-    id: 7,
+    id: 8,
     name: 'Stefan Bernard Lavilla',
     position: 'Senior Software Engineer',
     company: 'Adaca',
@@ -105,7 +120,7 @@ export const recommendations = [
     }
   },
   {
-    id: 8,
+    id: 9,
     name: 'Limuel Flores',
     position: 'Senior Java Developer',
     company: 'Tyler Technology Philippines Inc',
@@ -120,7 +135,7 @@ export const recommendations = [
     }
   },
   {
-    id: 9,
+    id: 10,
     name: 'Kelvin Hui',
     position: 'Development Manager',
     company: 'Iron Data Solutions',
@@ -135,7 +150,7 @@ export const recommendations = [
     }
   },
   {
-    id: 10,
+    id: 11,
     name: 'Dino Bagayaua',
     position: 'Senior Consultant',
     company: 'MarkLogic',
@@ -150,7 +165,7 @@ export const recommendations = [
     }
   },
   {
-    id: 11,
+    id: 12,
     name: 'Giovanni Cruz',
     position: 'Software Engineer',
     company: 'Intertec International',
@@ -162,21 +177,6 @@ export const recommendations = [
     skills: ['Fast Learning', 'Technology Adoption', 'Practical Application'],
     contact: {
       linkedin: 'linkedin.com/in/giovanni-cruz-0b601055'
-    }
-  },
-  {
-    id: 12,
-    name: 'Kayla Koch',
-    position: 'Product Design Manager',
-    company: 'Newsela',
-    relationship: 'Colleague',
-    duration: 'Worked together at Newsela',
-    avatar: '🎨',
-    rating: 5,
-    recommendation: 'Ken was always a pleasure to work with on both front-end and back-end tasks. He is humble, approachable, and highly communicative throughout the development process. He made a positive contribution to team culture and approached every challenge with openness and determination.',
-    skills: ['Frontend', 'Backend', 'Communication', 'Team Culture', 'Problem Solving'],
-    contact: {
-      linkedin: 'linkedin.com/in/kayla-koch'
     }
   }
 ]
