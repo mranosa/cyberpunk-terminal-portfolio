@@ -9,6 +9,8 @@ import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 import { LinkIcon } from '@heroicons/react/24/solid'
 import { useRef, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { useMobileOptimizedMotion } from '@/hooks/useMobileOptimizedMotion'
+import './work.css'
 
 export default function WorkPage() {
   const router = useRouter()
@@ -17,6 +19,7 @@ export default function WorkPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMobile, setIsMobile] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const motionOptimized = useMobileOptimizedMotion()
   
   
   const { scrollYProgress } = useScroll({
@@ -82,14 +85,15 @@ export default function WorkPage() {
     }
   }
 
-  // Parallax transforms
-  const heroY = useTransform(scrollSpring, [0, 0.2], [0, -100])
-  const heroOpacity = useTransform(scrollSpring, [0, 0.15], [1, 0])
-  const heroScale = useTransform(scrollSpring, [0, 0.2], [1, 0.95])
+  // Parallax transforms - reduced for mobile
+  const parallaxMultiplier = isMobile ? 0.3 : 1
+  const heroY = useTransform(scrollSpring, [0, 0.2], [0, -100 * parallaxMultiplier])
+  const heroOpacity = useTransform(scrollSpring, [0, 0.15], [1, isMobile ? 0.3 : 0])
+  const heroScale = useTransform(scrollSpring, [0, 0.2], [1, isMobile ? 0.98 : 0.95])
 
   return (
     <>
-      <MatrixRain />
+      {!isMobile && <MatrixRain />}
       <div ref={containerRef} className="relative bg-black text-white">
         {/* Progress Bar */}
         <motion.div
@@ -150,12 +154,12 @@ export default function WorkPage() {
                   onClick={() => setMobileMenuOpen(false)}
                 />
                 
-                {/* Menu Drawer */}
+                {/* Menu Drawer - optimized for mobile */}
                 <motion.div
                   initial={{ x: '100%' }}
                   animate={{ x: 0 }}
                   exit={{ x: '100%' }}
-                  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                  transition={isMobile ? { type: 'tween', duration: 0.2 } : { type: 'spring', damping: 25, stiffness: 200 }}
                   className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-md border-l border-cyber-cyan/30 z-50 overflow-y-auto"
                 >
                   <div className="p-6 pt-20">
@@ -238,12 +242,12 @@ export default function WorkPage() {
           className="scroll-section min-h-screen flex items-center justify-center relative overflow-hidden"
           style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
         >
-          {/* Animated Background Grid */}
+          {/* Animated Background Grid - simplified for mobile */}
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0" style={{
+            <div className="absolute inset-0 grid-animation" style={{
               backgroundImage: `linear-gradient(cyan 1px, transparent 1px), linear-gradient(90deg, cyan 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-              transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
+              backgroundSize: isMobile ? '100px 100px' : '50px 50px',
+              transform: isMobile ? 'none' : `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
             }} />
           </div>
 
@@ -267,7 +271,7 @@ export default function WorkPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className="text-5xl md:text-7xl font-bold mb-4">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
                   <span className="text-cyber-green glitch-text inline-block">KEN</span>{' '}
                   <span className="text-cyber-cyan glitch-text inline-block">RANOSA</span>
                 </h1>

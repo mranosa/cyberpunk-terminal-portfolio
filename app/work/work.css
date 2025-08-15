@@ -1,0 +1,146 @@
+/* Mobile performance optimizations for work page */
+
+@media (max-width: 768px) {
+  /* Disable heavy animations on mobile */
+  .glitch-text,
+  .animate-pulse,
+  .animate-bounce {
+    animation: none !important;
+  }
+
+  /* Simplify backdrop filters */
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Reduce motion for parallax */
+  .parallax-element {
+    transform: translateZ(0) !important;
+    will-change: auto !important;
+  }
+
+  /* Optimize shadows */
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Simplify gradients */
+  .bg-gradient-to-r,
+  .bg-gradient-to-b {
+    background: linear-gradient(180deg, var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+
+  /* Force GPU acceleration for smooth scrolling */
+  .scroll-section {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Optimize hover states */
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover {
+    transform: scale(1.02);
+  }
+
+  /* Reduce animation durations */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Hide non-essential decorative elements */
+  .decoration-only {
+    display: none;
+  }
+
+  /* Optimize text rendering */
+  body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Reduce font weights for performance */
+  .font-black {
+    font-weight: 800;
+  }
+  .font-bold {
+    font-weight: 600;
+  }
+  .font-semibold {
+    font-weight: 500;
+  }
+
+  /* Touch-friendly tap targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent horizontal scroll */
+  .no-horizontal-scroll {
+    overflow-x: hidden;
+  }
+
+  /* Optimize images */
+  .optimized-image {
+    loading: lazy;
+    decoding: async;
+  }
+
+  /* Reduce complexity of grid animations */
+  .grid-animation {
+    animation: none !important;
+    background: rgba(0, 255, 255, 0.05);
+  }
+}
+
+/* Performance hints for all devices */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Low bandwidth mode */
+@media (prefers-reduced-data: reduce) {
+  .media-content {
+    display: none;
+  }
+  
+  .bg-gradient-to-r,
+  .bg-gradient-to-b,
+  .bg-gradient-to-t,
+  .bg-gradient-to-l {
+    background: var(--tw-gradient-from, #000);
+  }
+}
