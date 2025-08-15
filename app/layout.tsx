@@ -71,7 +71,7 @@ export default function RootLayout({
         {/* Optimize viewport for mobile */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
-      <body className="antialiased">
+      <body className="antialiased overflow-x-hidden">
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
@@ -92,8 +92,8 @@ export default function RootLayout({
         <ErrorBoundary>
           <CSPostHogProvider>
             <PostHogPageView />
-            <div className="fixed inset-0 bg-cyber-darker -z-50" />
-            <div className="fixed inset-0 opacity-30 -z-40">
+            <div className="fixed inset-0 bg-cyber-darker -z-50 overflow-hidden" />
+            <div className="fixed inset-0 opacity-30 -z-40 overflow-hidden">
               <div className="absolute inset-0 bg-cyber-grid bg-[size:50px_50px]" />
             </div>
             <CircuitBoard />

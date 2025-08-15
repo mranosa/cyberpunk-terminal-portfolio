@@ -295,11 +295,11 @@ export default function MatrixRain() {
         style={{ 
           zIndex: 1,
           opacity: 0.3,
-          left: '-25%',
-          top: '-25%',
-          width: '150%',
-          height: '150%',
-          transform: `perspective(800px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`,
+          left: '0',
+          top: '0',
+          width: '100%',
+          height: '100%',
+          transform: `perspective(800px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg) scale(1.2)`,
           transformOrigin: 'center center'
         }}
       />
