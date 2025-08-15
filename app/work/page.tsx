@@ -1423,6 +1423,73 @@ export default function WorkPage() {
             >
               15+ years of experience • Full Stack Development • Remote Work
             </motion.div>
+
+            {/* Contact Information */}
+            <motion.div
+              className="mt-16 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="relative group">
+                {/* Glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyber-cyan to-cyber-purple opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
+                
+                {/* Main container */}
+                <div className="relative border border-cyber-cyan/30 p-8 bg-black/80 backdrop-blur-sm">
+                  <h3 className="text-cyber-cyan font-bold mb-8 text-xl text-center">Let's Connect</h3>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {/* Email */}
+                    <motion.a 
+                      href="mailto:ken.ranosa@gmail.com"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-green/20 bg-black/40 hover:border-cyber-green/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                    >
+                      <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-green/30 group-hover/item:border-cyber-green/60 transition-colors">
+                        <span className="text-cyber-green text-2xl">@</span>
+                      </div>
+                      <span className="text-cyber-green font-semibold text-sm mb-1">Email</span>
+                      <span className="text-gray-400 text-xs text-center group-hover/item:text-gray-300 transition-colors">
+                        ken.ranosa@gmail.com
+                      </span>
+                    </motion.a>
+
+                    {/* LinkedIn */}
+                    <motion.a 
+                      href="https://www.linkedin.com/in/mranosa/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-purple/20 bg-black/40 hover:border-cyber-purple/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                    >
+                      <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-purple/30 group-hover/item:border-cyber-purple/60 transition-colors">
+                        <span className="text-cyber-purple text-xl font-bold">in</span>
+                      </div>
+                      <span className="text-cyber-purple font-semibold text-sm mb-1">LinkedIn</span>
+                      <span className="text-gray-400 text-xs text-center group-hover/item:text-gray-300 transition-colors">
+                        /in/mranosa
+                      </span>
+                    </motion.a>
+
+                    {/* Calendar */}
+                    <motion.a 
+                      href="#"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-orange/20 bg-black/40 hover:border-cyber-orange/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                    >
+                      <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-orange/30 group-hover/item:border-cyber-orange/60 transition-colors">
+                        <span className="text-cyber-orange text-xl">📅</span>
+                      </div>
+                      <span className="text-cyber-orange font-semibold text-sm mb-1">Calendar</span>
+                      <span className="text-gray-400 text-xs text-center group-hover/item:text-gray-300 transition-colors">
+                        Book 15 minutes
+                      </span>
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </section>
       </div>
