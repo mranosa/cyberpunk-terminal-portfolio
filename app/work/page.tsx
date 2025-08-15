@@ -617,25 +617,31 @@ export default function WorkPage() {
                 </div>
               </motion.div>
 
-              {/* Full Resume Note */}
+              {/* Full Resume Download Button */}
               <motion.div
-                className="mt-8 border border-cyber-yellow/20 p-6 bg-gradient-to-r from-cyber-yellow/5 via-transparent to-cyber-orange/5 backdrop-blur-sm text-center cursor-pointer hover:border-cyber-yellow/40 transition-all group"
+                className="mt-8 flex justify-center"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                whileHover={{ scale: 1.02 }}
-                onClick={() => {
-                  const link = document.createElement('a')
-                  link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                  link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
-                  link.click()
-                }}
               >
-                <p className="text-gray-400 hover:text-gray-300 transition-colors">
-                  <span className="text-cyber-yellow font-semibold">→</span> Full resume available as PDF for complete history and education
-                  <span className="text-cyber-yellow ml-2 opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
-                </p>
+                <motion.button
+                  onClick={() => {
+                    const link = document.createElement('a')
+                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.click()
+                  }}
+                  className="group relative px-8 py-4 border-2 border-cyber-yellow text-cyber-yellow hover:bg-cyber-yellow hover:text-black transition-all duration-300 font-bold"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="absolute inset-0 bg-cyber-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="relative flex items-center gap-3">
+                    <ArrowDownTrayIcon className="w-5 h-5" />
+                    Full Resume PDF - Complete History & Education
+                  </span>
+                </motion.button>
               </motion.div>
             </div>
           </motion.div>
@@ -755,17 +761,31 @@ export default function WorkPage() {
                 </div>
               </motion.div>
 
-              {/* More projects note */}
+              {/* More projects download button */}
               <motion.div
-                className="mt-8 text-center"
+                className="mt-8 flex justify-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <p className="text-gray-500 italic">
-                  <span className="text-cyber-yellow">→</span> More projects on downloadable CV.
-                </p>
+                <motion.button
+                  onClick={() => {
+                    const link = document.createElement('a')
+                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.click()
+                  }}
+                  className="group relative px-8 py-4 border-2 border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-black transition-all duration-300 font-bold"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="absolute inset-0 bg-cyber-purple transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="relative flex items-center gap-3">
+                    <ArrowDownTrayIcon className="w-5 h-5" />
+                    Download CV for More Projects
+                  </span>
+                </motion.button>
               </motion.div>
             </div>
           </motion.div>
