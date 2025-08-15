@@ -249,7 +249,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'EXPERIENCE', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -449,6 +449,198 @@ export default function WorkPage() {
           </div>
         </motion.section>
 
+        {/* Impact Section */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative flex items-center">
+          <motion.div
+            className="max-w-7xl mx-auto w-full"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="01" 
+              title="IMPACT" 
+              subtitle="MEASURABLE RESULTS THAT MATTER"
+            />
+
+            <div className="space-y-8 mt-16">
+              {/* Formative - Deal-closing delivery */}
+              <motion.div
+                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(0, 255, 136, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-green mb-2">
+                        Formative [Remote] — deal-closing delivery
+                      </h3>
+                      <p className="text-gray-400 text-sm">Software Engineer • Feb 2021–Jun 2025 (acquired May 2023)</p>
+                    </div>
+                    <div className="mt-4 md:mt-0">
+                      <span className="text-4xl md:text-5xl font-bold text-cyber-green">&gt;$1M</span>
+                      <p className="text-gray-400 text-xs">in deals closed</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-cyber-green mr-2">▸</span>
+                      Delivered time-critical features
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyber-green mr-2">▸</span>
+                      Demo-first reviews. Parallel test envs to cut risk
+                    </li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">TypeScript</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">Node.js</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">React</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">GraphQL</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">MongoDB</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-cyber-green/20">
+                    <p className="text-cyber-green font-semibold">
+                      Result: Helped close &gt;$1M in deals. Faster cycles. Fewer slips.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* PearlPay - Integration tests in seconds */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(0, 255, 255, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-cyan mb-2">
+                        PearlPay [On-Site] — integration tests in seconds
+                      </h3>
+                      <p className="text-gray-400 text-sm">Senior Software Engineer • Nov 2019–Sep 2020</p>
+                    </div>
+                    <div className="mt-4 md:mt-0 text-right">
+                      <span className="text-4xl md:text-5xl font-bold text-cyber-cyan">hours→seconds</span>
+                      <p className="text-gray-400 text-xs">per test run</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-cyber-cyan mr-2">▸</span>
+                      Added LocalStack and containerized fixtures
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyber-cyan mr-2">▸</span>
+                      Per-PR validation. Confident merges
+                    </li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">AWS Serverless</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">LocalStack</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Docker</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Node.js</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Python</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Java</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Spring</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">Django</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">MySQL</span>
+                    <span className="text-xs border border-cyber-cyan/20 px-2 py-2 text-gray-500">PyTest</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-cyber-cyan/20">
+                    <p className="text-cyber-cyan font-semibold">
+                      Result: Hours → seconds per run. Per-PR validation. Confident merges.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* BEN - 600% faster test runtime */}
+              <motion.div
+                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(157, 0, 255, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-purple mb-2">
+                        BEN [Remote] — 600% faster test runtime
+                      </h3>
+                      <p className="text-gray-400 text-sm">Software Engineer in Test • Apr 2016–Jun 2019</p>
+                    </div>
+                    <div className="mt-4 md:mt-0 text-right">
+                      <span className="text-4xl md:text-5xl font-bold text-cyber-purple">600%</span>
+                      <p className="text-gray-400 text-xs">faster runtime</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 text-gray-300 mb-4">
+                    <li className="flex items-start">
+                      <span className="text-cyber-purple mr-2">▸</span>
+                      Refactored slow, flaky suites
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyber-purple mr-2">▸</span>
+                      Faster releases. Clearer signals
+                    </li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">JavaScript</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Node.js</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">WebDriverIO</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Protractor</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Jasmine</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Mocha</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Chakram</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">MongoDB</span>
+                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">CI</span>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-cyber-purple/20">
+                    <p className="text-cyber-purple font-semibold">
+                      Result: 600% faster runtime. Faster releases. Clearer signals.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Full Resume Note */}
+              <motion.div
+                className="mt-8 border border-cyber-yellow/20 p-6 bg-gradient-to-r from-cyber-yellow/5 via-transparent to-cyber-orange/5 backdrop-blur-sm text-center cursor-pointer hover:border-cyber-yellow/40 transition-all group"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.02 }}
+                onClick={() => {
+                  const link = document.createElement('a')
+                  link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                  link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                  link.click()
+                }}
+              >
+                <p className="text-gray-400 hover:text-gray-300 transition-colors">
+                  <span className="text-cyber-yellow font-semibold">→</span> Full resume available as PDF for complete history and education
+                  <span className="text-cyber-yellow ml-2 opacity-0 group-hover:opacity-100 transition-opacity">↓</span>
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* Work Experience Timeline */}
         <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
@@ -458,7 +650,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="01" 
+              number="02" 
               title="WORK EXPERIENCE" 
               subtitle="A DECADE AND A HALF OF INNOVATION"
             />
@@ -490,7 +682,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="02" 
+              number="03" 
               title="TECHNICAL ARSENAL" 
               subtitle="TOOLS OF THE TRADE"
             />
@@ -514,7 +706,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="03" 
+              number="04" 
               title="PET PROJECTS" 
               subtitle="EXPERIMENTS IN CODE"
             />
@@ -536,7 +728,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="04" 
+              number="05" 
               title="TESTIMONIALS" 
               subtitle="WORDS FROM COLLEAGUES"
             />
@@ -556,7 +748,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="05" 
+              number="06" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
@@ -616,7 +808,7 @@ function SectionTitle({ number, title, subtitle }: { number: string; title: stri
 }
 
 // Component: Timeline Item
-function TimelineItem({ job, index, isLeft }: any) {
+function TimelineItem({ job, index = 0, isLeft }: any) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isHovered, setIsHovered] = useState(false)
@@ -919,7 +1111,7 @@ function SkillCard({ title, skills, color, delay }: any) {
 }
 
 // Component: Project Card
-function ProjectCard({ project, index }: any) {
+function ProjectCard({ project, index = 0 }: any) {
   const [isHovered, setIsHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
