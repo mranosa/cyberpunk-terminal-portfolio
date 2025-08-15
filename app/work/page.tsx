@@ -1119,7 +1119,7 @@ export default function WorkPage() {
                 </div>
               </motion.div>
 
-              {/* Remote-ready */}
+              {/* Remote-Proven */}
               <motion.div
                 className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
@@ -1130,9 +1130,9 @@ export default function WorkPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-cyber-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <h3 className="text-lg font-bold text-cyber-yellow mb-3">Remote-ready</h3>
+                  <h3 className="text-lg font-bold text-cyber-yellow mb-3">Remote-Proven</h3>
                   <p className="text-gray-300 text-sm">
-                    async delivery across time zones
+                    reliable delivery across time zones
                   </p>
                 </div>
               </motion.div>
