@@ -1204,31 +1204,31 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
               {/* Personality Types */}
               <motion.div
-                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm"
+                className="border border-cyber-cyan/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
                     <span className="text-cyber-green font-bold">ENFJ-A</span>
-                    <span className="text-gray-400">— collaborative, outcome-first</span>
+                    <span className="text-gray-400 text-sm sm:text-base">— collaborative, outcome-first</span>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
                     <span className="text-cyber-purple font-bold">Aries</span>
-                    <span className="text-gray-400">— decisive, action-first</span>
+                    <span className="text-gray-400 text-sm sm:text-base">— decisive, action-first</span>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
                     <span className="text-cyber-orange font-bold">Fire Rabbit</span>
-                    <span className="text-gray-400">— empathetic, steady under pressure</span>
+                    <span className="text-gray-400 text-sm sm:text-base">— empathetic, steady under pressure</span>
                   </div>
                 </div>
               </motion.div>
 
               {/* Vedic Chart Intro */}
               <motion.div
-                className="border border-pink-400/30 p-8 bg-black/50 backdrop-blur-sm"
+                className="border border-pink-400/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
