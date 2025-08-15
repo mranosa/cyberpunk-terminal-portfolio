@@ -247,7 +247,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'SNAPSHOT', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -1253,6 +1253,198 @@ export default function WorkPage() {
           </motion.div>
         </section>
 
+        {/* Snapshot Section */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <motion.div
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="08" 
+              title="SNAPSHOT" 
+              subtitle="A FEW SIGNALS BEYOND CODE"
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
+              {/* Personality Types */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyber-green font-bold">ENFJ-A</span>
+                    <span className="text-gray-400">— collaborative, outcome-first</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyber-purple font-bold">Aries</span>
+                    <span className="text-gray-400">— decisive, action-first</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-cyber-orange font-bold">Fire Rabbit</span>
+                    <span className="text-gray-400">— empathetic, steady under pressure</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Vedic Chart Intro */}
+              <motion.div
+                className="border border-pink-400/30 p-8 bg-black/50 backdrop-blur-sm"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-pink-400 font-bold mb-4">Vedic chart (career lens)</h3>
+                <p className="text-gray-400 text-sm">
+                  — a brief, personal lens I use for self-reflection. It's not evidence; the proof is in the work and metrics above.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Vedic Insights */}
+            <div className="mt-8 space-y-6">
+              {/* Mission-led builder */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-cyber-cyan font-bold mb-2">Mission-led builder</h4>
+                    <p className="text-gray-300">— work that helps people at scale; comfortable with visibility.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Sun + Jupiter + Rahu in Pisces, 10th (Uttarabhadra/Revati) → public impact, big goals.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Systems thinker */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-cyber-purple font-bold mb-2">Systems thinker</h4>
+                    <p className="text-gray-300">— clear about trade-offs in distributed systems and protocols.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Mercury in Aquarius, 9th (Shatabhisha) → networks, standards, research mindset.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Fast shipper, team multiplier */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-cyber-green font-bold mb-2">Fast shipper, team multiplier</h4>
+                    <p className="text-gray-300">— executes quickly and shares tools others reuse.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Mars in Aries, 11th (Krittika) → high energy + community leverage.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Partner & evangelist */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-cyber-orange font-bold mb-2">Partner & evangelist</h4>
+                    <p className="text-gray-300">— aligns PM/Design/Eng; explains clearly; good with customers.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Moon in Sagittarius, 7th with Uranus/Neptune → collaborative, teaching/evangelism vibe.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Crisis steady */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-pink-400 font-bold mb-2">Crisis steady</h4>
+                    <p className="text-gray-300">— calm in incidents; fixes root causes and prevents repeats.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Saturn in Scorpio, 6th (Jyeshtha) → depth, discipline under pressure.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Reset → upgrade */}
+              <motion.div
+                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.55 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h4 className="text-cyber-yellow font-bold mb-2">Reset → upgrade</h4>
+                    <p className="text-gray-300">— periodic declutter/retooling leads to better versions.</p>
+                  </div>
+                  <div className="md:max-w-md">
+                    <span className="text-gray-500 text-sm italic">Why: </span>
+                    <span className="text-gray-400 text-sm">Ketu in Virgo, 4th aspecting the 10th cluster → healthy detachment → reinvention.</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Footer Note */}
+            <motion.div
+              className="mt-12 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+            >
+              <p className="text-gray-500 italic text-sm">
+                *Fun signals I identify with; I still lead with data and delivery.*
+              </p>
+            </motion.div>
+          </motion.div>
+        </section>
+
         {/* CV Download */}
         <section className="scroll-section min-h-screen flex items-center justify-center py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
@@ -1262,7 +1454,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="08" 
+              number="09" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
