@@ -247,7 +247,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'SNAPSHOT', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'PLAYBOOK', 'SNAPSHOT', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -1253,7 +1253,7 @@ export default function WorkPage() {
           </motion.div>
         </section>
 
-        {/* Snapshot Section */}
+        {/* Playbook Section */}
         <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="max-w-7xl mx-auto"
@@ -1263,6 +1263,96 @@ export default function WorkPage() {
           >
             <SectionTitle 
               number="08" 
+              title="PLAYBOOK" 
+              subtitle="HOW I WORK"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              {/* Cadence */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 255, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-cyber-cyan mb-6">Cadence:</h3>
+                  <div className="space-y-4 text-gray-300">
+                    <div>
+                      <span className="text-cyber-green">•</span> 3 deep-work blocks/day at ~70% effort 
+                      <span className="text-gray-500 block text-sm mt-1">(sustainable pace)</span>
+                    </div>
+                    <div>
+                      <span className="text-cyber-green">•</span> Weekly <span className="font-bold text-cyber-yellow">1–3 main deliverables</span> with clear acceptance criteria
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Definition of Done */}
+              <motion.div
+                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-cyber-purple mb-6">Definition of Done:</h3>
+                  <div className="space-y-4 text-gray-300">
+                    <div>
+                      <span className="text-cyber-green">•</span> Tests green (unit + integration), perf check, docs updated
+                    </div>
+                    <div>
+                      <span className="text-cyber-green">•</span> Logging/metrics in place; rollback plan ready
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Collaboration Contract */}
+              <motion.div
+                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 136, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-cyber-green mb-6">Collaboration Contract:</h3>
+                  <div className="space-y-4 text-gray-300">
+                    <div>
+                      <span className="text-cyber-orange font-semibold">PM/Design:</span> 
+                      <span className="block mt-1">1-page problem spec before building</span>
+                    </div>
+                    <div>
+                      <span className="text-cyber-orange font-semibold">Eng:</span>
+                      <span className="block mt-1">small PRs, async-friendly reviews, pair programming</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Snapshot Section */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <motion.div
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="09" 
               title="SNAPSHOT" 
               subtitle="A FEW SIGNALS BEYOND CODE"
             />
@@ -1454,7 +1544,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="09" 
+              number="10" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
