@@ -249,7 +249,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'THEMES', 'GAPS', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -646,7 +646,7 @@ export default function WorkPage() {
           <WorkExperienceSection />
         </section>
 
-        {/* Engineering Themes */}
+        {/* Builds Section */}
         <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="max-w-7xl mx-auto"
@@ -656,6 +656,131 @@ export default function WorkPage() {
           >
             <SectionTitle 
               number="03" 
+              title="BUILDS" 
+              subtitle="SMALL TOOLS AND MVPS. SHIPPED FAST."
+            />
+
+            <div className="space-y-8 mt-16">
+              {/* SignZen */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(0, 255, 255, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-cyan mb-2">SignZen</h3>
+                      <p className="text-gray-400">pay-per-unique-gaze ads (Web/IoT)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="text-cyber-green font-semibold">Stack:</span>
+                    <span className="text-gray-300 ml-2">Python, Node.js, React, TensorFlow/Keras/PyTorch, VLC, HDF5, Firebase, Heroku, Git.</span>
+                  </div>
+                  
+                  <div className="border-t border-cyber-cyan/20 pt-4">
+                    <span className="text-cyber-yellow font-semibold">Note:</span>
+                    <span className="text-gray-300 ml-2">
+                      MVP targeted <span className="text-cyber-yellow font-bold">16,000 in-transit</span> and 
+                      <span className="text-cyber-yellow font-bold"> 100 indoor</span> displays. 
+                      Disbanded after founder realignment.
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* KyoZen */}
+              <motion.div
+                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-purple mb-2">KyoZen</h3>
+                      <p className="text-gray-400">party matching for e-sports (Web)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="text-cyber-green font-semibold">Stack:</span>
+                    <span className="text-gray-300 ml-2">Node.js, React, Firebase, Heroku, Git, Bitbucket.</span>
+                  </div>
+                  
+                  <div className="border-t border-cyber-purple/20 pt-4">
+                    <span className="text-cyber-yellow font-semibold">Note:</span>
+                    <span className="text-gray-300 ml-2">quick team formation; simple matchmaking loops.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* PageBoy */}
+              <motion.div
+                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(0, 255, 136, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-cyber-green mb-2">PageBoy</h3>
+                      <p className="text-gray-400">QR ordering for physical stores (Web)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="text-cyber-green font-semibold">Stack:</span>
+                    <span className="text-gray-300 ml-2">Node.js, AngularJS, Firebase, Bootstrap, Heroku, Git.</span>
+                  </div>
+                  
+                  <div className="border-t border-cyber-green/20 pt-4">
+                    <span className="text-cyber-yellow font-semibold">Note:</span>
+                    <span className="text-gray-300 ml-2">menu → order → notify; fast setup for small shops.</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* More projects note */}
+              <motion.div
+                className="mt-8 text-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <p className="text-gray-500 italic">
+                  <span className="text-cyber-yellow">→</span> More projects on downloadable CV.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Engineering Themes */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <motion.div
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="04" 
               title="ENGINEERING THEMES" 
               subtitle="PERSONAL REFLECTION ON HOW I ADD VALUE"
             />
@@ -781,141 +906,251 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="04" 
+              number="05" 
               title="GAPS" 
               subtitle="KNOWN GAPS AND ACTIVE FIXES"
             />
 
-            <div className="space-y-6 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
               {/* Avoiding overwork */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-cyan/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 255, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyber-cyan mb-2">
-                      <span className="text-gray-500 mr-2">1)</span> Avoiding overwork
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> 3 focused blocks/day, planned breaks, capacity cap
-                    <span className="text-cyber-yellow ml-2">→ steady pace</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-cyan mb-3">Avoiding overwork</h3>
+                  <p className="text-gray-300 text-sm">
+                    3 focused blocks/day, planned breaks, capacity cap 
+                    <span className="text-cyber-yellow font-bold"> → steady pace</span>
+                  </p>
                 </div>
               </motion.div>
 
               {/* Asking for help earlier */}
               <motion.div
-                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-purple/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyber-purple mb-2">
-                      <span className="text-gray-500 mr-2">2)</span> Asking for help earlier
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> call risks in week 1, share a short RFC
-                    <span className="text-cyber-yellow ml-2">→ faster decisions</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-purple mb-3">Asking for help earlier</h3>
+                  <p className="text-gray-300 text-sm">
+                    call risks in week 1, share a short RFC
+                    <span className="text-cyber-yellow font-bold"> → faster decisions</span>
+                  </p>
                 </div>
               </motion.div>
 
               {/* Aligning before building */}
               <motion.div
-                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-green/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 136, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyber-green mb-2">
-                      <span className="text-gray-500 mr-2">3)</span> Aligning before building
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> 1-page brief, early demo
-                    <span className="text-cyber-yellow ml-2">→ fewer reworks</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-green mb-3">Aligning before building</h3>
+                  <p className="text-gray-300 text-sm">
+                    1-page brief, early demo
+                    <span className="text-cyber-yellow font-bold"> → fewer reworks</span>
+                  </p>
                 </div>
               </motion.div>
 
               {/* Protecting focus */}
               <motion.div
-                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-orange/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 140, 0, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyber-orange mb-2">
-                      <span className="text-gray-500 mr-2">4)</span> Protecting focus
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> 1–3 goals/week, public done list, time-boxed spikes
-                    <span className="text-cyber-yellow ml-2">→ consistent progress</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-orange mb-3">Protecting focus</h3>
+                  <p className="text-gray-300 text-sm">
+                    1–3 goals/week, public done list, time-boxed spikes
+                    <span className="text-cyber-yellow font-bold"> → consistent progress</span>
+                  </p>
                 </div>
               </motion.div>
 
               {/* Infra specialization */}
               <motion.div
-                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm hover:border-pink-400/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 105, 180, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-pink-400 mb-2">
-                      <span className="text-gray-500 mr-2">5)</span> Infra specialization
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> partner with SREs; own CI/tests/observability; write runbooks
-                    <span className="text-cyber-yellow ml-2">→ clear ownership</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-pink-400 mb-3">Infra specialization</h3>
+                  <p className="text-gray-300 text-sm">
+                    partner with SREs; own CI/tests/observability; write runbooks
+                    <span className="text-cyber-yellow font-bold"> → clear ownership</span>
+                  </p>
                 </div>
               </motion.div>
 
               {/* Design & accessibility depth */}
               <motion.div
-                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-yellow/50 transition-all group"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6 }}
-                whileHover={{ x: 10 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 204, 0, 0.6)' }}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyber-yellow mb-2">
-                      <span className="text-gray-500 mr-2">6)</span> Design & accessibility depth
-                    </h3>
-                  </div>
-                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
-                    <span className="text-cyber-green">→</span> a11y checklist, Lighthouse runs, quick review
-                    <span className="text-cyber-yellow ml-2">→ clean, usable UI</span>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-yellow mb-3">Design & accessibility depth</h3>
+                  <p className="text-gray-300 text-sm">
+                    a11y checklist, Lighthouse runs, quick review
+                    <span className="text-cyber-yellow font-bold"> → clean, usable UI</span>
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Edge Section */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <motion.div
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="06" 
+              title="EDGE" 
+              subtitle="WHAT I DO BEST, WITH PROOF"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+              {/* Deliver under deadline */}
+              <motion.div
+                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 136, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-green mb-3">Deliver under deadline</h3>
+                  <p className="text-gray-300 text-sm">
+                    features tied to <span className="text-cyber-yellow font-bold">&gt;$1M</span> in deals
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Make teams faster */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 255, 255, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-cyan mb-3">Make teams faster</h3>
+                  <p className="text-gray-300 text-sm">
+                    <span className="text-cyber-yellow font-bold">600%</span> faster tests; 
+                    <span className="text-cyber-yellow font-bold"> hours → seconds</span> integration loop
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Enable the team */}
+              <motion.div
+                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-purple mb-3">Enable the team</h3>
+                  <p className="text-gray-300 text-sm">
+                    generator cut setup <span className="text-cyber-yellow font-bold">2 weeks → 1 minute</span>; 
+                    adopted by <span className="text-cyber-yellow font-bold">8</span> engineers; YouTube UX analysis bot
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Full-stack with test discipline */}
+              <motion.div
+                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 140, 0, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-orange mb-3">Full-stack with test discipline</h3>
+                  <p className="text-gray-300 text-sm">
+                    TypeScript/Node/React + GraphQL + CI; Started career with TDD Java stack
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Bias to ship */}
+              <motion.div
+                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 105, 180, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-pink-400 mb-3">Bias to ship</h3>
+                  <p className="text-gray-300 text-sm">
+                    ensured time-sensitive delivery; founder experience; shipped side projects
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Remote-ready */}
+              <motion.div
+                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(255, 204, 0, 0.6)' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyber-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-cyber-yellow mb-3">Remote-ready</h3>
+                  <p className="text-gray-300 text-sm">
+                    async delivery across time zones
+                  </p>
                 </div>
               </motion.div>
             </div>
@@ -933,7 +1168,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="05" 
+              number="07" 
               title="TECHNICAL ARSENAL" 
               subtitle="TOOLS OF THE TRADE"
             />
@@ -957,7 +1192,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="06" 
+              number="08" 
               title="PET PROJECTS" 
               subtitle="EXPERIMENTS IN CODE"
             />
@@ -979,7 +1214,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="07" 
+              number="09" 
               title="TESTIMONIALS" 
               subtitle="WORDS FROM COLLEAGUES"
             />
@@ -999,7 +1234,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="08" 
+              number="10" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
