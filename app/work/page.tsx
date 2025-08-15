@@ -16,6 +16,7 @@ export default function WorkPage() {
   const [activeSection, setActiveSection] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMobile, setIsMobile] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   
   const { scrollYProgress } = useScroll({
@@ -73,6 +74,14 @@ export default function WorkPage() {
     router.push('/?skipSplash=true')
   }
 
+  const scrollToSection = (index: number) => {
+    const sections = document.querySelectorAll('.scroll-section')
+    if (sections[index]) {
+      sections[index].scrollIntoView({ behavior: 'smooth' })
+      setMobileMenuOpen(false)
+    }
+  }
+
   // Parallax transforms
   const heroY = useTransform(scrollSpring, [0, 0.2], [0, -100])
   const heroOpacity = useTransform(scrollSpring, [0, 0.15], [1, 0])
@@ -88,10 +97,118 @@ export default function WorkPage() {
           style={{ scaleX: scrollSpring }}
         />
 
+        {/* Mobile Navigation */}
+        <div className="lg:hidden">
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="fixed top-4 right-4 z-50 p-3 bg-black/80 backdrop-blur-sm border border-cyber-cyan/30 hover:border-cyber-cyan/60 transition-all"
+            aria-label="Toggle menu"
+          >
+            <motion.div
+              animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-1.5"
+            >
+              <motion.span 
+                className="block w-6 h-0.5 bg-cyber-cyan"
+                animate={{ 
+                  rotate: mobileMenuOpen ? 45 : 0,
+                  y: mobileMenuOpen ? 6 : 0
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                className="block w-6 h-0.5 bg-cyber-cyan"
+                animate={{ 
+                  opacity: mobileMenuOpen ? 0 : 1
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span 
+                className="block w-6 h-0.5 bg-cyber-cyan"
+                animate={{ 
+                  rotate: mobileMenuOpen ? -45 : 0,
+                  y: mobileMenuOpen ? -6 : 0
+                }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          </button>
+
+          {/* Mobile Menu Drawer */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <>
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                  onClick={() => setMobileMenuOpen(false)}
+                />
+                
+                {/* Menu Drawer */}
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '100%' }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                  className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-md border-l border-cyber-cyan/30 z-50 overflow-y-auto"
+                >
+                  <div className="p-6 pt-20">
+                    <h2 className="text-cyber-cyan font-bold text-xl mb-6">Navigation</h2>
+
+                    {/* Section Links */}
+                    <div className="space-y-2">
+                      {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'PLAYBOOK', 'SNAPSHOT', 'CONTACT'].map((label, i) => (
+                        <button
+                          key={label}
+                          onClick={() => scrollToSection(i)}
+                          className={`w-full text-left px-4 py-3 border transition-all ${
+                            activeSection === i 
+                              ? 'border-cyber-cyan bg-cyber-cyan/10 text-cyber-cyan' 
+                              : 'border-gray-800 hover:border-cyber-cyan/50 hover:bg-cyber-cyan/5 text-gray-400 hover:text-cyber-cyan'
+                          }`}
+                        >
+                          <span className="flex items-center gap-3">
+                            <span className={`text-xs font-mono ${activeSection === i ? 'text-cyber-cyan' : 'text-gray-600'}`}>
+                              {String(i).padStart(2, '0')}
+                            </span>
+                            <span className="font-semibold">{label}</span>
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* CV Download in Menu */}
+                    <div className="mt-8 pt-8 border-t border-gray-800">
+                      <button
+                        onClick={() => {
+                          const link = document.createElement('a')
+                          link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                          link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                          link.click()
+                          setMobileMenuOpen(false)
+                        }}
+                        className="w-full px-4 py-3 bg-cyber-green/10 border border-cyber-green/50 text-cyber-green hover:bg-cyber-green/20 transition-all font-bold flex items-center justify-center gap-2"
+                      >
+                        <ArrowDownTrayIcon className="w-5 h-5" />
+                        Download CV
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'PLAYBOOK', 'SNAPSHOT', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'BUILDS', 'THEMES', 'GAPS', 'EDGE', 'TESTIMONIALS', 'PLAYBOOK', 'SNAPSHOT', 'CONTACT'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
