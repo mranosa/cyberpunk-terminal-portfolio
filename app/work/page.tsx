@@ -530,50 +530,50 @@ export default function WorkPage() {
 
               {/* BEN - 600% faster test runtime */}
               <motion.div
-                className="border border-cyber-purple/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                whileHover={{ scale: 1.01, borderColor: 'rgba(157, 0, 255, 0.6)' }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(245, 158, 11, 0.6)' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-4">
                     <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-cyber-purple mb-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-amber-500 mb-2">
                         BEN [Remote] — 600% faster test runtime
                       </h3>
                       <p className="text-gray-400 text-xs sm:text-sm">Software Engineer in Test • Apr 2016–Jun 2019</p>
                     </div>
                     <div className="flex-shrink-0 text-left lg:text-right">
-                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyber-purple">600%</span>
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-500">600%</span>
                       <p className="text-gray-400 text-xs">faster runtime</p>
                     </div>
                   </div>
                   <ul className="space-y-2 text-gray-300 mb-4">
                     <li className="flex items-start">
-                      <span className="text-cyber-purple mr-2">▸</span>
+                      <span className="text-amber-500 mr-2">▸</span>
                       Refactored slow, flaky suites
                     </li>
                     <li className="flex items-start">
-                      <span className="text-cyber-purple mr-2">▸</span>
+                      <span className="text-amber-500 mr-2">▸</span>
                       Faster releases. Clearer signals
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">JavaScript</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Node.js</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">WebDriverIO</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Protractor</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Jasmine</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Mocha</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">Chakram</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">MongoDB</span>
-                    <span className="text-xs border border-cyber-purple/20 px-2 py-2 text-gray-500">CI</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">JavaScript</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">Node.js</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">WebDriverIO</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">Protractor</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">Jasmine</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">Mocha</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">Chakram</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">MongoDB</span>
+                    <span className="text-xs border border-amber-500/20 px-2 py-2 text-gray-500">CI</span>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-cyber-purple/20">
-                    <p className="text-cyber-purple font-semibold">
+                  <div className="mt-4 pt-4 border-t border-amber-500/20">
+                    <p className="text-amber-500 font-semibold">
                       Result: 600% faster runtime. Faster releases. Clearer signals.
                     </p>
                   </div>
@@ -666,18 +666,18 @@ export default function WorkPage() {
 
               {/* KyoZen */}
               <motion.div
-                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                whileHover={{ scale: 1.01, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(245, 158, 11, 0.6)' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-cyber-purple mb-2">KyoZen</h3>
+                      <h3 className="text-2xl font-bold text-amber-500 mb-2">KyoZen</h3>
                       <p className="text-gray-400">party matching for e-sports (Web)</p>
                     </div>
                   </div>
@@ -687,7 +687,7 @@ export default function WorkPage() {
                     <span className="text-gray-300 ml-2">Node.js, React, Firebase, Heroku, Git, Bitbucket.</span>
                   </div>
                   
-                  <div className="border-t border-cyber-purple/20 pt-4">
+                  <div className="border-t border-amber-500/20 pt-4">
                     <span className="text-cyber-yellow font-semibold">Note:</span>
                     <span className="text-gray-300 ml-2">quick team formation; simple matchmaking loops.</span>
                   </div>
@@ -739,11 +739,11 @@ export default function WorkPage() {
                     link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
                     link.click()
                   }}
-                  className="group relative px-8 py-4 border-2 border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-black transition-all duration-300 font-bold"
+                  className="group relative px-8 py-4 border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black transition-all duration-300 font-bold"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="absolute inset-0 bg-cyber-purple transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <div className="absolute inset-0 bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   <span className="relative flex items-center gap-3">
                     <ArrowDownTrayIcon className="w-5 h-5" />
                     Download CV for More Projects
@@ -794,14 +794,14 @@ export default function WorkPage() {
 
               {/* Systems thinker */}
               <motion.div
-                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-purple/50 transition-all"
+                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm hover:border-amber-500/60 transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <h3 className="text-xl font-bold text-cyber-purple mb-3">Systems thinker</h3>
+                <h3 className="text-xl font-bold text-amber-500 mb-3">Systems thinker</h3>
                 <p className="text-gray-300 mb-3">Clear trade-offs (consistency/latency/cost).</p>
                 <div className="text-sm">
                   <span className="text-cyber-green font-semibold">Proof:</span>
@@ -916,16 +916,16 @@ export default function WorkPage() {
 
               {/* Asking for help earlier */}
               <motion.div
-                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(245, 158, 11, 0.6)' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <h3 className="text-lg font-bold text-cyber-purple mb-3">Asking for help earlier</h3>
+                  <h3 className="text-lg font-bold text-amber-500 mb-3">Asking for help earlier</h3>
                   <p className="text-gray-300 text-sm">
                     call risks in week 1, share a short RFC
                     <span className="text-cyber-yellow font-bold"> → faster decisions</span>
@@ -1066,16 +1066,16 @@ export default function WorkPage() {
 
               {/* Enable the team */}
               <motion.div
-                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(245, 158, 11, 0.6)' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <h3 className="text-lg font-bold text-cyber-purple mb-3">Enable the team</h3>
+                  <h3 className="text-lg font-bold text-amber-500 mb-3">Enable the team</h3>
                   <p className="text-gray-300 text-sm">
                     generator cut setup <span className="text-cyber-yellow font-bold">2 weeks → 1 minute</span>; 
                     adopted by <span className="text-cyber-yellow font-bold">8</span> engineers; YouTube UX analysis bot
@@ -1259,16 +1259,16 @@ export default function WorkPage() {
 
               {/* Definition of Done */}
               <motion.div
-                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                whileHover={{ scale: 1.02, borderColor: 'rgba(147, 112, 219, 0.6)' }}
+                whileHover={{ scale: 1.02, borderColor: 'rgba(245, 158, 11, 0.6)' }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-cyber-purple mb-6">Definition of Done:</h3>
+                  <h3 className="text-xl font-bold text-amber-500 mb-6">Definition of Done:</h3>
                   <div className="space-y-4 text-gray-300">
                     <div>
                       <span className="text-cyber-green">•</span> Tests green (unit + integration), perf check, docs updated
@@ -1581,13 +1581,13 @@ export default function WorkPage() {
                       href="https://www.linkedin.com/in/mranosa/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/item flex flex-col items-center p-4 border border-cyber-purple/20 bg-black/40 hover:border-cyber-purple/50 transition-all duration-300"
+                      className="group/item flex flex-col items-center p-4 border border-amber-500/30 bg-black/50 hover:border-amber-500/60 transition-all duration-300"
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
-                      <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-purple/30 group-hover/item:border-cyber-purple/60 transition-colors">
-                        <span className="text-cyber-purple text-xl font-bold">in</span>
+                      <div className="w-12 h-12 mb-3 flex items-center justify-center border border-amber-500/40 group-hover/item:border-amber-500/70 transition-colors">
+                        <span className="text-amber-500 text-xl font-bold">in</span>
                       </div>
-                      <span className="text-cyber-purple font-semibold text-sm mb-1">LinkedIn</span>
+                      <span className="text-amber-500 font-semibold text-sm mb-1">LinkedIn</span>
                       <span className="text-gray-400 text-xs text-center group-hover/item:text-gray-300 transition-colors">
                         /in/mranosa
                       </span>
@@ -1596,7 +1596,7 @@ export default function WorkPage() {
                     {/* Calendar */}
                     <motion.a 
                       href="#"
-                      className="group/item flex flex-col items-center p-4 border border-cyber-orange/20 bg-black/40 hover:border-cyber-orange/50 transition-all duration-300"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-orange/30 bg-black/50 hover:border-cyber-orange/60 transition-all duration-300"
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
                       <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-orange/30 group-hover/item:border-cyber-orange/60 transition-colors">
