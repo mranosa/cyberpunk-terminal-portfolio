@@ -1804,6 +1804,7 @@ function TypewriterText({ text }: { text: string }) {
 function TestimonialMarquee() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [showAllMobile, setShowAllMobile] = useState(false)
   
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768)
@@ -1819,19 +1820,56 @@ function TestimonialMarquee() {
   
   // For mobile, show static grid instead of marquee
   if (isMobile) {
+    const visibleRecommendations = showAllMobile ? recommendations : recommendations.slice(0, 3)
+    const hasMore = recommendations.length > 3
+    
     return (
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 gap-4">
-          {recommendations.map((rec) => (
-            <TestimonialCard 
-              key={rec.id} 
-              rec={rec} 
-              onHover={() => {}}
-              cardId={rec.id}
-              isMobileGrid={true}
-            />
-          ))}
+          <AnimatePresence mode="wait">
+            {visibleRecommendations.map((rec, index) => (
+              <motion.div
+                key={rec.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ 
+                  delay: index * 0.1,
+                  duration: 0.3
+                }}
+              >
+                <TestimonialCard 
+                  rec={rec} 
+                  onHover={() => {}}
+                  cardId={rec.id}
+                  isMobileGrid={true}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+        
+        {hasMore && (
+          <motion.div 
+            className="mt-6 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <button
+              onClick={() => setShowAllMobile(!showAllMobile)}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-cyber-cyan/50 text-cyber-cyan hover:bg-cyber-cyan/10 transition-all duration-300"
+            >
+              <span>{showAllMobile ? 'Show Less' : `Show ${recommendations.length - 3} More`}</span>
+              <motion.span
+                animate={{ rotate: showAllMobile ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                ↓
+              </motion.span>
+            </button>
+          </motion.div>
+        )}
       </div>
     )
   }
