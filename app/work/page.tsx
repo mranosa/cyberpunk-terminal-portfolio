@@ -15,16 +15,8 @@ export default function WorkPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeSection, setActiveSection] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  
-  // Drag hint states
-  const [showScrollHint, setShowScrollHint] = useState(false)
-  const [isScrollable, setIsScrollable] = useState(false)
-  const [isDragging, setIsDragging] = useState(false)
-  const [dragStartY, setDragStartY] = useState(0)
-  const [dragStartScrollTop, setDragStartScrollTop] = useState(0)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
-  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -34,50 +26,6 @@ export default function WorkPage() {
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 }
   const scrollSpring = useSpring(scrollYProgress, springConfig)
 
-  // Check if page is scrollable
-  const checkScrollable = () => {
-    const isPageScrollable = document.documentElement.scrollHeight > window.innerHeight
-    setIsScrollable(isPageScrollable)
-    
-    if (isPageScrollable && window.innerWidth <= 768) {
-      // Show hint on mobile devices when scrollable
-      showHintWithAutoHide()
-    }
-  }
-
-  // Auto-hide scroll hint after 3 seconds of inactivity
-  const scheduleHideHint = () => {
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current)
-    }
-    
-    hideTimeoutRef.current = setTimeout(() => {
-      if (!isDragging) {
-        setShowScrollHint(false)
-      }
-    }, 3000)
-  }
-
-  // Show hint and schedule auto-hide
-  const showHintWithAutoHide = () => {
-    setShowScrollHint(true)
-    scheduleHideHint()
-  }
-
-  // Handle drag start
-  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
-    setIsDragging(true)
-    setDragStartY(clientY)
-    setDragStartScrollTop(window.scrollY)
-    setShowScrollHint(true)
-    
-    if (hideTimeoutRef.current) {
-      clearTimeout(hideTimeoutRef.current)
-    }
-    
-    e.preventDefault()
-  }
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -87,48 +35,18 @@ export default function WorkPage() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  // Handle drag movement
+  // Check if mobile
   useEffect(() => {
-    const handleMove = (e: MouseEvent | TouchEvent) => {
-      if (!isDragging) return
-      
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
-      const deltaY = clientY - dragStartY
-      const scrollRatio = deltaY / window.innerHeight
-      const newScrollTop = dragStartScrollTop + (scrollRatio * document.documentElement.scrollHeight)
-      
-      window.scrollTo({
-        top: Math.max(0, Math.min(document.documentElement.scrollHeight - window.innerHeight, newScrollTop)),
-        behavior: 'auto'
-      })
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
     }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
-    const handleEnd = () => {
-      setIsDragging(false)
-      scheduleHideHint()
-    }
 
-    if (isDragging) {
-      document.addEventListener('mousemove', handleMove)
-      document.addEventListener('mouseup', handleEnd)
-      document.addEventListener('touchmove', handleMove)
-      document.addEventListener('touchend', handleEnd)
-      
-      document.body.style.cursor = 'grabbing'
-      document.body.style.userSelect = 'none'
-    }
-
-    return () => {
-      document.removeEventListener('mousemove', handleMove)
-      document.removeEventListener('mouseup', handleEnd)
-      document.removeEventListener('touchmove', handleMove)
-      document.removeEventListener('touchend', handleEnd)
-      document.body.style.cursor = ''
-      document.body.style.userSelect = ''
-    }
-  }, [isDragging, dragStartY, dragStartScrollTop])
-
-  // Update active section and scroll progress
+  // Update active section
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.scroll-section')
@@ -143,47 +61,13 @@ export default function WorkPage() {
           setActiveSection(index)
         }
       })
-      
-      // Calculate scroll progress for drag hint position
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
-      const currentScroll = window.scrollY
-      const progress = Math.min(1, Math.max(0, currentScroll / scrollHeight))
-      setScrollProgress(progress)
-      
-      // Show hint on scroll if on mobile
-      if (isScrollable && window.innerWidth <= 768) {
-        showHintWithAutoHide()
-      }
     }
 
     window.addEventListener('scroll', handleScroll)
     handleScroll() // Initial check
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isScrollable])
-
-  // Check scrollable on mount and resize
-  useEffect(() => {
-    const handleResize = () => {
-      checkScrollable()
-      setIsMobile(window.innerWidth <= 768)
-    }
-    
-    // Initial check
-    checkScrollable()
-    setIsMobile(window.innerWidth <= 768)
-    
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Clean up timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current)
-      }
-    }
-  }, [])
 
   const handleBackToTerminal = () => {
     router.push('/?skipSplash=true')
@@ -204,46 +88,6 @@ export default function WorkPage() {
           style={{ scaleX: scrollSpring }}
         />
 
-        {/* Drag Hint for Mobile */}
-        <AnimatePresence>
-          {showScrollHint && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: 1, 
-                scale: isDragging ? 1 : [1, 1.1, 1],
-              }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ 
-                duration: 0.3,
-                scale: isDragging ? {} : {
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 1.5
-                }
-              }}
-              className="fixed right-4 z-40 md:hidden transition-[top] duration-100 ease-out"
-              style={{ 
-                top: `${Math.max(10, Math.min(90, 10 + scrollProgress * 80))}%`,
-                cursor: isDragging ? 'grabbing' : 'grab',
-                touchAction: 'none'
-              }}
-              onMouseDown={handleDragStart}
-              onTouchStart={handleDragStart}
-            >
-              <div className="bg-cyber-cyan/20 backdrop-blur-md border border-cyber-cyan/50 rounded-full px-4 py-2 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:bg-cyber-cyan/30 transition-colors">
-                <span className="text-xs font-mono text-cyber-cyan whitespace-nowrap select-none">
-                  ↕ Drag Me
-                </span>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Scroll Track Indicator for Mobile (optional visual aid) */}
-        {isScrollable && isMobile && (
-          <div className="fixed right-6 top-[10%] bottom-[10%] w-px bg-gray-800/30 z-30 md:hidden" />
-        )}
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
