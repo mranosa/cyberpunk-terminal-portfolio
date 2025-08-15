@@ -308,7 +308,7 @@ export default function WorkPage() {
             <div className="space-y-8 mt-16">
               {/* Formative - Deal-closing delivery */}
               <motion.div
-                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -317,15 +317,15 @@ export default function WorkPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-cyber-green mb-2">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-cyber-green mb-2">
                         Formative [Remote] — deal-closing delivery
                       </h3>
-                      <p className="text-gray-400 text-sm">Software Engineer • Feb 2021–Jun 2025 (acquired May 2023)</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">Software Engineer • Feb 2021–Jun 2025 (acquired May 2023)</p>
                     </div>
-                    <div className="mt-4 md:mt-0">
-                      <span className="text-4xl md:text-5xl font-bold text-cyber-green">&gt;$1M</span>
+                    <div className="flex-shrink-0">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyber-green">&gt;$1M</span>
                       <p className="text-gray-400 text-xs">in deals closed</p>
                     </div>
                   </div>
@@ -339,12 +339,12 @@ export default function WorkPage() {
                       Demo-first reviews. Parallel test envs to cut risk
                     </li>
                   </ul>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">TypeScript</span>
-                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">Node.js</span>
-                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">React</span>
-                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">GraphQL</span>
-                    <span className="text-xs border border-cyber-green/20 px-2 py-2 text-gray-500">MongoDB</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                    <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">TypeScript</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">Node.js</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">React</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">GraphQL</span>
+                    <span className="text-xs border border-cyber-green/20 px-2 py-1 sm:py-2 text-gray-500">MongoDB</span>
                   </div>
                   <div className="mt-4 pt-4 border-t border-cyber-green/20">
                     <p className="text-cyber-green font-semibold">
@@ -356,7 +356,7 @@ export default function WorkPage() {
 
               {/* PearlPay - Integration tests in seconds */}
               <motion.div
-                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -365,15 +365,15 @@ export default function WorkPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-cyber-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-cyber-cyan mb-2">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-cyber-cyan mb-2">
                         PearlPay [On-Site] — integration tests in seconds
                       </h3>
-                      <p className="text-gray-400 text-sm">Senior Software Engineer • Nov 2019–Sep 2020</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">Senior Software Engineer • Nov 2019–Sep 2020</p>
                     </div>
-                    <div className="mt-4 md:mt-0 text-right">
-                      <span className="text-4xl md:text-5xl font-bold text-cyber-cyan">hours→seconds</span>
+                    <div className="flex-shrink-0 text-left lg:text-right">
+                      <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-cyber-cyan">hours→seconds</span>
                       <p className="text-gray-400 text-xs">per test run</p>
                     </div>
                   </div>
@@ -409,7 +409,7 @@ export default function WorkPage() {
 
               {/* BEN - 600% faster test runtime */}
               <motion.div
-                className="border border-cyber-purple/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-purple/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -418,15 +418,15 @@ export default function WorkPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-cyber-purple mb-2">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-cyber-purple mb-2">
                         BEN [Remote] — 600% faster test runtime
                       </h3>
-                      <p className="text-gray-400 text-sm">Software Engineer in Test • Apr 2016–Jun 2019</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">Software Engineer in Test • Apr 2016–Jun 2019</p>
                     </div>
-                    <div className="mt-4 md:mt-0 text-right">
-                      <span className="text-4xl md:text-5xl font-bold text-cyber-purple">600%</span>
+                    <div className="flex-shrink-0 text-left lg:text-right">
+                      <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-cyber-purple">600%</span>
                       <p className="text-gray-400 text-xs">faster runtime</p>
                     </div>
                   </div>
