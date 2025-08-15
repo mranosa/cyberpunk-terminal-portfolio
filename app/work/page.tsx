@@ -1,12 +1,12 @@
 'use client'
 
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring, useInView, useAnimation } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { workExperience } from '@/components/terminal/data/workExperience'
 import { recommendations } from '@/components/terminal/data/recommendations'
 import MatrixRain from '@/components/MatrixRainWrapper'
 import { ArrowLeftIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
-import { StarIcon, LinkIcon } from '@heroicons/react/24/solid'
+import { LinkIcon } from '@heroicons/react/24/solid'
 import { useRef, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 
@@ -1194,6 +1194,63 @@ export default function WorkPage() {
           <div className="mt-16 relative">
             <TestimonialMarquee />
           </div>
+          
+          {/* What this signals to hiring managers */}
+          <motion.div
+            className="mt-16 max-w-4xl mx-auto px-4 md:px-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm">
+              <h3 className="text-xl font-bold text-cyber-cyan mb-6">What this signals to hiring managers:</h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <span className="text-cyber-green font-bold mr-3">Speed:</span>
+                  <span className="text-gray-300">
+                    repeatedly trusted with urgent work; fast learner; shortens feedback loops
+                  </span>
+                </div>
+                
+                <div className="flex items-start">
+                  <span className="text-cyber-purple font-bold mr-3">Results:</span>
+                  <span className="text-gray-300">
+                    revenue impact, defect discovery during refactors, measurable test/CI wins
+                  </span>
+                </div>
+                
+                <div className="flex items-start">
+                  <span className="text-cyber-orange font-bold mr-3">Likeability:</span>
+                  <span className="text-gray-300">
+                    coachable, collaborative, energizing presence on teams
+                  </span>
+                </div>
+              </div>
+              
+              {/* CTA Download Button */}
+              <div className="mt-8 pt-6 border-t border-cyber-cyan/20 flex justify-center">
+                <motion.button
+                  onClick={() => {
+                    const link = document.createElement('a')
+                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
+                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.click()
+                  }}
+                  className="group relative px-8 py-4 border-2 border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all duration-300 font-bold"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="absolute inset-0 bg-cyber-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="relative flex items-center gap-3">
+                    <ArrowDownTrayIcon className="w-5 h-5" />
+                    Download CV & See Full Work History
+                  </span>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* CV Download */}
@@ -1588,20 +1645,30 @@ function TestimonialMarquee() {
   
   return (
     <div className="space-y-8 relative">
+      <style jsx>{`
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .marquee-left {
+          animation: marquee-left 30s linear infinite;
+        }
+        .marquee-right {
+          animation: marquee-right 35s linear infinite;
+        }
+        .marquee-paused {
+          animation-play-state: paused !important;
+        }
+      `}</style>
+      
       {/* First Row - Left to Right */}
       <div className="relative overflow-hidden">
-        <motion.div 
-          className="flex gap-4"
-          initial={{ x: 0 }}
-          animate={{ x: hoveredCard ? 0 : '-50%' }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 30,
-              ease: "linear",
-            },
-          }}
+        <div 
+          className={`flex gap-4 marquee-left ${hoveredCard ? 'marquee-paused' : ''}`}
           style={{ width: 'fit-content' }}
         >
           {/* Duplicate for seamless loop */}
@@ -1613,23 +1680,13 @@ function TestimonialMarquee() {
               cardId={`row1-${rec.id}-${i}`}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
       
       {/* Second Row - Right to Left */}
       <div className="relative overflow-hidden">
-        <motion.div 
-          className="flex gap-4"
-          initial={{ x: '-50%' }}
-          animate={{ x: hoveredCard ? '-50%' : 0 }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 35,
-              ease: "linear",
-            },
-          }}
+        <div 
+          className={`flex gap-4 marquee-right ${hoveredCard ? 'marquee-paused' : ''}`}
           style={{ width: 'fit-content' }}
         >
           {/* Duplicate for seamless loop */}
@@ -1641,7 +1698,7 @@ function TestimonialMarquee() {
               cardId={`row2-${rec.id}-${i}`}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   )
@@ -1720,15 +1777,6 @@ function TestimonialCard({ rec, onHover, cardId, isMobileGrid = false }: any) {
               >
                 {rec.name}
               </motion.h3>
-              <motion.div 
-                className="flex gap-1 flex-shrink-0"
-                animate={{ opacity: isHovered ? 1 : 0.7 }}
-                transition={{ duration: 0.3 }}
-              >
-                {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className="w-3 h-3 text-cyber-orange" />
-                ))}
-              </motion.div>
             </div>
             <motion.div 
               className={`text-xs text-gray-400 ${!isHovered && 'truncate'}`}

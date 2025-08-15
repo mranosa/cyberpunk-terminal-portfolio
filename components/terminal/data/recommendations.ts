@@ -163,5 +163,20 @@ export const recommendations = [
     contact: {
       linkedin: 'linkedin.com/in/giovanni-cruz-0b601055'
     }
+  },
+  {
+    id: 12,
+    name: 'Kayla Koch',
+    position: 'Product Design Manager',
+    company: 'Newsela',
+    relationship: 'Colleague',
+    duration: 'Worked together at Newsela',
+    avatar: '🎨',
+    rating: 5,
+    recommendation: 'Ken was always a pleasure to work with on both front-end and back-end tasks. He is humble, approachable, and highly communicative throughout the development process. He made a positive contribution to team culture and approached every challenge with openness and determination.',
+    skills: ['Frontend', 'Backend', 'Communication', 'Team Culture', 'Problem Solving'],
+    contact: {
+      linkedin: 'linkedin.com/in/kayla-koch'
+    }
   }
 ]
