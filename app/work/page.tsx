@@ -249,7 +249,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'THEMES', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'THEMES', 'GAPS', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -772,6 +772,156 @@ export default function WorkPage() {
           </motion.div>
         </section>
 
+        {/* Gaps Section */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <motion.div
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <SectionTitle 
+              number="04" 
+              title="GAPS" 
+              subtitle="KNOWN GAPS AND ACTIVE FIXES"
+            />
+
+            <div className="space-y-6 mt-16">
+              {/* Avoiding overwork */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-cyan/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-cyber-cyan mb-2">
+                      <span className="text-gray-500 mr-2">1)</span> Avoiding overwork
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> 3 focused blocks/day, planned breaks, capacity cap
+                    <span className="text-cyber-yellow ml-2">→ steady pace</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Asking for help earlier */}
+              <motion.div
+                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-purple/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-cyber-purple mb-2">
+                      <span className="text-gray-500 mr-2">2)</span> Asking for help earlier
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> call risks in week 1, share a short RFC
+                    <span className="text-cyber-yellow ml-2">→ faster decisions</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Aligning before building */}
+              <motion.div
+                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-green/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-cyber-green mb-2">
+                      <span className="text-gray-500 mr-2">3)</span> Aligning before building
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> 1-page brief, early demo
+                    <span className="text-cyber-yellow ml-2">→ fewer reworks</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Protecting focus */}
+              <motion.div
+                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-orange/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-cyber-orange mb-2">
+                      <span className="text-gray-500 mr-2">4)</span> Protecting focus
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> 1–3 goals/week, public done list, time-boxed spikes
+                    <span className="text-cyber-yellow ml-2">→ consistent progress</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Infra specialization */}
+              <motion.div
+                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm hover:border-pink-400/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-pink-400 mb-2">
+                      <span className="text-gray-500 mr-2">5)</span> Infra specialization
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> partner with SREs; own CI/tests/observability; write runbooks
+                    <span className="text-cyber-yellow ml-2">→ clear ownership</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Design & accessibility depth */}
+              <motion.div
+                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-yellow/50 transition-all group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ x: 10 }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-cyber-yellow mb-2">
+                      <span className="text-gray-500 mr-2">6)</span> Design & accessibility depth
+                    </h3>
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2 md:mt-0 md:text-right">
+                    <span className="text-cyber-green">→</span> a11y checklist, Lighthouse runs, quick review
+                    <span className="text-cyber-yellow ml-2">→ clean, usable UI</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </section>
+
         {/* Skills Matrix */}
         <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
           <FloatingParticles />
@@ -783,7 +933,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="04" 
+              number="05" 
               title="TECHNICAL ARSENAL" 
               subtitle="TOOLS OF THE TRADE"
             />
@@ -807,7 +957,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="05" 
+              number="06" 
               title="PET PROJECTS" 
               subtitle="EXPERIMENTS IN CODE"
             />
@@ -829,7 +979,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="06" 
+              number="07" 
               title="TESTIMONIALS" 
               subtitle="WORDS FROM COLLEAGUES"
             />
@@ -849,7 +999,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="07" 
+              number="08" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
