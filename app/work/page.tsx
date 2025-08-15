@@ -249,7 +249,7 @@ export default function WorkPage() {
 
         {/* Floating Nav Dots */}
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
-          {['INTRO', 'IMPACT', 'EXPERIENCE', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
+          {['INTRO', 'IMPACT', 'EXPERIENCE', 'THEMES', 'SKILLS', 'PROJECTS', 'TESTIMONIALS', 'DOWNLOAD'].map((label, i) => (
             <motion.div
               key={label}
               className="relative group"
@@ -643,6 +643,11 @@ export default function WorkPage() {
 
         {/* Work Experience Timeline */}
         <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
+          <WorkExperienceSection />
+        </section>
+
+        {/* Engineering Themes */}
+        <section className="scroll-section min-h-screen py-16 md:py-32 px-4 md:px-8 relative">
           <motion.div
             className="max-w-7xl mx-auto"
             initial={{ opacity: 0 }}
@@ -650,23 +655,119 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="02" 
-              title="WORK EXPERIENCE" 
-              subtitle="A DECADE AND A HALF OF INNOVATION"
+              number="03" 
+              title="ENGINEERING THEMES" 
+              subtitle="PERSONAL REFLECTION ON HOW I ADD VALUE"
             />
 
-            <div className="relative mt-16">
-              {/* Timeline Line - Left on mobile, center on desktop */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-cyan via-cyber-green to-transparent" />
+            <div className="text-center mb-12 text-gray-400">
+              <p>Simple and practical.</p>
+            </div>
 
-              {workExperience.map((job, index) => (
-                <TimelineItem
-                  key={job.id}
-                  job={job}
-                  index={index}
-                  isLeft={index % 2 === 0}
-                />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Public-impact builder */}
+              <motion.div
+                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-cyan/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-cyber-cyan mb-3">Public-impact builder</h3>
+                <p className="text-gray-300 mb-3">Work that helps people at scale.</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> Formative features tied to </span>
+                  <span className="text-cyber-yellow font-bold">&gt;$1M</span>
+                  <span className="text-gray-400"> in deals.</span>
+                </div>
+              </motion.div>
+
+              {/* Systems thinker */}
+              <motion.div
+                className="border border-cyber-purple/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-purple/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-cyber-purple mb-3">Systems thinker</h3>
+                <p className="text-gray-300 mb-3">Clear trade-offs (consistency/latency/cost).</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> reliable CI/test architecture; integration isolation.</span>
+                </div>
+              </motion.div>
+
+              {/* Team multiplier */}
+              <motion.div
+                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-green/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-cyber-green mb-3">Team multiplier</h3>
+                <p className="text-gray-300 mb-3">Execute fast. Build and share tools.</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> generator adopted by 8 engineers; reusable CI snippets.</span>
+                </div>
+              </motion.div>
+
+              {/* Partner and evangelist */}
+              <motion.div
+                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-orange/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-cyber-orange mb-3">Partner and evangelist</h3>
+                <p className="text-gray-300 mb-3">Align early. Explain clearly. Influence without authority.</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> demo-first reviews; testimonials on collaboration.</span>
+                </div>
+              </motion.div>
+
+              {/* Crisis engineer */}
+              <motion.div
+                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm hover:border-pink-400/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-pink-400 mb-3">Crisis engineer</h3>
+                <p className="text-gray-300 mb-3">Calm in incidents. Root cause. Durable fixes.</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> faster, stable tests; flake triage; preventative checks.</span>
+                </div>
+              </motion.div>
+
+              {/* Periodic reset, higher bar */}
+              <motion.div
+                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-yellow/50 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <h3 className="text-xl font-bold text-cyber-yellow mb-3">Periodic reset, higher bar</h3>
+                <p className="text-gray-300 mb-3">Declutter. Recenter. Retool.</p>
+                <div className="text-sm">
+                  <span className="text-cyber-green font-semibold">Proof:</span>
+                  <span className="text-gray-400"> sustainable cadence and the habits below.</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </section>
@@ -682,7 +783,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="03" 
+              number="04" 
               title="TECHNICAL ARSENAL" 
               subtitle="TOOLS OF THE TRADE"
             />
@@ -706,7 +807,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="04" 
+              number="05" 
               title="PET PROJECTS" 
               subtitle="EXPERIMENTS IN CODE"
             />
@@ -728,7 +829,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="05" 
+              number="06" 
               title="TESTIMONIALS" 
               subtitle="WORDS FROM COLLEAGUES"
             />
@@ -748,7 +849,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
           >
             <SectionTitle 
-              number="06" 
+              number="07" 
               title="GET MY CV" 
               subtitle="DOWNLOAD THE FULL STORY"
             />
@@ -803,6 +904,101 @@ function SectionTitle({ number, title, subtitle }: { number: string; title: stri
       <div className="text-cyber-cyan text-sm mb-2">[{number}]</div>
       <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-4 glitch-text">{title}</h2>
       <div className="text-gray-500 text-xs sm:text-sm uppercase tracking-widest px-4">{subtitle}</div>
+    </motion.div>
+  )
+}
+
+// Component: Work Experience Section
+function WorkExperienceSection() {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const visibleCount = 3
+  
+  const displayedJobs = isExpanded ? workExperience : workExperience.slice(0, visibleCount)
+  const hasMore = workExperience.length > visibleCount
+  
+  return (
+    <motion.div
+      className="max-w-7xl mx-auto"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      <SectionTitle 
+        number="02" 
+        title="WORK EXPERIENCE" 
+        subtitle="A DECADE AND A HALF OF INNOVATION"
+      />
+
+      <div className="relative mt-16">
+        {/* Timeline Line - adjusts height based on expanded state */}
+        <motion.div 
+          className="absolute left-4 md:left-1/2 top-0 w-px bg-gradient-to-b from-cyber-cyan via-cyber-green to-transparent"
+          animate={{
+            height: isExpanded ? 'auto' : '100%'
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          style={{ bottom: 0 }}
+        />
+
+        {/* Timeline Items */}
+        <AnimatePresence mode="sync">
+          {displayedJobs.map((job, index) => (
+            <TimelineItem
+              key={job.id}
+              job={job}
+              index={index}
+              isLeft={index % 2 === 0}
+            />
+          ))}
+        </AnimatePresence>
+
+        {/* Show More/Less Button */}
+        {hasMore && (
+          <motion.div
+            className="relative flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="group relative px-8 py-4 border-2 border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all duration-300 font-bold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="absolute inset-0 bg-cyber-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="relative flex items-center gap-2">
+                {isExpanded ? (
+                  <>
+                    <span>Show Less</span>
+                    <motion.span
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      ↑
+                    </motion.span>
+                  </>
+                ) : (
+                  <>
+                    <span>View {workExperience.length - visibleCount} More Positions</span>
+                    <motion.span
+                      animate={{ y: [0, 3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      ↓
+                    </motion.span>
+                  </>
+                )}
+              </span>
+              {!isExpanded && (
+                <span className="absolute -top-2 -right-2 bg-cyber-yellow text-black text-xs px-2 py-1 rounded animate-pulse">
+                  +{workExperience.length - visibleCount}
+                </span>
+              )}
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
     </motion.div>
   )
 }
@@ -909,38 +1105,6 @@ function TimelineItem({ job, index = 0, isLeft }: any) {
               {job.location} • {job.type}
             </motion.div>
             
-            {/* Achievements */}
-            <motion.div 
-              className="space-y-2 flex-grow mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: 1
-              }}
-              transition={{ 
-                duration: 0.5,
-                ease: "easeOut",
-                delay: index * 0.05
-              }}
-            >
-              {job.achievements.map((achievement: string, i: number) => (
-                <motion.div 
-                  key={i} 
-                  className="text-gray-400 text-sm"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ 
-                    opacity: 1, 
-                    x: 0
-                  }}
-                  transition={{
-                    delay: index * 0.05 + i * 0.03,
-                    duration: 0.4
-                  }}
-                >
-                  <span className="text-cyber-cyan mr-2">▸</span>
-                  {achievement}
-                </motion.div>
-              ))}
-            </motion.div>
 
             {/* Technologies */}
             <motion.div 
@@ -1192,34 +1356,6 @@ function ProjectCard({ project, index = 0 }: any) {
           {project.description}
         </motion.p>
 
-        {/* Highlights - Only visible on hover or mobile */}
-        {project.highlights && (
-          <motion.div 
-            className="space-y-2"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ 
-              opacity: (isHovered || isMobile) ? 1 : 0,
-              height: (isHovered || isMobile) ? 'auto' : 0,
-              marginBottom: (isHovered || isMobile) ? '16px' : '0px'
-            }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            {project.highlights.map((highlight: string, i: number) => (
-              <motion.div 
-                key={i} 
-                className="text-gray-500 text-xs"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ 
-                  opacity: (isHovered || isMobile) ? 1 : 0,
-                  x: (isHovered || isMobile) ? 0 : -20
-                }}
-                transition={{ delay: isHovered ? i * 0.05 : 0, duration: 0.3 }}
-              >
-                <span className="text-cyber-green">▸</span> {highlight}
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
 
         {/* Technologies - Only visible on hover or mobile, showing all */}
         <motion.div 
