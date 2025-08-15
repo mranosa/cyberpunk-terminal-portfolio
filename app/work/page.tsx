@@ -315,6 +315,15 @@ export default function WorkPage() {
               </motion.div>
 
               <motion.div
+                className="text-lg md:text-xl text-cyber-yellow font-bold mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                I ship features that help close deals and make teams faster.
+              </motion.div>
+
+              <motion.div
                 className="text-xl md:text-2xl text-gray-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
