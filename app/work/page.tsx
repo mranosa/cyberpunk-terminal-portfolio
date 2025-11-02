@@ -429,7 +429,8 @@ export default function WorkPage() {
             <div className="space-y-8 mt-16">
               {/* Formative - Deal-closing delivery */}
               <motion.div
-                className="border border-cyber-green/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -473,7 +474,8 @@ export default function WorkPage() {
 
               {/* PearlPay - Integration tests in seconds */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -522,7 +524,8 @@ export default function WorkPage() {
 
               {/* BEN - 600% faster test runtime */}
               <motion.div
-                className="border border-amber-500/40 p-6 sm:p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 sm:p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -620,7 +623,8 @@ export default function WorkPage() {
             <div className="space-y-8 mt-16">
               {/* SignZen */}
               <motion.div
-                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -654,7 +658,8 @@ export default function WorkPage() {
 
               {/* KyoZen */}
               <motion.div
-                className="border border-amber-500/40 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -684,7 +689,8 @@ export default function WorkPage() {
 
               {/* PageBoy */}
               <motion.div
-                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -763,7 +769,8 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Public-impact builder */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-cyan/50 transition-all"
+                className="border border-cyber-cyan/30 p-6 backdrop-blur-sm hover:border-cyber-cyan/50 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -782,7 +789,8 @@ export default function WorkPage() {
 
               {/* Systems thinker */}
               <motion.div
-                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm hover:border-amber-500/60 transition-all"
+                className="border border-amber-500/40 p-6 backdrop-blur-sm hover:border-amber-500/60 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -799,7 +807,8 @@ export default function WorkPage() {
 
               {/* Team multiplier */}
               <motion.div
-                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-green/50 transition-all"
+                className="border border-cyber-green/30 p-6 backdrop-blur-sm hover:border-cyber-green/50 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -816,7 +825,8 @@ export default function WorkPage() {
 
               {/* Partner and evangelist */}
               <motion.div
-                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-orange/50 transition-all"
+                className="border border-cyber-orange/30 p-6 backdrop-blur-sm hover:border-cyber-orange/50 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -833,7 +843,8 @@ export default function WorkPage() {
 
               {/* Crisis engineer */}
               <motion.div
-                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm hover:border-pink-400/50 transition-all"
+                className="border border-pink-400/30 p-6 backdrop-blur-sm hover:border-pink-400/50 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -850,7 +861,8 @@ export default function WorkPage() {
 
               {/* Periodic reset, higher bar */}
               <motion.div
-                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm hover:border-cyber-yellow/50 transition-all"
+                className="border border-cyber-yellow/30 p-6 backdrop-blur-sm hover:border-cyber-yellow/50 transition-all"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -885,7 +897,8 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
               {/* Avoiding overwork */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -904,7 +917,8 @@ export default function WorkPage() {
 
               {/* Asking for help earlier */}
               <motion.div
-                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -923,7 +937,8 @@ export default function WorkPage() {
 
               {/* Aligning before building */}
               <motion.div
-                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -942,7 +957,8 @@ export default function WorkPage() {
 
               {/* Protecting focus */}
               <motion.div
-                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-orange/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -961,7 +977,8 @@ export default function WorkPage() {
 
               {/* Infra specialization */}
               <motion.div
-                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-pink-400/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -980,7 +997,8 @@ export default function WorkPage() {
 
               {/* Design & accessibility depth */}
               <motion.div
-                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-yellow/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1017,7 +1035,8 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
               {/* Deliver under deadline */}
               <motion.div
-                className="border border-cyber-green/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1035,7 +1054,8 @@ export default function WorkPage() {
 
               {/* Make teams faster */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1054,7 +1074,8 @@ export default function WorkPage() {
 
               {/* Enable the team */}
               <motion.div
-                className="border border-amber-500/40 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1073,7 +1094,8 @@ export default function WorkPage() {
 
               {/* Full-stack with test discipline */}
               <motion.div
-                className="border border-cyber-orange/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-orange/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1091,7 +1113,8 @@ export default function WorkPage() {
 
               {/* Bias to ship */}
               <motion.div
-                className="border border-pink-400/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-pink-400/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1109,7 +1132,8 @@ export default function WorkPage() {
 
               {/* Remote-Proven */}
               <motion.div
-                className="border border-cyber-yellow/30 p-6 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-yellow/30 p-6 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1156,7 +1180,7 @@ export default function WorkPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <div className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm">
+            <div className="border border-cyber-cyan/30 p-8 backdrop-blur-sm" style={{ backgroundColor: '#0a0a0a' }}>
               <h3 className="text-xl font-bold text-cyber-cyan mb-6">What this signals to hiring managers:</h3>
               
               <div className="space-y-4">
@@ -1223,7 +1247,8 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
               {/* Cadence */}
               <motion.div
-                className="border border-cyber-cyan/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-cyan/30 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1247,7 +1272,8 @@ export default function WorkPage() {
 
               {/* Definition of Done */}
               <motion.div
-                className="border border-amber-500/40 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-amber-500/40 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1270,7 +1296,8 @@ export default function WorkPage() {
 
               {/* Collaboration Contract */}
               <motion.div
-                className="border border-cyber-green/30 p-8 bg-black/50 backdrop-blur-sm relative overflow-hidden group"
+                className="border border-cyber-green/30 p-8 backdrop-blur-sm relative overflow-hidden group"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1313,7 +1340,8 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
               {/* Personality Types */}
               <motion.div
-                className="border border-cyber-cyan/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
+                className="border border-cyber-cyan/30 p-6 sm:p-8 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -1337,7 +1365,8 @@ export default function WorkPage() {
 
               {/* Vedic Chart Intro */}
               <motion.div
-                className="border border-pink-400/30 p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
+                className="border border-pink-400/30 p-6 sm:p-8 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -1354,7 +1383,8 @@ export default function WorkPage() {
             <div className="mt-8 space-y-6">
               {/* Mission-led builder */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1374,7 +1404,8 @@ export default function WorkPage() {
 
               {/* Systems thinker */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1394,7 +1425,8 @@ export default function WorkPage() {
 
               {/* Fast shipper, team multiplier */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1414,7 +1446,8 @@ export default function WorkPage() {
 
               {/* Partner & evangelist */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1434,7 +1467,8 @@ export default function WorkPage() {
 
               {/* Crisis steady */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1454,7 +1488,8 @@ export default function WorkPage() {
 
               {/* Reset → upgrade */}
               <motion.div
-                className="border border-cyber-yellow/20 p-6 bg-black/40 backdrop-blur-sm"
+                className="border border-cyber-yellow/20 p-6 backdrop-blur-sm"
+                style={{ backgroundColor: '#0a0a0a' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -1545,14 +1580,15 @@ export default function WorkPage() {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-cyber-cyan to-cyber-purple opacity-30 blur-lg group-hover:opacity-50 transition duration-500"></div>
                 
                 {/* Main container */}
-                <div className="relative border border-cyber-cyan/30 p-8 bg-black/80 backdrop-blur-sm">
+                <div className="relative border border-cyber-cyan/30 p-8 backdrop-blur-sm" style={{ backgroundColor: '#0a0a0a' }}>
                   <h3 className="text-cyber-cyan font-bold mb-8 text-xl text-center">Let's Connect</h3>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     {/* Email */}
-                    <motion.a 
+                    <motion.a
                       href="mailto:ken.ranosa@gmail.com"
-                      className="group/item flex flex-col items-center p-4 border border-cyber-green/20 bg-black/40 hover:border-cyber-green/50 transition-all duration-300"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-green/20 hover:border-cyber-green/50 transition-all duration-300"
+                      style={{ backgroundColor: '#0a0a0a' }}
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
                       <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-green/30 group-hover/item:border-cyber-green/60 transition-colors">
@@ -1565,11 +1601,12 @@ export default function WorkPage() {
                     </motion.a>
 
                     {/* LinkedIn */}
-                    <motion.a 
+                    <motion.a
                       href="https://www.linkedin.com/in/mranosa/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/item flex flex-col items-center p-4 border border-amber-500/30 bg-black/50 hover:border-amber-500/60 transition-all duration-300"
+                      className="group/item flex flex-col items-center p-4 border border-amber-500/30 hover:border-amber-500/60 transition-all duration-300"
+                      style={{ backgroundColor: '#0a0a0a' }}
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
                       <div className="w-12 h-12 mb-3 flex items-center justify-center border border-amber-500/40 group-hover/item:border-amber-500/70 transition-colors">
@@ -1582,9 +1619,10 @@ export default function WorkPage() {
                     </motion.a>
 
                     {/* Calendar */}
-                    <motion.a 
+                    <motion.a
                       href="#"
-                      className="group/item flex flex-col items-center p-4 border border-cyber-orange/30 bg-black/50 hover:border-cyber-orange/60 transition-all duration-300"
+                      className="group/item flex flex-col items-center p-4 border border-cyber-orange/30 hover:border-cyber-orange/60 transition-all duration-300"
+                      style={{ backgroundColor: '#0a0a0a' }}
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
                       <div className="w-12 h-12 mb-3 flex items-center justify-center border border-cyber-orange/30 group-hover/item:border-cyber-orange/60 transition-colors">
