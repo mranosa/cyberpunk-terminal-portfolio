@@ -94,7 +94,7 @@ export default function WorkPage() {
   return (
     <>
       {!isMobile && <MatrixRain />}
-      <div ref={containerRef} className="relative bg-black text-white">
+      <div ref={containerRef} className="relative bg-black text-white scroll-snap-container">
         {/* Progress Bar */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-cyber-cyan z-50 origin-left"

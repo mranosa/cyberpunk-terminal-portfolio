@@ -105,6 +105,15 @@
   }
 }
 
+/* Scroll snap behavior */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+}
+
 /* Performance hints for all devices */
 .will-change-transform {
   will-change: transform;
