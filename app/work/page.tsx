@@ -74,7 +74,7 @@ export default function WorkPage() {
 
 
   const handleBackToTerminal = () => {
-    router.push('/?skipSplash=true')
+    router.push('/terminal')
   }
 
   const scrollToSection = (index: number) => {
