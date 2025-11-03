@@ -292,7 +292,7 @@ export default function WorkPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <TypewriterText text="Full Stack Engineer • 15+ Years • Remote" />
+                <TypewriterText text="TypeScript/React Full-Stack Engineer • Remote-First Engineering Expert" />
               </motion.div>
 
               {/* Scroll to Explore - Centered below experience text */}
@@ -1565,7 +1565,7 @@ export default function WorkPage() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              15+ years of experience • Full Stack Development • Remote Work
+              TypeScript/React Full-Stack Engineer • Remote Work
             </motion.div>
 
             {/* Contact Information */}
