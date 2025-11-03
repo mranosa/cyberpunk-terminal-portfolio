@@ -360,15 +360,30 @@ button:active, a:active {
     animation: none !important;
     transition: none !important;
   }
-  
+
   /* Keep only essential transitions for usability */
   button, a, input, textarea {
     transition: opacity 0.2s ease, background-color 0.2s ease !important;
   }
-  
+
+  /* Allow simple fade animations for splash screen */
+  .splash-fade {
+    animation: fadeIn 0.6s ease-out !important;
+  }
+
   /* Keep pulse animation for splash screen indicator */
   .splash-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+  }
+
+  /* Define simple fade animation for mobile */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
   /* Disable all keyframe animations */

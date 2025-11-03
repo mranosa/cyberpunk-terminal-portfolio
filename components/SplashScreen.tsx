@@ -69,7 +69,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           delay: 0.2,
           ease: [0.22, 1, 0.36, 1]
         }}
-        className="relative z-10"
+        className="relative z-10 splash-fade"
       >
         <KRLogo />
       </motion.div>
@@ -114,10 +114,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 splash-fade"
       >
         <div className="flex items-center gap-2 text-cyan-400/40 font-mono text-xs">
-          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <div className="w-2 h-2 bg-cyan-400 rounded-full splash-pulse" />
           <span className="select-none">INITIALIZING.SYSTEM</span>
         </div>
       </motion.div>
