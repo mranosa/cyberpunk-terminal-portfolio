@@ -5,8 +5,8 @@ import { ArrowDownIcon } from '@heroicons/react/24/outline'
 export function CvCommand() {
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-    link.download = 'SOFTWARE_ENGINEER_CV.pdf'
+    link.href = '/cv/Ken_Ranosa_CV.pdf'
+    link.download = 'Ken_Ranosa_CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
