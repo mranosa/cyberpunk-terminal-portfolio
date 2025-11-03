@@ -192,8 +192,8 @@ export default function WorkPage() {
                       <button
                         onClick={() => {
                           const link = document.createElement('a')
-                          link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                          link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                          link.href = '/cv/Ken_Ranosa_CV.pdf'
+                          link.download = 'Ken_Ranosa_CV.pdf'
                           link.click()
                           setMobileMenuOpen(false)
                         }}
@@ -614,8 +614,8 @@ export default function WorkPage() {
                 <motion.button
                   onClick={() => {
                     const link = document.createElement('a')
-                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.href = '/cv/Ken_Ranosa_CV.pdf'
+                    link.download = 'Ken_Ranosa_CV.pdf'
                     link.click()
                   }}
                   className="group relative px-8 py-4 border-2 border-cyber-yellow text-cyber-yellow hover:bg-cyber-yellow hover:text-black transition-all duration-300 font-bold"
@@ -776,8 +776,8 @@ export default function WorkPage() {
                 <motion.button
                   onClick={() => {
                     const link = document.createElement('a')
-                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.href = '/cv/Ken_Ranosa_CV.pdf'
+                    link.download = 'Ken_Ranosa_CV.pdf'
                     link.click()
                   }}
                   className="group relative px-8 py-4 border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black transition-all duration-300 font-bold"
@@ -1258,8 +1258,8 @@ export default function WorkPage() {
                 <motion.button
                   onClick={() => {
                     const link = document.createElement('a')
-                    link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                    link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                    link.href = '/cv/Ken_Ranosa_CV.pdf'
+                    link.download = 'Ken_Ranosa_CV.pdf'
                     link.click()
                   }}
                   className="group relative px-8 py-4 border-2 border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-black transition-all duration-300 font-bold"
@@ -1592,8 +1592,8 @@ export default function WorkPage() {
               <button
                 onClick={() => {
                   const link = document.createElement('a')
-                  link.href = '/cv/SOFTWARE_ENGINEER_CV.pdf'
-                  link.download = 'Mark_Kenneth_Ranosa_CV.pdf'
+                  link.href = '/cv/Ken_Ranosa_CV.pdf'
+                  link.download = 'Ken_Ranosa_CV.pdf'
                   link.click()
                 }}
                 className="group relative px-12 py-6 border-2 border-cyber-green text-cyber-green hover:text-black font-bold text-lg overflow-hidden transition-all duration-300"
