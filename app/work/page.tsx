@@ -454,23 +454,7 @@ export default function WorkPage() {
                   <ul className="space-y-2 text-gray-300 mb-4">
                     <li className="flex items-start">
                       <span className="text-cyber-green mr-2">▸</span>
-                      Delivered $1M+ in closed deals by consistently shipping time-critical enterprise features (SSO, real-time collaboration, custom reporting, RBAC, demo sandboxes) for educational platform serving <span className="text-cyber-yellow font-bold">2M+ teachers and students</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-green mr-2">▸</span>
-                      Architected real-time collaborative editing system with WebSockets and MongoDB, enabling multiple teachers to edit formatives simultaneously with live presence indicators and conflict-free synchronization
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-green mr-2">▸</span>
-                      Owned <span className="text-cyber-yellow font-bold">10-month Item Bank integration</span> with Newsela's content library (Aug 2024 - May 2025), implementing CRUD operations, search, bulk import/export using TypeScript, React, and GraphQL
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-green mr-2">▸</span>
-                      Led codebase-wide GraphQL migration and modernized <span className="text-cyber-yellow font-bold">100+ React class components</span> to functional components with hooks, improving type safety and maintainability
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-green mr-2">▸</span>
-                      Delivered <span className="text-cyber-yellow font-bold">37 major platform features</span> over 4 years, completing <span className="text-cyber-yellow font-bold">1,000+ pull requests</span> and <span className="text-cyber-yellow font-bold">615+ code reviews</span> with <span className="text-cyber-yellow font-bold">zero production incidents</span>
+                      Delivered time-critical features
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -515,15 +499,7 @@ export default function WorkPage() {
                   <ul className="space-y-2 text-gray-300 mb-4">
                     <li className="flex items-start">
                       <span className="text-cyber-cyan mr-2">▸</span>
-                      Reduced integration testing from hours to seconds via LocalStack for AWS service mocking, accelerating development velocity while maintaining PCI compliance for fintech payment platform
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Created code generation tool adopted by <span className="text-cyber-yellow font-bold">8 engineers</span> that cut microservice creation time from <span className="text-cyber-yellow font-bold">2 weeks to 1 minute</span>, standardizing service architecture
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Introduced company-wide performance evaluation criteria that improved team dynamics, establishing clear expectations and feedback mechanisms for engineering organization
+                      Added LocalStack and containerized fixtures
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
@@ -573,15 +549,7 @@ export default function WorkPage() {
                   <ul className="space-y-2 text-gray-300 mb-4">
                     <li className="flex items-start">
                       <span className="text-amber-500 mr-2">▸</span>
-                      Achieved <span className="text-cyber-yellow font-bold">600% speed improvement</span> in test execution by implementing test automation and parallel execution with Selenium Grid, enabling QA team to test more features per sprint
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-amber-500 mr-2">▸</span>
-                      Reduced QA setup from <span className="text-cyber-yellow font-bold">2 days to 3 minutes</span> through automation using Docker and infrastructure-as-code, eliminating manual environment configuration
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-amber-500 mr-2">▸</span>
-                      Built YouTube monitoring service using Node.js, Puppeteer, and FFMpeg to track branded content videos across YouTube channels, automating copyright violation detection
+                      Refactored slow, flakey suites.
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-2">
@@ -676,21 +644,6 @@ export default function WorkPage() {
                     <span className="text-cyber-green font-semibold">Stack:</span>
                     <span className="text-gray-300 ml-2">Python, Node.js, React, TensorFlow/Keras/PyTorch, VLC, HDF5, Firebase, Heroku, Git.</span>
                   </div>
-
-                  <ul className="space-y-2 text-gray-300 mb-4">
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Built computer vision MVP for demographic detection and advertising analytics on digital signage networks
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Secured <span className="text-cyber-yellow font-bold">2 prospective clients in 2 weeks</span> for MVP rollout to 16,000+ digital screens, validating market demand through rapid customer development
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-cyber-cyan mr-2">▸</span>
-                      Recruited volunteer engineering talent and advertising experts through vision alignment, building cross-functional team to develop prototype
-                    </li>
-                  </ul>
 
                   <div className="border-t border-cyber-cyan/20 pt-4">
                     <span className="text-cyber-yellow font-semibold">Note:</span>
