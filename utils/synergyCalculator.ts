@@ -1,7 +1,7 @@
 // Main Synergy Calculator - Combines all four systems
 import { getZodiacSign, getWesternZodiacCompatibility, type ZodiacSign } from './zodiacData';
 import { getChineseZodiac, getChineseZodiacCompatibility, getElementName, type ChineseZodiac, type ChineseElement } from './chineseZodiacData';
-import { getMBTICompatibility, getSpecialMBTIMatch, type MBTIType } from './mbtiData';
+import { getMBTICompatibility, getSpecialMBTIMatch, getIdentityCompatibility, formatFullMBTIType, IDENTITY_INFO, type MBTIType, type MBTIIdentity, type MBTIFullType } from './mbtiData';
 import { calculateBigFiveCompatibility, type BigFiveScores, type TraitComparison } from './bigFiveCalculator';
 
 // Weights for each system
@@ -67,6 +67,7 @@ export function getSynergyLevel(score: number): SynergyLevelInfo {
 export interface SynergyInput {
   birthDate: Date;
   mbtiType: MBTIType;
+  mbtiIdentity: MBTIIdentity;
   bigFive: BigFiveScores;
 }
 
@@ -102,6 +103,9 @@ export interface SynergyResult {
 
   mbti: {
     type: MBTIType;
+    fullType: MBTIFullType;
+    identity: MBTIIdentity;
+    identityLabel: string;
     typeName: string;
     score: number;
     weightedScore: number;
@@ -111,6 +115,8 @@ export interface SynergyResult {
     workTips: string[];
     specialMatch: string | null;
     specialLabel?: string;
+    identityMatch: 'same' | 'different';
+    identityDescription: string;
   };
 
   bigFive: {
@@ -133,7 +139,7 @@ export interface SynergyResult {
 
 // Main calculation function
 export function calculateSynergy(input: SynergyInput): SynergyResult {
-  const { birthDate, mbtiType, bigFive } = input;
+  const { birthDate, mbtiType, mbtiIdentity, bigFive } = input;
 
   // Extract date components
   const year = birthDate.getFullYear();
@@ -279,6 +285,9 @@ export function calculateSynergy(input: SynergyInput): SynergyResult {
 
     mbti: {
       type: mbtiType,
+      fullType: formatFullMBTIType(mbtiType, mbtiIdentity),
+      identity: mbtiIdentity,
+      identityLabel: IDENTITY_INFO[mbtiIdentity].label,
       typeName: mbtiCompat.info.name,
       score: mbtiCompat.score,
       weightedScore: mbtiWeighted,
@@ -287,7 +296,9 @@ export function calculateSynergy(input: SynergyInput): SynergyResult {
       challenges: mbtiCompat.challenges,
       workTips: mbtiCompat.workTips,
       specialMatch: mbtiSpecialMatch,
-      specialLabel: mbtiCompat.specialLabel
+      specialLabel: mbtiCompat.specialLabel,
+      identityMatch: getIdentityCompatibility(mbtiIdentity).match,
+      identityDescription: getIdentityCompatibility(mbtiIdentity).description
     },
 
     bigFive: {
@@ -313,6 +324,7 @@ export function encodeResultForUrl(input: SynergyInput): string {
   const data = {
     bd: input.birthDate.toISOString().split('T')[0],
     mb: input.mbtiType,
+    mi: input.mbtiIdentity,
     o: input.bigFive.openness,
     c: input.bigFive.conscientiousness,
     e: input.bigFive.extraversion,
@@ -329,6 +341,7 @@ export function decodeResultFromUrl(encoded: string): SynergyInput | null {
     return {
       birthDate: new Date(data.bd),
       mbtiType: data.mb as MBTIType,
+      mbtiIdentity: (data.mi || 'A') as MBTIIdentity, // Default to Assertive for backwards compatibility
       bigFive: {
         openness: data.o,
         conscientiousness: data.c,

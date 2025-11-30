@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { type MBTIType, MBTI_INFO } from '@/utils/mbtiData'
+import { type MBTIType, type MBTIIdentity, MBTI_INFO, IDENTITY_INFO } from '@/utils/mbtiData'
 import { type BigFiveScores } from '@/utils/bigFiveCalculator'
 import { type SynergyInput } from '@/utils/synergyCalculator'
 
@@ -18,6 +18,11 @@ const MBTI_TYPES: MBTIType[] = [
   'ISTP', 'ISFP', 'ESTP', 'ESFP'
 ]
 
+const IDENTITY_OPTIONS: { value: MBTIIdentity; label: string; suffix: string }[] = [
+  { value: 'A', label: 'Assertive', suffix: '-A' },
+  { value: 'T', label: 'Turbulent', suffix: '-T' }
+]
+
 const BIG_FIVE_TRAITS = [
   { key: 'openness', label: 'Openness', description: 'Creativity, curiosity, openness to new experiences' },
   { key: 'conscientiousness', label: 'Conscientiousness', description: 'Organization, dependability, self-discipline' },
@@ -30,6 +35,7 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
   const [step, setStep] = useState(1)
   const [birthDate, setBirthDate] = useState('')
   const [mbtiType, setMbtiType] = useState<MBTIType | ''>('')
+  const [mbtiIdentity, setMbtiIdentity] = useState<MBTIIdentity | ''>('')
   const [bigFive, setBigFive] = useState<BigFiveScores>({
     openness: 50,
     conscientiousness: 50,
@@ -40,17 +46,18 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!birthDate || !mbtiType) return
+    if (!birthDate || !mbtiType || !mbtiIdentity) return
 
     onSubmit({
       birthDate: new Date(birthDate),
       mbtiType,
+      mbtiIdentity,
       bigFive
     })
   }
 
   const canProceedStep1 = birthDate !== ''
-  const canProceedStep2 = mbtiType !== ''
+  const canProceedStep2 = mbtiType !== '' && mbtiIdentity !== ''
   const canSubmit = canProceedStep1 && canProceedStep2
 
   return (
@@ -58,11 +65,16 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="bg-black/50 border border-cyber-purple/30 p-6"
+      className="relative group bg-black/50 border border-cyber-purple/30 p-6 overflow-hidden"
+      whileHover={{ borderColor: 'rgba(191, 90, 242, 0.6)' }}
     >
-      <h2 className="text-xl font-bold text-cyber-purple mb-6 font-mono tracking-wider">
-        SYNERGY.ANALYSIS // INPUT.REQUIRED
-      </h2>
+      {/* Gradient hover overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="relative z-10">
+        <h2 className="text-xl font-bold text-cyber-purple mb-6 font-mono tracking-wider">
+          SYNERGY.ANALYSIS // INPUT.REQUIRED
+        </h2>
 
       {/* Progress indicator */}
       <div className="flex items-center gap-2 mb-6">
@@ -157,15 +169,77 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                   </motion.button>
                 ))}
               </div>
-              {mbtiType && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-gray-400 text-sm"
-                >
-                  {MBTI_INFO[mbtiType].name} - {MBTI_INFO[mbtiType].traits.join(', ')}
-                </motion.p>
-              )}
+
+              {/* Identity selector - only show when base type is selected */}
+              <AnimatePresence>
+                {mbtiType && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="space-y-3 overflow-hidden"
+                  >
+                    <label className="block text-cyber-purple font-mono text-sm uppercase tracking-wider">
+                      IDENTITY.TYPE
+                    </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {IDENTITY_OPTIONS.map(({ value, label, suffix }) => (
+                        <motion.button
+                          key={value}
+                          type="button"
+                          onClick={() => setMbtiIdentity(value)}
+                          className={`relative group/id p-3 border-2 font-mono text-left transition-all duration-200 overflow-hidden ${
+                            mbtiIdentity === value
+                              ? 'border-cyber-purple bg-cyber-purple/20'
+                              : 'border-gray-600 hover:border-cyber-purple/50'
+                          }`}
+                          whileHover={{ scale: 1.01 }}
+                          whileTap={{ scale: 0.99 }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover/id:opacity-100 transition-opacity duration-300" />
+                          <div className="relative z-10">
+                            <div className="flex items-center justify-between mb-1">
+                              <span className={`text-lg font-bold ${mbtiIdentity === value ? 'text-cyber-purple' : 'text-gray-400'}`}>
+                                {mbtiType}{suffix}
+                              </span>
+                              <span className={`text-xs px-2 py-0.5 border ${
+                                mbtiIdentity === value
+                                  ? 'border-cyber-purple text-cyber-purple'
+                                  : 'border-gray-600 text-gray-500'
+                              }`}>
+                                {suffix}
+                              </span>
+                            </div>
+                            <span className={`text-sm ${mbtiIdentity === value ? 'text-cyber-purple' : 'text-gray-500'}`}>
+                              {label}
+                            </span>
+                            <p className="text-gray-600 text-xs mt-1 line-clamp-2">
+                              {IDENTITY_INFO[value].traits.slice(0, 3).join(' • ')}
+                            </p>
+                          </div>
+                        </motion.button>
+                      ))}
+                    </div>
+
+                    {/* Selected type info */}
+                    {mbtiIdentity && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="p-3 border border-cyber-purple/30 bg-cyber-purple/5"
+                      >
+                        <p className="text-cyber-purple text-sm font-bold mb-1">
+                          {mbtiType}-{mbtiIdentity} • {MBTI_INFO[mbtiType].name}
+                        </p>
+                        <p className="text-gray-400 text-sm">
+                          {IDENTITY_INFO[mbtiIdentity].description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <p className="text-gray-500 text-xs">
                 Don&apos;t know your MBTI?{' '}
                 <a
@@ -174,8 +248,9 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                   rel="noopener noreferrer"
                   className="text-cyber-cyan hover:underline"
                 >
-                  Take the test
+                  Take the test at 16personalities.com
                 </a>
+                {' '}(includes -A/-T result)
               </p>
               <div className="flex gap-2">
                 <button
@@ -284,6 +359,7 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
           )}
         </AnimatePresence>
       </form>
+      </div>
     </motion.div>
   )
 }
