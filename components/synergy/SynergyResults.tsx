@@ -173,7 +173,7 @@ export default function SynergyResults({ result, onShare, onCopyLink, onReset }:
               {result.mbti.identityMatch === 'same' ? 'SAME IDENTITY' : 'COMPLEMENTARY IDENTITY'}
             </div>
             <p className="text-gray-500 text-xs mb-2">{result.mbti.identityDescription}</p>
-            <p className="text-gray-600 text-xs">{result.mbti.description.slice(0, 120)}...</p>
+            <p className="text-gray-600 text-xs">{result.mbti.description}</p>
             <div className="mt-3 space-y-1">
               <p className="text-cyber-green text-xs">+ {result.mbti.strengths[0]}</p>
               {result.mbti.challenges[0] && (
@@ -243,7 +243,7 @@ export default function SynergyResults({ result, onShare, onCopyLink, onReset }:
                 {result.westernZodiac.isSpecialMatch.replace('_', ' ').toUpperCase()}
               </div>
             )}
-            <p className="text-gray-500 text-xs">{result.westernZodiac.description.slice(0, 150)}...</p>
+            <p className="text-gray-500 text-xs">{result.westernZodiac.description}</p>
           </div>
         </motion.div>
 
@@ -274,7 +274,7 @@ export default function SynergyResults({ result, onShare, onCopyLink, onReset }:
                 {result.chineseZodiac.specialLabel}
               </div>
             )}
-            <p className="text-gray-500 text-xs">{result.chineseZodiac.description.slice(0, 150)}...</p>
+            <p className="text-gray-500 text-xs">{result.chineseZodiac.description}</p>
           </div>
         </motion.div>
       </div>
