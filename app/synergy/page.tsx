@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
 import MatrixRain from '@/components/MatrixRainWrapper'
@@ -15,7 +15,7 @@ import {
   type SynergyResult
 } from '@/utils/synergyCalculator'
 
-export default function SynergyPage() {
+function SynergyContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [isMobile, setIsMobile] = useState(false)
@@ -197,5 +197,17 @@ export default function SynergyPage() {
         </div>
       </div>
     </>
+  )
+}
+
+export default function SynergyPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-cyber-cyan font-mono animate-pulse">LOADING.SYNERGY.MATRIX...</div>
+      </div>
+    }>
+      <SynergyContent />
+    </Suspense>
   )
 }

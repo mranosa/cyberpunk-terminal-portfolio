@@ -181,19 +181,22 @@ export const RABBIT_DESCRIPTIONS: Record<ChineseZodiac, {
     description: "Rabbit's flexibility meets Ox's steadfastness. Both value reliability and can build trust over time. Ken's diplomatic approach complements your methodical execution. Good for long-term projects requiring patience.",
     strengths: ["Both reliable", "Complementary work styles", "Trust builds steadily"],
     challenges: ["Ox may seem inflexible", "Rabbit may seem indecisive", "Different paces"],
-    workTips: ["Give Ox clear deadlines", "Let Rabbit handle negotiations", "Plan ahead together"]
+    workTips: ["Give Ox clear deadlines", "Let Rabbit handle negotiations", "Plan ahead together"],
+    specialRelation: null
   },
   tiger: {
     description: "Rabbit's caution balances Tiger's boldness. Ken provides diplomatic finesse while you bring courage and competitive drive. Different approaches to risk, but together you cover all bases - bold vision with careful execution.",
     strengths: ["Action + diplomacy balance", "Tiger leads charges, Rabbit ensures buy-in", "Complementary energy"],
     challenges: ["Tiger may seem reckless to Rabbit", "Rabbit may seem slow to Tiger", "Different conflict styles"],
-    workTips: ["Let Tiger handle confrontations", "Rabbit handles stakeholder relationships", "Combine boldness with tact"]
+    workTips: ["Let Tiger handle confrontations", "Rabbit handles stakeholder relationships", "Combine boldness with tact"],
+    specialRelation: null
   },
   rabbit: {
     description: "Two Rabbits bring double diplomacy and attention to harmony. Excellent for environments requiring tact, negotiation, and careful relationship management. May need external push for decisive action.",
     strengths: ["Harmonious collaboration", "Shared values", "Diplomatic powerhouse"],
     challenges: ["Both may avoid conflict", "Decision paralysis possible", "Need external drive"],
-    workTips: ["Bring in a decisive third party for tough calls", "Set decision deadlines", "Don't let politeness slow progress"]
+    workTips: ["Bring in a decisive third party for tough calls", "Set decision deadlines", "Don't let politeness slow progress"],
+    specialRelation: null
   },
   dragon: {
     description: "Traditional 'harm' relationship - Rabbit's quiet diplomacy meets Dragon's bold charisma. Different operating styles that can create friction. When aligned on goals, Dragon provides vision while Rabbit ensures smooth execution.",
@@ -207,13 +210,15 @@ export const RABBIT_DESCRIPTIONS: Record<ChineseZodiac, {
     description: "Both signs share elegance and intuition. Rabbit's diplomacy pairs well with Snake's strategic depth. Good for projects requiring careful planning and stakeholder management. Trust builds naturally.",
     strengths: ["Shared intuition", "Strategic alignment", "Both value thoughtful action"],
     challenges: ["Both can be guarded initially", "May move slowly", "Need action-oriented support"],
-    workTips: ["Build trust through transparency", "Leverage shared intuitive understanding", "Add action-oriented team members"]
+    workTips: ["Build trust through transparency", "Leverage shared intuitive understanding", "Add action-oriented team members"],
+    specialRelation: null
   },
   horse: {
     description: "Rabbit's methodical pace meets Horse's restless energy. Different rhythms require patience from both sides. Ken prefers planning while you prefer action. Balance planning with spontaneity.",
     strengths: ["Energy + stability balance", "Horse drives momentum", "Rabbit ensures sustainability"],
     challenges: ["Pace mismatch", "Horse may feel restricted", "Rabbit may feel rushed"],
-    workTips: ["Give Horse freedom within boundaries", "Build in sprint and plan phases", "Respect different energy styles"]
+    workTips: ["Give Horse freedom within boundaries", "Build in sprint and plan phases", "Respect different energy styles"],
+    specialRelation: null
   },
   goat: {
     description: "Fourth Trine harmony - Rabbit and Goat share the same compatibility group, creating natural understanding. Both value peace, creativity, and gentle approaches. Excellent for creative projects and environments requiring sensitivity.",
@@ -227,7 +232,8 @@ export const RABBIT_DESCRIPTIONS: Record<ChineseZodiac, {
     description: "Rabbit's diplomacy meets Monkey's quick wit and innovation. Different approaches - Ken is methodical while you're fast and creative. Good for projects needing both careful planning and innovative solutions.",
     strengths: ["Innovation + implementation", "Monkey ideates, Rabbit refines", "Complementary thinking styles"],
     challenges: ["Different paces", "Monkey may seem chaotic", "Rabbit may seem slow"],
-    workTips: ["Let Monkey explore ideas freely", "Rabbit curates and prioritizes", "Build iteration cycles"]
+    workTips: ["Let Monkey explore ideas freely", "Rabbit curates and prioritizes", "Build iteration cycles"],
+    specialRelation: null
   },
   rooster: {
     description: "Traditional CLASH relationship - direct opposition in the Chinese zodiac. Different communication styles create friction - Rabbit is diplomatic and indirect; Rooster is direct and critical. Requires significant effort and mutual respect.",
