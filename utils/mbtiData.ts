@@ -1,13 +1,57 @@
-// MBTI Data - Compatibility with Ken (ENFJ)
+// MBTI Data - Compatibility with Ken (ENFJ-A)
 // Based on cognitive function stacks, Socionics intertype relations, and temperament theory
+// Includes Identity dimension (-A/-T) from 16personalities framework
 
-export type MBTIType =
+export type MBTIBaseType =
   | 'INTJ' | 'INTP' | 'ENTJ' | 'ENTP'
   | 'INFJ' | 'INFP' | 'ENFJ' | 'ENFP'
   | 'ISTJ' | 'ISFJ' | 'ESTJ' | 'ESFJ'
   | 'ISTP' | 'ISFP' | 'ESTP' | 'ESFP';
 
+// Keep MBTIType as alias for backwards compatibility
+export type MBTIType = MBTIBaseType;
+
+// Identity dimension: Assertive (-A) or Turbulent (-T)
+// This is the 5th personality dimension from 16personalities, mapping to Neuroticism in Big Five
+export type MBTIIdentity = 'A' | 'T';
+
+// Full MBTI type with identity (e.g., "ENFJ-A", "INTP-T")
+export type MBTIFullType = `${MBTIBaseType}-${MBTIIdentity}`;
+
 export type Temperament = 'NT' | 'NF' | 'SJ' | 'SP';
+
+// Identity (Assertive vs Turbulent) information
+export interface IdentityInfo {
+  code: MBTIIdentity;
+  label: string;
+  traits: string[];
+  description: string;
+  workStyle: string;
+  stressResponse: string;
+}
+
+export const IDENTITY_INFO: Record<MBTIIdentity, IdentityInfo> = {
+  A: {
+    code: 'A',
+    label: 'Assertive',
+    traits: ['Self-assured', 'Stress-resilient', 'Confident', 'Decisive', 'Even-tempered'],
+    description: 'Self-assured and resistant to stress. Refuses to worry too much and moves forward with confidence.',
+    workStyle: 'Makes decisions quickly and confidently. Maintains composure under pressure and focuses on solutions rather than dwelling on problems.',
+    stressResponse: 'Remains calm and collected. Less likely to experience anxiety or second-guess decisions.'
+  },
+  T: {
+    code: 'T',
+    label: 'Turbulent',
+    traits: ['Perfectionist', 'Self-aware', 'Detail-oriented', 'Achievement-driven', 'Thorough'],
+    description: 'Success-driven with high standards. Self-conscious and sensitive to stress, but uses it as fuel for improvement.',
+    workStyle: 'Strives for excellence and catches details others might miss. Highly motivated to improve and willing to put in extra effort.',
+    stressResponse: 'More affected by stress but channels it into motivation. May dwell on outcomes but uses reflection for growth.'
+  }
+};
+
+// Ken's identity is Assertive
+export const KEN_IDENTITY: MBTIIdentity = 'A';
+export const KEN_FULL_TYPE: MBTIFullType = 'ENFJ-A';
 
 export interface MBTIInfo {
   type: MBTIType;
@@ -313,4 +357,44 @@ export function getTemperamentDescription(temperament: Temperament): string {
     case 'SJ': return 'Guardian - Reliable, traditional, security-seeking';
     case 'SP': return 'Artisan - Adaptable, practical, experience-seeking';
   }
+}
+
+// Get identity compatibility description (Ken is Assertive)
+export function getIdentityCompatibility(visitorIdentity: MBTIIdentity): {
+  match: 'same' | 'different';
+  description: string;
+  workDynamic: string;
+} {
+  if (visitorIdentity === 'A') {
+    return {
+      match: 'same',
+      description: 'Both Assertive - Shared confidence and stress resilience creates a decisive, action-oriented dynamic.',
+      workDynamic: 'Quick decision-making, minimal second-guessing. May need to ensure thoroughness in detail work.'
+    };
+  } else {
+    return {
+      match: 'different',
+      description: 'Assertive + Turbulent - Complementary balance of confidence and perfectionism.',
+      workDynamic: 'Ken provides steady confidence while you catch details and drive improvement. Good balance of speed and quality.'
+    };
+  }
+}
+
+// Format full MBTI type string
+export function formatFullMBTIType(baseType: MBTIBaseType, identity: MBTIIdentity): MBTIFullType {
+  return `${baseType}-${identity}` as MBTIFullType;
+}
+
+// Parse full MBTI type string
+export function parseFullMBTIType(fullType: string): { baseType: MBTIBaseType; identity: MBTIIdentity } | null {
+  const match = fullType.match(/^([A-Z]{4})-([AT])$/);
+  if (!match) return null;
+
+  const baseType = match[1] as MBTIBaseType;
+  const identity = match[2] as MBTIIdentity;
+
+  // Validate base type
+  if (!MBTI_INFO[baseType]) return null;
+
+  return { baseType, identity };
 }
