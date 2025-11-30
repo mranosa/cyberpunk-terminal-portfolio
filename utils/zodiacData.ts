@@ -241,3 +241,145 @@ export function getWesternZodiacCompatibility(visitorSign: ZodiacSign) {
     ...ARIES_DESCRIPTIONS[visitorSign]
   };
 }
+
+// Detailed Zodiac analysis with bullet points for rich display
+export interface ZodiacDetailedAnalysis {
+  summary: string;
+  bullets: string[];
+  professionalProfile: string;
+}
+
+export const ZODIAC_DETAILED: Record<ZodiacSign, ZodiacDetailedAnalysis> = {
+  aries: {
+    summary: "The Ram - Bold initiators who thrive on challenge and competition. You likely:",
+    bullets: [
+      "Take initiative and prefer leading over following",
+      "Thrive in fast-paced, competitive environments",
+      "Make quick decisions and prefer action to deliberation",
+      "Bring energy and enthusiasm to new projects",
+      "Excel at starting initiatives and inspiring momentum"
+    ],
+    professionalProfile: "Natural project starters who excel at launching initiatives, crisis response, and competitive situations. Best suited for roles requiring initiative and quick decision-making."
+  },
+  taurus: {
+    summary: "The Bull - Patient builders who create lasting value. You likely:",
+    bullets: [
+      "Value stability and prefer steady, methodical progress",
+      "Excel at building and maintaining quality systems",
+      "Show exceptional patience and determination",
+      "Appreciate tangible results and practical outcomes",
+      "Provide reliability and consistency to your team"
+    ],
+    professionalProfile: "Dependable executors who bring stability and thoroughness. Excel in roles requiring persistence, quality focus, and steady long-term progress."
+  },
+  gemini: {
+    summary: "The Twins - Quick-witted communicators who connect ideas and people. You likely:",
+    bullets: [
+      "Process and share information rapidly",
+      "Adapt easily to changing situations and requirements",
+      "Excel at multitasking and juggling multiple projects",
+      "Build connections between diverse people and ideas",
+      "Bring curiosity and mental agility to problem-solving"
+    ],
+    professionalProfile: "Versatile communicators who thrive in dynamic environments. Excel in roles requiring adaptability, networking, and rapid information processing."
+  },
+  cancer: {
+    summary: "The Crab - Intuitive nurturers who protect and support their teams. You likely:",
+    bullets: [
+      "Create safe, supportive environments for collaboration",
+      "Remember important details about people and relationships",
+      "Show strong loyalty to your team and organization",
+      "Balance professional goals with emotional intelligence",
+      "Protect team members and foster psychological safety"
+    ],
+    professionalProfile: "Supportive team builders who create trust and safety. Excel in roles requiring emotional intelligence, team care, and organizational loyalty."
+  },
+  leo: {
+    summary: "The Lion - Confident leaders who inspire and motivate others. You likely:",
+    bullets: [
+      "Natural presence that commands attention and respect",
+      "Inspire others through enthusiasm and confidence",
+      "Take pride in quality work and visible achievements",
+      "Excel at presentations, leadership, and public roles",
+      "Bring warmth and generosity to team dynamics"
+    ],
+    professionalProfile: "Charismatic leaders who shine in visible roles. Excel in presentations, team leadership, and positions requiring confidence and inspiration."
+  },
+  virgo: {
+    summary: "The Maiden - Detail-oriented analysts who ensure quality and precision. You likely:",
+    bullets: [
+      "Notice details others miss and ensure high quality",
+      "Excel at analysis, organization, and systematic improvement",
+      "Provide practical solutions to complex problems",
+      "Maintain high standards for yourself and your work",
+      "Bring precision and reliability to every project"
+    ],
+    professionalProfile: "Quality-focused perfectionists who excel in analytical roles. Best suited for positions requiring precision, process improvement, and attention to detail."
+  },
+  libra: {
+    summary: "The Scales - Diplomatic harmonizers who create balance and fairness. You likely:",
+    bullets: [
+      "Excel at seeing multiple perspectives and finding middle ground",
+      "Create harmony and resolve conflicts diplomatically",
+      "Value fairness and ensure balanced decision-making",
+      "Build and maintain professional relationships easily",
+      "Bring aesthetic awareness and social grace to work"
+    ],
+    professionalProfile: "Natural mediators who excel at stakeholder management. Best in roles requiring diplomacy, partnership building, and fair decision-making."
+  },
+  scorpio: {
+    summary: "The Scorpion - Strategic investigators who uncover what lies beneath. You likely:",
+    bullets: [
+      "Investigate deeply and uncover hidden insights",
+      "Show exceptional focus and determination toward goals",
+      "Excel at strategic thinking and reading situations",
+      "Bring intensity and commitment to important projects",
+      "Navigate complex political and interpersonal dynamics"
+    ],
+    professionalProfile: "Strategic operators who excel in complex environments. Best in roles requiring investigation, strategic planning, and handling sensitive matters."
+  },
+  sagittarius: {
+    summary: "The Archer - Optimistic explorers who expand horizons and inspire growth. You likely:",
+    bullets: [
+      "See the big picture and inspire others with vision",
+      "Embrace new challenges and learning opportunities",
+      "Bring optimism and enthusiasm to difficult situations",
+      "Excel at strategic thinking and long-range planning",
+      "Connect ideas across different domains and cultures"
+    ],
+    professionalProfile: "Vision-driven explorers who inspire growth. Excel in roles requiring big-picture thinking, cross-cultural work, and inspiring others toward ambitious goals."
+  },
+  capricorn: {
+    summary: "The Goat - Ambitious achievers who build lasting structures. You likely:",
+    bullets: [
+      "Set ambitious long-term goals and achieve them systematically",
+      "Build structures and systems that stand the test of time",
+      "Show exceptional discipline and work ethic",
+      "Take responsibility and demonstrate integrity",
+      "Lead through example and proven competence"
+    ],
+    professionalProfile: "Results-driven builders who excel at long-term planning. Best in roles requiring leadership, strategic execution, and building lasting organizational structures."
+  },
+  aquarius: {
+    summary: "The Water Bearer - Innovative visionaries who champion progress. You likely:",
+    bullets: [
+      "Think independently and challenge conventional approaches",
+      "Envision and work toward a better future",
+      "Excel at innovation and unconventional problem-solving",
+      "Value intellectual freedom and original thinking",
+      "Build networks and communities around shared ideals"
+    ],
+    professionalProfile: "Progressive innovators who drive change. Excel in roles requiring innovation, technology adoption, and building future-focused initiatives."
+  },
+  pisces: {
+    summary: "The Fish - Intuitive creatives who sense what others cannot. You likely:",
+    bullets: [
+      "Have strong intuition and emotional intelligence",
+      "Excel at creative and artistic endeavors",
+      "Connect deeply with others' feelings and needs",
+      "Bring imagination and vision to problem-solving",
+      "Create meaning and inspiration through your work"
+    ],
+    professionalProfile: "Intuitive creators who bring imagination to work. Excel in roles requiring creativity, empathy, and connecting with people on deeper levels."
+  }
+};

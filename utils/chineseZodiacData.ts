@@ -342,3 +342,180 @@ export function getChineseZodiacCompatibility(visitorAnimal: ChineseZodiac) {
 export function getElementName(element: ChineseElement): string {
   return element.charAt(0).toUpperCase() + element.slice(1);
 }
+
+// Detailed Chinese Zodiac analysis with bullet points for rich display
+export interface ChineseZodiacDetailedAnalysis {
+  summary: string;
+  bullets: string[];
+  professionalProfile: string;
+}
+
+export const CHINESE_ZODIAC_DETAILED: Record<ChineseZodiac, ChineseZodiacDetailedAnalysis> = {
+  rat: {
+    summary: "The Rat - Quick-witted and resourceful, masters of opportunity. You likely:",
+    bullets: [
+      "Identify and seize opportunities before others notice them",
+      "Adapt quickly to changing circumstances",
+      "Build valuable networks and maintain key relationships",
+      "Excel at gathering and leveraging information",
+      "Find creative solutions with limited resources"
+    ],
+    professionalProfile: "Strategic opportunists who excel in dynamic environments. Best in roles requiring quick thinking, networking, and resourceful problem-solving."
+  },
+  ox: {
+    summary: "The Ox - Patient and methodical, builders of lasting success. You likely:",
+    bullets: [
+      "Work steadily and persistently toward long-term goals",
+      "Demonstrate exceptional reliability and dependability",
+      "Show strength and resilience under pressure",
+      "Value tradition and proven methods",
+      "Build trust through consistent performance"
+    ],
+    professionalProfile: "Dependable builders who create lasting value. Excel in roles requiring persistence, reliability, and methodical execution of complex projects."
+  },
+  tiger: {
+    summary: "The Tiger - Bold and courageous, natural leaders who inspire action. You likely:",
+    bullets: [
+      "Take bold action when others hesitate",
+      "Lead with confidence and inspire others to follow",
+      "Thrive in competitive and challenging environments",
+      "Show courage in defending your beliefs and team",
+      "Bring energy and enthusiasm to every initiative"
+    ],
+    professionalProfile: "Courageous leaders who excel in challenging situations. Best in roles requiring bold decision-making, competitive drive, and inspiring others to action."
+  },
+  rabbit: {
+    summary: "The Rabbit - Diplomatic and refined, masters of harmony. You likely:",
+    bullets: [
+      "Navigate complex situations with grace and tact",
+      "Create peaceful, harmonious work environments",
+      "Excel at reading people and managing relationships",
+      "Show patience and caution in decision-making",
+      "Bring elegance and refinement to your work"
+    ],
+    professionalProfile: "Diplomatic harmonizers who excel in relationship-focused roles. Best in positions requiring negotiation, team harmony, and stakeholder management."
+  },
+  dragon: {
+    summary: "The Dragon - Ambitious and charismatic, destined for greatness. You likely:",
+    bullets: [
+      "Pursue ambitious goals with unwavering determination",
+      "Inspire others with your confidence and vision",
+      "Take on challenges others consider impossible",
+      "Attract opportunities and influential connections",
+      "Lead with natural authority and charisma"
+    ],
+    professionalProfile: "Visionary leaders who aim for extraordinary achievements. Excel in roles requiring ambitious goal-setting, public presence, and inspiring large-scale initiatives."
+  },
+  snake: {
+    summary: "The Snake - Wise and intuitive, strategic thinkers who see beneath the surface. You likely:",
+    bullets: [
+      "Think deeply and strategically about complex situations",
+      "Show exceptional intuition and insight",
+      "Maintain composure and mystery in professional settings",
+      "Excel at analytical and investigative work",
+      "Make decisions based on careful observation"
+    ],
+    professionalProfile: "Strategic thinkers who excel in analytical roles. Best in positions requiring deep analysis, strategic planning, and handling sensitive information."
+  },
+  horse: {
+    summary: "The Horse - Free-spirited and energetic, driven by adventure and progress. You likely:",
+    bullets: [
+      "Move quickly and maintain high energy levels",
+      "Value independence and freedom in your work",
+      "Embrace travel and diverse experiences",
+      "Bring enthusiasm and optimism to projects",
+      "Excel at pioneering new initiatives and paths"
+    ],
+    professionalProfile: "Energetic pioneers who thrive in dynamic roles. Excel in positions requiring travel, independence, and driving rapid progress."
+  },
+  goat: {
+    summary: "The Goat - Creative and compassionate, artists who bring beauty to work. You likely:",
+    bullets: [
+      "Bring artistic sensibility and creativity to projects",
+      "Show deep compassion and empathy for others",
+      "Excel in peaceful, harmonious environments",
+      "Create beauty and meaning through your work",
+      "Value collaboration over competition"
+    ],
+    professionalProfile: "Creative harmonizers who bring artistic vision. Excel in roles requiring creativity, teamwork, and creating aesthetically pleasing outcomes."
+  },
+  monkey: {
+    summary: "The Monkey - Clever and inventive, problem-solvers who see unique solutions. You likely:",
+    bullets: [
+      "Find innovative solutions to complex problems",
+      "Learn quickly and adapt to new situations",
+      "Bring humor and lightness to work environments",
+      "Excel at finding shortcuts and efficiencies",
+      "Show exceptional mental agility and creativity"
+    ],
+    professionalProfile: "Innovative problem-solvers who excel at finding unique solutions. Best in roles requiring creativity, quick learning, and unconventional thinking."
+  },
+  rooster: {
+    summary: "The Rooster - Observant and precise, perfectionists who ensure excellence. You likely:",
+    bullets: [
+      "Notice details others miss and maintain high standards",
+      "Show exceptional organization and punctuality",
+      "Communicate directly and honestly",
+      "Take pride in quality work and visible achievements",
+      "Excel at planning and systematic execution"
+    ],
+    professionalProfile: "Detail-oriented perfectionists who ensure quality. Excel in roles requiring precision, organization, and maintaining high standards."
+  },
+  dog: {
+    summary: "The Dog - Loyal and honest, guardians of integrity and trust. You likely:",
+    bullets: [
+      "Demonstrate unwavering loyalty to your team and organization",
+      "Value honesty and act with integrity in all situations",
+      "Protect and advocate for those you work with",
+      "Show reliability and consistency in your commitments",
+      "Bring a strong moral compass to decision-making"
+    ],
+    professionalProfile: "Trustworthy guardians who protect team interests. Excel in roles requiring loyalty, ethical leadership, and building long-term trust."
+  },
+  pig: {
+    summary: "The Pig - Generous and sincere, nurturers who create abundance. You likely:",
+    bullets: [
+      "Bring generosity and warmth to professional relationships",
+      "Show genuine sincerity in all interactions",
+      "Excel at creating comfortable, productive environments",
+      "Demonstrate patience and understanding with others",
+      "Value harmony and create inclusive team dynamics"
+    ],
+    professionalProfile: "Generous collaborators who create positive environments. Excel in roles requiring team building, hospitality, and creating inclusive cultures."
+  }
+};
+
+// Detailed Chinese Element analysis
+export interface ElementDetailedAnalysis {
+  summary: string;
+  traits: string[];
+  workStyle: string;
+}
+
+export const ELEMENT_DETAILED: Record<ChineseElement, ElementDetailedAnalysis> = {
+  wood: {
+    summary: "Wood Element - Growth, creativity, and benevolence",
+    traits: ["Creative", "Flexible", "Benevolent", "Growth-oriented", "Compassionate"],
+    workStyle: "You approach work with creativity and a desire to grow and help others grow. You're flexible and can bend without breaking under pressure."
+  },
+  fire: {
+    summary: "Fire Element - Passion, energy, and transformation",
+    traits: ["Passionate", "Energetic", "Inspiring", "Dynamic", "Transformative"],
+    workStyle: "You bring passion and energy to everything you do. You inspire others and can drive transformation, though you may need to pace yourself."
+  },
+  earth: {
+    summary: "Earth Element - Stability, practicality, and nurturing",
+    traits: ["Stable", "Practical", "Nurturing", "Grounded", "Reliable"],
+    workStyle: "You provide stability and practical grounding. You nurture projects and people with patience and create lasting structures."
+  },
+  metal: {
+    summary: "Metal Element - Precision, discipline, and determination",
+    traits: ["Precise", "Disciplined", "Determined", "Focused", "Structured"],
+    workStyle: "You bring precision and discipline to your work. You're focused and structured, cutting through to what matters most."
+  },
+  water: {
+    summary: "Water Element - Wisdom, flexibility, and intuition",
+    traits: ["Wise", "Intuitive", "Adaptable", "Reflective", "Diplomatic"],
+    workStyle: "You approach work with wisdom and intuition. Like water, you find your way around obstacles and bring depth to your analysis."
+  }
+};

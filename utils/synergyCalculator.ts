@@ -103,6 +103,7 @@ export interface SynergyResult {
 
   mbti: {
     type: MBTIType;
+    baseType: MBTIType;
     fullType: MBTIFullType;
     identity: MBTIIdentity;
     identityLabel: string;
@@ -285,6 +286,7 @@ export function calculateSynergy(input: SynergyInput): SynergyResult {
 
     mbti: {
       type: mbtiType,
+      baseType: mbtiType,
       fullType: formatFullMBTIType(mbtiType, mbtiIdentity),
       identity: mbtiIdentity,
       identityLabel: IDENTITY_INFO[mbtiIdentity].label,

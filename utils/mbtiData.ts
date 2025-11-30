@@ -385,6 +385,209 @@ export function formatFullMBTIType(baseType: MBTIBaseType, identity: MBTIIdentit
   return `${baseType}-${identity}` as MBTIFullType;
 }
 
+// Detailed MBTI analysis with bullet points for rich display
+export interface MBTIDetailedAnalysis {
+  summary: string;
+  bullets: string[];
+  cognitiveStack: string;
+  professionalStrengths: string[];
+}
+
+export const MBTI_DETAILED: Record<MBTIBaseType, MBTIDetailedAnalysis> = {
+  INTJ: {
+    summary: "The Architect - Strategic masterminds who see possibilities others miss. You likely:",
+    bullets: [
+      "Excel at long-term strategic planning and system design",
+      "Have high standards and expect competence from yourself and others",
+      "Prefer working independently on complex problems",
+      "Value efficiency and logical solutions over tradition",
+      "Are determined to achieve your goals regardless of obstacles"
+    ],
+    cognitiveStack: "Ni-Te-Fi-Se: Lead with vision, execute with logic",
+    professionalStrengths: ["Strategic planning", "Systems architecture", "Independent research", "Process optimization"]
+  },
+  INTP: {
+    summary: "The Logician - Analytical innovators who love solving complex problems. You likely:",
+    bullets: [
+      "Enjoy diving deep into theoretical and abstract concepts",
+      "Analyze problems from multiple angles before deciding",
+      "Value precision and accuracy in your work",
+      "Prefer intellectual autonomy and self-directed learning",
+      "Generate creative solutions through logical analysis"
+    ],
+    cognitiveStack: "Ti-Ne-Si-Fe: Lead with logic, explore with intuition",
+    professionalStrengths: ["Problem-solving", "Technical analysis", "Research", "Innovation"]
+  },
+  ENTJ: {
+    summary: "The Commander - Natural leaders who drive toward ambitious goals. You likely:",
+    bullets: [
+      "Take charge and organize people toward objectives",
+      "Make quick, confident decisions under pressure",
+      "Set high standards and expect results",
+      "Excel at strategic thinking and resource allocation",
+      "Challenge inefficiency and drive continuous improvement"
+    ],
+    cognitiveStack: "Te-Ni-Se-Fi: Lead with efficiency, guided by vision",
+    professionalStrengths: ["Executive leadership", "Strategic execution", "Team building", "Crisis management"]
+  },
+  ENTP: {
+    summary: "The Debater - Innovative thinkers who love exploring new possibilities. You likely:",
+    bullets: [
+      "Generate creative ideas and challenge conventional thinking",
+      "Enjoy intellectual debates and exploring multiple perspectives",
+      "Adapt quickly to changing situations and new information",
+      "Excel at entrepreneurial and startup environments",
+      "See connections others miss and identify opportunities"
+    ],
+    cognitiveStack: "Ne-Ti-Fe-Si: Lead with possibilities, analyze with logic",
+    professionalStrengths: ["Innovation", "Entrepreneurship", "Strategic consulting", "Problem reframing"]
+  },
+  INFJ: {
+    summary: "The Advocate - Insightful idealists guided by strong values. You likely:",
+    bullets: [
+      "Have deep insight into people's motivations and emotions",
+      "Are driven by a desire to help others and make a difference",
+      "Think deeply about meaning, purpose, and the future",
+      "Prefer meaningful work that aligns with your values",
+      "Balance idealism with practical implementation"
+    ],
+    cognitiveStack: "Ni-Fe-Ti-Se: Lead with vision, connect with empathy",
+    professionalStrengths: ["Counseling", "Strategic HR", "Writing", "Mission-driven leadership"]
+  },
+  INFP: {
+    summary: "The Mediator - Creative idealists guided by personal values. You likely:",
+    bullets: [
+      "Are deeply committed to your personal values and authenticity",
+      "Express yourself creatively through art, writing, or other mediums",
+      "Empathize deeply with others' experiences and emotions",
+      "Seek meaningful work that makes a positive difference",
+      "Value depth and genuine connection over surface-level interaction"
+    ],
+    cognitiveStack: "Fi-Ne-Si-Te: Lead with values, explore with imagination",
+    professionalStrengths: ["Creative work", "Counseling", "Writing", "Values-based advocacy"]
+  },
+  ENFJ: {
+    summary: "The Protagonist - Charismatic leaders who inspire others toward shared goals. You likely:",
+    bullets: [
+      "Have a natural ability to understand and motivate people",
+      "Lead through inspiration and genuine care for others",
+      "Excel at building consensus and resolving conflicts",
+      "Organize people and resources toward meaningful objectives",
+      "Balance vision with practical action steps"
+    ],
+    cognitiveStack: "Fe-Ni-Se-Ti: Lead with harmony, guided by intuition",
+    professionalStrengths: ["Team leadership", "Mentoring", "Conflict resolution", "Change management"]
+  },
+  ENFP: {
+    summary: "The Campaigner - Enthusiastic innovators who inspire creativity in others. You likely:",
+    bullets: [
+      "Generate enthusiasm and energy for new ideas",
+      "Connect easily with diverse people and perspectives",
+      "See potential and possibilities in people and situations",
+      "Champion causes you believe in with passion",
+      "Bring creativity and optimism to every project"
+    ],
+    cognitiveStack: "Ne-Fi-Te-Si: Lead with possibility, guided by values",
+    professionalStrengths: ["Creative direction", "Marketing", "Coaching", "Culture building"]
+  },
+  ISTJ: {
+    summary: "The Logistician - Reliable executors who uphold standards and traditions. You likely:",
+    bullets: [
+      "Follow through on commitments with exceptional reliability",
+      "Maintain high standards for quality and accuracy",
+      "Value established procedures and proven methods",
+      "Excel at organizing information and maintaining systems",
+      "Provide stability and dependability to any team"
+    ],
+    cognitiveStack: "Si-Te-Fi-Ne: Lead with experience, execute with logic",
+    professionalStrengths: ["Quality assurance", "Compliance", "Project management", "Operations"]
+  },
+  ISFJ: {
+    summary: "The Defender - Dedicated protectors who care deeply about others. You likely:",
+    bullets: [
+      "Remember details about people and their needs",
+      "Provide reliable, consistent support to your team",
+      "Value tradition while caring for practical needs",
+      "Work diligently behind the scenes to help others succeed",
+      "Create warm, supportive environments for collaboration"
+    ],
+    cognitiveStack: "Si-Fe-Ti-Ne: Lead with care, grounded in experience",
+    professionalStrengths: ["Team support", "Healthcare", "Customer service", "Administrative excellence"]
+  },
+  ESTJ: {
+    summary: "The Executive - Efficient organizers who get things done. You likely:",
+    bullets: [
+      "Take charge and organize resources for maximum efficiency",
+      "Value clear hierarchies and defined responsibilities",
+      "Make decisions quickly based on facts and logic",
+      "Hold yourself and others to high standards of performance",
+      "Implement systems that ensure consistent results"
+    ],
+    cognitiveStack: "Te-Si-Ne-Fi: Lead with efficiency, grounded in experience",
+    professionalStrengths: ["Operations management", "Process implementation", "Team direction", "Quality control"]
+  },
+  ESFJ: {
+    summary: "The Consul - Caring organizers who create harmony and support others. You likely:",
+    bullets: [
+      "Create warm, supportive environments for your team",
+      "Remember and honor commitments to others",
+      "Organize events and activities that bring people together",
+      "Provide practical help and emotional support",
+      "Value tradition and maintain important relationships"
+    ],
+    cognitiveStack: "Fe-Si-Ne-Ti: Lead with harmony, grounded in tradition",
+    professionalStrengths: ["Event coordination", "HR", "Customer relations", "Team building"]
+  },
+  ISTP: {
+    summary: "The Virtuoso - Practical problem-solvers who master tools and systems. You likely:",
+    bullets: [
+      "Troubleshoot and fix problems efficiently",
+      "Stay calm and logical in crisis situations",
+      "Prefer hands-on work over theoretical discussion",
+      "Learn by doing and experimenting",
+      "Value efficiency and practical solutions"
+    ],
+    cognitiveStack: "Ti-Se-Ni-Fe: Lead with logic, grounded in action",
+    professionalStrengths: ["Technical troubleshooting", "Crisis response", "Engineering", "Tactical execution"]
+  },
+  ISFP: {
+    summary: "The Adventurer - Gentle artists who express themselves through action. You likely:",
+    bullets: [
+      "Express your values through your work and actions",
+      "Are sensitive to beauty and aesthetics in your environment",
+      "Prefer flexibility and dislike rigid schedules",
+      "Show care through practical help and actions",
+      "Value authenticity and personal freedom"
+    ],
+    cognitiveStack: "Fi-Se-Ni-Te: Lead with values, expressed through action",
+    professionalStrengths: ["Design", "Healthcare", "Artistic creation", "Hands-on care"]
+  },
+  ESTP: {
+    summary: "The Entrepreneur - Bold pragmatists who thrive in action. You likely:",
+    bullets: [
+      "Respond quickly and effectively to immediate challenges",
+      "Read situations and people with accuracy",
+      "Take calculated risks for potential rewards",
+      "Prefer action over extended planning",
+      "Negotiate and persuade with natural charisma"
+    ],
+    cognitiveStack: "Se-Ti-Fe-Ni: Lead with action, analyze on the fly",
+    professionalStrengths: ["Sales", "Crisis management", "Negotiation", "Entrepreneurship"]
+  },
+  ESFP: {
+    summary: "The Entertainer - Spontaneous performers who bring joy to their work. You likely:",
+    bullets: [
+      "Bring energy and enthusiasm to any environment",
+      "Connect easily with people from all backgrounds",
+      "Prefer hands-on experience over theoretical planning",
+      "Adapt quickly to changing situations",
+      "Make work fun and engaging for everyone"
+    ],
+    cognitiveStack: "Se-Fi-Te-Ni: Lead with experience, guided by values",
+    professionalStrengths: ["Performance", "Event hosting", "Sales", "Customer engagement"]
+  }
+};
+
 // Parse full MBTI type string
 export function parseFullMBTIType(fullType: string): { baseType: MBTIBaseType; identity: MBTIIdentity } | null {
   const match = fullType.match(/^([A-Z]{4})-([AT])$/);
