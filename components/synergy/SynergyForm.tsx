@@ -65,36 +65,36 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="relative group bg-black/50 border border-cyber-purple/30 p-6 overflow-hidden"
+      className="relative group bg-black backdrop-blur-sm border border-nova-purple/50 p-6 overflow-hidden"
       whileHover={{ borderColor: 'rgba(191, 90, 242, 0.6)' }}
     >
       {/* Gradient hover overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-nova-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10">
-        <h2 className="text-xl font-bold text-cyber-purple mb-6 font-mono tracking-wider">
+        <h2 className="text-xl font-bold text-nova-purple mb-6 font-mono tracking-wider">
           SYNERGY.ANALYSIS // INPUT.REQUIRED
         </h2>
 
       {/* Progress indicator */}
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center justify-center gap-2 mb-6">
         {[1, 2, 3].map((s) => (
           <div key={s} className="flex items-center">
             <motion.div
-              className={`w-8 h-8 flex items-center justify-center border-2 font-mono text-sm ${
+              className={`w-10 h-10 flex items-center justify-center border-2 font-mono ${
                 step >= s
                   ? 'border-cyber-cyan text-cyber-cyan'
                   : 'border-gray-600 text-gray-600'
               }`}
               animate={step === s ? {
-                boxShadow: ['0 0 0px rgba(0, 255, 255, 0)', '0 0 10px rgba(0, 255, 255, 0.5)', '0 0 0px rgba(0, 255, 255, 0)']
+                boxShadow: ['0 0 0px rgba(0, 255, 255, 0)', '0 0 15px rgba(0, 255, 255, 0.5)', '0 0 0px rgba(0, 255, 255, 0)']
               } : {}}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               {s}
             </motion.div>
             {s < 3 && (
-              <div className={`w-8 h-0.5 ${step > s ? 'bg-cyber-cyan' : 'bg-gray-600'}`} />
+              <div className={`w-10 h-0.5 ${step > s ? 'bg-cyber-cyan' : 'bg-gray-600'}`} />
             )}
           </div>
         ))}
@@ -111,19 +111,19 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
               exit={{ opacity: 0, x: -20 }}
               className="space-y-4"
             >
-              <label className="block text-cyber-cyan font-mono text-sm uppercase tracking-wider">
+              <label className="block text-cyber-cyan font-mono tracking-wider">
                 BIRTH.DATE
               </label>
               <input
                 type="date"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
-                className="w-full px-4 py-3 bg-black border-2 border-cyber-purple/50
+                className="w-full px-4 py-3 bg-black border-2 border-nova-purple/50
                          text-white font-mono focus:border-cyber-cyan focus:outline-none
-                         focus:shadow-neon-cyan transition-all duration-300"
+                         focus:shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all duration-300"
                 required
               />
-              <p className="text-gray-500 text-sm">
+              <p className="text-white/80 text-sm font-mono">
                 Used to calculate Western and Chinese zodiac compatibility
               </p>
               <button
@@ -148,7 +148,7 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
               exit={{ opacity: 0, x: -20 }}
               className="space-y-4"
             >
-              <label className="block text-cyber-cyan font-mono text-sm uppercase tracking-wider">
+              <label className="block text-cyber-cyan font-mono tracking-wider">
                 MBTI.TYPE
               </label>
               <div className="grid grid-cols-4 gap-2">
@@ -157,10 +157,10 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                     key={type}
                     type="button"
                     onClick={() => setMbtiType(type)}
-                    className={`py-2 px-2 border-2 font-mono text-sm transition-all duration-200 ${
+                    className={`py-3 px-2 border-2 font-mono transition-all duration-200 ${
                       mbtiType === type
                         ? 'border-cyber-cyan bg-cyber-cyan/20 text-cyber-cyan'
-                        : 'border-gray-600 text-gray-400 hover:border-cyber-purple hover:text-cyber-purple'
+                        : 'border-gray-600 text-gray-400 hover:border-nova-purple hover:text-nova-purple'
                     }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -177,43 +177,43 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="space-y-3 overflow-hidden"
+                    className="space-y-4 overflow-hidden"
                   >
-                    <label className="block text-cyber-purple font-mono text-sm uppercase tracking-wider">
+                    <label className="block text-nova-purple font-mono tracking-wider">
                       IDENTITY.TYPE
                     </label>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-4">
                       {IDENTITY_OPTIONS.map(({ value, label, suffix }) => (
                         <motion.button
                           key={value}
                           type="button"
                           onClick={() => setMbtiIdentity(value)}
-                          className={`relative group/id p-3 border-2 font-mono text-left transition-all duration-200 overflow-hidden ${
+                          className={`relative group/id p-4 border-2 font-mono text-left transition-all duration-200 overflow-hidden ${
                             mbtiIdentity === value
-                              ? 'border-cyber-purple bg-cyber-purple/20'
-                              : 'border-gray-600 hover:border-cyber-purple/50'
+                              ? 'border-nova-purple bg-nova-purple/20'
+                              : 'border-gray-600 hover:border-nova-purple/50'
                           }`}
                           whileHover={{ scale: 1.01 }}
                           whileTap={{ scale: 0.99 }}
                         >
-                          <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/5 to-transparent opacity-0 group-hover/id:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-nova-purple/5 to-transparent opacity-0 group-hover/id:opacity-100 transition-opacity duration-300" />
                           <div className="relative z-10">
-                            <div className="flex items-center justify-between mb-1">
-                              <span className={`text-lg font-bold ${mbtiIdentity === value ? 'text-cyber-purple' : 'text-gray-400'}`}>
+                            <div className="flex items-center justify-between mb-2">
+                              <span className={`text-lg font-bold ${mbtiIdentity === value ? 'text-nova-purple' : 'text-gray-400'}`}>
                                 {mbtiType}{suffix}
                               </span>
-                              <span className={`text-xs px-2 py-0.5 border ${
+                              <span className={`text-xs px-2 py-1 border ${
                                 mbtiIdentity === value
-                                  ? 'border-cyber-purple text-cyber-purple'
+                                  ? 'border-nova-purple text-nova-purple'
                                   : 'border-gray-600 text-gray-500'
                               }`}>
                                 {suffix}
                               </span>
                             </div>
-                            <span className={`text-sm ${mbtiIdentity === value ? 'text-cyber-purple' : 'text-gray-500'}`}>
+                            <span className={`text-sm ${mbtiIdentity === value ? 'text-nova-purple' : 'text-gray-500'}`}>
                               {label}
                             </span>
-                            <p className="text-gray-600 text-xs mt-1 line-clamp-2">
+                            <p className="text-gray-500 text-xs mt-2 line-clamp-2">
                               {IDENTITY_INFO[value].traits.slice(0, 3).join(' • ')}
                             </p>
                           </div>
@@ -226,12 +226,12 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="p-3 border border-cyber-purple/30 bg-cyber-purple/5"
+                        className="p-4 border border-nova-purple/50 bg-nova-purple/5"
                       >
-                        <p className="text-cyber-purple text-sm font-bold mb-1">
+                        <p className="text-nova-purple text-sm font-bold font-mono mb-2">
                           {mbtiType}-{mbtiIdentity} • {MBTI_INFO[mbtiType].name}
                         </p>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-white text-sm font-mono">
                           {IDENTITY_INFO[mbtiIdentity].description}
                         </p>
                       </motion.div>
@@ -240,7 +240,7 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                 )}
               </AnimatePresence>
 
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-xs font-mono">
                 Don&apos;t know your MBTI?{' '}
                 <a
                   href="https://www.16personalities.com/free-personality-test"
@@ -257,8 +257,8 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                   type="button"
                   onClick={() => setStep(1)}
                   className="flex-1 py-3 bg-black border-2 border-gray-600 text-gray-400
-                           font-mono uppercase tracking-wider hover:border-cyber-purple
-                           hover:text-cyber-purple transition-all duration-300"
+                           font-mono uppercase tracking-wider hover:border-nova-purple
+                           hover:text-nova-purple transition-all duration-300"
                 >
                   &lt;&lt; BACK
                 </button>
@@ -285,10 +285,10 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
               exit={{ opacity: 0, x: -20 }}
               className="space-y-4"
             >
-              <label className="block text-cyber-cyan font-mono text-sm uppercase tracking-wider">
+              <label className="block text-cyber-cyan font-mono tracking-wider">
                 BIG.FIVE.TRAITS
               </label>
-              <p className="text-gray-500 text-xs mb-4">
+              <p className="text-white/80 text-sm font-mono mb-4">
                 Don&apos;t know your scores?{' '}
                 <a
                   href="https://www.truity.com/test/big-five-personality-test"
@@ -301,12 +301,12 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                 , then enter your scores below.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {BIG_FIVE_TRAITS.map(({ key, label, description }) => (
-                  <div key={key} className="space-y-1">
+                  <div key={key} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-cyber-green font-mono text-sm">{label}</span>
-                      <span className="text-white font-mono">{bigFive[key]}%</span>
+                      <span className="text-cyber-green font-mono">{label}</span>
+                      <span className="text-white font-mono font-bold">{bigFive[key]}%</span>
                     </div>
                     <input
                       type="range"
@@ -317,12 +317,15 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                         ...prev,
                         [key]: parseInt(e.target.value)
                       }))}
-                      className="w-full h-2 bg-black border border-cyber-green/30 appearance-none cursor-pointer
+                      className="w-full h-2 bg-gray-800 border border-gray-700 appearance-none cursor-pointer
                                [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4
                                [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-cyber-green
-                               [&::-webkit-slider-thumb]:cursor-pointer"
+                               [&::-webkit-slider-thumb]:cursor-pointer
+                               [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4
+                               [&::-moz-range-thumb]:bg-cyber-green [&::-moz-range-thumb]:cursor-pointer
+                               [&::-moz-range-thumb]:border-0"
                     />
-                    <p className="text-gray-600 text-xs">{description}</p>
+                    <p className="text-white/60 text-sm font-mono">{description}</p>
                   </div>
                 ))}
               </div>
@@ -332,8 +335,8 @@ export default function SynergyForm({ onSubmit, isCalculating }: SynergyFormProp
                   type="button"
                   onClick={() => setStep(2)}
                   className="flex-1 py-3 bg-black border-2 border-gray-600 text-gray-400
-                           font-mono uppercase tracking-wider hover:border-cyber-purple
-                           hover:text-cyber-purple transition-all duration-300"
+                           font-mono uppercase tracking-wider hover:border-nova-purple
+                           hover:text-nova-purple transition-all duration-300"
                 >
                   &lt;&lt; BACK
                 </button>
